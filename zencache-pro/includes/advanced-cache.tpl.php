@@ -19,16 +19,18 @@ namespace zencache
 	/*
 	 * Back compat. with Quick Cache.
 	 */
+	advanced_cache::QUICK_CACHE_constants_back_compat();
 	advanced_cache::qcAC_qcABC_back_compat();
 
-	/**
-	 * ZenCache Pro flag.
-	 *
-	 * @since 140422 First documented version.
-	 *
-	 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
-	 */
-	define('ZENCACHE_PRO', TRUE); // Note that we do NOT check `if(defined())` here.
+	if(!defined('ZENCACHE_PRO'))
+		/**
+		 * ZenCache Pro flag.
+		 *
+		 * @since 140422 First documented version.
+		 *
+		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
+		 */
+		define('ZENCACHE_PRO', TRUE); // Pro version.
 
 	if(!defined('ZENCACHE_ENABLE'))
 		/**
@@ -1561,6 +1563,31 @@ namespace zencache
 					break; // Break switch handler.
 			}
 			return "\n".'<!-- '.htmlspecialchars(sprintf(__('ZenCache is NOT caching this page, %1$s', $this->text_domain), $reason)).' -->';
+		}
+
+		/**
+		 * Back compat. with `QUICK_CACHE_` constants.
+		 *
+		 * @since 14xxxx First documented version.
+		 */
+		public static function QUICK_CACHE_constants_back_compat()
+		{
+			$constants = get_defined_constants(TRUE);
+
+			if(empty($constants['user']))
+				return; // Nothing to do.
+
+			foreach($constants['user'] as $_constant => $_value)
+			{
+				if(stripos($_constant, 'QUICK_CACHE_') !== 0)
+					continue; // Nothing to do here.
+
+				if(!($_constant_sub_name = substr($_constant, 12)))
+					continue; // Nothing to do here.
+
+				if(!defined('ZENCACHE_'.$_constant_sub_name))
+					define('ZENCACHE_'.$_constant_sub_name, $_value);
+			}
 		}
 
 		/**
