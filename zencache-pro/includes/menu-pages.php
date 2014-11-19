@@ -45,7 +45,7 @@ namespace zencache // Root namespace.
 			echo '      <a href="'.esc_attr('http://www.websharks-inc.com/r/zencache-beta-testers-list/').'" target="_blank"><i class="fa fa-envelope"></i> '.__('Beta Testers (Signup)', $this->plugin->text_domain).'</a>'."\n";
 			echo '   </div>'."\n";
 
-			echo '   <img src="'.$this->plugin->url('/client-s/images/options.png').'" alt="'.esc_attr(__('Plugin Options', $this->plugin->text_domain)).'" />'."\n";
+			echo '   <img src="'.$this->plugin->url('/client-s/images/options.png').'" alt="'.esc_attr(__('Plugin Options', $this->plugin->text_domain)).'" style="width:400px;" />'."\n";
 
 			echo '</div>'."\n";
 
