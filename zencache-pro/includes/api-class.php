@@ -87,4 +87,7 @@ namespace // Global namespace.
 			return static::plugin()->wipe_cache();
 		}
 	}
+
+	if(!class_exists('\\quick_cache'))
+		class_alias('\\zencache', '\\quick_cache');
 }
