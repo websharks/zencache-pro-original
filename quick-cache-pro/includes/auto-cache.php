@@ -18,7 +18,7 @@ namespace zencache // Root namespace.
 	class auto_cache
 	{
 		/**
-		 * @var plugin Quick Cache instance.
+		 * @var plugin ZenCache instance.
 		 */
 		protected $plugin; // Set by constructor.
 

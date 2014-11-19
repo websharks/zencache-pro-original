@@ -1,8 +1,8 @@
-# Copyright (C) 2014 Quick Cache Pro
-# This file is distributed under the same license as the Quick Cache Pro package.
+# Copyright (C) 2014 ZenCache Pro
+# This file is distributed under the same license as the ZenCache Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Quick Cache Pro 141001\n"
+"Project-Id-Version: ZenCache Pro 141001\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/zencache-pro\n"
 "POT-Creation-Date: 2014-10-02 03:13:43+00:00\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr ""
 #. translators: This string is actually NOT translatable because the `__()`
 #. function is not available at this point in the processing.
 #: includes/advanced-cache.tpl.php:1014
-msgid "Quick Cache fully functional :-) Cache file served for (%1$s) in %2$s seconds, on: %3$s."
+msgid "ZenCache fully functional :-) Cache file served for (%1$s) in %2$s seconds, on: %3$s."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1088
@@ -51,7 +51,7 @@ msgid "Unable to invalidate file: `%1$s`."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1132
-msgid "Quick Cache fully functional :-) Cache file served for (%1$s; user token: %2$s) in %3$s seconds, on: %4$s."
+msgid "ZenCache fully functional :-) Cache file served for (%1$s; user token: %2$s) in %3$s seconds, on: %4$s."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1223
@@ -59,7 +59,7 @@ msgid "Unexpected OB phase: `%1$s`."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1285
-msgid "Cache directory not writable. Quick Cache needs this directory please: `%1$s`. Set permissions to `755` or higher; `777` might be needed in some cases."
+msgid "Cache directory not writable. ZenCache needs this directory please: `%1$s`. Set permissions to `755` or higher; `777` might be needed in some cases."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1293 includes/advanced-cache.tpl.php:1316
@@ -67,11 +67,11 @@ msgid "Unable to create symlink: `%1$s` » `%2$s`. Possible permissions issue (o
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1303
-msgid "Quick Cache file path: %1$s"
+msgid "ZenCache file path: %1$s"
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1304
-msgid "Quick Cache file built for (%1$s%2$s) in %3$s seconds, on: %4$s."
+msgid "ZenCache file built for (%1$s%2$s) in %3$s seconds, on: %4$s."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1305
@@ -79,15 +79,15 @@ msgid "user token: %1$s"
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1306
-msgid "This Quick Cache file will auto-expire (and be rebuilt) on: %1$s (based on your configured expiration time)."
+msgid "This ZenCache file will auto-expire (and be rebuilt) on: %1$s (based on your configured expiration time)."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1325
-msgid "Quick Cache: failed to write cache file for: `%1$s`; possible permissions issue (or race condition), please check your cache directory: `%2$s`."
+msgid "ZenCache: failed to write cache file for: `%1$s`; possible permissions issue (or race condition), please check your cache directory: `%2$s`."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1359
-msgid "Quick Cache HTML Compressor"
+msgid "ZenCache HTML Compressor"
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1427
@@ -151,7 +151,7 @@ msgid "because the current user visiting this page (usually YOU), appears to be 
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1488
-msgid "because the current user appeared to be logged into the site (in one way or another); but Quick Cache was unable to formulate a User Token for them. Please report this as a possible bug."
+msgid "because the current user appeared to be logged into the site (in one way or another); but ZenCache was unable to formulate a User Token for them. Please report this as a possible bug."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1492
@@ -179,7 +179,7 @@ msgid "because a plugin running on this installation says this page is in Mainte
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1516
-msgid "because Quick Cache is unable to cache already-compressed output. Please use `mod_deflate` w/ Apache; or use `zlib.output_compression` in your `php.ini` file. Quick Cache is NOT compatible with `ob_gzhandler()` and others like this."
+msgid "because ZenCache is unable to cache already-compressed output. Please use `mod_deflate` w/ Apache; or use `zlib.output_compression` in your `php.ini` file. ZenCache is NOT compatible with `ob_gzhandler()` and others like this."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1520
@@ -195,11 +195,11 @@ msgid "because a `Status:` header (or an `HTTP/` header) was set via PHP at runt
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1532
-msgid "because the WordPress `is_404()` Conditional Tag says the current page is a 404 error; and this is the first time it's happened on this page. Your current configuration says that 404 errors SHOULD be cached, so Quick Cache built a cached symlink which points future requests for this location to your already-cached 404 error document. If you reload this page (assuming you don't clear the cache before you do so); you should get a cached version of your 404 error document. This message occurs ONCE for each new/unique 404 error request."
+msgid "because the WordPress `is_404()` Conditional Tag says the current page is a 404 error; and this is the first time it's happened on this page. Your current configuration says that 404 errors SHOULD be cached, so ZenCache built a cached symlink which points future requests for this location to your already-cached 404 error document. If you reload this page (assuming you don't clear the cache before you do so); you should get a cached version of your 404 error document. This message occurs ONCE for each new/unique 404 error request."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1536
-msgid "because Quick Cache detected an early output buffer termination. This may happen when a theme/plugin ends, cleans, or flushes all output buffers before reaching the PHP shutdown phase. It's not always a bad thing. Sometimes it is necessary for a theme/plugin to do this. However, in this scenario it is NOT possible to cache the output; since Quick Cache is effectively disabled at runtime when this occurs."
+msgid "because ZenCache detected an early output buffer termination. This may happen when a theme/plugin ends, cleans, or flushes all output buffers before reaching the PHP shutdown phase. It's not always a bad thing. Sometimes it is necessary for a theme/plugin to do this. However, in this scenario it is NOT possible to cache the output; since ZenCache is effectively disabled at runtime when this occurs."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1540
@@ -207,7 +207,7 @@ msgid "due to an unexpected behavior in the application. Please report this as a
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1543
-msgid "Quick Cache is NOT caching this page, %1$s"
+msgid "ZenCache is NOT caching this page, %1$s"
 msgstr ""
 
 #: includes/auto-cache.php:153 includes/auto-cache.php:178
@@ -312,7 +312,7 @@ msgid "Failed to remove your <code>/wp-content/advanced-cache.php</code> file. M
 msgstr ""
 
 #: includes/menu-pages.php:105
-msgid "Quick Cache is currently disabled; please review options below."
+msgid "ZenCache is currently disabled; please review options below."
 msgstr ""
 
 #: includes/menu-pages.php:113
@@ -320,7 +320,7 @@ msgid "Enable/Disable"
 msgstr ""
 
 #: includes/menu-pages.php:118
-msgid "Yes, enable Quick Cache!"
+msgid "Yes, enable ZenCache!"
 msgstr ""
 
 #: includes/menu-pages.php:118
@@ -328,23 +328,23 @@ msgid "No, disable."
 msgstr ""
 
 #: includes/menu-pages.php:120
-msgid "<strong>HUGE Time-Saver:</strong> Approx. 95% of all WordPress sites running Quick Cache, simply enable it here; and that's it :-) <strong>No further configuration is necessary (really).</strong> All of the other options (down below) are already tuned for the BEST performance on a typical WordPress installation. Simply enable Quick Cache here and click \"Save All Changes\". If you get any warnings please follow the instructions given. Otherwise, you're good <i class=\"fa fa-smile-o\"></i>. This plugin is designed to run just fine like it is. Take it for a spin right away; you can always fine-tune things later if you deem necessary."
+msgid "<strong>HUGE Time-Saver:</strong> Approx. 95% of all WordPress sites running ZenCache, simply enable it here; and that's it :-) <strong>No further configuration is necessary (really).</strong> All of the other options (down below) are already tuned for the BEST performance on a typical WordPress installation. Simply enable ZenCache here and click \"Save All Changes\". If you get any warnings please follow the instructions given. Otherwise, you're good <i class=\"fa fa-smile-o\"></i>. This plugin is designed to run just fine like it is. Take it for a spin right away; you can always fine-tune things later if you deem necessary."
 msgstr ""
 
 #: includes/menu-pages.php:123
-msgid "How Can I Tell Quick Cache is Working?"
+msgid "How Can I Tell ZenCache is Working?"
 msgstr ""
 
 #: includes/menu-pages.php:124
-msgid "First of all, please make sure that you've enabled Quick Cache here; then scroll down to the bottom of this page and click \"Save All Changes\". All of the other options (below) are already pre-configured for typical usage. Feel free to skip them all for now. You can go back through all of these later and fine-tune things the way you like them."
+msgid "First of all, please make sure that you've enabled ZenCache here; then scroll down to the bottom of this page and click \"Save All Changes\". All of the other options (below) are already pre-configured for typical usage. Feel free to skip them all for now. You can go back through all of these later and fine-tune things the way you like them."
 msgstr ""
 
 #: includes/menu-pages.php:125
-msgid "Once Quick Cache has been enabled, <strong>you'll need to log out (and/or clear browser cookies)</strong>. By default, cache files are NOT served to visitors who are logged-in, and that includes you too ;-) Cache files are NOT served to recent comment authors either. If you've commented (or replied to a comment lately); please clear your browser cookies before testing."
+msgid "Once ZenCache has been enabled, <strong>you'll need to log out (and/or clear browser cookies)</strong>. By default, cache files are NOT served to visitors who are logged-in, and that includes you too ;-) Cache files are NOT served to recent comment authors either. If you've commented (or replied to a comment lately); please clear your browser cookies before testing."
 msgstr ""
 
 #: includes/menu-pages.php:126
-msgid "<strong>To verify that Quick Cache is working</strong>, navigate your site like a normal visitor would. Right-click on any page (choose View Source), then scroll to the very bottom of the document. At the bottom, you'll find comments that show Quick Cache stats and information. You should also notice that page-to-page navigation is <i class=\"fa fa-flash\"></i> <strong>lightning fast</strong> now that Quick Cache is running; and it gets faster over time!"
+msgid "<strong>To verify that ZenCache is working</strong>, navigate your site like a normal visitor would. Right-click on any page (choose View Source), then scroll to the very bottom of the document. At the bottom, you'll find comments that show ZenCache stats and information. You should also notice that page-to-page navigation is <i class=\"fa fa-flash\"></i> <strong>lightning fast</strong> now that ZenCache is running; and it gets faster over time!"
 msgstr ""
 
 #: includes/menu-pages.php:128
@@ -368,7 +368,7 @@ msgid "Uninstall on Plugin Deletion; or Safeguard Options?"
 msgstr ""
 
 #: includes/menu-pages.php:145
-msgid "<strong>Tip:</strong> By default, if you delete Quick Cache using the plugins menu in WordPress, nothing is lost. However, if you want to completely uninstall Quick Cache you should set this to <code>Yes</code> and <strong>THEN</strong> deactivate &amp; delete Quick Cache from the plugins menu in WordPress. This way Quick Cache will erase your options for the plugin, erase directories/files created by the plugin, remove the <code>advanced-cache.php</code> file, terminate CRON jobs, etc. It erases itself from existence completely."
+msgid "<strong>Tip:</strong> By default, if you delete ZenCache using the plugins menu in WordPress, nothing is lost. However, if you want to completely uninstall ZenCache you should set this to <code>Yes</code> and <strong>THEN</strong> deactivate &amp; delete ZenCache from the plugins menu in WordPress. This way ZenCache will erase your options for the plugin, erase directories/files created by the plugin, remove the <code>advanced-cache.php</code> file, terminate CRON jobs, etc. It erases itself from existence completely."
 msgstr ""
 
 #: includes/menu-pages.php:147
@@ -376,7 +376,7 @@ msgid "Safeguard my options and the cache (recommended)."
 msgstr ""
 
 #: includes/menu-pages.php:148
-msgid "Yes, uninstall (completely erase) Quick Cache on plugin deletion."
+msgid "Yes, uninstall (completely erase) ZenCache on plugin deletion."
 msgstr ""
 
 #: includes/menu-pages.php:157
@@ -388,11 +388,11 @@ msgid "Clearing the Cache (Manually)"
 msgstr ""
 
 #: includes/menu-pages.php:163
-msgid "Once Quick Cache is enabled, you will find this new option in your WordPress Admin Bar (see screenshot on right). Clicking this button will clear the cache and you can start fresh at anytime (e.g. you can do this manually; and as often as you wish)."
+msgid "Once ZenCache is enabled, you will find this new option in your WordPress Admin Bar (see screenshot on right). Clicking this button will clear the cache and you can start fresh at anytime (e.g. you can do this manually; and as often as you wish)."
 msgstr ""
 
 #: includes/menu-pages.php:164
-msgid "Depending on the structure of your site, there could be many reasons to clear the cache. However, the most common reasons are related to Post/Page edits or deletions, Category/Tag edits or deletions, and Theme changes. Quick Cache handles most scenarios all by itself. However, many site owners like to clear the cache manually; for a variety of reasons (just to force a refresh)."
+msgid "Depending on the structure of your site, there could be many reasons to clear the cache. However, the most common reasons are related to Post/Page edits or deletions, Category/Tag edits or deletions, and Theme changes. ZenCache handles most scenarios all by itself. However, many site owners like to clear the cache manually; for a variety of reasons (just to force a refresh)."
 msgstr ""
 
 #: includes/menu-pages.php:166
@@ -408,7 +408,7 @@ msgid "Running the <a href=\"http://www.websharks-inc.com/product/s2clean/\" tar
 msgstr ""
 
 #: includes/menu-pages.php:170
-msgid "If s2Clean is installed, Quick Cache can be configured to clear the Markdown cache too (if you've enabled Markdown processing with s2Clean). The s2Clean Markdown cache is only cleared when you manually clear the cache (with Quick Cache); and only if you enable this option here. Note: s2Clean's Markdown cache is extremely dynamic. Just like the rest of your site, s2Clean caches do NOT need to be cleared away at all, as this happens automatically when your content changes. However, some developers find this feature useful while developing their site; just to force a refresh."
+msgid "If s2Clean is installed, ZenCache can be configured to clear the Markdown cache too (if you've enabled Markdown processing with s2Clean). The s2Clean Markdown cache is only cleared when you manually clear the cache (with ZenCache); and only if you enable this option here. Note: s2Clean's Markdown cache is extremely dynamic. Just like the rest of your site, s2Clean caches do NOT need to be cleared away at all, as this happens automatically when your content changes. However, some developers find this feature useful while developing their site; just to force a refresh."
 msgstr ""
 
 #: includes/menu-pages.php:172
@@ -424,7 +424,7 @@ msgid "Process Other Custom PHP Code?"
 msgstr ""
 
 #: includes/menu-pages.php:176
-msgid "If you have other custom routines you'd like to process when the cache is cleared manually, please type your custom PHP code here. The PHP code that you provide is only evaluated when you manually clear the cache (with Quick Cache); and only if the field below contains PHP code. Note: if your PHP code outputs a message (e.g. if you have <code>echo '&lt;p&gt;My message&lt;/p&gt;';</code>); your message will be displayed along with any other notes from Quick Cache itself. This could be useful to developers that need to clear server caches too (such as <a href=\"http://www.php.net/manual/en/function.apc-clear-cache.php\" target=\"_blank\">APC</a> or <a href=\"http://www.php.net/manual/en/memcache.flush.php\" target=\"_blank\">memcache</a>)."
+msgid "If you have other custom routines you'd like to process when the cache is cleared manually, please type your custom PHP code here. The PHP code that you provide is only evaluated when you manually clear the cache (with ZenCache); and only if the field below contains PHP code. Note: if your PHP code outputs a message (e.g. if you have <code>echo '&lt;p&gt;My message&lt;/p&gt;';</code>); your message will be displayed along with any other notes from ZenCache itself. This could be useful to developers that need to clear server caches too (such as <a href=\"http://www.php.net/manual/en/function.apc-clear-cache.php\" target=\"_blank\">APC</a> or <a href=\"http://www.php.net/manual/en/memcache.flush.php\" target=\"_blank\">memcache</a>)."
 msgstr ""
 
 #: includes/menu-pages.php:178
@@ -436,15 +436,15 @@ msgid "Purging the Cache (Automatically)"
 msgstr ""
 
 #: includes/menu-pages.php:182
-msgid "This is built into the Quick Cache plugin; e.g. this functionality is \"always on\". If you edit a Post/Page (or delete one), Quick Cache will automatically purge the cache file(s) associated with that content. This way a new updated version of the cache will be created automatically the next time this content is accessed. Simple updates like this occur each time you make changes in the Dashboard, and Quick Cache will notify you of these as they occur. Quick Cache monitors changes to Posts (of any kind, including Pages), Categories, Tags, Links, Themes (even Users); and more. Notifications in the Dashboard regarding these detections can be enabled/disabled below."
+msgid "This is built into the ZenCache plugin; e.g. this functionality is \"always on\". If you edit a Post/Page (or delete one), ZenCache will automatically purge the cache file(s) associated with that content. This way a new updated version of the cache will be created automatically the next time this content is accessed. Simple updates like this occur each time you make changes in the Dashboard, and ZenCache will notify you of these as they occur. ZenCache monitors changes to Posts (of any kind, including Pages), Categories, Tags, Links, Themes (even Users); and more. Notifications in the Dashboard regarding these detections can be enabled/disabled below."
 msgstr ""
 
 #: includes/menu-pages.php:184
-msgid "Yes, enable Quick Cache notifications in the Dashboard when changes are detected &amp; one or more cache files are purged automatically."
+msgid "Yes, enable ZenCache notifications in the Dashboard when changes are detected &amp; one or more cache files are purged automatically."
 msgstr ""
 
 #: includes/menu-pages.php:185
-msgid "No, I don't want to know (don't really care) what Quick Cache is doing behind-the-scene."
+msgid "No, I don't want to know (don't really care) what ZenCache is doing behind-the-scene."
 msgstr ""
 
 #: includes/menu-pages.php:188
@@ -452,7 +452,7 @@ msgid "Auto-Purge Designated \"Home Page\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:189
-msgid "On many sites, the Home Page (aka: the Front Page) offers an archive view of all Posts (or even Pages). Therefore, if a single Post/Page is changed in some way; and Quick Cache purges/resets the cache for a single Post/Page, would you like Quick Cache to also purge any existing cache files for the \"Home Page\"?"
+msgid "On many sites, the Home Page (aka: the Front Page) offers an archive view of all Posts (or even Pages). Therefore, if a single Post/Page is changed in some way; and ZenCache purges/resets the cache for a single Post/Page, would you like ZenCache to also purge any existing cache files for the \"Home Page\"?"
 msgstr ""
 
 #: includes/menu-pages.php:191
@@ -468,7 +468,7 @@ msgid "Auto-Purge Designated \"Posts Page\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:195
-msgid "On many sites, the Posts Page (aka: the Blog Page) offers an archive view of all Posts (or even Pages). Therefore, if a single Post/Page is changed in some way; and Quick Cache purges/resets the cache for a single Post/Page, would you like Quick Cache to also purge any existing cache files for the \"Posts Page\"?"
+msgid "On many sites, the Posts Page (aka: the Blog Page) offers an archive view of all Posts (or even Pages). Therefore, if a single Post/Page is changed in some way; and ZenCache purges/resets the cache for a single Post/Page, would you like ZenCache to also purge any existing cache files for the \"Posts Page\"?"
 msgstr ""
 
 #: includes/menu-pages.php:197
@@ -484,7 +484,7 @@ msgid "Auto-Purge \"Author Page\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:202
-msgid "On many sites, each author has a related \"Author Page\" that offers an archive view of all posts associated with that author. Therefore, if a single Post/Page is changed in some way; and Quick Cache purges/resets the cache for a single Post/Page, would you like Quick Cache to also purge any existing cache files for the related \"Author Page\"?"
+msgid "On many sites, each author has a related \"Author Page\" that offers an archive view of all posts associated with that author. Therefore, if a single Post/Page is changed in some way; and ZenCache purges/resets the cache for a single Post/Page, would you like ZenCache to also purge any existing cache files for the related \"Author Page\"?"
 msgstr ""
 
 #: includes/menu-pages.php:204
@@ -500,7 +500,7 @@ msgid "Auto-Purge \"Category Archives\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:208
-msgid "On many sites, each post is associated with at least one Category. Each category then has an archive view that contains all the posts within that category. Therefore, if a single Post/Page is changed in some way; and Quick Cache purges/resets the cache for a single Post/Page, would you like Quick Cache to also purge any existing cache files for the associated Category archive views?"
+msgid "On many sites, each post is associated with at least one Category. Each category then has an archive view that contains all the posts within that category. Therefore, if a single Post/Page is changed in some way; and ZenCache purges/resets the cache for a single Post/Page, would you like ZenCache to also purge any existing cache files for the associated Category archive views?"
 msgstr ""
 
 #: includes/menu-pages.php:210
@@ -516,7 +516,7 @@ msgid "Auto-Purge \"Tag Archives\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:214
-msgid "On many sites, each post may be associated with at least one Tag. Each tag then has an archive view that contains all the posts assigned that tag. Therefore, if a single Post/Page is changed in some way; and Quick Cache purges/resets the cache for a single Post/Page, would you like Quick Cache to also purge any existing cache files for the associated Tag archive views?"
+msgid "On many sites, each post may be associated with at least one Tag. Each tag then has an archive view that contains all the posts assigned that tag. Therefore, if a single Post/Page is changed in some way; and ZenCache purges/resets the cache for a single Post/Page, would you like ZenCache to also purge any existing cache files for the associated Tag archive views?"
 msgstr ""
 
 #: includes/menu-pages.php:216
@@ -532,7 +532,7 @@ msgid "Auto-Purge \"Custom Term Archives\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:220
-msgid "Most sites do not use any custom Terms so it should be safe to leave this disabled. However, if your site uses custom Terms and they have their own Term archive views, you may want to clear those when the associated post is cleared. Therefore, if a single Post/Page is changed in some way; and Quick Cache purges/resets the cache for a single Post/Page, would you like Quick Cache to also purge any existing cache files for the associated Tag archive views?"
+msgid "Most sites do not use any custom Terms so it should be safe to leave this disabled. However, if your site uses custom Terms and they have their own Term archive views, you may want to clear those when the associated post is cleared. Therefore, if a single Post/Page is changed in some way; and ZenCache purges/resets the cache for a single Post/Page, would you like ZenCache to also purge any existing cache files for the associated Tag archive views?"
 msgstr ""
 
 #: includes/menu-pages.php:222
@@ -548,7 +548,7 @@ msgid "Auto-Purge \"Custom Post Type Archives\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:226
-msgid "Most sites do not use any Custom Post Types so it should be safe to disable this option. However, if your site uses Custom Post Types and they have their own Custom Post Type archive views, you may want to clear those when any associated post is cleared. Therefore, if a single Post with a Custom Post Type is changed in some way; and Quick Cache purges/resets the cache for that post, would you like Quick Cache to also purge any existing cache files for the associated Custom Post Type archive views?"
+msgid "Most sites do not use any Custom Post Types so it should be safe to disable this option. However, if your site uses Custom Post Types and they have their own Custom Post Type archive views, you may want to clear those when any associated post is cleared. Therefore, if a single Post with a Custom Post Type is changed in some way; and ZenCache purges/resets the cache for that post, would you like ZenCache to also purge any existing cache files for the associated Custom Post Type archive views?"
 msgstr ""
 
 #: includes/menu-pages.php:228
@@ -564,7 +564,7 @@ msgid "Auto-Purge \"RSS/RDF/ATOM Feeds\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:233
-msgid "If you enable Feed Caching (below), this can be quite handy. If enabled, when you update a Post/Page, approve a Comment, or make other changes where Quick Cache can detect that certain types of Feeds should be purged to keep your site up-to-date, then Quick Cache will do this for you automatically. For instance, the blog's master feed, the blog's master comments feed, feeds associated with comments on a Post/Page, term-related feeds (including mixed term-related feeds), author-related feeds, etc. Under various circumstances (i.e. as you work in the Dashboard) these can be purged automatically to keep your site up-to-date."
+msgid "If you enable Feed Caching (below), this can be quite handy. If enabled, when you update a Post/Page, approve a Comment, or make other changes where ZenCache can detect that certain types of Feeds should be purged to keep your site up-to-date, then ZenCache will do this for you automatically. For instance, the blog's master feed, the blog's master comments feed, feeds associated with comments on a Post/Page, term-related feeds (including mixed term-related feeds), author-related feeds, etc. Under various circumstances (i.e. as you work in the Dashboard) these can be purged automatically to keep your site up-to-date."
 msgstr ""
 
 #: includes/menu-pages.php:235
@@ -580,7 +580,7 @@ msgid "Auto-Purge \"XML Sitemaps\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:240
-msgid "If you're generating XML Sitemaps with a plugin like <a href=\"http://wordpress.org/plugins/google-sitemap-generator/\" target=\"_blank\">Google XML Sitemaps</a>, you can tell Quick Cache to automatically purge the cache of any XML Sitemaps whenever it purges a Post/Page. Note; this does NOT purge the XML Sitemap itself of course, only the cache. The point being, to clear the cache and allow changes to a Post/Page to be reflected by a fresh copy of your XML Sitemap; sooner rather than later."
+msgid "If you're generating XML Sitemaps with a plugin like <a href=\"http://wordpress.org/plugins/google-sitemap-generator/\" target=\"_blank\">Google XML Sitemaps</a>, you can tell ZenCache to automatically purge the cache of any XML Sitemaps whenever it purges a Post/Page. Note; this does NOT purge the XML Sitemap itself of course, only the cache. The point being, to clear the cache and allow changes to a Post/Page to be reflected by a fresh copy of your XML Sitemap; sooner rather than later."
 msgstr ""
 
 #: includes/menu-pages.php:242
@@ -608,7 +608,7 @@ msgid "Base Cache Directory (Must be Writable; e.g. <a href=\"http://codex.wordp
 msgstr ""
 
 #: includes/menu-pages.php:260
-msgid "This is where Quick Cache will store the cached version of your site. If you're not sure how to deal with directory permissions, don't worry too much about this. If there is a problem, Quick Cache will let you know about it. By default, this directory is created by Quick Cache and the permissions are setup automatically. In most cases there is nothing more you need to do."
+msgid "This is where ZenCache will store the cached version of your site. If you're not sure how to deal with directory permissions, don't worry too much about this. If there is a problem, ZenCache will let you know about it. By default, this directory is created by ZenCache and the permissions are setup automatically. In most cases there is nothing more you need to do."
 msgstr ""
 
 #: includes/menu-pages.php:264
@@ -620,11 +620,11 @@ msgid "If you don't update your site much, you could set this to <code>6 months<
 msgstr ""
 
 #: includes/menu-pages.php:266
-msgid "Keep in mind that your Expiration Time is only one part of the big picture. Quick Cache will also purge the cache automatically as changes are made to the site (i.e. you edit a post, someone comments on a post, you change your theme, you add a new navigation menu item, etc., etc.). Thus, your Expiration Time is really just a fallback; e.g. the maximum amount of time that a cache file could ever possibly live."
+msgid "Keep in mind that your Expiration Time is only one part of the big picture. ZenCache will also purge the cache automatically as changes are made to the site (i.e. you edit a post, someone comments on a post, you change your theme, you add a new navigation menu item, etc., etc.). Thus, your Expiration Time is really just a fallback; e.g. the maximum amount of time that a cache file could ever possibly live."
 msgstr ""
 
 #: includes/menu-pages.php:267
-msgid "All of that being said, you could set this to just <code>60 seconds</code> and you would still see huge differences in speed and performance. If you're just starting out with Quick Cache (perhaps a bit nervous about old cache files being served to your visitors); you could set this to something like <code>30 minutes</code>, and experiment with it while you build confidence in Quick Cache. It's not necessary to do so, but many site owners have reported this makes them feel like they're more-in-control when the cache has a short expiration time. All-in-all, it's a matter of preference <i class=\"fa fa-smile-o\"></i>."
+msgid "All of that being said, you could set this to just <code>60 seconds</code> and you would still see huge differences in speed and performance. If you're just starting out with ZenCache (perhaps a bit nervous about old cache files being served to your visitors); you could set this to something like <code>30 minutes</code>, and experiment with it while you build confidence in ZenCache. It's not necessary to do so, but many site owners have reported this makes them feel like they're more-in-control when the cache has a short expiration time. All-in-all, it's a matter of preference <i class=\"fa fa-smile-o\"></i>."
 msgstr ""
 
 #: includes/menu-pages.php:269
@@ -632,7 +632,7 @@ msgid "<strong>Tip:</strong> the value that you specify here MUST be compatible 
 msgstr ""
 
 #: includes/menu-pages.php:270
-msgid "<strong>Note:</strong> Quick Cache will never serve a cache file that is older than what you specify here (even if one exists in your cache directory; stale cache files are never used). In addition, a WP Cron job will automatically cleanup your cache directory (once daily); purging expired cache files periodically. This prevents a HUGE cache from building up over time, creating a potential storage issue."
+msgid "<strong>Note:</strong> ZenCache will never serve a cache file that is older than what you specify here (even if one exists in your cache directory; stale cache files are never used). In addition, a WP Cron job will automatically cleanup your cache directory (once daily); purging expired cache files periodically. This prevents a HUGE cache from building up over time, creating a potential storage issue."
 msgstr ""
 
 #: includes/menu-pages.php:278
@@ -648,7 +648,7 @@ msgid "Recommended setting: <code>No</code> (for membership sites, very importan
 msgstr ""
 
 #: includes/menu-pages.php:285
-msgid "Quick Cache handles content delivery through its ability to communicate with a browser using PHP. If you allow a browser to (cache) the caching system itself, you are momentarily losing some control; and this can have a negative impact on users that see more than one version of your site; e.g. one version while logged-in, and another while NOT logged-in. For instance, a user may log out of your site, but upon logging out they report seeing pages on the site which indicate they are STILL logged in (even though they're not — that's bad). This can happen if you allow a client-side cache, because their browser may cache web pages they visited while logged into your site which persist even after logging out. Sending no-cache headers will work to prevent this issue."
+msgid "ZenCache handles content delivery through its ability to communicate with a browser using PHP. If you allow a browser to (cache) the caching system itself, you are momentarily losing some control; and this can have a negative impact on users that see more than one version of your site; e.g. one version while logged-in, and another while NOT logged-in. For instance, a user may log out of your site, but upon logging out they report seeing pages on the site which indicate they are STILL logged in (even though they're not — that's bad). This can happen if you allow a client-side cache, because their browser may cache web pages they visited while logged into your site which persist even after logging out. Sending no-cache headers will work to prevent this issue."
 msgstr ""
 
 #: includes/menu-pages.php:286
@@ -672,7 +672,7 @@ msgid "<strong>Tip:</strong> Setting this to <code>No</code> will NOT impact sta
 msgstr ""
 
 #: includes/menu-pages.php:293
-msgid "<strong>Advanced Tip:</strong> if you have this set to <code>No</code>, but you DO want to allow a few special URLs to be cached by the browser; you can add this parameter to your URL <code>?qcABC=1</code>. This tells Quick Cache that it's OK for the browser to cache that particular URL. In other words, the <code>qcABC=1</code> parameter tells Quick Cache NOT to send no-cache headers to the browser."
+msgid "<strong>Advanced Tip:</strong> if you have this set to <code>No</code>, but you DO want to allow a few special URLs to be cached by the browser; you can add this parameter to your URL <code>?qcABC=1</code>. This tells ZenCache that it's OK for the browser to cache that particular URL. In other words, the <code>qcABC=1</code> parameter tells ZenCache NOT to send no-cache headers to the browser."
 msgstr ""
 
 #: includes/menu-pages.php:301
@@ -688,7 +688,7 @@ msgid "This should almost ALWAYS be set to <code>No</code>. Most sites will NOT 
 msgstr ""
 
 #: includes/menu-pages.php:309
-msgid "<strong>Exception (Membership Sites):</strong> If you run a site with many users and the majority of your traffic comes from users who ARE logged-in, please choose: <code>Yes (maintain separate cache)</code>. Quick Cache will operate normally; but when a user is logged-in, the cache is user-specific. Quick Cache will intelligently refresh the cache when/if a user submits a form on your site with the GET or POST method. Or, if you make changes to their account (or another plugin makes changes to their account); including user <a href=\"http://codex.wordpress.org/Function_Reference/update_user_option\" target=\"_blank\">option</a>|<a href=\"http://codex.wordpress.org/Function_Reference/update_user_meta\" target=\"_blank\">meta</a> additions, updates &amp; deletions too. However, please note that enabling this feature (e.g. user-specific cache entries); will eat up MUCH more disk space. That being said, the benefits of this feature for most sites will outweigh the disk overhead (e.g. it's NOT an issue in most cases). Unless you are short on disk space (or you have MANY thousands of users), the disk overhead is neglible."
+msgid "<strong>Exception (Membership Sites):</strong> If you run a site with many users and the majority of your traffic comes from users who ARE logged-in, please choose: <code>Yes (maintain separate cache)</code>. ZenCache will operate normally; but when a user is logged-in, the cache is user-specific. ZenCache will intelligently refresh the cache when/if a user submits a form on your site with the GET or POST method. Or, if you make changes to their account (or another plugin makes changes to their account); including user <a href=\"http://codex.wordpress.org/Function_Reference/update_user_option\" target=\"_blank\">option</a>|<a href=\"http://codex.wordpress.org/Function_Reference/update_user_meta\" target=\"_blank\">meta</a> additions, updates &amp; deletions too. However, please note that enabling this feature (e.g. user-specific cache entries); will eat up MUCH more disk space. That being said, the benefits of this feature for most sites will outweigh the disk overhead (e.g. it's NOT an issue in most cases). Unless you are short on disk space (or you have MANY thousands of users), the disk overhead is neglible."
 msgstr ""
 
 #: includes/menu-pages.php:311
@@ -708,7 +708,7 @@ msgid "<strong>Note:</strong> For most sites, the majority of their traffic (if 
 msgstr ""
 
 #: includes/menu-pages.php:316
-msgid "<strong>Note:</strong> This setting includes some users who AREN'T actually logged into the system, but who HAVE authored comments recently. Quick Cache includes comment authors as part of it's logged-in user check. This way comment authors will be able to see updates to the comment thread immediately; and, so that any dynamically-generated messages displayed by your theme will work as intended. In short, Quick Cache thinks of a comment author as a logged-in user, even though technically they are not. ~ Users who gain access to password-protected Posts/Pages are also included."
+msgid "<strong>Note:</strong> This setting includes some users who AREN'T actually logged into the system, but who HAVE authored comments recently. ZenCache includes comment authors as part of it's logged-in user check. This way comment authors will be able to see updates to the comment thread immediately; and, so that any dynamically-generated messages displayed by your theme will work as intended. In short, ZenCache thinks of a comment author as a logged-in user, even though technically they are not. ~ Users who gain access to password-protected Posts/Pages are also included."
 msgstr ""
 
 #: includes/menu-pages.php:324
@@ -736,7 +736,7 @@ msgid "<strong>Note:</strong> POST requests (i.e. forms with <code>method=&quot;
 msgstr ""
 
 #: includes/menu-pages.php:336
-msgid "<strong>Advanced Tip:</strong> If you are NOT caching GET requests (recommended), but you DO want to allow some special URLs that include query string parameters to be cached; you can add this special parameter to any URL <code>?qcAC=1</code>. This tells Quick Cache that it's OK to cache that particular URL, even though it contains query string arguments. If you ARE caching GET requests and you want to force Quick Cache to NOT cache a specific request, you can add this special parameter to any URL <code>?qcAC=0</code>."
+msgid "<strong>Advanced Tip:</strong> If you are NOT caching GET requests (recommended), but you DO want to allow some special URLs that include query string parameters to be cached; you can add this special parameter to any URL <code>?qcAC=1</code>. This tells ZenCache that it's OK to cache that particular URL, even though it contains query string arguments. If you ARE caching GET requests and you want to force ZenCache to NOT cache a specific request, you can add this special parameter to any URL <code>?qcAC=0</code>."
 msgstr ""
 
 #: includes/menu-pages.php:344
@@ -748,7 +748,7 @@ msgid "Caching Enabled for 404 Requests?"
 msgstr ""
 
 #: includes/menu-pages.php:350
-msgid "When this is set to <code>No</code>, Quick Cache will ignore all 404 requests and no cache file will be served. While this is fine for most site owners, caching the 404 page on a high-traffic site may further reduce server load. When this is set to <code>Yes</code>, Quick Cache will cache the 404 page (see <a href=\"https://codex.wordpress.org/Creating_an_Error_404_Page\" target=\"_blank\">Creating an Error 404 Page</a>) and then serve that single cache file to all future 404 requests."
+msgid "When this is set to <code>No</code>, ZenCache will ignore all 404 requests and no cache file will be served. While this is fine for most site owners, caching the 404 page on a high-traffic site may further reduce server load. When this is set to <code>Yes</code>, ZenCache will cache the 404 page (see <a href=\"https://codex.wordpress.org/Creating_an_Error_404_Page\" target=\"_blank\">Creating an Error 404 Page</a>) and then serve that single cache file to all future 404 requests."
 msgstr ""
 
 #: includes/menu-pages.php:352
@@ -760,7 +760,7 @@ msgid "Yes, I would like to cache the 404 page and serve the cached file for 404
 msgstr ""
 
 #: includes/menu-pages.php:355
-msgid "<strong>How does Quick Cache cache 404 requests?</strong> Quick Cache will create a special cache file (<code>----404----.html</code>, see Advanced Tip below) for the first 404 request and then <a href=\"http://www.php.net/manual/en/function.symlink.php\" target=\"_blank\">symlink</a> future 404 requests to this special cache file. That way you don't end up with lots of 404 cache files that all contain the same thing (the contents of the 404 page). Instead, you'll have one 404 cache file and then several symlinks (i.e., references) to that 404 cache file."
+msgid "<strong>How does ZenCache cache 404 requests?</strong> ZenCache will create a special cache file (<code>----404----.html</code>, see Advanced Tip below) for the first 404 request and then <a href=\"http://www.php.net/manual/en/function.symlink.php\" target=\"_blank\">symlink</a> future 404 requests to this special cache file. That way you don't end up with lots of 404 cache files that all contain the same thing (the contents of the 404 page). Instead, you'll have one 404 cache file and then several symlinks (i.e., references) to that 404 cache file."
 msgstr ""
 
 #: includes/menu-pages.php:356
@@ -842,7 +842,7 @@ msgid "Sometimes there are special cases when a particular user-agent (e.g. a sp
 msgstr ""
 
 #: includes/menu-pages.php:422
-msgid "<strong>Tip:</strong> if you wanted to exclude iPhones put this line into the field above: <code>iPhone;*AppleWebKit</code>. Or, you could also just put in a small fragment, like: <code>iphone</code>; and that would exclude any user-agent containing that word fragment. Note, this is just an example. With a default installation of Quick Cache, there is no compelling reason to exclude iOS devices (or any mobile device for that matter)."
+msgid "<strong>Tip:</strong> if you wanted to exclude iPhones put this line into the field above: <code>iPhone;*AppleWebKit</code>. Or, you could also just put in a small fragment, like: <code>iphone</code>; and that would exclude any user-agent containing that word fragment. Note, this is just an example. With a default installation of ZenCache, there is no compelling reason to exclude iOS devices (or any mobile device for that matter)."
 msgstr ""
 
 #: includes/menu-pages.php:431
@@ -854,7 +854,7 @@ msgid "Enable the Auto-Cache Engine?"
 msgstr ""
 
 #: includes/menu-pages.php:437
-msgid "After using Quick Cache for awhile (or any other page caching plugin, for that matter); it becomes obvious that at some point (based on your configured Expiration Time) Quick Cache has to refresh itself. It does this by ditching its cached version of a page, reloading the database-driven content, and then recreating the cache with the latest data. This is a never ending regeneration cycle that is based entirely on your configured Expiration Time."
+msgid "After using ZenCache for awhile (or any other page caching plugin, for that matter); it becomes obvious that at some point (based on your configured Expiration Time) ZenCache has to refresh itself. It does this by ditching its cached version of a page, reloading the database-driven content, and then recreating the cache with the latest data. This is a never ending regeneration cycle that is based entirely on your configured Expiration Time."
 msgstr ""
 
 #: includes/menu-pages.php:438
@@ -910,7 +910,7 @@ msgid "This is an experimental feature, however it offers a potentially HUGE spe
 msgstr ""
 
 #: includes/menu-pages.php:475
-msgid "<strong>WARNING:</strong> The HTML Compressor requires the <a href=\"http://www.php.net/manual/en/book.curl.php\" target=\"_blank\" rel=\"external\">cURL extension for PHP</a>. cURL must also be compiled together with <a href=\"http://www.php.net/manual/en/book.openssl.php\" target=\"_blank\" rel=\"external\">OpenSSL</a>. Quick Cache has detected that one or both of these are currently missing. Please check with your hosting company to resolve this message."
+msgid "<strong>WARNING:</strong> The HTML Compressor requires the <a href=\"http://www.php.net/manual/en/book.curl.php\" target=\"_blank\" rel=\"external\">cURL extension for PHP</a>. cURL must also be compiled together with <a href=\"http://www.php.net/manual/en/book.openssl.php\" target=\"_blank\" rel=\"external\">OpenSSL</a>. ZenCache has detected that one or both of these are currently missing. Please check with your hosting company to resolve this message."
 msgstr ""
 
 #: includes/menu-pages.php:477
@@ -1022,7 +1022,7 @@ msgid "<strong>Tip:</strong> the value that you specify here MUST be compatible 
 msgstr ""
 
 #: includes/menu-pages.php:530
-msgid "<strong>Note:</strong> This does NOT impact the overall cache expiration time that you configure with Quick Cache. It only impacts the sub-routines provided by the HTML Compressor. In fact, this expiration time is mostly irrelevant. The HTML Compressor uses an internal checksum, and it also checks <code>filemtime()</code> before using an existing cache file. The HTML Compressor class also handles the automatic cleanup of your cache directories to keep it from growing too large over time. Therefore, unless you have VERY little disk space there is no reason to set this to a lower value (even if your site changes dynamically quite often). If anything, you might like to increase this value which could help to further reduce server load. You can <a href=\"https://github.com/WebSharks/HTML-Compressor\" target=\"_blank\">learn more here</a>. We recommend setting this value to at least double that of your overall Quick Cache expiration time."
+msgid "<strong>Note:</strong> This does NOT impact the overall cache expiration time that you configure with ZenCache. It only impacts the sub-routines provided by the HTML Compressor. In fact, this expiration time is mostly irrelevant. The HTML Compressor uses an internal checksum, and it also checks <code>filemtime()</code> before using an existing cache file. The HTML Compressor class also handles the automatic cleanup of your cache directories to keep it from growing too large over time. Therefore, unless you have VERY little disk space there is no reason to set this to a lower value (even if your site changes dynamically quite often). If anything, you might like to increase this value which could help to further reduce server load. You can <a href=\"https://github.com/WebSharks/HTML-Compressor\" target=\"_blank\">learn more here</a>. We recommend setting this value to at least double that of your overall ZenCache expiration time."
 msgstr ""
 
 #: includes/menu-pages.php:539
@@ -1038,7 +1038,7 @@ msgid "You don't have to use an <code>.htaccess</code> file to enjoy the perform
 msgstr ""
 
 #: includes/menu-pages.php:546
-msgid "Quick Cache fully supports GZIP compression on its output. However, it does not handle GZIP compression directly. We purposely left GZIP compression out of this plugin, because GZIP compression is something that should really be enabled at the Apache level or inside your <code>php.ini</code> file. GZIP compression can be used for things like JavaScript and CSS files as well, so why bother turning it on for only WordPress-generated pages when you can enable GZIP at the server level and cover all the bases!"
+msgid "ZenCache fully supports GZIP compression on its output. However, it does not handle GZIP compression directly. We purposely left GZIP compression out of this plugin, because GZIP compression is something that should really be enabled at the Apache level or inside your <code>php.ini</code> file. GZIP compression can be used for things like JavaScript and CSS files as well, so why bother turning it on for only WordPress-generated pages when you can enable GZIP at the server level and cover all the bases!"
 msgstr ""
 
 #: includes/menu-pages.php:547
@@ -1054,7 +1054,7 @@ msgid "<i class=\"fa fa-flask\"></i> <span style=\"display:inline-block; padding
 msgstr ""
 
 #: includes/menu-pages.php:564
-msgid "<em>Note: Understanding the Quick Cache <a href=\"http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> is a prerequisite to understanding how Dynamic Version Salts are added to the mix.</em>"
+msgid "<em>Note: Understanding the ZenCache <a href=\"http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> is a prerequisite to understanding how Dynamic Version Salts are added to the mix.</em>"
 msgstr ""
 
 #: includes/menu-pages.php:565
@@ -1074,7 +1074,7 @@ msgid "For more documentation, please see <a href=\"http://www.websharks-inc.com
 msgstr ""
 
 #: includes/menu-pages.php:570
-msgid "Create a Dynamic Version Salt For Quick Cache? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"font-size:90%; opacity:0.5;\">150% OPTIONAL</span>"
+msgid "Create a Dynamic Version Salt For ZenCache? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"font-size:90%; opacity:0.5;\">150% OPTIONAL</span>"
 msgstr ""
 
 #: includes/menu-pages.php:572
@@ -1098,19 +1098,19 @@ msgid "Developing a Theme or Plugin for WordPress?"
 msgstr ""
 
 #: includes/menu-pages.php:588
-msgid "<strong>Tip:</strong> Quick Cache can be disabled temporarily. If you're a theme/plugin developer, you can set a flag within your PHP code to disable the cache engine at runtime. Perhaps on a specific page, or in a specific scenario. In your PHP script, set: <code>$_SERVER['QUICK_CACHE_ALLOWED'] = FALSE;</code> or <code>define('QUICK_CACHE_ALLOWED', FALSE)</code>. Quick Cache is also compatible with: <code>define('DONOTCACHEPAGE', TRUE)</code>. It does't matter where or when you define one of these, because Quick Cache is the last thing to run before script execution ends."
+msgid "<strong>Tip:</strong> ZenCache can be disabled temporarily. If you're a theme/plugin developer, you can set a flag within your PHP code to disable the cache engine at runtime. Perhaps on a specific page, or in a specific scenario. In your PHP script, set: <code>$_SERVER['QUICK_CACHE_ALLOWED'] = FALSE;</code> or <code>define('QUICK_CACHE_ALLOWED', FALSE)</code>. ZenCache is also compatible with: <code>define('DONOTCACHEPAGE', TRUE)</code>. It does't matter where or when you define one of these, because ZenCache is the last thing to run before script execution ends."
 msgstr ""
 
 #: includes/menu-pages.php:590
-msgid "Writing \"Advanced Cache\" Plugins Specifically for Quick Cache"
+msgid "Writing \"Advanced Cache\" Plugins Specifically for ZenCache"
 msgstr ""
 
 #: includes/menu-pages.php:591
-msgid "Theme/plugin developers can take advantage of the Quick Cache plugin architecture by creating PHP files inside this special directory: <code>/wp-content/ac-plugins/</code>. There is an <a href=\"https://github.com/WebSharks/Quick-Cache/blob/000000-dev/zencache/includes/ac-plugin.example.php\" target=\"_blank\">example plugin file @ GitHub</a> (please review it carefully and ask questions). If you develop a plugin for Quick Cache, please share it with the community by publishing it in the plugins respository at WordPress.org."
+msgid "Theme/plugin developers can take advantage of the ZenCache plugin architecture by creating PHP files inside this special directory: <code>/wp-content/ac-plugins/</code>. There is an <a href=\"https://github.com/WebSharks/Quick-Cache/blob/000000-dev/zencache/includes/ac-plugin.example.php\" target=\"_blank\">example plugin file @ GitHub</a> (please review it carefully and ask questions). If you develop a plugin for ZenCache, please share it with the community by publishing it in the plugins respository at WordPress.org."
 msgstr ""
 
 #: includes/menu-pages.php:592
-msgid "<strong>Why does Quick Cache have it's own plugin architecture?</strong> WordPress loads the <code>advanced-cache.php</code> drop-in file (for caching purposes) very early-on; before any other plugins or a theme. For this reason, Quick Cache implements it's own watered-down version of functions like <code>add_action()</code>, <code>do_action()</code>, <code>add_filter()</code>, <code>apply_filters()</code>."
+msgid "<strong>Why does ZenCache have it's own plugin architecture?</strong> WordPress loads the <code>advanced-cache.php</code> drop-in file (for caching purposes) very early-on; before any other plugins or a theme. For this reason, ZenCache implements it's own watered-down version of functions like <code>add_action()</code>, <code>do_action()</code>, <code>add_filter()</code>, <code>apply_filters()</code>."
 msgstr ""
 
 #: includes/menu-pages.php:600
@@ -1118,7 +1118,7 @@ msgid "Import/Export Options"
 msgstr ""
 
 #: includes/menu-pages.php:605
-msgid "Import Options from Another Quick Cache Installation?"
+msgid "Import Options from Another ZenCache Installation?"
 msgstr ""
 
 #: includes/menu-pages.php:606
@@ -1126,7 +1126,7 @@ msgid "Upload your <code>%1$s-options.json</code> file and click \"Save All Chan
 msgstr ""
 
 #: includes/menu-pages.php:609
-msgid "Export Existing Options from this Quick Cache Installation?"
+msgid "Export Existing Options from this ZenCache Installation?"
 msgstr ""
 
 #: includes/menu-pages.php:612
@@ -1134,7 +1134,7 @@ msgid "%1$s-options.json"
 msgstr ""
 
 #: includes/menu-pages.php:613
-msgid "Download your existing options and import them all into another Quick Cache installation; saves time on future installs."
+msgid "Download your existing options and import them all into another ZenCache installation; saves time on future installs."
 msgstr ""
 
 #: includes/menu-pages.php:624
@@ -1163,7 +1163,7 @@ msgid "WebSharks™ Authentication"
 msgstr ""
 
 #: includes/menu-pages.php:672
-msgid "From this page you can update to the latest version of Quick Cache Pro for WordPress. Quick Cache Pro is a premium product available for purchase @ <a href=\"http://www.websharks-inc.com/product/%1$s/\" target=\"_blank\">websharks-inc.com</a>. In order to connect with our update servers, we ask that you supply your account login details for <a href=\"http://www.websharks-inc.com/product/%1$s/\" target=\"_blank\">websharks-inc.com</a>. If you prefer not to provide your password, you can use your License Key in place of your password. Your License Key is located under \"My Products (purchase history)\" when you login to your account @ <a href=\"http://www.websharks-inc.com/product/%1$s/\" target=\"_blank\">websharks-inc.com</a>. This will authenticate your copy of Quick Cache Pro; providing you with access to the latest version. You only need to enter these credentials once. Quick Cache Pro will save them in your WordPress database; making future upgrades even easier. <i class=\"fa fa-smile-o\"></i>"
+msgid "From this page you can update to the latest version of ZenCache Pro for WordPress. ZenCache Pro is a premium product available for purchase @ <a href=\"http://www.websharks-inc.com/product/%1$s/\" target=\"_blank\">websharks-inc.com</a>. In order to connect with our update servers, we ask that you supply your account login details for <a href=\"http://www.websharks-inc.com/product/%1$s/\" target=\"_blank\">websharks-inc.com</a>. If you prefer not to provide your password, you can use your License Key in place of your password. Your License Key is located under \"My Products (purchase history)\" when you login to your account @ <a href=\"http://www.websharks-inc.com/product/%1$s/\" target=\"_blank\">websharks-inc.com</a>. This will authenticate your copy of ZenCache Pro; providing you with access to the latest version. You only need to enter these credentials once. ZenCache Pro will save them in your WordPress database; making future upgrades even easier. <i class=\"fa fa-smile-o\"></i>"
 msgstr ""
 
 #: includes/menu-pages.php:674
@@ -1183,7 +1183,7 @@ msgid "WebSharks™ Update Notifier"
 msgstr ""
 
 #: includes/menu-pages.php:691
-msgid "When a new version of Quick Cache Pro becomes available, WebSharks™ can display a notification in your WordPress Dashboard prompting you to return to this page and perform an upgrade. Would you like this functionality enabled or disabled?"
+msgid "When a new version of ZenCache Pro becomes available, WebSharks™ can display a notification in your WordPress Dashboard prompting you to return to this page and perform an upgrade. Would you like this functionality enabled or disabled?"
 msgstr ""
 
 #: includes/menu-pages.php:694
@@ -1191,7 +1191,7 @@ msgid "Yes, display a notification in my WordPress Dashboard when a new version 
 msgstr ""
 
 #: includes/menu-pages.php:695
-msgid "No, do not display any Quick Cache update notifications in my WordPress Dashboard."
+msgid "No, do not display any ZenCache update notifications in my WordPress Dashboard."
 msgstr ""
 
 #: includes/share.php:219
@@ -1207,23 +1207,23 @@ msgid "Invalid hook."
 msgstr ""
 
 #: includes/version-specific-upgrade.php:67
-msgid "<strong>Quick Cache:</strong> this version is a <strong>complete rewrite</strong> :-) Please review your Quick Cache options carefully!"
+msgid "<strong>ZenCache:</strong> this version is a <strong>complete rewrite</strong> :-) Please review your ZenCache options carefully!"
 msgstr ""
 
 #: includes/version-specific-upgrade.php:77
-msgid "<strong>Quick Cache Feature Notice:</strong> This version of Quick Cache adds new options for Feed caching. Feed caching is now disabled by default. If you wish to enable feed caching, please visit the Quick Cache options panel."
+msgid "<strong>ZenCache Feature Notice:</strong> This version of ZenCache adds new options for Feed caching. Feed caching is now disabled by default. If you wish to enable feed caching, please visit the ZenCache options panel."
 msgstr ""
 
 #: includes/version-specific-upgrade.php:107
-msgid "<strong>Quick Cache Feature Notice:</strong> This version of Quick Cache introduces a new <a href=\"http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> and several other <a href=\"http://www.websharks-inc.com/post/zencache-v140605-now-available/\" target=\"_blank\">new features</a>."
+msgid "<strong>ZenCache Feature Notice:</strong> This version of ZenCache introduces a new <a href=\"http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> and several other <a href=\"http://www.websharks-inc.com/post/zencache-v140605-now-available/\" target=\"_blank\">new features</a>."
 msgstr ""
 
 #: includes/version-specific-upgrade.php:129
-msgid "<strong>Quick Cache Notice:</strong> This version of Quick Cache changes the default base directory that it uses, from <code>ABSPATH</code> to <code>WP_CONTENT_DIR</code>. This is for improved compatibility with installations that choose to use a custom <code>WP_CONTENT_DIR</code> location."
+msgid "<strong>ZenCache Notice:</strong> This version of ZenCache changes the default base directory that it uses, from <code>ABSPATH</code> to <code>WP_CONTENT_DIR</code>. This is for improved compatibility with installations that choose to use a custom <code>WP_CONTENT_DIR</code> location."
 msgstr ""
 
 #: includes/version-specific-upgrade.php:130
-msgid "Quick Cache has detected that your previously configured cache directory may have been in conflict with this change. As a result, your Quick Cache configuration has been updated to the new default value; just to keep things running smoothly for you :-). If you would like to review this change, please see: <code>Dashboard ⥱ Quick Cache ⥱ Directory &amp; Expiration Time</code>; where you may customize it further if necessary."
+msgid "ZenCache has detected that your previously configured cache directory may have been in conflict with this change. As a result, your ZenCache configuration has been updated to the new default value; just to keep things running smoothly for you :-). If you would like to review this change, please see: <code>Dashboard ⥱ ZenCache ⥱ Directory &amp; Expiration Time</code>; where you may customize it further if necessary."
 msgstr ""
 
 #: includes/wp-php53.php:31
@@ -1243,7 +1243,7 @@ msgid "To remove this message, please deactivate %1$s."
 msgstr ""
 
 #: zencache-pro.inc.php:443
-msgid "<strong>Quick Cache:</strong> detected a new version of itself. Recompiling w/ latest version... wiping the cache... all done :-)"
+msgid "<strong>ZenCache:</strong> detected a new version of itself. Recompiling w/ latest version... wiping the cache... all done :-)"
 msgstr ""
 
 #: zencache-pro.inc.php:564
@@ -1255,7 +1255,7 @@ msgid "Clear Cache (Start Fresh); affects the current site only."
 msgstr ""
 
 #: zencache-pro.inc.php:704 zencache-pro.inc.php:727
-msgid "Quick Cache"
+msgid "ZenCache"
 msgstr ""
 
 #: zencache-pro.inc.php:751
@@ -1263,7 +1263,7 @@ msgid "Settings"
 msgstr ""
 
 #: zencache-pro.inc.php:822
-msgid "<strong>Quick Cache Pro:</strong> a new version is now available. Please <a href=\"%1$s\">upgrade to v%2$s</a>."
+msgid "<strong>ZenCache Pro:</strong> a new version is now available. Please <a href=\"%1$s\">upgrade to v%2$s</a>."
 msgstr ""
 
 #: zencache-pro.inc.php:904 zencache-pro.inc.php:975
@@ -1319,19 +1319,19 @@ msgid "Unable to purge file: `%1$s`."
 msgstr ""
 
 #: zencache-pro.inc.php:1333
-msgid "<strong>Quick Cache:</strong> detected significant changes. Found cache files (auto-wiping)."
+msgid "<strong>ZenCache:</strong> detected significant changes. Found cache files (auto-wiping)."
 msgstr ""
 
 #: zencache-pro.inc.php:1379
-msgid "<strong>Quick Cache:</strong> detected important site changes. Found cache files for this site (auto-clearing)."
+msgid "<strong>ZenCache:</strong> detected important site changes. Found cache files for this site (auto-clearing)."
 msgstr ""
 
 #: zencache-pro.inc.php:1400
-msgid "<strong>Quick Cache:</strong> detected important site changes that would normally trigger a clear cache routine, however clear cache routines have been disabled by a site administrator. [<a href=\"http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/\" target=\"_blank\">?</a>]"
+msgid "<strong>ZenCache:</strong> detected important site changes that would normally trigger a clear cache routine, however clear cache routines have been disabled by a site administrator. [<a href=\"http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/\" target=\"_blank\">?</a>]"
 msgstr ""
 
 #: zencache-pro.inc.php:1426
-msgid "<strong>Quick Cache:</strong> detected significant changes that would normally trigger a wipe cache routine, however wipe cache routines have been disabled by a site administrator. [<a href=\"http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/\" target=\"_blank\">?</a>]"
+msgid "<strong>ZenCache:</strong> detected significant changes that would normally trigger a wipe cache routine, however wipe cache routines have been disabled by a site administrator. [<a href=\"http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/\" target=\"_blank\">?</a>]"
 msgstr ""
 
 #: zencache-pro.inc.php:1508
@@ -1346,11 +1346,11 @@ msgid "Unable to auto-purge file: `%1$s`."
 msgstr ""
 
 #: zencache-pro.inc.php:1530
-msgid "<strong>Quick Cache:</strong> detected changes. Found cache file(s) for %1$s ID: <code>%2$s</code> (auto-purging)."
+msgid "<strong>ZenCache:</strong> detected changes. Found cache file(s) for %1$s ID: <code>%2$s</code> (auto-purging)."
 msgstr ""
 
 #: zencache-pro.inc.php:1866
-msgid "<strong>Quick Cache:</strong> detected changes. Found XML feeds of type <code>%1$s</code> (auto-purging)."
+msgid "<strong>ZenCache:</strong> detected changes. Found XML feeds of type <code>%1$s</code> (auto-purging)."
 msgstr ""
 
 #: zencache-pro.inc.php:1928
@@ -1358,31 +1358,31 @@ msgid "Unable to auto-purge XML sitemap file: `%1$s`."
 msgstr ""
 
 #: zencache-pro.inc.php:1935
-msgid "<strong>Quick Cache:</strong> detected changes. Found XML sitemaps (auto-purging)."
+msgid "<strong>ZenCache:</strong> detected changes. Found XML sitemaps (auto-purging)."
 msgstr ""
 
 #: zencache-pro.inc.php:1995
-msgid "<strong>Quick Cache:</strong> detected changes. Found cache file(s) for the designated \"Home Page\" (auto-purging)."
+msgid "<strong>ZenCache:</strong> detected changes. Found cache file(s) for the designated \"Home Page\" (auto-purging)."
 msgstr ""
 
 #: zencache-pro.inc.php:2070
-msgid "<strong>Quick Cache:</strong> detected changes. Found cache file(s) for the designated \"Posts Page\" (auto-purging)."
+msgid "<strong>ZenCache:</strong> detected changes. Found cache file(s) for the designated \"Posts Page\" (auto-purging)."
 msgstr ""
 
 #: zencache-pro.inc.php:2145
-msgid "<strong>Quick Cache:</strong> detected changes. Found cache file(s) for Custom Post Type <code>%1$s</code> (auto-purging)."
+msgid "<strong>ZenCache:</strong> detected changes. Found cache file(s) for Custom Post Type <code>%1$s</code> (auto-purging)."
 msgstr ""
 
 #: zencache-pro.inc.php:2250
-msgid "<strong>Quick Cache:</strong> detected changes. Found cache files for Author Page: <code>%1$s</code> (auto-purging)."
+msgid "<strong>ZenCache:</strong> detected changes. Found cache files for Author Page: <code>%1$s</code> (auto-purging)."
 msgstr ""
 
 #: zencache-pro.inc.php:2408
-msgid "<strong>Quick Cache:</strong> detected changes. Found cache files for %1$s: <code>%2$s</code> (auto-purging)."
+msgid "<strong>ZenCache:</strong> detected changes. Found cache files for %1$s: <code>%2$s</code> (auto-purging)."
 msgstr ""
 
 #: zencache-pro.inc.php:2575
-msgid "<strong>Quick Cache:</strong> detected changes. Found cache files for user ID: <code>%1$s</code> (auto-purging)."
+msgid "<strong>ZenCache:</strong> detected changes. Found cache files for user ID: <code>%1$s</code> (auto-purging)."
 msgstr ""
 
 #: zencache-pro.inc.php:2834 zencache-pro.inc.php:2860
@@ -1390,7 +1390,7 @@ msgid "Doing it wrong! Missing `base_dir` option value. MUST call this method af
 msgstr ""
 
 #: zencache-pro.inc.php:3083
-msgid "<strong>Quick Cache</strong>: ignoring your Version Salt; it seems to contain PHP syntax errors."
+msgid "<strong>ZenCache</strong>: ignoring your Version Salt; it seems to contain PHP syntax errors."
 msgstr ""
 
 #: zencache-pro.inc.php:3300
@@ -1406,11 +1406,11 @@ msgid "Unable to remove base dir: `%1$s`."
 msgstr ""
 
 #: zencache-pro.inc.php:3345
-msgid "Please disable the LITE version of Quick Cache before you activate the PRO version."
+msgid "Please disable the LITE version of ZenCache before you activate the PRO version."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "Quick Cache Pro"
+msgid "ZenCache Pro"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

@@ -1,6 +1,6 @@
 <?php
 /**
- * Quick Cache Uninstaller
+ * ZenCache Uninstaller
  *
  * @package zencache\uninstall
  * @since 140829 Adding plugin uninstaller.

@@ -7,7 +7,7 @@ namespace zencache // Root namespace.
 	if(!class_exists('\\'.__NAMESPACE__.'\\share'))
 	{
 		/**
-		 * Quick Cache (Shared Methods)
+		 * ZenCache (Shared Methods)
 		 *
 		 * @package zencache\share
 		 * @since 140725 Reorganizing class members.
@@ -25,7 +25,7 @@ namespace zencache // Root namespace.
 			 *
 			 * @var string Plugin name.
 			 */
-			public $name = 'Quick Cache';
+			public $name = 'ZenCache';
 
 			/**
 			 * Short name for this plugin.
@@ -37,11 +37,11 @@ namespace zencache // Root namespace.
 			public $short_name = 'QC';
 
 			/**
-			 * Identifies pro version of Quick Cache.
+			 * Identifies pro version of ZenCache.
 			 *
 			 * @since 140422 First documented version.
 			 *
-			 * @var boolean `TRUE` for Quick Cache Pro.
+			 * @var boolean `TRUE` for ZenCache Pro.
 			 */
 			public $is_pro = TRUE;
 
@@ -1350,7 +1350,7 @@ namespace zencache // Root namespace.
 			}
 
 			/* --------------------------------------------------------------------------------------
-			 * File/directory iteration utilities for Quick Cache.
+			 * File/directory iteration utilities for ZenCache.
 			 -------------------------------------------------------------------------------------- */
 
 			/**
@@ -1819,7 +1819,7 @@ namespace zencache // Root namespace.
 			}
 
 			/* --------------------------------------------------------------------------------------
-			 * Translation utilities for Quick Cache.
+			 * Translation utilities for ZenCache.
 			 -------------------------------------------------------------------------------------- */
 
 			/**
@@ -1871,7 +1871,7 @@ namespace zencache // Root namespace.
 			}
 
 			/* --------------------------------------------------------------------------------------
-			 * Hook/filter API for Quick Cache.
+			 * Hook/filter API for ZenCache.
 			 -------------------------------------------------------------------------------------- */
 
 			/**

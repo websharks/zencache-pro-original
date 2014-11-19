@@ -7,7 +7,7 @@ namespace zencache // Root namespace.
 	if(!class_exists('\\'.__NAMESPACE__.'\\version_specific_upgrade'))
 	{
 		/**
-		 * Quick Cache (Upgrade Handlers)
+		 * ZenCache (Upgrade Handlers)
 		 *
 		 * @since 140725 Reorganizing class members.
 		 * @package zencache\version_specific_upgrade
@@ -65,7 +65,7 @@ namespace zencache // Root namespace.
 					wp_clear_scheduled_hook('ws_plugin__qcache_garbage_collector__schedule'); // Ditch old CRON job.
 					wp_clear_scheduled_hook('ws_plugin__qcache_auto_cache_engine__schedule'); // Ditch old CRON job.
 
-					$this->plugin->enqueue_notice(__('<strong>Quick Cache:</strong> this version is a <strong>complete rewrite</strong> :-) Please review your Quick Cache options carefully!', $this->plugin->text_domain));
+					$this->plugin->enqueue_notice(__('<strong>ZenCache:</strong> this version is a <strong>complete rewrite</strong> :-) Please review your ZenCache options carefully!', $this->plugin->text_domain));
 				}
 			}
 
@@ -75,7 +75,7 @@ namespace zencache // Root namespace.
 			public function from_lt_v140104()
 			{
 				if(version_compare($this->prev_version, '140104', '<')) // When this sort of update occurs, we issue a notice about this new feature.
-					$this->plugin->enqueue_notice(__('<strong>Quick Cache Feature Notice:</strong> This version of Quick Cache adds new options for Feed caching. Feed caching is now disabled by default. If you wish to enable feed caching, please visit the Quick Cache options panel.', $this->plugin->text_domain));
+					$this->plugin->enqueue_notice(__('<strong>ZenCache Feature Notice:</strong> This version of ZenCache adds new options for Feed caching. Feed caching is now disabled by default. If you wish to enable feed caching, please visit the ZenCache options panel.', $this->plugin->text_domain));
 			}
 
 			/*
@@ -105,7 +105,7 @@ namespace zencache // Root namespace.
 						update_option(__NAMESPACE__.'_options', $this->plugin->options);
 						if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
 					}
-					$this->plugin->enqueue_notice(__('<strong>Quick Cache Feature Notice:</strong> This version of Quick Cache introduces a new <a href="http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/" target="_blank">Branched Cache Structure</a> and several other <a href="http://www.websharks-inc.com/post/zencache-v140605-now-available/" target="_blank">new features</a>.', $this->plugin->text_domain));
+					$this->plugin->enqueue_notice(__('<strong>ZenCache Feature Notice:</strong> This version of ZenCache introduces a new <a href="http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/" target="_blank">Branched Cache Structure</a> and several other <a href="http://www.websharks-inc.com/post/zencache-v140605-now-available/" target="_blank">new features</a>.', $this->plugin->text_domain));
 				}
 			}
 
@@ -129,8 +129,8 @@ namespace zencache // Root namespace.
 							if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
 
 							$this->plugin->enqueue_notice( // Give site owners a quick heads up about this.
-								'<p>'.__('<strong>Quick Cache Notice:</strong> This version of Quick Cache changes the default base directory that it uses, from <code>ABSPATH</code> to <code>WP_CONTENT_DIR</code>. This is for improved compatibility with installations that choose to use a custom <code>WP_CONTENT_DIR</code> location.', $this->plugin->text_domain).
-								' '.__('Quick Cache has detected that your previously configured cache directory may have been in conflict with this change. As a result, your Quick Cache configuration has been updated to the new default value; just to keep things running smoothly for you :-). If you would like to review this change, please see: <code>Dashboard ⥱ Quick Cache ⥱ Directory &amp; Expiration Time</code>; where you may customize it further if necessary.', $this->plugin->text_domain).'</p>'
+								'<p>'.__('<strong>ZenCache Notice:</strong> This version of ZenCache changes the default base directory that it uses, from <code>ABSPATH</code> to <code>WP_CONTENT_DIR</code>. This is for improved compatibility with installations that choose to use a custom <code>WP_CONTENT_DIR</code> location.', $this->plugin->text_domain).
+								' '.__('ZenCache has detected that your previously configured cache directory may have been in conflict with this change. As a result, your ZenCache configuration has been updated to the new default value; just to keep things running smoothly for you :-). If you would like to review this change, please see: <code>Dashboard ⥱ ZenCache ⥱ Directory &amp; Expiration Time</code>; where you may customize it further if necessary.', $this->plugin->text_domain).'</p>'
 							);
 						}
 					}

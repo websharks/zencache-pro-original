@@ -1,3 +1,3 @@
-## Quick Cache (Pro)
+## ZenCache (Pro)
 
 Caching plugin for WordPress®.

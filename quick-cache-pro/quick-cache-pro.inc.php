@@ -1,6 +1,6 @@
 <?php
 /**
- * Quick Cache Plugin
+ * ZenCache Plugin
  *
  * @package zencache\plugin
  * @since 140422 First documented version.
@@ -17,7 +17,7 @@ namespace zencache
 	if(!class_exists('\\'.__NAMESPACE__.'\\plugin'))
 	{
 		/**
-		 * Quick Cache Plugin
+		 * ZenCache Plugin
 		 *
 		 * @package zencache\plugin
 		 * @since 140422 First documented version.
@@ -30,7 +30,7 @@ namespace zencache
 			 * @since 140422 First documented version.
 			 *
 			 * @var string Current `__FILE__` from the stub; NOT from this file.
-			 *    Note that Quick Cache has a stub loader that checks for PHP v5.3 compat;
+			 *    Note that ZenCache has a stub loader that checks for PHP v5.3 compat;
 			 *    which is why we have this property. This is the stub `__FILE__`.
 			 */
 			public $file = '';
@@ -139,7 +139,7 @@ namespace zencache
 			public $enable_hooks = TRUE;
 
 			/**
-			 * Quick Cache plugin constructor.
+			 * ZenCache plugin constructor.
 			 *
 			 * @param boolean $enable_hooks Defaults to a TRUE value.
 			 *    If FALSE, setup runs but without adding any hooks.
@@ -168,7 +168,7 @@ namespace zencache
 			}
 
 			/**
-			 * Setup the Quick Cache plugin.
+			 * Setup the ZenCache plugin.
 			 *
 			 * @since 140422 First documented version.
 			 */
@@ -531,7 +531,7 @@ namespace zencache
 				}
 				$this->wipe_cache(); // Always wipe the cache; unless disabled by site owner; @see disable_wipe_cache_routines()
 
-				$this->enqueue_notice(__('<strong>Quick Cache:</strong> detected a new version of itself. Recompiling w/ latest version... wiping the cache... all done :-)', $this->text_domain), '', TRUE);
+				$this->enqueue_notice(__('<strong>ZenCache:</strong> detected a new version of itself. Recompiling w/ latest version... wiping the cache... all done :-)', $this->text_domain), '', TRUE);
 			}
 
 			/**
@@ -595,7 +595,7 @@ namespace zencache
 			}
 
 			/**
-			 * URL to a Quick Cache plugin file.
+			 * URL to a ZenCache plugin file.
 			 *
 			 * @since 140422 First documented version.
 			 *
@@ -802,7 +802,7 @@ namespace zencache
 			 */
 			public function add_network_menu_pages()
 			{
-				add_menu_page(__('Quick Cache', $this->text_domain), __('Quick Cache', $this->text_domain),
+				add_menu_page(__('ZenCache', $this->text_domain), __('ZenCache', $this->text_domain),
 				              $this->network_cap, __NAMESPACE__, array($this, 'menu_page_options'),
 				              $this->url('/client-s/images/menu-icon.png'));
 
@@ -825,7 +825,7 @@ namespace zencache
 			{
 				if(is_multisite()) return; // Multisite networks MUST use network admin area.
 
-				add_menu_page(__('Quick Cache', $this->text_domain), __('Quick Cache', $this->text_domain),
+				add_menu_page(__('ZenCache', $this->text_domain), __('ZenCache', $this->text_domain),
 				              $this->cap, __NAMESPACE__, array($this, 'menu_page_options'),
 				              $this->url('/client-s/images/menu-icon.png'));
 
@@ -837,7 +837,7 @@ namespace zencache
 			}
 
 			/**
-			 * Adds link(s) to Quick Cache row on the WP plugins page.
+			 * Adds link(s) to ZenCache row on the WP plugins page.
 			 *
 			 * @since 140422 First documented version.
 			 *
@@ -920,7 +920,7 @@ namespace zencache
 				$update_sync_page = network_admin_url('/admin.php'); // Page that initiates an update.
 				$update_sync_page = add_query_arg(urlencode_deep(array('page' => __NAMESPACE__.'-update-sync')), $update_sync_page);
 
-				$this->enqueue_notice(sprintf(__('<strong>Quick Cache Pro:</strong> a new version is now available. Please <a href="%1$s">upgrade to v%2$s</a>.', $this->text_domain),
+				$this->enqueue_notice(sprintf(__('<strong>ZenCache Pro:</strong> a new version is now available. Please <a href="%1$s">upgrade to v%2$s</a>.', $this->text_domain),
 				                              $update_sync_page, $update_sync_response['version']), 'persistent-update-sync-version');
 			}
 
@@ -1371,7 +1371,7 @@ namespace zencache
 				if($counter && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/wipe.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>Quick Cache:</strong> detected significant changes. Found %1$s in the cache; auto-wiping.', $this->text_domain),
+					                      sprintf(__('<strong>ZenCache:</strong> detected significant changes. Found %1$s in the cache; auto-wiping.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter))));
 				}
 				return apply_filters(__METHOD__, $counter, get_defined_vars());
@@ -1388,8 +1388,8 @@ namespace zencache
 			 * @TODO @raamdev I noticed that you used `zencache_` in this filter.
 			 *    Moving forward, I'd suggest that we use `__METHOD__` instead, as seen elsewhere in the codebase.
 			 *    This allows us to rebrand the software under a different namespace quite easily. Changing the namespace changes everything.
-			 *    In the future, we could even work to enhance this further, by avoiding anything that hard-codes `zencache` or `Quick Cache`.
-			 *    Instead, we might create a class property; e.g. `$this->name = 'Quick Cache';` so it's available when we need to call the plugin by name.
+			 *    In the future, we could even work to enhance this further, by avoiding anything that hard-codes `zencache` or `ZenCache`.
+			 *    Instead, we might create a class property; e.g. `$this->name = 'ZenCache';` so it's available when we need to call the plugin by name.
 			 *
 			 * @raamdev UPDATE: I added two new properties that we can start using for the plugin name, to help make a name transition easier.
 			 *    New properties can be referenced like this: `$this->name`, and `$this->short_name`, as seen in the notice below.
@@ -1454,7 +1454,7 @@ namespace zencache
 
 				if($counter && is_admin() && $this->options['change_notifications_enable'])
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>Quick Cache:</strong> detected important site changes. Found %1$s in the cache for this site; auto-clearing.', $this->text_domain),
+					                      sprintf(__('<strong>ZenCache:</strong> detected important site changes. Found %1$s in the cache for this site; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter))));
 
 				return apply_filters(__METHOD__, $counter, get_defined_vars());
@@ -1471,8 +1471,8 @@ namespace zencache
 			 * @TODO @raamdev I noticed that you used `zencache_` in this filter.
 			 *    Moving forward, I'd suggest that we use `__METHOD__` instead, as seen elsewhere in the codebase.
 			 *    This allows us to rebrand the software under a different namespace quite easily. Changing the namespace changes everything.
-			 *    In the future, we could even work to enhance this further, by avoiding anything that hard-codes `zencache` or `Quick Cache`.
-			 *    Instead, we might create a class property; e.g. `$this->name = 'Quick Cache';` so it's available when we need to call the plugin by name.
+			 *    In the future, we could even work to enhance this further, by avoiding anything that hard-codes `zencache` or `ZenCache`.
+			 *    Instead, we might create a class property; e.g. `$this->name = 'ZenCache';` so it's available when we need to call the plugin by name.
 			 *
 			 * @raamdev UPDATE: I added two new properties that we can start using for the plugin name, to help make a name transition easier.
 			 *    New properties can be referenced like this: `$this->name`, and `$this->short_name`, as seen in the notice below.
@@ -1577,7 +1577,7 @@ namespace zencache
 				if($counter && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>Quick Cache:</strong> detected changes. Found %1$s in the cache for %2$s ID: <code>%3$s</code>; auto-clearing.', $this->text_domain),
+					                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for %2$s ID: <code>%3$s</code>; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter)), esc_html($type_singular_name), esc_html($post_id)));
 				}
 				$counter += $this->auto_clear_xml_feeds_cache('blog');
@@ -1743,7 +1743,7 @@ namespace zencache
 				if($counter && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>Quick Cache:</strong> detected changes. Found %1$s in the cache, for XML feeds of type: <code>%2$s</code>; auto-clearing.', $this->text_domain),
+					                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache, for XML feeds of type: <code>%2$s</code>; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter)), esc_html($type)));
 				}
 				return apply_filters(__METHOD__, $counter, get_defined_vars());
@@ -1792,7 +1792,7 @@ namespace zencache
 				if($counter && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>Quick Cache:</strong> detected changes. Found %1$s in the cache for XML sitemaps; auto-clearing.', $this->text_domain),
+					                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for XML sitemaps; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter))));
 				}
 				return apply_filters(__METHOD__, $counter, get_defined_vars());
@@ -1835,7 +1835,7 @@ namespace zencache
 				if($counter && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>Quick Cache:</strong> detected changes. Found %1$s in the cache for the designated "Home Page"; auto-clearing.', $this->text_domain),
+					                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for the designated "Home Page"; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter))));
 				}
 				$counter += $this->auto_clear_xml_feeds_cache('blog');
@@ -1893,7 +1893,7 @@ namespace zencache
 				if($counter && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>Quick Cache:</strong> detected changes. Found %1$s in the cache for the designated "Posts Page"; auto-clearing.', $this->text_domain),
+					                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for the designated "Posts Page"; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter))));
 				}
 				$counter += $this->auto_clear_xml_feeds_cache('blog');
@@ -1962,7 +1962,7 @@ namespace zencache
 				if($counter && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>Quick Cache:</strong> detected changes. Found %1$s in the cache for Custom Post Type: <code>%2$s</code>; auto-clearing.', $this->text_domain),
+					                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for Custom Post Type: <code>%2$s</code>; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter)), esc_html($custom_post_type_name)));
 				}
 				$counter += $this->auto_clear_xml_feeds_cache('custom-post-type', $post_id);
@@ -2052,7 +2052,7 @@ namespace zencache
 					if($_author_counter && $enqueued_notices < 100 && is_admin() && $this->options['change_notifications_enable'])
 					{
 						$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-						                      sprintf(__('<strong>Quick Cache:</strong> detected changes. Found %1$s in the cache for Author Page: <code>%2$s</code>; auto-clearing.', $this->text_domain),
+						                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for Author Page: <code>%2$s</code>; auto-clearing.', $this->text_domain),
 						                              esc_html($this->i18n_files($_author_counter)), esc_html($_author['display_name'])));
 						$enqueued_notices++; // Increment enqueued notices counter.
 					}
@@ -2204,7 +2204,7 @@ namespace zencache
 					if($_term_counter && $enqueued_notices < 100 && is_admin() && $this->options['change_notifications_enable'])
 					{
 						$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-						                      sprintf(__('<strong>Quick Cache:</strong> detected changes. Found %1$s in the cache for %2$s: <code>%3$s</code>; auto-clearing.', $this->text_domain),
+						                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for %2$s: <code>%3$s</code>; auto-clearing.', $this->text_domain),
 						                              esc_html($this->i18n_files($_term_counter)), esc_html($_term['taxonomy_label']), esc_html($_term['term_name'])));
 						$enqueued_notices++; // Increment enqueued notices counter.
 					}
@@ -2356,7 +2356,7 @@ namespace zencache
 				if($counter && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>Quick Cache:</strong> detected changes. Found %1$s in the cache for user ID: <code>%2$s</code>; auto-clearing.', $this->text_domain),
+					                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for user ID: <code>%2$s</code>; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter)), esc_html($user_id)));
 				}
 				return apply_filters(__METHOD__, $counter, get_defined_vars());
@@ -2765,13 +2765,13 @@ namespace zencache
 			 * @attaches-to `init` hook.
 			 *
 			 * @note This runs so that remote deployments which completely wipe out an
-			 *    existing set of website files (like the AWS Elastic Beanstalk does) will NOT cause Quick Cache
-			 *    to stop functioning due to the lack of an `advanced-cache.php` file, which is generated by Quick Cache.
+			 *    existing set of website files (like the AWS Elastic Beanstalk does) will NOT cause ZenCache
+			 *    to stop functioning due to the lack of an `advanced-cache.php` file, which is generated by ZenCache.
 			 *
 			 *    For instance, if you have a Git repo with all of your site files; when you push those files
 			 *    to your website to deploy them, you most likely do NOT have the `advanced-cache.php` file.
-			 *    Quick Cache creates this file on its own. Thus, if it's missing (and QC is active)
-			 *    we simply regenerate the file automatically to keep Quick Cache running.
+			 *    ZenCache creates this file on its own. Thus, if it's missing (and QC is active)
+			 *    we simply regenerate the file automatically to keep ZenCache running.
 			 */
 			public function check_advanced_cache()
 			{
@@ -2792,7 +2792,7 @@ namespace zencache
 			 *
 			 * @since 140422 First documented version.
 			 *
-			 * @note Many of the Quick Cache option values become PHP Constants in the `advanced-cache.php` file.
+			 * @note Many of the ZenCache option values become PHP Constants in the `advanced-cache.php` file.
 			 *    We take an option key (e.g. `version_salt`) and prefix it with `zencache_`.
 			 *    Then we convert it to uppercase (e.g. `QUICK_CACHE_VERSION_SALT`) and wrap
 			 *    it with double percent signs to form a replacement codes.
@@ -2867,7 +2867,7 @@ namespace zencache
 							) // We will NOT include a version salt if the syntax contains errors reported by this web service.
 							{
 								$_value = ''; // PHP syntax errors; empty this.
-								$this->enqueue_error(__('<strong>Quick Cache</strong>: ignoring your Version Salt; it seems to contain PHP syntax errors.', $this->text_domain));
+								$this->enqueue_error(__('<strong>ZenCache</strong>: ignoring your Version Salt; it seems to contain PHP syntax errors.', $this->text_domain));
 							}
 							if(!$_value) $_value = "''"; // Use an empty string (default).
 
@@ -2892,7 +2892,7 @@ namespace zencache
 				// Make it possible for the `advanced-cache.php` handler to find the plugin directory reliably.
 				$advanced_cache_contents = str_ireplace("'%%".__NAMESPACE__."_PLUGIN_FILE%%'", $plugin_file, $advanced_cache_contents);
 
-				// Ignore; this is created by Quick Cache; and we don't need to obey in this case.
+				// Ignore; this is created by ZenCache; and we don't need to obey in this case.
 				#if(defined('DISALLOW_FILE_MODS') && DISALLOW_FILE_MODS)
 				#	return FALSE; // We may NOT edit any files.
 
@@ -2946,12 +2946,12 @@ namespace zencache
 
 				if(!is_writable($advanced_cache_file)) return FALSE; // Not possible.
 
-				// Ignore; this is created by Quick Cache; and we don't need to obey in this case.
+				// Ignore; this is created by ZenCache; and we don't need to obey in this case.
 				#if(defined('DISALLOW_FILE_MODS') && DISALLOW_FILE_MODS)
 				#	return FALSE; // We may NOT edit any files.
 
 				/* Empty the file only. This way permissions are NOT lost in cases where
-					a site owner makes this specific file writable for Quick Cache. */
+					a site owner makes this specific file writable for ZenCache. */
 				if(file_put_contents($advanced_cache_file, '') !== 0)
 					return FALSE; // Failure.
 
@@ -2975,7 +2975,7 @@ namespace zencache
 
 				if(!is_file($advanced_cache_file)) return TRUE; // Already gone.
 
-				// Ignore; this is created by Quick Cache; and we don't need to obey in this case.
+				// Ignore; this is created by ZenCache; and we don't need to obey in this case.
 				#if(defined('DISALLOW_FILE_MODS') && DISALLOW_FILE_MODS)
 				#	return FALSE; // We may NOT edit any files.
 
@@ -2994,13 +2994,13 @@ namespace zencache
 			 * @attaches-to `init` hook.
 			 *
 			 * @note This runs so that remote deployments which completely wipe out an
-			 *    existing set of website files (like the AWS Elastic Beanstalk does) will NOT cause Quick Cache
-			 *    to stop functioning due to the lack of a `qc-blog-paths` file, which is generated by Quick Cache.
+			 *    existing set of website files (like the AWS Elastic Beanstalk does) will NOT cause ZenCache
+			 *    to stop functioning due to the lack of a `qc-blog-paths` file, which is generated by ZenCache.
 			 *
 			 *    For instance, if you have a Git repo with all of your site files; when you push those files
 			 *    to your website to deploy them, you most likely do NOT have the `qc-blog-paths` file.
-			 *    Quick Cache creates this file on its own. Thus, if it's missing (and QC is active)
-			 *    we simply regenerate the file automatically to keep Quick Cache running.
+			 *    ZenCache creates this file on its own. Thus, if it's missing (and QC is active)
+			 *    we simply regenerate the file automatically to keep ZenCache running.
 			 */
 			public function check_blog_paths()
 			{
@@ -3083,8 +3083,8 @@ namespace zencache
 		}
 
 		/**
-		 * Used internally by other Quick Cache classes as an easy way to reference
-		 *    the core {@link plugin} class instance for Quick Cache.
+		 * Used internally by other ZenCache classes as an easy way to reference
+		 *    the core {@link plugin} class instance for ZenCache.
 		 *
 		 * @since 140422 First documented version.
 		 *
@@ -3096,21 +3096,21 @@ namespace zencache
 		}
 
 		/**
-		 * A global reference to the Quick Cache plugin.
+		 * A global reference to the ZenCache plugin.
 		 *
 		 * @since 140422 First documented version.
 		 *
 		 * @var plugin Main plugin class.
 		 */
 		if(!isset($GLOBALS[__NAMESPACE__.'_autoload_plugin']) || $GLOBALS[__NAMESPACE__.'_autoload_plugin'])
-			$GLOBALS[__NAMESPACE__] = new plugin(); // Load the Quick Cache plugin automatically.
+			$GLOBALS[__NAMESPACE__] = new plugin(); // Load the ZenCache plugin automatically.
 		require_once dirname(__FILE__).'/includes/api-class.php'; // API class.
 	}
 	else if(empty($GLOBALS[__NAMESPACE__.'_uninstalling'])) add_action('all_admin_notices', function ()
 	{
 		echo '<div class="error">'.
 		     '   <p>'. // Running multiple versions of this plugin at same time.
-		     '      '.__('Please disable the LITE version of Quick Cache before you activate the PRO version.', str_replace('_', '-', __NAMESPACE__)).
+		     '      '.__('Please disable the LITE version of ZenCache before you activate the PRO version.', str_replace('_', '-', __NAMESPACE__)).
 		     '   </p>'.
 		     '</div>';
 	});

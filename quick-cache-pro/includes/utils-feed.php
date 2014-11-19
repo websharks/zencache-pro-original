@@ -18,7 +18,7 @@ namespace zencache // Root namespace.
 	class utils_feed
 	{
 		/**
-		 * @var plugin Quick Cache instance.
+		 * @var plugin ZenCache instance.
 		 *
 		 * @since 14xxxx Refactoring cache clear/purge routines.
 		 */

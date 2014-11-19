@@ -1,9 +1,9 @@
 <?php
 /**
- * Quick Cache (Advanced Cache Handler)
+ * ZenCache (Advanced Cache Handler)
  *
- * This file serves as a template for the Quick Cache plugin in WordPress.
- * The Quick Cache plugin will fill the `%%` replacement codes automatically.
+ * This file serves as a template for the ZenCache plugin in WordPress.
+ * The ZenCache plugin will fill the `%%` replacement codes automatically.
  *    This file becomes: `/wp-content/advanced-cache.php`.
  *
  * @package zencache\advanced_cache
@@ -17,7 +17,7 @@ namespace zencache
 		exit('Do NOT access this file directly: '.basename(__FILE__));
 
 	/**
-	 * Quick Cache Pro flag.
+	 * ZenCache Pro flag.
 	 *
 	 * @since 140422 First documented version.
 	 *
@@ -27,7 +27,7 @@ namespace zencache
 
 	if(!defined('QUICK_CACHE_ENABLE'))
 		/**
-		 * Is Quick Cache enabled?
+		 * Is ZenCache enabled?
 		 *
 		 * @since 140422 First documented version.
 		 *
@@ -37,7 +37,7 @@ namespace zencache
 
 	if(!defined('QUICK_CACHE_DEBUGGING_ENABLE'))
 		/**
-		 * Is Quick Cache debugging enabled?
+		 * Is ZenCache debugging enabled?
 		 *
 		 * @since 140422 First documented version.
 		 *
@@ -53,8 +53,8 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 *
-		 * @note If this is a `FALSE` (or an empty) value; Quick Cache will send no-cache headers.
-		 *    If `TRUE`, Quick Cache will NOT send no-cache headers.
+		 * @note If this is a `FALSE` (or an empty) value; ZenCache will send no-cache headers.
+		 *    If `TRUE`, ZenCache will NOT send no-cache headers.
 		 */
 		define('QUICK_CACHE_ALLOW_BROWSER_CACHE', '%%QUICK_CACHE_ALLOW_BROWSER_CACHE%%');
 
@@ -326,7 +326,7 @@ namespace zencache
 	require_once dirname(QUICK_CACHE_PLUGIN_FILE).'/includes/share.php';
 
 	/**
-	 * Quick Cache (Advanced Cache Handler)
+	 * ZenCache (Advanced Cache Handler)
 	 *
 	 * @package zencache\advanced_cache
 	 * @since 140422 First documented version.
@@ -839,7 +839,7 @@ namespace zencache
 		 *
 		 * @since 140605 Improving output buffer.
 		 *
-		 * @note In `/wp-settings.php`, Quick Cache is loaded before WP registers its own shutdown function.
+		 * @note In `/wp-settings.php`, ZenCache is loaded before WP registers its own shutdown function.
 		 * Therefore, this flag is set before {@link shutdown_action_hook()} fires, and thus before {@link wp_ob_end_flush_all()}.
 		 *
 		 * @see http://www.php.net/manual/en/function.register-shutdown-function.php
@@ -922,7 +922,7 @@ namespace zencache
 		 *
 		 * @since 140422 First documented version.
 		 *
-		 * @note This is a vital part of Quick Cache. This method serves existing (fresh) cache files.
+		 * @note This is a vital part of ZenCache. This method serves existing (fresh) cache files.
 		 *    It is also responsible for beginning the process of collecting the output buffer.
 		 */
 		public function maybe_start_output_buffering()
@@ -1017,7 +1017,7 @@ namespace zencache
 					$total_time = number_format(microtime(TRUE) - $this->timer, 5, '.', '');
 					$cache .= "\n".'<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->';
 					// translators: This string is actually NOT translatable because the `__()` function is not available at this point in the processing.
-					$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('Quick Cache fully functional :-) Cache file served for (%1$s) in %2$s seconds, on: %3$s.', $this->text_domain), $this->salt_location, $total_time, date('M jS, Y @ g:i a T'))).' -->';
+					$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('ZenCache fully functional :-) Cache file served for (%1$s) in %2$s seconds, on: %3$s.', $this->text_domain), $this->salt_location, $total_time, date('M jS, Y @ g:i a T'))).' -->';
 				}
 				exit($cache); // Exit with cache contents.
 			}
@@ -1129,7 +1129,7 @@ namespace zencache
 				{
 					$total_time = number_format(microtime(TRUE) - $this->timer, 5, '.', '');
 					$cache .= "\n".'<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->';
-					$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('Quick Cache fully functional :-) Cache file served for (%1$s; user token: %2$s) in %3$s seconds, on: %4$s.', $this->text_domain), $this->salt_location, $this->user_token, $total_time, date('M jS, Y @ g:i a T'))).' -->';
+					$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('ZenCache fully functional :-) Cache file served for (%1$s; user token: %2$s) in %3$s seconds, on: %4$s.', $this->text_domain), $this->salt_location, $this->user_token, $total_time, date('M jS, Y @ g:i a T'))).' -->';
 				}
 				exit($cache); // Exit with cache contents.
 			}
@@ -1162,7 +1162,7 @@ namespace zencache
 		}
 
 		/**
-		 * Grab details from WP and the Quick Cache plugin itself,
+		 * Grab details from WP and the ZenCache plugin itself,
 		 *    after the main query is loaded (if at all possible).
 		 *
 		 * This is where we have a chance to grab any values we need from WordPress; or from the QC plugin.
@@ -1290,7 +1290,7 @@ namespace zencache
 
 			if(!is_dir($cache_file_dir = dirname($this->cache_file))) $cache_file_dir_writable = mkdir($cache_file_dir, 0775, TRUE);
 			if(empty($cache_file_dir_writable) && !is_writable($cache_file_dir)) // Only check if it's writable, if we didn't just successfully create it.
-				throw new \exception(sprintf(__('Cache directory not writable. Quick Cache needs this directory please: `%1$s`. Set permissions to `755` or higher; `777` might be needed in some cases.', $this->text_domain), $cache_file_dir));
+				throw new \exception(sprintf(__('Cache directory not writable. ZenCache needs this directory please: `%1$s`. Set permissions to `755` or higher; `777` might be needed in some cases.', $this->text_domain), $cache_file_dir));
 
 			# This is where a new 404 request might be detected for the first time; and where the 404 error file already exists in this case.
 
@@ -1310,10 +1310,10 @@ namespace zencache
 			if(QUICK_CACHE_DEBUGGING_ENABLE && $this->is_html_xml_doc($cache)) // Add HTML comments?
 			{
 				$total_time = number_format(microtime(TRUE) - $this->timer, 5, '.', ''); // Based on the original timer.
-				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('Quick Cache file path: %1$s', $this->text_domain), str_replace(WP_CONTENT_DIR, '', $this->is_404 ? $this->cache_file_404 : $this->cache_file))).' -->';
-				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('Quick Cache file built for (%1$s%2$s) in %3$s seconds, on: %4$s.', $this->text_domain),
+				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('ZenCache file path: %1$s', $this->text_domain), str_replace(WP_CONTENT_DIR, '', $this->is_404 ? $this->cache_file_404 : $this->cache_file))).' -->';
+				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('ZenCache file built for (%1$s%2$s) in %3$s seconds, on: %4$s.', $this->text_domain),
 				                                                ($this->is_404) ? '404 [error document]' : $this->salt_location, (($this->user_token) ? '; '.sprintf(__('user token: %1$s', $this->text_domain), $this->user_token) : ''), $total_time, date('M jS, Y @ g:i a T'))).' -->';
-				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('This Quick Cache file will auto-expire (and be rebuilt) on: %1$s (based on your configured expiration time).', $this->text_domain), date('M jS, Y @ g:i a T', strtotime('+'.QUICK_CACHE_MAX_AGE)))).' -->';
+				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('This ZenCache file will auto-expire (and be rebuilt) on: %1$s (based on your configured expiration time).', $this->text_domain), date('M jS, Y @ g:i a T', strtotime('+'.QUICK_CACHE_MAX_AGE)))).' -->';
 			}
 			# NOT a 404, or it is 404 and the 404 cache file doesn't yet exist (so we need to create it).
 
@@ -1337,7 +1337,7 @@ namespace zencache
 			}
 			@unlink($cache_file_tmp); // Clean this up (if it exists); and throw an exception with information for the site owner.
 
-			throw new \exception(sprintf(__('Quick Cache: failed to write cache file for: `%1$s`; possible permissions issue (or race condition), please check your cache directory: `%2$s`.', $this->text_domain), $_SERVER['REQUEST_URI'], QUICK_CACHE_DIR));
+			throw new \exception(sprintf(__('ZenCache: failed to write cache file for: `%1$s`; possible permissions issue (or race condition), please check your cache directory: `%2$s`.', $this->text_domain), $_SERVER['REQUEST_URI'], QUICK_CACHE_DIR));
 		}
 
 		/**
@@ -1371,7 +1371,7 @@ namespace zencache
 
 			$html_compressor_options = array(
 				'benchmark'                      => $htmlc_benchmark,
-				'product_title'                  => __('Quick Cache HTML Compressor', $this->text_domain),
+				'product_title'                  => __('ZenCache HTML Compressor', $this->text_domain),
 
 				'regex_css_exclusions'           => QUICK_CACHE_HTMLC_CSS_EXCLUSIONS,
 				'regex_js_exclusions'            => QUICK_CACHE_HTMLC_JS_EXCLUSIONS,
@@ -1500,7 +1500,7 @@ namespace zencache
 					break; // Break switch handler.
 
 				case $this::NC_DEBUG_NO_USER_TOKEN:
-					$reason = __('because the current user appeared to be logged into the site (in one way or another); but Quick Cache was unable to formulate a User Token for them. Please report this as a possible bug.', $this->text_domain);
+					$reason = __('because the current user appeared to be logged into the site (in one way or another); but ZenCache was unable to formulate a User Token for them. Please report this as a possible bug.', $this->text_domain);
 					break; // Break switch handler.
 
 				case $this::NC_DEBUG_GET_REQUEST_QUERIES:
@@ -1528,7 +1528,7 @@ namespace zencache
 					break; // Break switch handler.
 
 				case $this::NC_DEBUG_OB_ZLIB_CODING_TYPE:
-					$reason = __('because Quick Cache is unable to cache already-compressed output. Please use `mod_deflate` w/ Apache; or use `zlib.output_compression` in your `php.ini` file. Quick Cache is NOT compatible with `ob_gzhandler()` and others like this.', $this->text_domain);
+					$reason = __('because ZenCache is unable to cache already-compressed output. Please use `mod_deflate` w/ Apache; or use `zlib.output_compression` in your `php.ini` file. ZenCache is NOT compatible with `ob_gzhandler()` and others like this.', $this->text_domain);
 					break; // Break switch handler.
 
 				case $this::NC_DEBUG_WP_ERROR_PAGE:
@@ -1544,23 +1544,23 @@ namespace zencache
 					break; // Break switch handler.
 
 				case $this::NC_DEBUG_1ST_TIME_404_SYMLINK:
-					$reason = __('because the WordPress `is_404()` Conditional Tag says the current page is a 404 error; and this is the first time it\'s happened on this page. Your current configuration says that 404 errors SHOULD be cached, so Quick Cache built a cached symlink which points future requests for this location to your already-cached 404 error document. If you reload this page (assuming you don\'t clear the cache before you do so); you should get a cached version of your 404 error document. This message occurs ONCE for each new/unique 404 error request.', $this->text_domain);
+					$reason = __('because the WordPress `is_404()` Conditional Tag says the current page is a 404 error; and this is the first time it\'s happened on this page. Your current configuration says that 404 errors SHOULD be cached, so ZenCache built a cached symlink which points future requests for this location to your already-cached 404 error document. If you reload this page (assuming you don\'t clear the cache before you do so); you should get a cached version of your 404 error document. This message occurs ONCE for each new/unique 404 error request.', $this->text_domain);
 					break; // Break switch handler.
 
 				case $this::NC_DEBUG_EARLY_BUFFER_TERMINATION:
-					$reason = __('because Quick Cache detected an early output buffer termination. This may happen when a theme/plugin ends, cleans, or flushes all output buffers before reaching the PHP shutdown phase. It\'s not always a bad thing. Sometimes it is necessary for a theme/plugin to do this. However, in this scenario it is NOT possible to cache the output; since Quick Cache is effectively disabled at runtime when this occurs.', $this->text_domain);
+					$reason = __('because ZenCache detected an early output buffer termination. This may happen when a theme/plugin ends, cleans, or flushes all output buffers before reaching the PHP shutdown phase. It\'s not always a bad thing. Sometimes it is necessary for a theme/plugin to do this. However, in this scenario it is NOT possible to cache the output; since ZenCache is effectively disabled at runtime when this occurs.', $this->text_domain);
 					break; // Break switch handler.
 
 				default: // Default case handler.
 					$reason = __('due to an unexpected behavior in the application. Please report this as a bug!', $this->text_domain);
 					break; // Break switch handler.
 			}
-			return "\n".'<!-- '.htmlspecialchars(sprintf(__('Quick Cache is NOT caching this page, %1$s', $this->text_domain), $reason)).' -->';
+			return "\n".'<!-- '.htmlspecialchars(sprintf(__('ZenCache is NOT caching this page, %1$s', $this->text_domain), $reason)).' -->';
 		}
 	}
 
 	/**
-	 * Global Quick Cache {@link advanced_cache} instance.
+	 * Global ZenCache {@link advanced_cache} instance.
 	 *
 	 * @since 140422 First documented version.
 	 *

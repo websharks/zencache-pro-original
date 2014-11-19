@@ -174,7 +174,7 @@ namespace zencache // Root namespace.
 
 				$this->plugin->update_blog_paths();
 			}
-			else // We need to disable Quick Cache in this case.
+			else // We need to disable ZenCache in this case.
 			{
 				if(!($remove_wp_cache_from_wp_config = $this->plugin->remove_wp_cache_from_wp_config()))
 					$query_args[__NAMESPACE__.'__wp_config_wp_cache_remove_failure'] = '1';
@@ -216,7 +216,7 @@ namespace zencache // Root namespace.
 
 				$this->plugin->update_blog_paths();
 			}
-			else // We need to disable Quick Cache in this case.
+			else // We need to disable ZenCache in this case.
 			{
 				if(!($remove_wp_cache_from_wp_config = $this->plugin->remove_wp_cache_from_wp_config()))
 					$query_args[__NAMESPACE__.'__wp_config_wp_cache_remove_failure'] = '1';

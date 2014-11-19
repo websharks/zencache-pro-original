@@ -21,7 +21,7 @@ namespace zencache // Root namespace.
 	{
 		/**
 		 * @since 14xxxx Adding CDN support.
-		 * @var plugin Quick Cache instance.
+		 * @var plugin ZenCache instance.
 		 */
 		protected $plugin;
 

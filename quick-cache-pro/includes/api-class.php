@@ -1,6 +1,6 @@
 <?php
 /**
- * Quick Cache API Class.
+ * ZenCache API Class.
  *
  * @package zencache\api
  * @since 140420 API class addition.
@@ -13,7 +13,7 @@ namespace // Global namespace.
 		exit('Do NOT access this file directly: '.basename(__FILE__));
 
 	/**
-	 * Quick Cache API Class.
+	 * ZenCache API Class.
 	 */
 	class zencache
 	{
