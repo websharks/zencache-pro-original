@@ -36,7 +36,7 @@
 
 = v140605 =
 
-- **New Feature**: Branched Cache Structure. Cache files are now written to the cache directory using a more intuitive format of `PROTOCOL`/`HOSTNAME`/`PERMALINK` (e.g., `http/example-com/sample-page.html`). For more details, please see <https://github.com/websharks/zencache/wiki/Branched-Cache-Structure>
+- **New Feature**: Branched Cache Structure. Cache files are now written to the cache directory using a more intuitive format of `PROTOCOL`/`HOSTNAME`/`PERMALINK` (e.g., `http/example-com/sample-page.html`). For more details, please see <http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/>
 - **New Feature**: 404 Page caching. It's now possible to enable/disable the caching of 404 requests. Enabling this feature generates a single cache file for your 404 Page and then symlinks future 404 requests to that cache file. See *Dashboard -> ZenCache -> Plugin Options -> 404 Requests*.
 - **New Feature (Pro)**: HTML Compressor (experimental). This new experimental feature automatically combines and compresses CSS/JS/HTML code. See *Dashboard -> ZenCache -> Plugin Options -> HTML Compressor*. For more details about how this feature works, please see <https://github.com/websharks/HTML-Compressor>
 - **New Feature (Pro)**: Auto-Cache Engine. When enabled, the Auto-Cache Engine will pre-cache your site at 15-minute intervals, rebuilding cache files when necessary (it will not rebuild cache files until they have expired). This helps eliminate the slowness a user may experience when visiting a page on your site that has not yet been cached. See *Dashboard -> ZenCache -> Plugin Options -> Auto-Cache Engine*.
