@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quick Cache Pro 141001\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/quick-cache-pro\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/zencache-pro\n"
 "POT-Creation-Date: 2014-10-02 03:13:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -226,15 +226,15 @@ msgstr ""
 msgid "Invalid XML sitemap content type at: `%1$s`. Expecting XML. Instead got: `%2$s`."
 msgstr ""
 
-#: includes/menu-pages.php:24 quick-cache-pro.inc.php:561
+#: includes/menu-pages.php:24 zencache-pro.inc.php:561
 msgid "Wipe Cache (Start Fresh); clears the cache for all sites in this network at once!"
 msgstr ""
 
-#: includes/menu-pages.php:26 quick-cache-pro.inc.php:560
+#: includes/menu-pages.php:26 zencache-pro.inc.php:560
 msgid "Wipe"
 msgstr ""
 
-#: includes/menu-pages.php:28 quick-cache-pro.inc.php:567
+#: includes/menu-pages.php:28 zencache-pro.inc.php:567
 msgid "Clear Cache (Start Fresh)"
 msgstr ""
 
@@ -270,8 +270,8 @@ msgstr ""
 msgid "Beta Testers (Signup)"
 msgstr ""
 
-#: includes/menu-pages.php:48 quick-cache-pro.inc.php:708
-#: quick-cache-pro.inc.php:731
+#: includes/menu-pages.php:48 zencache-pro.inc.php:708
+#: zencache-pro.inc.php:731
 msgid "Plugin Options"
 msgstr ""
 
@@ -1054,7 +1054,7 @@ msgid "<i class=\"fa fa-flask\"></i> <span style=\"display:inline-block; padding
 msgstr ""
 
 #: includes/menu-pages.php:564
-msgid "<em>Note: Understanding the Quick Cache <a href=\"http://www.websharks-inc.com/r/quick-cache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> is a prerequisite to understanding how Dynamic Version Salts are added to the mix.</em>"
+msgid "<em>Note: Understanding the Quick Cache <a href=\"http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> is a prerequisite to understanding how Dynamic Version Salts are added to the mix.</em>"
 msgstr ""
 
 #: includes/menu-pages.php:565
@@ -1070,7 +1070,7 @@ msgid "Experts could even use PHP ternary expressions that evaluate into somethi
 msgstr ""
 
 #: includes/menu-pages.php:568
-msgid "For more documentation, please see <a href=\"http://www.websharks-inc.com/r/quick-cache-dynamic-version-salts-wiki/\" target=\"_blank\">Dynamic Version Salts</a>."
+msgid "For more documentation, please see <a href=\"http://www.websharks-inc.com/r/zencache-dynamic-version-salts-wiki/\" target=\"_blank\">Dynamic Version Salts</a>."
 msgstr ""
 
 #: includes/menu-pages.php:570
@@ -1106,7 +1106,7 @@ msgid "Writing \"Advanced Cache\" Plugins Specifically for Quick Cache"
 msgstr ""
 
 #: includes/menu-pages.php:591
-msgid "Theme/plugin developers can take advantage of the Quick Cache plugin architecture by creating PHP files inside this special directory: <code>/wp-content/ac-plugins/</code>. There is an <a href=\"https://github.com/WebSharks/Quick-Cache/blob/000000-dev/quick-cache/includes/ac-plugin.example.php\" target=\"_blank\">example plugin file @ GitHub</a> (please review it carefully and ask questions). If you develop a plugin for Quick Cache, please share it with the community by publishing it in the plugins respository at WordPress.org."
+msgid "Theme/plugin developers can take advantage of the Quick Cache plugin architecture by creating PHP files inside this special directory: <code>/wp-content/ac-plugins/</code>. There is an <a href=\"https://github.com/WebSharks/Quick-Cache/blob/000000-dev/zencache/includes/ac-plugin.example.php\" target=\"_blank\">example plugin file @ GitHub</a> (please review it carefully and ask questions). If you develop a plugin for Quick Cache, please share it with the community by publishing it in the plugins respository at WordPress.org."
 msgstr ""
 
 #: includes/menu-pages.php:592
@@ -1149,8 +1149,8 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: includes/menu-pages.php:651 quick-cache-pro.inc.php:712
-#: quick-cache-pro.inc.php:734
+#: includes/menu-pages.php:651 zencache-pro.inc.php:712
+#: zencache-pro.inc.php:734
 msgid "Plugin Updater"
 msgstr ""
 
@@ -1215,7 +1215,7 @@ msgid "<strong>Quick Cache Feature Notice:</strong> This version of Quick Cache 
 msgstr ""
 
 #: includes/version-specific-upgrade.php:107
-msgid "<strong>Quick Cache Feature Notice:</strong> This version of Quick Cache introduces a new <a href=\"http://www.websharks-inc.com/r/quick-cache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> and several other <a href=\"http://www.websharks-inc.com/post/quick-cache-v140605-now-available/\" target=\"_blank\">new features</a>."
+msgid "<strong>Quick Cache Feature Notice:</strong> This version of Quick Cache introduces a new <a href=\"http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> and several other <a href=\"http://www.websharks-inc.com/post/zencache-v140605-now-available/\" target=\"_blank\">new features</a>."
 msgstr ""
 
 #: includes/version-specific-upgrade.php:129
@@ -1242,170 +1242,170 @@ msgstr ""
 msgid "To remove this message, please deactivate %1$s."
 msgstr ""
 
-#: quick-cache-pro.inc.php:443
+#: zencache-pro.inc.php:443
 msgid "<strong>Quick Cache:</strong> detected a new version of itself. Recompiling w/ latest version... wiping the cache... all done :-)"
 msgstr ""
 
-#: quick-cache-pro.inc.php:564
+#: zencache-pro.inc.php:564
 msgid "Clear Cache"
 msgstr ""
 
-#: quick-cache-pro.inc.php:566
+#: zencache-pro.inc.php:566
 msgid "Clear Cache (Start Fresh); affects the current site only."
 msgstr ""
 
-#: quick-cache-pro.inc.php:704 quick-cache-pro.inc.php:727
+#: zencache-pro.inc.php:704 zencache-pro.inc.php:727
 msgid "Quick Cache"
 msgstr ""
 
-#: quick-cache-pro.inc.php:751
+#: zencache-pro.inc.php:751
 msgid "Settings"
 msgstr ""
 
-#: quick-cache-pro.inc.php:822
+#: zencache-pro.inc.php:822
 msgid "<strong>Quick Cache Pro:</strong> a new version is now available. Please <a href=\"%1$s\">upgrade to v%2$s</a>."
 msgstr ""
 
-#: quick-cache-pro.inc.php:904 quick-cache-pro.inc.php:975
+#: zencache-pro.inc.php:904 zencache-pro.inc.php:975
 msgid "dismiss &times;"
 msgstr ""
 
-#: quick-cache-pro.inc.php:1056
+#: zencache-pro.inc.php:1056
 msgid "Every 15 Minutes"
 msgstr ""
 
-#: quick-cache-pro.inc.php:1095
+#: zencache-pro.inc.php:1095
 msgid "Unable to wipe file: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1100
+#: zencache-pro.inc.php:1100
 msgid "Unable to wipe dir: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1109
+#: zencache-pro.inc.php:1109
 msgid "Unable to also wipe file: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1114
+#: zencache-pro.inc.php:1114
 msgid "Unable to also wipe dir: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1156
+#: zencache-pro.inc.php:1156
 msgid "Unable to wipe HTMLC file: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1161
+#: zencache-pro.inc.php:1161
 msgid "Unable to wipe HTMLC dir: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1206
+#: zencache-pro.inc.php:1206
 msgid "Unable to clear file: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1211
+#: zencache-pro.inc.php:1211
 msgid "Unable to clear dir: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1257
+#: zencache-pro.inc.php:1257
 msgid "Unable to clear HTMLC file: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1262
+#: zencache-pro.inc.php:1262
 msgid "Unable to clear HTMLC dir: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1297
+#: zencache-pro.inc.php:1297
 msgid "Unable to purge file: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1333
+#: zencache-pro.inc.php:1333
 msgid "<strong>Quick Cache:</strong> detected significant changes. Found cache files (auto-wiping)."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1379
+#: zencache-pro.inc.php:1379
 msgid "<strong>Quick Cache:</strong> detected important site changes. Found cache files for this site (auto-clearing)."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1400
-msgid "<strong>Quick Cache:</strong> detected important site changes that would normally trigger a clear cache routine, however clear cache routines have been disabled by a site administrator. [<a href=\"http://www.websharks-inc.com/r/quick-cache-clear-cache-and-wipe-cache-routines-wiki/\" target=\"_blank\">?</a>]"
+#: zencache-pro.inc.php:1400
+msgid "<strong>Quick Cache:</strong> detected important site changes that would normally trigger a clear cache routine, however clear cache routines have been disabled by a site administrator. [<a href=\"http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/\" target=\"_blank\">?</a>]"
 msgstr ""
 
-#: quick-cache-pro.inc.php:1426
-msgid "<strong>Quick Cache:</strong> detected significant changes that would normally trigger a wipe cache routine, however wipe cache routines have been disabled by a site administrator. [<a href=\"http://www.websharks-inc.com/r/quick-cache-clear-cache-and-wipe-cache-routines-wiki/\" target=\"_blank\">?</a>]"
+#: zencache-pro.inc.php:1426
+msgid "<strong>Quick Cache:</strong> detected significant changes that would normally trigger a wipe cache routine, however wipe cache routines have been disabled by a site administrator. [<a href=\"http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/\" target=\"_blank\">?</a>]"
 msgstr ""
 
-#: quick-cache-pro.inc.php:1508
+#: zencache-pro.inc.php:1508
 msgid "Post"
 msgstr ""
 
-#: quick-cache-pro.inc.php:1523 quick-cache-pro.inc.php:1988
-#: quick-cache-pro.inc.php:2063 quick-cache-pro.inc.php:2138
-#: quick-cache-pro.inc.php:2244 quick-cache-pro.inc.php:2401
-#: quick-cache-pro.inc.php:2568
+#: zencache-pro.inc.php:1523 zencache-pro.inc.php:1988
+#: zencache-pro.inc.php:2063 zencache-pro.inc.php:2138
+#: zencache-pro.inc.php:2244 zencache-pro.inc.php:2401
+#: zencache-pro.inc.php:2568
 msgid "Unable to auto-purge file: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1530
+#: zencache-pro.inc.php:1530
 msgid "<strong>Quick Cache:</strong> detected changes. Found cache file(s) for %1$s ID: <code>%2$s</code> (auto-purging)."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1866
+#: zencache-pro.inc.php:1866
 msgid "<strong>Quick Cache:</strong> detected changes. Found XML feeds of type <code>%1$s</code> (auto-purging)."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1928
+#: zencache-pro.inc.php:1928
 msgid "Unable to auto-purge XML sitemap file: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1935
+#: zencache-pro.inc.php:1935
 msgid "<strong>Quick Cache:</strong> detected changes. Found XML sitemaps (auto-purging)."
 msgstr ""
 
-#: quick-cache-pro.inc.php:1995
+#: zencache-pro.inc.php:1995
 msgid "<strong>Quick Cache:</strong> detected changes. Found cache file(s) for the designated \"Home Page\" (auto-purging)."
 msgstr ""
 
-#: quick-cache-pro.inc.php:2070
+#: zencache-pro.inc.php:2070
 msgid "<strong>Quick Cache:</strong> detected changes. Found cache file(s) for the designated \"Posts Page\" (auto-purging)."
 msgstr ""
 
-#: quick-cache-pro.inc.php:2145
+#: zencache-pro.inc.php:2145
 msgid "<strong>Quick Cache:</strong> detected changes. Found cache file(s) for Custom Post Type <code>%1$s</code> (auto-purging)."
 msgstr ""
 
-#: quick-cache-pro.inc.php:2250
+#: zencache-pro.inc.php:2250
 msgid "<strong>Quick Cache:</strong> detected changes. Found cache files for Author Page: <code>%1$s</code> (auto-purging)."
 msgstr ""
 
-#: quick-cache-pro.inc.php:2408
+#: zencache-pro.inc.php:2408
 msgid "<strong>Quick Cache:</strong> detected changes. Found cache files for %1$s: <code>%2$s</code> (auto-purging)."
 msgstr ""
 
-#: quick-cache-pro.inc.php:2575
+#: zencache-pro.inc.php:2575
 msgid "<strong>Quick Cache:</strong> detected changes. Found cache files for user ID: <code>%1$s</code> (auto-purging)."
 msgstr ""
 
-#: quick-cache-pro.inc.php:2834 quick-cache-pro.inc.php:2860
+#: zencache-pro.inc.php:2834 zencache-pro.inc.php:2860
 msgid "Doing it wrong! Missing `base_dir` option value. MUST call this method after `setup()`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:3083
+#: zencache-pro.inc.php:3083
 msgid "<strong>Quick Cache</strong>: ignoring your Version Salt; it seems to contain PHP syntax errors."
 msgstr ""
 
-#: quick-cache-pro.inc.php:3300
+#: zencache-pro.inc.php:3300
 msgid "Unable to remove file: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:3305
+#: zencache-pro.inc.php:3305
 msgid "Unable to remove dir: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:3310
+#: zencache-pro.inc.php:3310
 msgid "Unable to remove base dir: `%1$s`."
 msgstr ""
 
-#: quick-cache-pro.inc.php:3345
+#: zencache-pro.inc.php:3345
 msgid "Please disable the LITE version of Quick Cache before you activate the PRO version."
 msgstr ""
 
@@ -1414,7 +1414,7 @@ msgid "Quick Cache Pro"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://www.websharks-inc.com/product/quick-cache/"
+msgid "http://www.websharks-inc.com/product/zencache/"
 msgstr ""
 
 #. Description of the plugin/theme

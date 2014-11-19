@@ -15,7 +15,7 @@ namespace zencache
 	$GLOBALS[__NAMESPACE__.'_uninstalling']    = TRUE;
 	$GLOBALS[__NAMESPACE__.'_autoload_plugin'] = FALSE;
 
-	require_once dirname(__FILE__).'/quick-cache-pro.inc.php';
+	require_once dirname(__FILE__).'/zencache-pro.inc.php';
 
 	if(!class_exists('\\'.__NAMESPACE__.'\\uninstall'))
 	{

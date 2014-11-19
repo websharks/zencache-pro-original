@@ -3,14 +3,14 @@
 Stable tag: 141001
 Requires at least: 3.7
 Tested up to: 4.0
-Text Domain: quick-cache
+Text Domain: zencache
 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Contributors: WebSharks, JasWSInc, raamdev, anguz
 Donate link: http://www.websharks-inc.com/r/wp-theme-plugin-donation/
-Tags: cache, quick cache, quick-cache, quickcache, speed, performance, loading, generation, execution, benchmark, benchmarking, debug, debugging, caching, cash, caching, cacheing, super cache, advanced cache, advanced-cache, wp-cache, wp cache, options panel included, websharks framework, w3c validated code, includes extensive documentation, highly extensible
+Tags: cache, quick cache, zencache, quickcache, speed, performance, loading, generation, execution, benchmark, benchmarking, debug, debugging, caching, cash, caching, cacheing, super cache, advanced cache, advanced-cache, wp-cache, wp cache, options panel included, websharks framework, w3c validated code, includes extensive documentation, highly extensible
 
 Speed up your site (BIG time!) — Quick Cache provides reliable page caching for WordPress. Easy-to-use (very simple installation).
 
@@ -67,7 +67,7 @@ TIP: you can preview Pro features in the free version by clicking the "Preview P
 
 = Quick Cache is Very Easy to Install =
 
-1. Upload the `/quick-cache` folder to your `/wp-content/plugins/` directory.
+1. Upload the `/zencache` folder to your `/wp-content/plugins/` directory.
 2. Activate the plugin through the Plugins menu in WordPress®.
 3. Navigate to the **Quick Cache** panel & enable it.
 
@@ -89,7 +89,7 @@ Ordinarily you can just deactivate Quick Cache from the plugins menu in WordPres
 
 1. Log into your site via FTP; perhaps using [FileZilla](http://www.youtube.com/watch?v=joXUMhr8PhU).
 2. Delete this file: `/wp-content/advanced-cache.php`
-3. Delete this directory: `/wp-content/plugins/quick-cache/`
+3. Delete this directory: `/wp-content/plugins/zencache/`
 4. Remove this line from your `/wp-config.php` file: `define('WP_CACHE', TRUE);`
 
 Quick Cache is now completely uninstalled and you can start fresh :-)
@@ -116,9 +116,9 @@ In computer science, a cache (pronounced /kash/) is a collection of data duplica
 
 = Where & why are the cache files stored on my server? =
 
-The cache files are stored in a special directory: `/wp-content/cache/quick-cache`. This directory needs to remain writable, just like the `/wp-content/uploads` directory on many WordPress® installations. The `/quick-cache/cache` directory is where cache files reside. These files are stored using an intutive directory structure that named based on the request URL (`HTTPS/HTTP_HOST/REQUEST_URI`). See also: **Dashboard -› Quick Cache -› Cache Directory/Expiration Time** for further details.
+The cache files are stored in a special directory: `/wp-content/cache/zencache`. This directory needs to remain writable, just like the `/wp-content/uploads` directory on many WordPress® installations. The `/zencache/cache` directory is where cache files reside. These files are stored using an intutive directory structure that named based on the request URL (`HTTPS/HTTP_HOST/REQUEST_URI`). See also: **Dashboard -› Quick Cache -› Cache Directory/Expiration Time** for further details.
 
-Whenever a request comes in from someone on the web, Quick Cache checks to see if it can serve a cached file; e.g. it looks at the `HTTPS/HTTP_HOST/REQUEST_URI` environent variables, then it checks the `/quick-cache/cache` directory. If a cache file has been built already, and it matches an existing `HTTPS.HTTP_HOST.REQUEST_URI` combination; and it is not too old (see: **Dashboard -› Quick Cache -› Cache Directory/Expiration Time**), then it will serve that file instead of asking WordPress® to regenerate it. This adds tremendous speed to your site and reduces server load.
+Whenever a request comes in from someone on the web, Quick Cache checks to see if it can serve a cached file; e.g. it looks at the `HTTPS/HTTP_HOST/REQUEST_URI` environent variables, then it checks the `/zencache/cache` directory. If a cache file has been built already, and it matches an existing `HTTPS.HTTP_HOST.REQUEST_URI` combination; and it is not too old (see: **Dashboard -› Quick Cache -› Cache Directory/Expiration Time**), then it will serve that file instead of asking WordPress® to regenerate it. This adds tremendous speed to your site and reduces server load.
 
 If you have GZIP compression enabled, then the cache file is also sent to the browser with compression (recommended). Modern web browsers that support this technique will definitely take advantage of it. After all, if it is easier to email a zip file, it's also easier to download a web page that way. That is why on-the-fly GZIP compression for web pages is recommended. This is supported by all modern browsers.
 
@@ -191,7 +191,7 @@ Ordinarily you can just deactivate Quick Cache from the plugins menu in WordPres
 
 1. Log into your site via FTP; perhaps using [FileZilla](http://www.youtube.com/watch?v=joXUMhr8PhU).
 2. Delete this file: `/wp-content/advanced-cache.php`
-3. Delete this directory: `/wp-content/plugins/quick-cache/`
+3. Delete this directory: `/wp-content/plugins/zencache/`
 4. Remove this line from your `/wp-config.php` file: `define('WP_CACHE', TRUE);`
 
 Quick Cache is now completely uninstalled and you can start fresh :-)
@@ -245,7 +245,7 @@ Ordinarily you can just deactivate Quick Cache from the plugins menu in WordPres
 
 1. Log into your site via FTP; perhaps using [FileZilla](http://www.youtube.com/watch?v=joXUMhr8PhU).
 2. Delete this file: `/wp-content/advanced-cache.php`
-3. Delete this directory: `/wp-content/plugins/quick-cache/`
+3. Delete this directory: `/wp-content/plugins/zencache/`
 4. Remove this line from your `/wp-config.php` file: `define('WP_CACHE', TRUE);`
 
 Quick Cache is now completely uninstalled and you can start fresh :-)
@@ -316,65 +316,65 @@ Released under the terms of the [GNU General Public License](http://www.gnu.org/
 
 = v140104 =
 
-Requires PHP v5.3+. The latest version of Quick Cache is a complete rewrite (OOP design). Faster! and even more dependable. NOTE: the free version of Quick Cache (this new LITE version); while it remains fully functional and is more-than-adequate for most sites; is now limited in some ways. The following advanced features from the previous release are no longer available in the lite version: a custom MD5 Version Salt, custom Exclusion Patterns, a Clear Cache button in admin bar. These, and other features; are now available only in the pro version of the plugin. For further details, please see: <http://www.websharks-inc.com/product/quick-cache/>.
+Requires PHP v5.3+. The latest version of Quick Cache is a complete rewrite (OOP design). Faster! and even more dependable. NOTE: the free version of Quick Cache (this new LITE version); while it remains fully functional and is more-than-adequate for most sites; is now limited in some ways. The following advanced features from the previous release are no longer available in the lite version: a custom MD5 Version Salt, custom Exclusion Patterns, a Clear Cache button in admin bar. These, and other features; are now available only in the pro version of the plugin. For further details, please see: <http://www.websharks-inc.com/product/zencache/>.
 
 == Changelog ==
 
 = v141001 =
 
-- **Enhancement**: Improved Dashboard messaging for the `auto_clear_cache()` routine. See [#328](https://github.com/websharks/quick-cache/issues/328).
-- **Enhancement (Pro)**: Improved consistency of Auto-Cache Engine User-Agent string by removing WordPress-version-specific identifier. See [#315](https://github.com/websharks/quick-cache/issues/315).
-- **Enhancement (Pro)**: It is now possible to disable the automatic clear and wipe cache routines. If you have a very large site with many cache files, this feature allows you manual control over when the cache gets cleared or wiped. For complete documentation on this feature, see [Quick Cache Wiki - Clear and Wipe Cache Routines](https://github.com/websharks/quick-cache/wiki/Clear-Cache-and-Wipe-Cache-Routines). See also [#23](https://github.com/websharks/quick-cache/issues/23).
-- **Bug Fix**: Fixes an issue with the Pro Preview mode where saving the plugin options may inadvertently save Pro-only options that could later cause issues if the plugin is upgraded to the Pro version. See [#311](https://github.com/websharks/quick-cache/pull/311#issuecomment-54491922).
-- **Bug Fix**: Fixes an edge-case where the proper cache files do not get purged when a user with the Editor role publishes a new post with both a category and a tag associated with the post. See [#313](https://github.com/websharks/quick-cache/issues/313).
-- **Bug Fix**: When Quick Cache purges/resets the cache for a post with a Custom Post Type, any cache files for the associated Custom Post Type archive view are now auto-purged, along with any associated XML feed cache files. See [#280](https://github.com/websharks/quick-cache/issues/280).
-- **Bug Fix**: Fixed missing trailing slash in Directory / Expiration Time configuration panel. This was purely a visual inconsistency and had no effect on Quick Cache's functionality. See [#267](https://github.com/websharks/quick-cache/issues/267).
-- **Bug Fix**: When saving custom CSS using JetPack's Custom CSS module, Quick Cache now properly purges the site cache to ensure that outdated cache files are not served to visitors. See [#246](https://github.com/websharks/quick-cache/issues/246).
-- **Bug Fix**: When changes are made to WordPress General, Reading, Discussion, or Permalink settings (Dashboard -> Settings), Quick Cache now clears the cache to prevent an outdated cache file from being served to visitors. See [#223](https://github.com/websharks/quick-cache/issues/223).
-- **Bug Fix**: When an active plugin is updated, or when an active theme or the parent theme for an active child theme is updated, or when WordPress Core is updated, Quick Cache now properly clears the cache to ensure that an outdated cache file does not get served to a visitor. See [#145](https://github.com/websharks/quick-cache/issues/145) and [#327](https://github.com/websharks/quick-cache/issues/327).
-- **Bug Fix**: When a new comment is posted, Quick Cache now properly purges the cache files for any paginated comment pages. See [#336](https://github.com/websharks/quick-cache/issues/336).
-- **Bug Fix (Pro)**: Fixed a bug where the HTML Compressor, when enabled with the "remove extra whitespace in the final HTML" option, would incorrectly remove `<!DOCTYPE html>`. See [#299](https://github.com/websharks/quick-cache/issues/299).
-- **Bug Fix (Pro)**: Fixed a bug in the HTML Compressor that would, in certain scenarios, leave behind fragments of HTML comments. See [#295](https://github.com/websharks/quick-cache/issues/295).
-- **Bug Fix (Pro)**: The Auto-Cache Engine now has an option to configure a delay between each request when pre-caching the site. There were some reports of the Auto-Cache Engine causing load issues with large sites on servers that sometimes had trouble handling many requests. See [#294](https://github.com/websharks/quick-cache/issues/294).
-- **Bug Fix (Pro)**: Fixes an Auto-Cache Engine scheduling issue that may, in some scenarios, prevent it from running as expected. See [#291](https://github.com/websharks/quick-cache/issues/291).
+- **Enhancement**: Improved Dashboard messaging for the `auto_clear_cache()` routine. See [#328](https://github.com/websharks/zencache/issues/328).
+- **Enhancement (Pro)**: Improved consistency of Auto-Cache Engine User-Agent string by removing WordPress-version-specific identifier. See [#315](https://github.com/websharks/zencache/issues/315).
+- **Enhancement (Pro)**: It is now possible to disable the automatic clear and wipe cache routines. If you have a very large site with many cache files, this feature allows you manual control over when the cache gets cleared or wiped. For complete documentation on this feature, see [Quick Cache Wiki - Clear and Wipe Cache Routines](https://github.com/websharks/zencache/wiki/Clear-Cache-and-Wipe-Cache-Routines). See also [#23](https://github.com/websharks/zencache/issues/23).
+- **Bug Fix**: Fixes an issue with the Pro Preview mode where saving the plugin options may inadvertently save Pro-only options that could later cause issues if the plugin is upgraded to the Pro version. See [#311](https://github.com/websharks/zencache/pull/311#issuecomment-54491922).
+- **Bug Fix**: Fixes an edge-case where the proper cache files do not get purged when a user with the Editor role publishes a new post with both a category and a tag associated with the post. See [#313](https://github.com/websharks/zencache/issues/313).
+- **Bug Fix**: When Quick Cache purges/resets the cache for a post with a Custom Post Type, any cache files for the associated Custom Post Type archive view are now auto-purged, along with any associated XML feed cache files. See [#280](https://github.com/websharks/zencache/issues/280).
+- **Bug Fix**: Fixed missing trailing slash in Directory / Expiration Time configuration panel. This was purely a visual inconsistency and had no effect on Quick Cache's functionality. See [#267](https://github.com/websharks/zencache/issues/267).
+- **Bug Fix**: When saving custom CSS using JetPack's Custom CSS module, Quick Cache now properly purges the site cache to ensure that outdated cache files are not served to visitors. See [#246](https://github.com/websharks/zencache/issues/246).
+- **Bug Fix**: When changes are made to WordPress General, Reading, Discussion, or Permalink settings (Dashboard -> Settings), Quick Cache now clears the cache to prevent an outdated cache file from being served to visitors. See [#223](https://github.com/websharks/zencache/issues/223).
+- **Bug Fix**: When an active plugin is updated, or when an active theme or the parent theme for an active child theme is updated, or when WordPress Core is updated, Quick Cache now properly clears the cache to ensure that an outdated cache file does not get served to a visitor. See [#145](https://github.com/websharks/zencache/issues/145) and [#327](https://github.com/websharks/zencache/issues/327).
+- **Bug Fix**: When a new comment is posted, Quick Cache now properly purges the cache files for any paginated comment pages. See [#336](https://github.com/websharks/zencache/issues/336).
+- **Bug Fix (Pro)**: Fixed a bug where the HTML Compressor, when enabled with the "remove extra whitespace in the final HTML" option, would incorrectly remove `<!DOCTYPE html>`. See [#299](https://github.com/websharks/zencache/issues/299).
+- **Bug Fix (Pro)**: Fixed a bug in the HTML Compressor that would, in certain scenarios, leave behind fragments of HTML comments. See [#295](https://github.com/websharks/zencache/issues/295).
+- **Bug Fix (Pro)**: The Auto-Cache Engine now has an option to configure a delay between each request when pre-caching the site. There were some reports of the Auto-Cache Engine causing load issues with large sites on servers that sometimes had trouble handling many requests. See [#294](https://github.com/websharks/zencache/issues/294).
+- **Bug Fix (Pro)**: Fixes an Auto-Cache Engine scheduling issue that may, in some scenarios, prevent it from running as expected. See [#291](https://github.com/websharks/zencache/issues/291).
 - **Bug Fix (Pro)**: Fixed a bug with the HTML Compressor where `style`, `link` and/or `script` tags could end up out of order in certain scenarios. See [#45](https://github.com/websharks/html-compressor/issues/45).
 - **Bug Fix (Pro)**: Fixed a bug in the HTML Compressor related to JavaScript compression routines. See [#38](https://github.com/websharks/html-compressor/issues/38).
 
 = v140829 =
 
-- **SECURITY FIX - Please upgrade immediately**: Fixes a security related to cached cookies sent in the header of a request. This only affects sites running plugins that might send cookie data via the header. See [#253](https://github.com/websharks/quick-cache/issues/253)
-- **Enhancement**: Auto-Purge RSS Feeds. Quick Cache will now automatically purge the cache for RSS/RDF/Atom Feeds when Feed Caching is enabled. This new option will purge the cache for the master feed, the master comments feed, feeds associated with comments on a Post/Page, term-related feeds (including mixed term-related feeds), and author-related feeds when you update a Post/Page, approve a Comment, or make other changes where Quick Cache can detect that certain types of Feeds should be purged. See [#182](https://github.com/websharks/quick-cache/issues/182)
-- **Enhancement**: Improve handling of symlink creation for 404 cache files by using atomic symlink creation to decrease the possibility of encountering a race condition. See [#242](https://github.com/websharks/quick-cache/issues/242).
-- **Enhancement**: Improved portability of `advanced-cache.php`. This will help reduce configuration overhead for site owners when migrating a WordPress installation from one server to another. See [#258](https://github.com/websharks/quick-cache/issues/258).
-- **Enhancement**: Option Panels now have proper HTML anchor tags so that they work better with browser extensions that rely on anchor tags being available. See [#260.](https://github.com/websharks/quick-cache/issues/260)
-- **Enhancement**: The Plugin Deactivation Safeguards option has been renamed to Plugin Deletion Safeguards. When Plugin Deletion Safeguards are disabled, deactivating and deleting the plugin will now erase your options for the plugin, erase directories/files created by the plugin, remove the advanced-cache.php file, terminate CRON jobs, etc. It completely erases itself, but only when you disable Plugin Deletion Safeguards (enabled by default to prevent accidental loss of data). See [#261](https://github.com/websharks/quick-cache/issues/261).
+- **SECURITY FIX - Please upgrade immediately**: Fixes a security related to cached cookies sent in the header of a request. This only affects sites running plugins that might send cookie data via the header. See [#253](https://github.com/websharks/zencache/issues/253)
+- **Enhancement**: Auto-Purge RSS Feeds. Quick Cache will now automatically purge the cache for RSS/RDF/Atom Feeds when Feed Caching is enabled. This new option will purge the cache for the master feed, the master comments feed, feeds associated with comments on a Post/Page, term-related feeds (including mixed term-related feeds), and author-related feeds when you update a Post/Page, approve a Comment, or make other changes where Quick Cache can detect that certain types of Feeds should be purged. See [#182](https://github.com/websharks/zencache/issues/182)
+- **Enhancement**: Improve handling of symlink creation for 404 cache files by using atomic symlink creation to decrease the possibility of encountering a race condition. See [#242](https://github.com/websharks/zencache/issues/242).
+- **Enhancement**: Improved portability of `advanced-cache.php`. This will help reduce configuration overhead for site owners when migrating a WordPress installation from one server to another. See [#258](https://github.com/websharks/zencache/issues/258).
+- **Enhancement**: Option Panels now have proper HTML anchor tags so that they work better with browser extensions that rely on anchor tags being available. See [#260.](https://github.com/websharks/zencache/issues/260)
+- **Enhancement**: The Plugin Deactivation Safeguards option has been renamed to Plugin Deletion Safeguards. When Plugin Deletion Safeguards are disabled, deactivating and deleting the plugin will now erase your options for the plugin, erase directories/files created by the plugin, remove the advanced-cache.php file, terminate CRON jobs, etc. It completely erases itself, but only when you disable Plugin Deletion Safeguards (enabled by default to prevent accidental loss of data). See [#261](https://github.com/websharks/zencache/issues/261).
 - **Enhancement (Pro)**: HTML Compressor now includes FOPEN as transport layer fallback in case cURL is not available. See [#15](https://github.com/websharks/html-compressor/issues/15)
-- **Enhancement (Pro)**: HTML Compressor now writes files atomically; this will help avoid race conditions when writing cache files. See [#273](https://github.com/websharks/quick-cache/issues/273)
-- **Enhancement (Pro)**: Improved error handling for the Auto-Cache Engine. There were some scenarios where `XMLReader()` would fail with a PHP Warning notice when it was unable to properly parse the sitemap. See [#250](https://github.com/websharks/quick-cache/issues/250).
-- **Bug Fix**: The cache directory is now properly removed when deleting the plugin from the WordPress Dashboard plugins list. See [#261](https://github.com/websharks/quick-cache/issues/261).
-- **Bug Fix**: WooCommerce compatibility fix for a bug where cart session data appeared to get cached across sessions. See [#253](https://github.com/websharks/quick-cache/issues/253)
-- **Bug Fix (Pro)**: The plugin upgrade notice no longer appears on Child Blogs in a Multisite Network. There was no security risk here; while the upgrade notice was shown, Child Blog admins who did not have permission to upgrade Network-activated plugins were unable to do anything with the message. See [#259](https://github.com/websharks/quick-cache/issues/259).
-- **Bug Fix (Pro)**: Fixed a bug where, in certain scenarios, a WordPress Plugin may break the JavaScript that controls the Clear Cache button on the Dashboard. See [#272](https://github.com/websharks/quick-cache/issues/259).
+- **Enhancement (Pro)**: HTML Compressor now writes files atomically; this will help avoid race conditions when writing cache files. See [#273](https://github.com/websharks/zencache/issues/273)
+- **Enhancement (Pro)**: Improved error handling for the Auto-Cache Engine. There were some scenarios where `XMLReader()` would fail with a PHP Warning notice when it was unable to properly parse the sitemap. See [#250](https://github.com/websharks/zencache/issues/250).
+- **Bug Fix**: The cache directory is now properly removed when deleting the plugin from the WordPress Dashboard plugins list. See [#261](https://github.com/websharks/zencache/issues/261).
+- **Bug Fix**: WooCommerce compatibility fix for a bug where cart session data appeared to get cached across sessions. See [#253](https://github.com/websharks/zencache/issues/253)
+- **Bug Fix (Pro)**: The plugin upgrade notice no longer appears on Child Blogs in a Multisite Network. There was no security risk here; while the upgrade notice was shown, Child Blog admins who did not have permission to upgrade Network-activated plugins were unable to do anything with the message. See [#259](https://github.com/websharks/zencache/issues/259).
+- **Bug Fix (Pro)**: Fixed a bug where, in certain scenarios, a WordPress Plugin may break the JavaScript that controls the Clear Cache button on the Dashboard. See [#272](https://github.com/websharks/zencache/issues/259).
 - **Bug Fix (Pro)**: CSS files are now excluded from compression by the HTML Compressor when included inside conditional comments. See [#35](https://github.com/websharks/html-compressor/issues/35)
-- **Bug Fix (Pro)**: HTML Compressor now preserves whitespace inside CSS `calc()` statements. See [#286](https://github.com/websharks/quick-cache/issues/286).
+- **Bug Fix (Pro)**: HTML Compressor now preserves whitespace inside CSS `calc()` statements. See [#286](https://github.com/websharks/zencache/issues/286).
 
 = v140725 =
 
-- **Enhancement**: Improved overall performance by optimizing the auto-purge routines. See also: [#130](https://github.com/websharks/quick-cache/issues/130)
-- **Enhancement**: The "GET Requests" UI Panel now explains that you can use `?qcAC=0` to disable caching when you ARE caching GET Requests. See also: [#210](https://github.com/websharks/quick-cache/issues/210).
-- **New Pro Feature: Auto-Purge XML Sitemaps**. If you're generating XML Sitemaps with a plugin like Google XML Sitemaps, you can now tell Quick Cache to automatically purge any cached sitemap files whenever it purges a Post/Page cache. You may also specify a list of XML Sitemap patterns to clear, if you have multiple sitemap files. See also: [#169](https://github.com/websharks/quick-cache/issues/169)
+- **Enhancement**: Improved overall performance by optimizing the auto-purge routines. See also: [#130](https://github.com/websharks/zencache/issues/130)
+- **Enhancement**: The "GET Requests" UI Panel now explains that you can use `?qcAC=0` to disable caching when you ARE caching GET Requests. See also: [#210](https://github.com/websharks/zencache/issues/210).
+- **New Pro Feature: Auto-Purge XML Sitemaps**. If you're generating XML Sitemaps with a plugin like Google XML Sitemaps, you can now tell Quick Cache to automatically purge any cached sitemap files whenever it purges a Post/Page cache. You may also specify a list of XML Sitemap patterns to clear, if you have multiple sitemap files. See also: [#169](https://github.com/websharks/zencache/issues/169)
 - **Enhancement (Pro)**: The Quick Cache Pro Updater now accepts a License Key in place of the WebSharks password.
-- **Enhancement (Pro)**: In a Multisite Network, the Auto-Cache Engine will now also auto-cache each child blog. See also: [#169](https://github.com/websharks/quick-cache/issues/169)
-- **Bug Fix**: Fixed a bug that was causing unapproved, spam, and trash comments to unnecessarily purge the cache. See also: [#159](https://github.com/websharks/quick-cache/issues/159)
-- **Bug Fix**: A custom `WP_CONTENT_DIR` is now obeyed in the scenario where it's set to a path outside of `ABSPATH`. See also: [#95](https://github.com/websharks/quick-cache/issues/95)
-- **Bug Fix**: The UI now correctly displays custom `WP_CONTENT_DIR` in the "Directory/Expiration Time" options panel. See also: [#206](https://github.com/websharks/quick-cache/issues/206)
-- **Bug Fix**: Quick Cache LITE now correctly sets the `QUICK_CACHE_PRO` constant to false. See also: [#229](https://github.com/websharks/quick-cache/issues/229)
-- **Bug Fix**: Workaround for broken page navigation on the front page of some sites. This is a WordPress `redirect_canonical()` bug workaround. See also: [#209](https://github.com/websharks/quick-cache/issues/209)
-- **Bug Fix (Pro)**: 404 Caching now properly returns a 404 HTTP Status code when serving a cached 404 page. See also: [#197](https://github.com/websharks/quick-cache/issues/197)
+- **Enhancement (Pro)**: In a Multisite Network, the Auto-Cache Engine will now also auto-cache each child blog. See also: [#169](https://github.com/websharks/zencache/issues/169)
+- **Bug Fix**: Fixed a bug that was causing unapproved, spam, and trash comments to unnecessarily purge the cache. See also: [#159](https://github.com/websharks/zencache/issues/159)
+- **Bug Fix**: A custom `WP_CONTENT_DIR` is now obeyed in the scenario where it's set to a path outside of `ABSPATH`. See also: [#95](https://github.com/websharks/zencache/issues/95)
+- **Bug Fix**: The UI now correctly displays custom `WP_CONTENT_DIR` in the "Directory/Expiration Time" options panel. See also: [#206](https://github.com/websharks/zencache/issues/206)
+- **Bug Fix**: Quick Cache LITE now correctly sets the `QUICK_CACHE_PRO` constant to false. See also: [#229](https://github.com/websharks/zencache/issues/229)
+- **Bug Fix**: Workaround for broken page navigation on the front page of some sites. This is a WordPress `redirect_canonical()` bug workaround. See also: [#209](https://github.com/websharks/zencache/issues/209)
+- **Bug Fix (Pro)**: 404 Caching now properly returns a 404 HTTP Status code when serving a cached 404 page. See also: [#197](https://github.com/websharks/zencache/issues/197)
 - **Bug Fix (Pro)**: The HTML Compressor now properly preserves `[]` character whitespace during CSS compression. See also: [#25](https://github.com/websharks/html-compressor/issues/25)
-- **Bug Fix (Pro)**: The Pro Updater upgrade link now points to the correction location when displayed from a Child Blog in a Multisite Network. See also: [#205](https://github.com/websharks/quick-cache/issues/205)
+- **Bug Fix (Pro)**: The Pro Updater upgrade link now points to the correction location when displayed from a Child Blog in a Multisite Network. See also: [#205](https://github.com/websharks/zencache/issues/205)
 - **Bug Fix (Pro)**: The Auto-Cache Engine now correctly handles the sitemap when `home_url()` differs from `site_url()`.
-- **Bug Fix (Pro)**: The "Dynamic Version Salt" options panel now correctly displays the last saved value. See also: [#231](https://github.com/websharks/quick-cache/issues/231)
+- **Bug Fix (Pro)**: The "Dynamic Version Salt" options panel now correctly displays the last saved value. See also: [#231](https://github.com/websharks/zencache/issues/231)
 
 = v140605 =
 
@@ -388,10 +388,10 @@ Requires PHP v5.3+. The latest version of Quick Cache is a complete rewrite (OOP
 - **New Feature**: Auto-Purge "Custom Term Archives". When a single Post/Page is changed in some way, Quick Cache can also purge any custom Terms that may have their own Term archive views. See *Dashboard -> Quick Cache -> Plugin Options -> Clearing the Cache*. (This option is enabled by default; disabling this requires Quick Cache Pro.)
 - **Enhancement**: Improved conflict handling of other plugins using `ob_start()`. See <https://github.com/WebSharks/Quick-Cache/issues/97>
 - **Enhancement**: Added a postload filter for `status_header` so that Quick Cache can properly detect calls to the WP core function `status_header()`
-- **Enhancement**: The Quick Cache cache directory has been changed to `wp-content/cache/quick-cache/` to provide better organization of cache files and avoid interfering with another plugin that may also be writing to the `wp-content/cache/` directory. See <https://github.com/WebSharks/Quick-Cache/issues/123>
+- **Enhancement**: The Quick Cache cache directory has been changed to `wp-content/cache/zencache/` to provide better organization of cache files and avoid interfering with another plugin that may also be writing to the `wp-content/cache/` directory. See <https://github.com/WebSharks/Quick-Cache/issues/123>
 - **Enhancement**: New detailed debugging notes (see *Dashboard -> Quick Cache -> Plugin Options -> Enable/Disable*). There is now an extra option to show detailed debugging information in addition to the Quick Cache notes in the HTML source. For now, this feature only applies when the HTML Compressor is enabled.
 - **Enhancement**: Better Debugging Notices. If Quick Cache is not caching a particular page (such as when a logged-in user visits the site and logged-in user caching is not enabled), Quick Cache will now report why that page is not being cached in the HTML notes.
-- **Enhancement**: Improved compatibility with the Nav Menu Roles plugin. See <https://github.com/WebSharks/quick-cache/issues/164>
+- **Enhancement**: Improved compatibility with the Nav Menu Roles plugin. See <https://github.com/WebSharks/zencache/issues/164>
 - **Bug Fix**: Obey custom content directories. If you have customized your `WP_CONTENT_DIR` and `WP_CONTENT_URL` constants to point somewhere other than the default, Quick Cache will now obey those and use your custom directory for storing cache files. See <https://github.com/WebSharks/Quick-Cache/issues/95>
 - **Bug Fix**: Scheduled posts now trigger the clearing of any associated archive views when those posts go live (assuming you have those archive views set to Auto-Purge in *Dashboard -> Quick Cache -> Plugin Options -> Clearing the Cache*). See <https://github.com/WebSharks/Quick-Cache/issues/26>
 - **Bug Fix**: Fixed a bug where saving a post as `draft` would trigger the Auto-Purge Post routine and clear the cache for that post. Now only purges post status `publish` and `private` and when transitioning from `publish` or `private` post status to `draft`, `future`, or `private`. See <https://github.com/WebSharks/Quick-Cache/issues/43>

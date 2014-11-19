@@ -1193,7 +1193,7 @@ namespace zencache
 			$_this = $this; // Reference for the closure below.
 			add_action('template_redirect', function () use ($_this)
 			{ // Move this AFTER `redirect_canonical` to avoid buggy WP behavior.
-				// See <https://github.com/websharks/quick-cache/issues/209#issuecomment-46999230>
+				// See <https://github.com/websharks/zencache/issues/209#issuecomment-46999230>
 				$_this->is_a_wp_content_type = $_this->is_404 || $_this->is_maintenance
 				                               || is_front_page() // See <https://core.trac.wordpress.org/ticket/21602#comment:7>
 				                               || is_home() || is_singular() || is_archive() || is_post_type_archive() || is_tax() || is_search() || is_feed();

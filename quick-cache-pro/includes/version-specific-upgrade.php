@@ -105,7 +105,7 @@ namespace zencache // Root namespace.
 						update_option(__NAMESPACE__.'_options', $this->plugin->options);
 						if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
 					}
-					$this->plugin->enqueue_notice(__('<strong>Quick Cache Feature Notice:</strong> This version of Quick Cache introduces a new <a href="http://www.websharks-inc.com/r/quick-cache-branched-cache-structure-wiki/" target="_blank">Branched Cache Structure</a> and several other <a href="http://www.websharks-inc.com/post/quick-cache-v140605-now-available/" target="_blank">new features</a>.', $this->plugin->text_domain));
+					$this->plugin->enqueue_notice(__('<strong>Quick Cache Feature Notice:</strong> This version of Quick Cache introduces a new <a href="http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/" target="_blank">Branched Cache Structure</a> and several other <a href="http://www.websharks-inc.com/post/zencache-v140605-now-available/" target="_blank">new features</a>.', $this->plugin->text_domain));
 				}
 			}
 

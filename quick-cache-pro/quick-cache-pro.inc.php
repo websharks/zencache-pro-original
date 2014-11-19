@@ -206,7 +206,7 @@ namespace zencache
 
 					/* Related to cache directory. */
 
-					'base_dir'                             => 'cache/quick-cache', // Relative to `WP_CONTENT_DIR`.
+					'base_dir'                             => 'cache/zencache', // Relative to `WP_CONTENT_DIR`.
 					'cache_max_age'                        => '7 days', // `strtotime()` compatible.
 
 					/* Related to automatic cache clearing. */
@@ -1407,7 +1407,7 @@ namespace zencache
 				if($is_disabled && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>%1$s:</strong> detected significant changes that would normally trigger a wipe cache routine, however wipe cache routines have been disabled by a site administrator. [<a href="http://www.websharks-inc.com/r/quick-cache-clear-cache-and-wipe-cache-routines-wiki/" target="_blank">?</a>]', $this->text_domain),
+					                      sprintf(__('<strong>%1$s:</strong> detected significant changes that would normally trigger a wipe cache routine, however wipe cache routines have been disabled by a site administrator. [<a href="http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/" target="_blank">?</a>]', $this->text_domain),
 					                              esc_html($this->name)));
 				}
 				return $is_disabled; // Disabled?
@@ -1490,7 +1490,7 @@ namespace zencache
 				if($is_disabled && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>%1$s:</strong> detected important site changes that would normally trigger a clear cache routine. However, clear cache routines have been disabled by a site administrator. [<a href="http://www.websharks-inc.com/r/quick-cache-clear-cache-and-wipe-cache-routines-wiki/" target="_blank">?</a>]', $this->text_domain),
+					                      sprintf(__('<strong>%1$s:</strong> detected important site changes that would normally trigger a clear cache routine. However, clear cache routines have been disabled by a site administrator. [<a href="http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/" target="_blank">?</a>]', $this->text_domain),
 					                              esc_html($this->name)));
 				}
 				return $is_disabled; // Disabled?
