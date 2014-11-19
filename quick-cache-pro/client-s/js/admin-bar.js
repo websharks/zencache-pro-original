@@ -2,7 +2,7 @@
 	{
 		'use strict'; // Standards.
 
-		var plugin = {namespace: 'quick_cache'},
+		var plugin = {namespace: 'zencache'},
 			$window = $(window), $document = $(document);
 
 		plugin.hideAJAXResponseTimeoutDelay = 0;

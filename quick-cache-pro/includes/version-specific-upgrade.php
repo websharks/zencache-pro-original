@@ -1,5 +1,5 @@
 <?php
-namespace quick_cache // Root namespace.
+namespace zencache // Root namespace.
 {
 	if(!defined('WPINC')) // MUST have WordPress.
 		exit('Do NOT access this file directly: '.basename(__FILE__));
@@ -10,7 +10,7 @@ namespace quick_cache // Root namespace.
 		 * Quick Cache (Upgrade Handlers)
 		 *
 		 * @since 140725 Reorganizing class members.
-		 * @package quick_cache\version_specific_upgrade
+		 * @package zencache\version_specific_upgrade
 		 */
 		class version_specific_upgrade // Version-specific upgrade handlers.
 		{

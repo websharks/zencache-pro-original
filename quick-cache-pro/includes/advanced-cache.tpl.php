@@ -6,12 +6,12 @@
  * The Quick Cache plugin will fill the `%%` replacement codes automatically.
  *    This file becomes: `/wp-content/advanced-cache.php`.
  *
- * @package quick_cache\advanced_cache
+ * @package zencache\advanced_cache
  * @since 140422 First documented version.
  * @copyright WebSharks, Inc. <http://www.websharks-inc.com>
  * @license GNU General Public License, version 2
  */
-namespace quick_cache
+namespace zencache
 {
 	if(!defined('WPINC')) // MUST have WordPress.
 		exit('Do NOT access this file directly: '.basename(__FILE__));
@@ -328,7 +328,7 @@ namespace quick_cache
 	/**
 	 * Quick Cache (Advanced Cache Handler)
 	 *
-	 * @package quick_cache\advanced_cache
+	 * @package zencache\advanced_cache
 	 * @since 140422 First documented version.
 	 */
 	class advanced_cache extends share # `/wp-content/advanced-cache.php`
@@ -572,7 +572,7 @@ namespace quick_cache
 		 *
 		 * @var string A unique string identifier in the set of `NC_DEBUG_` constants.
 		 */
-		const NC_DEBUG_QUICK_CACHE_ALLOWED_CONSTANT = 'nc_debug_quick_cache_allowed_constant';
+		const NC_DEBUG_QUICK_CACHE_ALLOWED_CONSTANT = 'nc_debug_zencache_allowed_constant';
 
 		/**
 		 * No-cache because the `$_SERVER['QUICK_CACHE_ALLOWED']` environment variable says not to.
@@ -581,7 +581,7 @@ namespace quick_cache
 		 *
 		 * @var string A unique string identifier in the set of `NC_DEBUG_` constants.
 		 */
-		const NC_DEBUG_QUICK_CACHE_ALLOWED_SERVER_VAR = 'nc_debug_quick_cache_allowed_server_var';
+		const NC_DEBUG_QUICK_CACHE_ALLOWED_SERVER_VAR = 'nc_debug_zencache_allowed_server_var';
 
 		/**
 		 * No-cache because the {@link \DONOTCACHEPAGE} constant says not to.
@@ -1579,8 +1579,8 @@ namespace // Global namespace.
 	 */
 	function wp_cache_postload() // See: `wp-settings.php`.
 	{
-		$advanced_cache = $GLOBALS['quick_cache__advanced_cache'];
-		/** @var $advanced_cache \quick_cache\advanced_cache */
+		$advanced_cache = $GLOBALS['zencache__advanced_cache'];
+		/** @var $advanced_cache \zencache\advanced_cache */
 		if(!$advanced_cache->is_running) return;
 
 		if(!empty($advanced_cache->postload['invalidate_when_logged_in']))

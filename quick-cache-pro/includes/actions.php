@@ -1,7 +1,7 @@
 <?php
 // @TODO Add docBlocks to this class.
 
-namespace quick_cache // Root namespace.
+namespace zencache // Root namespace.
 {
 	if(!defined('WPINC')) // MUST have WordPress.
 		exit('Do NOT access this file directly: '.basename(__FILE__));

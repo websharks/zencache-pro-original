@@ -1,5 +1,5 @@
 <?php
-namespace quick_cache // Root namespace.
+namespace zencache // Root namespace.
 {
 	if(!defined('WPINC')) // MUST have WordPress.
 		exit('Do NOT access this file directly: '.basename(__FILE__));
@@ -9,7 +9,7 @@ namespace quick_cache // Root namespace.
 		/**
 		 * Quick Cache (Shared Methods)
 		 *
-		 * @package quick_cache\share
+		 * @package zencache\share
 		 * @since 140725 Reorganizing class members.
 		 */
 		abstract class share // Shared between {@link advanced_cache} and {@link plugin}.

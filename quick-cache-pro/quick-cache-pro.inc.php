@@ -2,12 +2,12 @@
 /**
  * Quick Cache Plugin
  *
- * @package quick_cache\plugin
+ * @package zencache\plugin
  * @since 140422 First documented version.
  * @copyright WebSharks, Inc. <http://www.websharks-inc.com>
  * @license GNU General Public License, version 2
  */
-namespace quick_cache
+namespace zencache
 {
 	if(!defined('WPINC')) // MUST have WordPress.
 		exit('Do NOT access this file directly: '.basename(__FILE__));
@@ -19,7 +19,7 @@ namespace quick_cache
 		/**
 		 * Quick Cache Plugin
 		 *
-		 * @package quick_cache\plugin
+		 * @package zencache\plugin
 		 * @since 140422 First documented version.
 		 */
 		class plugin extends share
@@ -1123,7 +1123,7 @@ namespace quick_cache
 			 *
 			 * @since 140422 First documented version.
 			 *
-			 * @attaches-to `_cron_quick_cache_auto_cache` hook.
+			 * @attaches-to `_cron_zencache_auto_cache` hook.
 			 */
 			public function auto_cache()
 			{
@@ -1380,15 +1380,15 @@ namespace quick_cache
 			/**
 			 * Allows a site owner to disable the wipe cache routines.
 			 *
-			 * This is done by filtering `quick_cache_disable_auto_wipe_cache_routines` to return TRUE,
+			 * This is done by filtering `zencache_disable_auto_wipe_cache_routines` to return TRUE,
 			 *    in which case this method returns TRUE, otherwise it returns FALSE.
 			 *
 			 * @since 141001 First documented version.
 			 *
-			 * @TODO @raamdev I noticed that you used `quick_cache_` in this filter.
+			 * @TODO @raamdev I noticed that you used `zencache_` in this filter.
 			 *    Moving forward, I'd suggest that we use `__METHOD__` instead, as seen elsewhere in the codebase.
 			 *    This allows us to rebrand the software under a different namespace quite easily. Changing the namespace changes everything.
-			 *    In the future, we could even work to enhance this further, by avoiding anything that hard-codes `quick_cache` or `Quick Cache`.
+			 *    In the future, we could even work to enhance this further, by avoiding anything that hard-codes `zencache` or `Quick Cache`.
 			 *    Instead, we might create a class property; e.g. `$this->name = 'Quick Cache';` so it's available when we need to call the plugin by name.
 			 *
 			 * @raamdev UPDATE: I added two new properties that we can start using for the plugin name, to help make a name transition easier.
@@ -1402,7 +1402,7 @@ namespace quick_cache
 			 */
 			public function disable_auto_wipe_cache_routines()
 			{
-				$is_disabled = (boolean)apply_filters('quick_cache_disable_auto_wipe_cache_routines', FALSE);
+				$is_disabled = (boolean)apply_filters('zencache_disable_auto_wipe_cache_routines', FALSE);
 
 				if($is_disabled && is_admin() && $this->options['change_notifications_enable'])
 				{
@@ -1463,15 +1463,15 @@ namespace quick_cache
 			/**
 			 * Allows a site owner to disable the clear and wipe cache routines.
 			 *
-			 * This is done by filtering `quick_cache_disable_auto_clear_cache_routines` to return TRUE,
+			 * This is done by filtering `zencache_disable_auto_clear_cache_routines` to return TRUE,
 			 *    in which case this method returns TRUE, otherwise it returns FALSE.
 			 *
 			 * @since 141001 First documented version.
 			 *
-			 * @TODO @raamdev I noticed that you used `quick_cache_` in this filter.
+			 * @TODO @raamdev I noticed that you used `zencache_` in this filter.
 			 *    Moving forward, I'd suggest that we use `__METHOD__` instead, as seen elsewhere in the codebase.
 			 *    This allows us to rebrand the software under a different namespace quite easily. Changing the namespace changes everything.
-			 *    In the future, we could even work to enhance this further, by avoiding anything that hard-codes `quick_cache` or `Quick Cache`.
+			 *    In the future, we could even work to enhance this further, by avoiding anything that hard-codes `zencache` or `Quick Cache`.
 			 *    Instead, we might create a class property; e.g. `$this->name = 'Quick Cache';` so it's available when we need to call the plugin by name.
 			 *
 			 * @raamdev UPDATE: I added two new properties that we can start using for the plugin name, to help make a name transition easier.
@@ -1485,7 +1485,7 @@ namespace quick_cache
 			 */
 			public function disable_auto_clear_cache_routines()
 			{
-				$is_disabled = (boolean)apply_filters('quick_cache_disable_auto_clear_cache_routines', FALSE);
+				$is_disabled = (boolean)apply_filters('zencache_disable_auto_clear_cache_routines', FALSE);
 
 				if($is_disabled && is_admin() && $this->options['change_notifications_enable'])
 				{
@@ -2793,7 +2793,7 @@ namespace quick_cache
 			 * @since 140422 First documented version.
 			 *
 			 * @note Many of the Quick Cache option values become PHP Constants in the `advanced-cache.php` file.
-			 *    We take an option key (e.g. `version_salt`) and prefix it with `quick_cache_`.
+			 *    We take an option key (e.g. `version_salt`) and prefix it with `zencache_`.
 			 *    Then we convert it to uppercase (e.g. `QUICK_CACHE_VERSION_SALT`) and wrap
 			 *    it with double percent signs to form a replacement codes.
 			 *    ex: `%%QUICK_CACHE_VERSION_SALT%%`

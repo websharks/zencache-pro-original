@@ -12,9 +12,9 @@ function my_ac_plugin() // Example plugin.
 	/**
 	 * All plugins need a reference to this class object instance.
 	 *
-	 * @var $ac \quick_cache\advanced_cache Object instance.
+	 * @var $ac \zencache\advanced_cache Object instance.
 	 */
-	$ac = $GLOBALS['quick_cache__advanced_cache']; // See: `advanced-cache.php`.
+	$ac = $GLOBALS['zencache__advanced_cache']; // See: `advanced-cache.php`.
 
 	/*
 	 * This plugin will dynamically modify the version salt.

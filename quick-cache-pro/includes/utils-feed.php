@@ -2,12 +2,12 @@
 /**
  * Feed Utilities
  *
- * @package quick_cache\utils_feed
+ * @package zencache\utils_feed
  * @since 14xxxx Refactoring cache clear/purge routines.
  * @copyright WebSharks, Inc. <http://www.websharks-inc.com>
  * @license GNU General Public License, version 2
  */
-namespace quick_cache // Root namespace.
+namespace zencache // Root namespace.
 {
 	if(!defined('WPINC')) // MUST have WordPress.
 		exit('Do NOT access this file directly: '.basename(__FILE__));

@@ -2,7 +2,7 @@
 /**
  * Quick Cache API Class.
  *
- * @package quick_cache\api
+ * @package zencache\api
  * @since 140420 API class addition.
  * @copyright WebSharks, Inc. <http://www.websharks-inc.com>
  * @license GNU General Public License, version 2
@@ -15,12 +15,12 @@ namespace // Global namespace.
 	/**
 	 * Quick Cache API Class.
 	 */
-	class quick_cache
+	class zencache
 	{
 		/**
 		 * Current QC plugin instance.
 		 *
-		 * @return \quick_cache\plugin instance.
+		 * @return \zencache\plugin instance.
 		 */
 		public static function plugin()
 		{
@@ -76,7 +76,7 @@ namespace // Global namespace.
 		/**
 		 * This wipes out the entire cache.
 		 *
-		 * @note On a standard WP installation this is the same as quick_cache::clear();
+		 * @note On a standard WP installation this is the same as zencache::clear();
 		 *    but on a multisite installation it impacts the entire network
 		 *    (i.e. wipes the cache for all blogs in the network).
 		 *

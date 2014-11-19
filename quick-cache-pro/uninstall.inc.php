@@ -2,12 +2,12 @@
 /**
  * Quick Cache Uninstaller
  *
- * @package quick_cache\uninstall
+ * @package zencache\uninstall
  * @since 140829 Adding plugin uninstaller.
  * @copyright WebSharks, Inc. <http://www.websharks-inc.com>
  * @license GNU General Public License, version 2
  */
-namespace quick_cache
+namespace zencache
 {
 	if(!defined('WPINC')) // MUST have WordPress.
 		exit('Do NOT access this file directly: '.basename(__FILE__));
