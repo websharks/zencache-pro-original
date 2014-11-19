@@ -906,7 +906,7 @@ msgid "Enable WebSharks™ HTML Compression?"
 msgstr ""
 
 #: includes/menu-pages.php:473
-msgid "This is an experimental feature, however it offers a potentially HUGE speed boost. You can <a href=\"https://github.com/WebSharks/HTML-Compressor\" target=\"_blank\">learn more here</a>. Please use with caution."
+msgid "This is an experimental feature, however it offers a potentially HUGE speed boost. You can <a href=\"https://github.com/websharks/HTML-Compressor\" target=\"_blank\">learn more here</a>. Please use with caution."
 msgstr ""
 
 #: includes/menu-pages.php:475
@@ -922,7 +922,7 @@ msgid "Yes, I want to compress HTML/CSS/JS for blazing fast speeds."
 msgstr ""
 
 #: includes/menu-pages.php:480
-msgid "<strong>Note:</strong> This is experimental. Please <a href=\"https://github.com/WebSharks/HTML-Compressor/issues\" target=\"_blank\">report issues here</a>."
+msgid "<strong>Note:</strong> This is experimental. Please <a href=\"https://github.com/websharks/HTML-Compressor/issues\" target=\"_blank\">report issues here</a>."
 msgstr ""
 
 #: includes/menu-pages.php:483
@@ -930,7 +930,7 @@ msgid "HTML Compression Options"
 msgstr ""
 
 #: includes/menu-pages.php:484
-msgid "You can <a href=\"https://github.com/WebSharks/HTML-Compressor\" target=\"_blank\">learn more about all of these options here</a>."
+msgid "You can <a href=\"https://github.com/websharks/HTML-Compressor\" target=\"_blank\">learn more about all of these options here</a>."
 msgstr ""
 
 #: includes/menu-pages.php:486
@@ -1022,7 +1022,7 @@ msgid "<strong>Tip:</strong> the value that you specify here MUST be compatible 
 msgstr ""
 
 #: includes/menu-pages.php:530
-msgid "<strong>Note:</strong> This does NOT impact the overall cache expiration time that you configure with ZenCache. It only impacts the sub-routines provided by the HTML Compressor. In fact, this expiration time is mostly irrelevant. The HTML Compressor uses an internal checksum, and it also checks <code>filemtime()</code> before using an existing cache file. The HTML Compressor class also handles the automatic cleanup of your cache directories to keep it from growing too large over time. Therefore, unless you have VERY little disk space there is no reason to set this to a lower value (even if your site changes dynamically quite often). If anything, you might like to increase this value which could help to further reduce server load. You can <a href=\"https://github.com/WebSharks/HTML-Compressor\" target=\"_blank\">learn more here</a>. We recommend setting this value to at least double that of your overall ZenCache expiration time."
+msgid "<strong>Note:</strong> This does NOT impact the overall cache expiration time that you configure with ZenCache. It only impacts the sub-routines provided by the HTML Compressor. In fact, this expiration time is mostly irrelevant. The HTML Compressor uses an internal checksum, and it also checks <code>filemtime()</code> before using an existing cache file. The HTML Compressor class also handles the automatic cleanup of your cache directories to keep it from growing too large over time. Therefore, unless you have VERY little disk space there is no reason to set this to a lower value (even if your site changes dynamically quite often). If anything, you might like to increase this value which could help to further reduce server load. You can <a href=\"https://github.com/websharks/HTML-Compressor\" target=\"_blank\">learn more here</a>. We recommend setting this value to at least double that of your overall ZenCache expiration time."
 msgstr ""
 
 #: includes/menu-pages.php:539
@@ -1106,7 +1106,7 @@ msgid "Writing \"Advanced Cache\" Plugins Specifically for ZenCache"
 msgstr ""
 
 #: includes/menu-pages.php:591
-msgid "Theme/plugin developers can take advantage of the ZenCache plugin architecture by creating PHP files inside this special directory: <code>/wp-content/ac-plugins/</code>. There is an <a href=\"https://github.com/WebSharks/zencache/blob/000000-dev/zencache/includes/ac-plugin.example.php\" target=\"_blank\">example plugin file @ GitHub</a> (please review it carefully and ask questions). If you develop a plugin for ZenCache, please share it with the community by publishing it in the plugins respository at WordPress.org."
+msgid "Theme/plugin developers can take advantage of the ZenCache plugin architecture by creating PHP files inside this special directory: <code>/wp-content/ac-plugins/</code>. There is an <a href=\"https://github.com/websharks/zencache/blob/000000-dev/zencache/includes/ac-plugin.example.php\" target=\"_blank\">example plugin file @ GitHub</a> (please review it carefully and ask questions). If you develop a plugin for ZenCache, please share it with the community by publishing it in the plugins respository at WordPress.org."
 msgstr ""
 
 #: includes/menu-pages.php:592

@@ -1349,7 +1349,7 @@ namespace zencache
 		 *
 		 * @return string The `$cache` with HTML compression applied (if applicable).
 		 *
-		 * @see https://github.com/WebSharks/HTML-Compressor
+		 * @see https://github.com/websharks/HTML-Compressor
 		 */
 		public function maybe_compress_html($cache)
 		{
