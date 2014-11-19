@@ -119,7 +119,7 @@ namespace zencache // Root namespace.
 			echo '      <hr />'."\n";
 			echo '      <p class="info">'.__('<strong>HUGE Time-Saver:</strong> Approx. 95% of all WordPress sites running ZenCache, simply enable it here; and that\'s it :-) <strong>No further configuration is necessary (really).</strong> All of the other options (down below) are already tuned for the BEST performance on a typical WordPress installation. Simply enable ZenCache here and click "Save All Changes". If you get any warnings please follow the instructions given. Otherwise, you\'re good <i class="fa fa-smile-o"></i>. This plugin is designed to run just fine like it is. Take it for a spin right away; you can always fine-tune things later if you deem necessary.', $this->plugin->text_domain).'</p>'."\n";
 			echo '      <hr />'."\n";
-			echo '      <img src="'.esc_attr($this->plugin->url('/client-s/images/db-screenshot.png')).'" class="screenshot" />'."\n";
+			echo '      <img src="'.esc_attr($this->plugin->url('/client-s/images/source-code-ss.png')).'" class="screenshot" />'."\n";
 			echo '      <h3>'.__('How Can I Tell ZenCache is Working?', $this->plugin->text_domain).'</h3>'."\n";
 			echo '      <p>'.__('First of all, please make sure that you\'ve enabled ZenCache here; then scroll down to the bottom of this page and click "Save All Changes". All of the other options (below) are already pre-configured for typical usage. Feel free to skip them all for now. You can go back through all of these later and fine-tune things the way you like them.', $this->plugin->text_domain).'</p>'."\n";
 			echo '      <p>'.__('Once ZenCache has been enabled, <strong>you\'ll need to log out (and/or clear browser cookies)</strong>. By default, cache files are NOT served to visitors who are logged-in, and that includes you too ;-) Cache files are NOT served to recent comment authors either. If you\'ve commented (or replied to a comment lately); please clear your browser cookies before testing.', $this->plugin->text_domain).'</p>'."\n";
@@ -159,7 +159,7 @@ namespace zencache // Root namespace.
 
 			echo '   <div class="plugin-menu-page-panel-body clearfix">'."\n";
 			echo '      <h2 style="margin-top:0; font-weight:bold;">'.__('Clearing the Cache Manually', $this->plugin->text_domain).'</h2>'."\n";
-			echo '      <img src="'.esc_attr($this->plugin->url('/client-s/images/cc-screenshot.png')).'" class="screenshot" />'."\n";
+			echo '      <img src="'.esc_attr($this->plugin->url('/client-s/images/clear-cache-ss.png')).'" class="screenshot" />'."\n";
 			echo '      <p>'.__('Once ZenCache is enabled, you will find this new option in your WordPress Admin Bar (see screenshot on right). Clicking this button will clear the cache and you can start fresh at anytime (e.g. you can do this manually; and as often as you wish).', $this->plugin->text_domain).'</p>'."\n";
 			echo '      <p>'.__('Depending on the structure of your site, there could be many reasons to clear the cache. However, the most common reasons are related to Post/Page edits or deletions, Category/Tag edits or deletions, and Theme changes. ZenCache handles most scenarios all by itself. However, many site owners like to clear the cache manually; for a variety of reasons (just to force a refresh).', $this->plugin->text_domain).'</p>'."\n";
 			echo '      <p><select name="'.esc_attr(__NAMESPACE__).'[save_options][admin_bar_enable]" style="width:auto;">'."\n";
@@ -179,7 +179,7 @@ namespace zencache // Root namespace.
 			echo '      <p class="info" style="margin-top:0;">'.__('<strong>Example:</strong> <code>&lt;?php apc_clear_cache(); echo \'&lt;p&gt;Also cleared APC cache.&lt;/p&gt;\'; ?&gt;</code>', $this->plugin->text_domain).'</p>'."\n";
 			echo '      <hr />'."\n";
 			echo '      <h2 style="font-weight:bold;">'.__('Clearing the Cache Automatically', $this->plugin->text_domain).'</h2>'."\n";
-			echo '      <img src="'.esc_attr($this->plugin->url('/client-s/images/ap-screenshot.png')).'" class="screenshot" />'."\n";
+			echo '      <img src="'.esc_attr($this->plugin->url('/client-s/images/auto-clear-ss.png')).'" class="screenshot" />'."\n";
 			echo '      <p>'.__('This is built into the ZenCache plugin; e.g. this functionality is "always on". If you edit a Post/Page (or delete one), ZenCache will automatically clear the cache file(s) associated with that content. This way a new updated version of the cache will be created automatically the next time this content is accessed. Simple updates like this occur each time you make changes in the Dashboard, and ZenCache will notify you of these as they occur. ZenCache monitors changes to Posts (of any kind, including Pages), Categories, Tags, Links, Themes (even Users); and more. Notifications in the Dashboard regarding these detections can be enabled/disabled below.', $this->plugin->text_domain).'</p>'."\n";
 			echo '      <p><select name="'.esc_attr(__NAMESPACE__).'[save_options][change_notifications_enable]" style="width:auto;">'."\n";
 			echo '            <option value="1"'.selected($this->plugin->options['change_notifications_enable'], '1', FALSE).'>'.__('Yes, enable ZenCache notifications in the Dashboard when changes are detected &amp; one or more cache files are cleared automatically.', $this->plugin->text_domain).'</option>'."\n";
