@@ -107,11 +107,11 @@ msgid "because `$_SERVER['REQUEST_URI']` is missing from your server configurati
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1443
-msgid "because the PHP constant `QUICK_CACHE_ALLOWED` has been set to a boolean-ish `FALSE` value at runtime. Perhaps by WordPress itself, or by one of your themes/plugins. This usually means that you have a theme/plugin intentionally disabling the cache on this page; and it's usually for a very good reason."
+msgid "because the PHP constant `ZENCACHE_ALLOWED` has been set to a boolean-ish `FALSE` value at runtime. Perhaps by WordPress itself, or by one of your themes/plugins. This usually means that you have a theme/plugin intentionally disabling the cache on this page; and it's usually for a very good reason."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1447
-msgid "because the environment variable `$_SERVER['QUICK_CACHE_ALLOWED']` has been set to a boolean-ish `FALSE` value at runtime. Perhaps by WordPress itself, or by one of your themes/plugins. This usually means that you have a theme/plugin intentionally disabling the cache on this page; and it's usually for a very good reason."
+msgid "because the environment variable `$_SERVER['ZENCACHE_ALLOWED']` has been set to a boolean-ish `FALSE` value at runtime. Perhaps by WordPress itself, or by one of your themes/plugins. This usually means that you have a theme/plugin intentionally disabling the cache on this page; and it's usually for a very good reason."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1451
@@ -764,7 +764,7 @@ msgid "<strong>How does ZenCache cache 404 requests?</strong> ZenCache will crea
 msgstr ""
 
 #: includes/menu-pages.php:356
-msgid "<strong>Advanced Tip:</strong> The default 404 cache filename (<code>----404----.html</code>) is designed to minimize the chance of a collision with a cache file for a real page with the same name. However, if you want to override this default and define your own 404 cache filename, you can do so by adding <code>define('QUICK_CACHE_404_CACHE_FILENAME', 'your-404-cache-filename');</code> to your <code>wp-config.php</code> file (note that the <code>.html</code> extension should be excluded when defining a new filename)."
+msgid "<strong>Advanced Tip:</strong> The default 404 cache filename (<code>----404----.html</code>) is designed to minimize the chance of a collision with a cache file for a real page with the same name. However, if you want to override this default and define your own 404 cache filename, you can do so by adding <code>define('ZENCACHE_404_CACHE_FILENAME', 'your-404-cache-filename');</code> to your <code>wp-config.php</code> file (note that the <code>.html</code> extension should be excluded when defining a new filename)."
 msgstr ""
 
 #: includes/menu-pages.php:364
@@ -1098,7 +1098,7 @@ msgid "Developing a Theme or Plugin for WordPress?"
 msgstr ""
 
 #: includes/menu-pages.php:588
-msgid "<strong>Tip:</strong> ZenCache can be disabled temporarily. If you're a theme/plugin developer, you can set a flag within your PHP code to disable the cache engine at runtime. Perhaps on a specific page, or in a specific scenario. In your PHP script, set: <code>$_SERVER['QUICK_CACHE_ALLOWED'] = FALSE;</code> or <code>define('QUICK_CACHE_ALLOWED', FALSE)</code>. ZenCache is also compatible with: <code>define('DONOTCACHEPAGE', TRUE)</code>. It does't matter where or when you define one of these, because ZenCache is the last thing to run before script execution ends."
+msgid "<strong>Tip:</strong> ZenCache can be disabled temporarily. If you're a theme/plugin developer, you can set a flag within your PHP code to disable the cache engine at runtime. Perhaps on a specific page, or in a specific scenario. In your PHP script, set: <code>$_SERVER['ZENCACHE_ALLOWED'] = FALSE;</code> or <code>define('ZENCACHE_ALLOWED', FALSE)</code>. ZenCache is also compatible with: <code>define('DONOTCACHEPAGE', TRUE)</code>. It does't matter where or when you define one of these, because ZenCache is the last thing to run before script execution ends."
 msgstr ""
 
 #: includes/menu-pages.php:590

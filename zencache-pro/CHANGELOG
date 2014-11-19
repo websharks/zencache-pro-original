@@ -26,7 +26,7 @@
 - **Bug Fix**: Fixed a bug that was causing unapproved, spam, and trash comments to unnecessarily purge the cache. See also: [#159](https://github.com/websharks/zencache/issues/159)
 - **Bug Fix**: A custom `WP_CONTENT_DIR` is now obeyed in the scenario where it's set to a path outside of `ABSPATH`. See also: [#95](https://github.com/websharks/zencache/issues/95)
 - **Bug Fix**: The UI now correctly displays custom `WP_CONTENT_DIR` in the "Directory/Expiration Time" options panel. See also: [#206](https://github.com/websharks/zencache/issues/206)
-- **Bug Fix**: ZenCache LITE now correctly sets the `QUICK_CACHE_PRO` constant to false. See also: [#229](https://github.com/websharks/zencache/issues/229)
+- **Bug Fix**: ZenCache LITE now correctly sets the `ZENCACHE_PRO` constant to false. See also: [#229](https://github.com/websharks/zencache/issues/229)
 - **Bug Fix**: Workaround for broken page navigation on the front page of some sites. This is a WordPress `redirect_canonical()` bug workaround. See also: [#209](https://github.com/websharks/zencache/issues/209)
 - **Bug Fix (Pro)**: 404 Caching now properly returns a 404 HTTP Status code when serving a cached 404 page. See also: [#197](https://github.com/websharks/zencache/issues/197)
 - **Bug Fix (Pro)**: The HTML Compressor now properly preserves `[]` character whitespace during CSS compression. See also: [#25](https://github.com/websharks/html-compressor/issues/25)
@@ -196,7 +196,7 @@
 
 * Support for `glob()` has been added to ZenCache. In previous versions, it was impossible to pinpoint a specific cache file through Dynamic Pruning routines ( at least, not with 100% accuracy ). This was because an MD5 Version Salt *could* have been generated; based on arbitrary conditionals, set by the site owner. ZenCache now stores its cache files with three MD5 hash strings, producing longer file names; but with the added benefit of improved Multisite compatibility, and improvements in optimization overall. ZenCache can now handle dynamic pruning with 100% accuracy. Even supporting complex Multisite installations, with or without `SUBDOMAIN_INSTALL`.
 * New feature. ZenCache now integrates a `Clear ZenCache` button into the WordPress® Dashboard. This makes it easy to force a "cache reset, via <code>ajax</code>", without having to navigate through the ZenCache menu for this simple task. Another great benefit to this new button, is that it works in all Dashboard views, even in a Multisite installation across different backends. If you're running a Multisite installation, you can use this new button to clear the cache for a particular site/blog in your network, without interrupting others.
-* Bug fix. The Constant `QUICK_CACHE_ALLOWED` was being defined too early in the buffering routine. This has been resolved in v2.2.1.
+* Bug fix. The Constant `ZENCACHE_ALLOWED` was being defined too early in the buffering routine. This has been resolved in v2.2.1.
 * Optimization of `advanced-cache.php`. A few things have been streamlined even further.
 * Added compatibility for the [WP Maintenance Mode](http://wordpress.org/extend/plugins/wp-maintenance-mode/) plugin, and also the [Maintenance Mode](http://wordpress.org/extend/plugins/maintenance-mode/) plugin. ZenCache will disable itself when these plugins are enabled for maintenance.
 * Added compatibility for other Maintenance Mode plugins that are capable of sending a `Status: 503` header, or a `Retry-After:` header.
@@ -303,7 +303,7 @@
 
 = v1.2 =
 
-* We've implemented a way for plugin developers to disallow caching during certain routines or on specific pages. You can set the following PHP Constant at runtime to disable caching. `define("QUICK_CACHE_ALLOWED", false)`. We have also added backward compatibility for WP Super Cache, so that `define("DONOTCACHEPAGE", true)` will also be supported by plugins that have previously been written for compatibility with Super Cache. In other words, ZenCache looks for either of these two Constants.
+* We've implemented a way for plugin developers to disallow caching during certain routines or on specific pages. You can set the following PHP Constant at runtime to disable caching. `define("ZENCACHE_ALLOWED", false)`. We have also added backward compatibility for WP Super Cache, so that `define("DONOTCACHEPAGE", true)` will also be supported by plugins that have previously been written for compatibility with Super Cache. In other words, ZenCache looks for either of these two Constants.
 
 = v1.1 =
 

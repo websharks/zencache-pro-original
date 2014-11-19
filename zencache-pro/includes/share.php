@@ -247,8 +247,8 @@ namespace zencache // Root namespace.
 				if(method_exists($this, 'wp_content_base_dir_to') && isset($this->cache_sub_dir))
 					$cache_dir = $this->wp_content_base_dir_to($this->cache_sub_dir);
 
-				else if(defined('QUICK_CACHE_DIR') && QUICK_CACHE_DIR)
-					$cache_dir = QUICK_CACHE_DIR; // Global constant.
+				else if(defined('ZENCACHE_DIR') && ZENCACHE_DIR)
+					$cache_dir = ZENCACHE_DIR; // Global constant.
 
 				if(empty($cache_dir)) // No cache directory?
 					throw new \exception(__('Unable to determine cache directory location.', $this->text_domain));

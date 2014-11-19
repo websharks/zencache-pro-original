@@ -169,13 +169,13 @@ If your installation of Apache does not have `mod_deflate` installed. You can al
 = I'm a plugin developer. How can I prevent certain files from being cached? =
 
 	<?php
-	define('QUICK_CACHE_ALLOWED', FALSE); // The easiest way.
-	// or $_SERVER['QUICK_CACHE_ALLOWED'] = FALSE; // Also very easy.
+	define('ZENCACHE_ALLOWED', FALSE); // The easiest way.
+	// or $_SERVER['ZENCACHE_ALLOWED'] = FALSE; // Also very easy.
 	// or define('DONOTCACHEPAGE', TRUE); // For compatibility with other cache plugins.
 
-When your script finishes execution, ZenCache will know that it should NOT cache that particular page. It does not matter where or when you define this Constant; e.g. `define('QUICK_CACHE_ALLOWED', FALSE);` because ZenCache is the last thing to run during execution. So as long as you define this Constant at some point in your routines, everything will be fine.
+When your script finishes execution, ZenCache will know that it should NOT cache that particular page. It does not matter where or when you define this Constant; e.g. `define('ZENCACHE_ALLOWED', FALSE);` because ZenCache is the last thing to run during execution. So as long as you define this Constant at some point in your routines, everything will be fine.
 
-ZenCache also provides support for `define('DONOTCACHEPAGE', TRUE)`, which is used by the WP Super Cache plugin as well. Another option is: `$_SERVER['QUICK_CACHE_ALLOWED'] = FALSE`. The `$_SERVER` array method is useful if you need to disable caching at the Apache level using `mod_rewrite`. The `$_SERVER` array is filled with all environment variables, so if you use `mod_rewrite` to set the `QUICK_CACHE_ALLOWED` environment variable, that will end up in `$_SERVER['QUICK_CACHE_ALLOWED']`. All of these methods have the same end result, so it's up to you which one you'd like to use.
+ZenCache also provides support for `define('DONOTCACHEPAGE', TRUE)`, which is used by the WP Super Cache plugin as well. Another option is: `$_SERVER['ZENCACHE_ALLOWED'] = FALSE`. The `$_SERVER` array method is useful if you need to disable caching at the Apache level using `mod_rewrite`. The `$_SERVER` array is filled with all environment variables, so if you use `mod_rewrite` to set the `ZENCACHE_ALLOWED` environment variable, that will end up in `$_SERVER['ZENCACHE_ALLOWED']`. All of these methods have the same end result, so it's up to you which one you'd like to use.
 
 = What should my expiration setting be? =
 
@@ -368,7 +368,7 @@ Requires PHP v5.3+. The latest version of ZenCache is a complete rewrite (OOP de
 - **Bug Fix**: Fixed a bug that was causing unapproved, spam, and trash comments to unnecessarily purge the cache. See also: [#159](https://github.com/websharks/zencache/issues/159)
 - **Bug Fix**: A custom `WP_CONTENT_DIR` is now obeyed in the scenario where it's set to a path outside of `ABSPATH`. See also: [#95](https://github.com/websharks/zencache/issues/95)
 - **Bug Fix**: The UI now correctly displays custom `WP_CONTENT_DIR` in the "Directory/Expiration Time" options panel. See also: [#206](https://github.com/websharks/zencache/issues/206)
-- **Bug Fix**: ZenCache LITE now correctly sets the `QUICK_CACHE_PRO` constant to false. See also: [#229](https://github.com/websharks/zencache/issues/229)
+- **Bug Fix**: ZenCache LITE now correctly sets the `ZENCACHE_PRO` constant to false. See also: [#229](https://github.com/websharks/zencache/issues/229)
 - **Bug Fix**: Workaround for broken page navigation on the front page of some sites. This is a WordPress `redirect_canonical()` bug workaround. See also: [#209](https://github.com/websharks/zencache/issues/209)
 - **Bug Fix (Pro)**: 404 Caching now properly returns a 404 HTTP Status code when serving a cached 404 page. See also: [#197](https://github.com/websharks/zencache/issues/197)
 - **Bug Fix (Pro)**: The HTML Compressor now properly preserves `[]` character whitespace during CSS compression. See also: [#25](https://github.com/websharks/html-compressor/issues/25)

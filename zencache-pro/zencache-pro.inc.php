@@ -2794,9 +2794,9 @@ namespace zencache
 			 *
 			 * @note Many of the ZenCache option values become PHP Constants in the `advanced-cache.php` file.
 			 *    We take an option key (e.g. `version_salt`) and prefix it with `zencache_`.
-			 *    Then we convert it to uppercase (e.g. `QUICK_CACHE_VERSION_SALT`) and wrap
+			 *    Then we convert it to uppercase (e.g. `ZENCACHE_VERSION_SALT`) and wrap
 			 *    it with double percent signs to form a replacement codes.
-			 *    ex: `%%QUICK_CACHE_VERSION_SALT%%`
+			 *    ex: `%%ZENCACHE_VERSION_SALT%%`
 			 *
 			 * @note There are a few special options considered by this routine which actually
 			 *    get converted to regex patterns before they become replacement codes.

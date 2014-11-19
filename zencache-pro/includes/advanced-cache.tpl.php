@@ -23,9 +23,9 @@ namespace zencache
 	 *
 	 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 	 */
-	define('QUICK_CACHE_PRO', TRUE); // Note that we do NOT check `if(defined())` here.
+	define('ZENCACHE_PRO', TRUE); // Note that we do NOT check `if(defined())` here.
 
-	if(!defined('QUICK_CACHE_ENABLE'))
+	if(!defined('ZENCACHE_ENABLE'))
 		/**
 		 * Is ZenCache enabled?
 		 *
@@ -33,9 +33,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_ENABLE', '%%QUICK_CACHE_ENABLE%%');
+		define('ZENCACHE_ENABLE', '%%ZENCACHE_ENABLE%%');
 
-	if(!defined('QUICK_CACHE_DEBUGGING_ENABLE'))
+	if(!defined('ZENCACHE_DEBUGGING_ENABLE'))
 		/**
 		 * Is ZenCache debugging enabled?
 		 *
@@ -43,9 +43,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_DEBUGGING_ENABLE', '%%QUICK_CACHE_DEBUGGING_ENABLE%%');
+		define('ZENCACHE_DEBUGGING_ENABLE', '%%ZENCACHE_DEBUGGING_ENABLE%%');
 
-	if(!defined('QUICK_CACHE_ALLOW_BROWSER_CACHE'))
+	if(!defined('ZENCACHE_ALLOW_BROWSER_CACHE'))
 		/**
 		 * Allow browsers to cache each document?
 		 *
@@ -56,9 +56,9 @@ namespace zencache
 		 * @note If this is a `FALSE` (or an empty) value; ZenCache will send no-cache headers.
 		 *    If `TRUE`, ZenCache will NOT send no-cache headers.
 		 */
-		define('QUICK_CACHE_ALLOW_BROWSER_CACHE', '%%QUICK_CACHE_ALLOW_BROWSER_CACHE%%');
+		define('ZENCACHE_ALLOW_BROWSER_CACHE', '%%ZENCACHE_ALLOW_BROWSER_CACHE%%');
 
-	if(!defined('QUICK_CACHE_GET_REQUESTS'))
+	if(!defined('ZENCACHE_GET_REQUESTS'))
 		/**
 		 * Cache `$_GET` requests w/ a query string?
 		 *
@@ -66,9 +66,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_GET_REQUESTS', '%%QUICK_CACHE_GET_REQUESTS%%');
+		define('ZENCACHE_GET_REQUESTS', '%%ZENCACHE_GET_REQUESTS%%');
 
-	if(!defined('QUICK_CACHE_CACHE_404_REQUESTS'))
+	if(!defined('ZENCACHE_CACHE_404_REQUESTS'))
 		/**
 		 * Cache 404 errors?
 		 *
@@ -76,9 +76,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_CACHE_404_REQUESTS', '%%QUICK_CACHE_CACHE_404_REQUESTS%%');
+		define('ZENCACHE_CACHE_404_REQUESTS', '%%ZENCACHE_CACHE_404_REQUESTS%%');
 
-	if(!defined('QUICK_CACHE_FEEDS_ENABLE'))
+	if(!defined('ZENCACHE_FEEDS_ENABLE'))
 		/**
 		 * Cache XML/RSS/Atom feeds?
 		 *
@@ -86,9 +86,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_FEEDS_ENABLE', '%%QUICK_CACHE_FEEDS_ENABLE%%');
+		define('ZENCACHE_FEEDS_ENABLE', '%%ZENCACHE_FEEDS_ENABLE%%');
 
-	if(!defined('QUICK_CACHE_WHEN_LOGGED_IN'))
+	if(!defined('ZENCACHE_WHEN_LOGGED_IN'))
 		/**
 		 * Cache logged-in users?
 		 *
@@ -96,9 +96,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`; or `postload`.
 		 */
-		define('QUICK_CACHE_WHEN_LOGGED_IN', '%%QUICK_CACHE_WHEN_LOGGED_IN%%');
+		define('ZENCACHE_WHEN_LOGGED_IN', '%%ZENCACHE_WHEN_LOGGED_IN%%');
 
-	if(!defined('QUICK_CACHE_DIR'))
+	if(!defined('ZENCACHE_DIR'))
 		/**
 		 * Directory used to store cache files; relative to `WP_CONTENT_DIR`.
 		 *
@@ -106,9 +106,9 @@ namespace zencache
 		 *
 		 * @var string Absolute server directory path.
 		 */
-		define('QUICK_CACHE_DIR', WP_CONTENT_DIR.'/'.'%%QUICK_CACHE_DIR%%');
+		define('ZENCACHE_DIR', WP_CONTENT_DIR.'/'.'%%ZENCACHE_DIR%%');
 
-	if(!defined('QUICK_CACHE_MAX_AGE'))
+	if(!defined('ZENCACHE_MAX_AGE'))
 		/**
 		 * Cache expiration time.
 		 *
@@ -116,9 +116,9 @@ namespace zencache
 		 *
 		 * @var string Anything compatible with PHP's {@link \strtotime()}.
 		 */
-		define('QUICK_CACHE_MAX_AGE', '%%QUICK_CACHE_MAX_AGE%%');
+		define('ZENCACHE_MAX_AGE', '%%ZENCACHE_MAX_AGE%%');
 
-	if(!defined('QUICK_CACHE_EXCLUDE_URIS'))
+	if(!defined('ZENCACHE_EXCLUDE_URIS'))
 		/**
 		 * URI exclusions.
 		 *
@@ -126,9 +126,9 @@ namespace zencache
 		 *
 		 * @var string A regular expression; else an empty string.
 		 */
-		define('QUICK_CACHE_EXCLUDE_URIS', '%%QUICK_CACHE_EXCLUDE_URIS%%');
+		define('ZENCACHE_EXCLUDE_URIS', '%%ZENCACHE_EXCLUDE_URIS%%');
 
-	if(!defined('QUICK_CACHE_EXCLUDE_REFS'))
+	if(!defined('ZENCACHE_EXCLUDE_REFS'))
 		/**
 		 * HTTP referrer exclusions.
 		 *
@@ -136,9 +136,9 @@ namespace zencache
 		 *
 		 * @var string A regular expression; else an empty string.
 		 */
-		define('QUICK_CACHE_EXCLUDE_REFS', '%%QUICK_CACHE_EXCLUDE_REFS%%');
+		define('ZENCACHE_EXCLUDE_REFS', '%%ZENCACHE_EXCLUDE_REFS%%');
 
-	if(!defined('QUICK_CACHE_EXCLUDE_AGENTS'))
+	if(!defined('ZENCACHE_EXCLUDE_AGENTS'))
 		/**
 		 * HTTP user-agent exclusions.
 		 *
@@ -146,9 +146,9 @@ namespace zencache
 		 *
 		 * @var string A regular expression; else an empty string.
 		 */
-		define('QUICK_CACHE_EXCLUDE_AGENTS', '%%QUICK_CACHE_EXCLUDE_AGENTS%%');
+		define('ZENCACHE_EXCLUDE_AGENTS', '%%ZENCACHE_EXCLUDE_AGENTS%%');
 
-	if(!defined('QUICK_CACHE_VERSION_SALT'))
+	if(!defined('ZENCACHE_VERSION_SALT'))
 		/**
 		 * Version salt.
 		 *
@@ -157,9 +157,9 @@ namespace zencache
 		 * @var mixed Any scalar value; e.g. string, integer, boolean;
 		 *    or a PHP expression that results in a scalar value.
 		 */
-		define('QUICK_CACHE_VERSION_SALT', '%%QUICK_CACHE_VERSION_SALT%%');
+		define('ZENCACHE_VERSION_SALT', '%%ZENCACHE_VERSION_SALT%%');
 
-	if(!defined('QUICK_CACHE_404_CACHE_FILENAME'))
+	if(!defined('ZENCACHE_404_CACHE_FILENAME'))
 		/**
 		 * 404 file name (if applicable).
 		 *
@@ -168,9 +168,9 @@ namespace zencache
 		 * @var string A unique file name that will not conflict with real paths.
 		 *    This should NOT include the extension; basename only please.
 		 */
-		define('QUICK_CACHE_404_CACHE_FILENAME', '----404----');
+		define('ZENCACHE_404_CACHE_FILENAME', '----404----');
 
-	if(!defined('QUICK_CACHE_HTMLC_ENABLE'))
+	if(!defined('ZENCACHE_HTMLC_ENABLE'))
 		/**
 		 * Enable HTML compressor?
 		 *
@@ -178,9 +178,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_HTMLC_ENABLE', '%%QUICK_CACHE_HTMLC_ENABLE%%');
+		define('ZENCACHE_HTMLC_ENABLE', '%%ZENCACHE_HTMLC_ENABLE%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_CSS_EXCLUSIONS'))
+	if(!defined('ZENCACHE_HTMLC_CSS_EXCLUSIONS'))
 		/**
 		 * CSS exclusions for the HTML compressor.
 		 *
@@ -188,9 +188,9 @@ namespace zencache
 		 *
 		 * @var string A regular expression; else an empty string.
 		 */
-		define('QUICK_CACHE_HTMLC_CSS_EXCLUSIONS', '%%QUICK_CACHE_HTMLC_CSS_EXCLUSIONS%%');
+		define('ZENCACHE_HTMLC_CSS_EXCLUSIONS', '%%ZENCACHE_HTMLC_CSS_EXCLUSIONS%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_JS_EXCLUSIONS'))
+	if(!defined('ZENCACHE_HTMLC_JS_EXCLUSIONS'))
 		/**
 		 * JS exclusions for the HTML compressor.
 		 *
@@ -198,9 +198,9 @@ namespace zencache
 		 *
 		 * @var string A regular expression; else an empty string.
 		 */
-		define('QUICK_CACHE_HTMLC_JS_EXCLUSIONS', '%%QUICK_CACHE_HTMLC_JS_EXCLUSIONS%%');
+		define('ZENCACHE_HTMLC_JS_EXCLUSIONS', '%%ZENCACHE_HTMLC_JS_EXCLUSIONS%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_CACHE_EXPIRATION_TIME'))
+	if(!defined('ZENCACHE_HTMLC_CACHE_EXPIRATION_TIME'))
 		/**
 		 * Cache expiration time for the HTML compressor.
 		 *
@@ -208,9 +208,9 @@ namespace zencache
 		 *
 		 * @var string Anything compatible with PHP's {@link \strtotime()}.
 		 */
-		define('QUICK_CACHE_HTMLC_CACHE_EXPIRATION_TIME', '%%QUICK_CACHE_HTMLC_CACHE_EXPIRATION_TIME%%');
+		define('ZENCACHE_HTMLC_CACHE_EXPIRATION_TIME', '%%ZENCACHE_HTMLC_CACHE_EXPIRATION_TIME%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_CACHE_DIR_PUBLIC'))
+	if(!defined('ZENCACHE_HTMLC_CACHE_DIR_PUBLIC'))
 		/**
 		 * Public cache directory for the HTML compressor.
 		 *
@@ -218,9 +218,9 @@ namespace zencache
 		 *
 		 * @var string Absolute server directory path.
 		 */
-		define('QUICK_CACHE_HTMLC_CACHE_DIR_PUBLIC', WP_CONTENT_DIR.'/'.'%%QUICK_CACHE_HTMLC_CACHE_DIR_PUBLIC%%');
+		define('ZENCACHE_HTMLC_CACHE_DIR_PUBLIC', WP_CONTENT_DIR.'/'.'%%ZENCACHE_HTMLC_CACHE_DIR_PUBLIC%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_CACHE_DIR_PRIVATE'))
+	if(!defined('ZENCACHE_HTMLC_CACHE_DIR_PRIVATE'))
 		/**
 		 * Private cache directory for the HTML compressor.
 		 *
@@ -228,9 +228,9 @@ namespace zencache
 		 *
 		 * @var string Absolute server directory path.
 		 */
-		define('QUICK_CACHE_HTMLC_CACHE_DIR_PRIVATE', WP_CONTENT_DIR.'/'.'%%QUICK_CACHE_HTMLC_CACHE_DIR_PRIVATE%%');
+		define('ZENCACHE_HTMLC_CACHE_DIR_PRIVATE', WP_CONTENT_DIR.'/'.'%%ZENCACHE_HTMLC_CACHE_DIR_PRIVATE%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_COMPRESS_COMBINE_HEAD_BODY_CSS'))
+	if(!defined('ZENCACHE_HTMLC_COMPRESS_COMBINE_HEAD_BODY_CSS'))
 		/**
 		 * Compress/combine `<head>` and `<body>` CSS?
 		 *
@@ -238,9 +238,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_HTMLC_COMPRESS_COMBINE_HEAD_BODY_CSS', '%%QUICK_CACHE_HTMLC_COMPRESS_COMBINE_HEAD_BODY_CSS%%');
+		define('ZENCACHE_HTMLC_COMPRESS_COMBINE_HEAD_BODY_CSS', '%%ZENCACHE_HTMLC_COMPRESS_COMBINE_HEAD_BODY_CSS%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_COMPRESS_COMBINE_HEAD_JS'))
+	if(!defined('ZENCACHE_HTMLC_COMPRESS_COMBINE_HEAD_JS'))
 		/**
 		 * Compress/combine `<head>` JS?
 		 *
@@ -248,9 +248,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_HTMLC_COMPRESS_COMBINE_HEAD_JS', '%%QUICK_CACHE_HTMLC_COMPRESS_COMBINE_HEAD_JS%%');
+		define('ZENCACHE_HTMLC_COMPRESS_COMBINE_HEAD_JS', '%%ZENCACHE_HTMLC_COMPRESS_COMBINE_HEAD_JS%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_COMPRESS_COMBINE_FOOTER_JS'))
+	if(!defined('ZENCACHE_HTMLC_COMPRESS_COMBINE_FOOTER_JS'))
 		/**
 		 * Compress/combine `<!--footer-scripts-->`?
 		 *
@@ -258,9 +258,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_HTMLC_COMPRESS_COMBINE_FOOTER_JS', '%%QUICK_CACHE_HTMLC_COMPRESS_COMBINE_FOOTER_JS%%');
+		define('ZENCACHE_HTMLC_COMPRESS_COMBINE_FOOTER_JS', '%%ZENCACHE_HTMLC_COMPRESS_COMBINE_FOOTER_JS%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_COMPRESS_COMBINE_REMOTE_CSS_JS'))
+	if(!defined('ZENCACHE_HTMLC_COMPRESS_COMBINE_REMOTE_CSS_JS'))
 		/**
 		 * Compress/combine remotely hosted CSS/JS files?
 		 *
@@ -268,9 +268,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_HTMLC_COMPRESS_COMBINE_REMOTE_CSS_JS', '%%QUICK_CACHE_HTMLC_COMPRESS_COMBINE_REMOTE_CSS_JS%%');
+		define('ZENCACHE_HTMLC_COMPRESS_COMBINE_REMOTE_CSS_JS', '%%ZENCACHE_HTMLC_COMPRESS_COMBINE_REMOTE_CSS_JS%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_COMPRESS_INLINE_JS_CODE'))
+	if(!defined('ZENCACHE_HTMLC_COMPRESS_INLINE_JS_CODE'))
 		/**
 		 * Compress inline `<script>` tags?
 		 *
@@ -278,9 +278,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_HTMLC_COMPRESS_INLINE_JS_CODE', '%%QUICK_CACHE_HTMLC_COMPRESS_INLINE_JS_CODE%%');
+		define('ZENCACHE_HTMLC_COMPRESS_INLINE_JS_CODE', '%%ZENCACHE_HTMLC_COMPRESS_INLINE_JS_CODE%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_COMPRESS_CSS_CODE'))
+	if(!defined('ZENCACHE_HTMLC_COMPRESS_CSS_CODE'))
 		/**
 		 * Compress CSS code after combining files?
 		 *
@@ -288,9 +288,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_HTMLC_COMPRESS_CSS_CODE', '%%QUICK_CACHE_HTMLC_COMPRESS_CSS_CODE%%');
+		define('ZENCACHE_HTMLC_COMPRESS_CSS_CODE', '%%ZENCACHE_HTMLC_COMPRESS_CSS_CODE%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_COMPRESS_JS_CODE'))
+	if(!defined('ZENCACHE_HTMLC_COMPRESS_JS_CODE'))
 		/**
 		 * Compress JS code after combining files?
 		 *
@@ -298,9 +298,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_HTMLC_COMPRESS_JS_CODE', '%%QUICK_CACHE_HTMLC_COMPRESS_JS_CODE%%');
+		define('ZENCACHE_HTMLC_COMPRESS_JS_CODE', '%%ZENCACHE_HTMLC_COMPRESS_JS_CODE%%');
 
-	if(!defined('QUICK_CACHE_HTMLC_COMPRESS_HTML_CODE'))
+	if(!defined('ZENCACHE_HTMLC_COMPRESS_HTML_CODE'))
 		/**
 		 * Compress the resulting HTML code?
 		 *
@@ -308,9 +308,9 @@ namespace zencache
 		 *
 		 * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
 		 */
-		define('QUICK_CACHE_HTMLC_COMPRESS_HTML_CODE', '%%QUICK_CACHE_HTMLC_COMPRESS_HTML_CODE%%');
+		define('ZENCACHE_HTMLC_COMPRESS_HTML_CODE', '%%ZENCACHE_HTMLC_COMPRESS_HTML_CODE%%');
 
-	if(!defined('QUICK_CACHE_PLUGIN_FILE'))
+	if(!defined('ZENCACHE_PLUGIN_FILE'))
 		/**
 		 * Plugin file path.
 		 *
@@ -318,12 +318,12 @@ namespace zencache
 		 *
 		 * @var string Absolute server path to QC plugin file.
 		 */
-		define('QUICK_CACHE_PLUGIN_FILE', '%%QUICK_CACHE_PLUGIN_FILE%%');
+		define('ZENCACHE_PLUGIN_FILE', '%%ZENCACHE_PLUGIN_FILE%%');
 
 	/*
 	 * Include shared methods between {@link advanced_cache} and {@link plugin}.
 	 */
-	require_once dirname(QUICK_CACHE_PLUGIN_FILE).'/includes/share.php';
+	require_once dirname(ZENCACHE_PLUGIN_FILE).'/includes/share.php';
 
 	/**
 	 * ZenCache (Advanced Cache Handler)
@@ -429,7 +429,7 @@ namespace zencache
 		public $postload = array(
 			'invalidate_when_logged_in' => FALSE, 'when_logged_in' => FALSE,
 			'filter_status_header'      => TRUE, 'wp_main_query' => TRUE,
-			'set_debug_info'            => QUICK_CACHE_DEBUGGING_ENABLE,
+			'set_debug_info'            => ZENCACHE_DEBUGGING_ENABLE,
 		);
 
 		/**
@@ -527,7 +527,7 @@ namespace zencache
 		 *
 		 * @see wp_main_query_postload()
 		 */
-		public $plugin_file = QUICK_CACHE_PLUGIN_FILE;
+		public $plugin_file = ZENCACHE_PLUGIN_FILE;
 
 		/**
 		 * No-cache because of the current {@link \PHP_SAPI}.
@@ -566,22 +566,22 @@ namespace zencache
 		const NC_DEBUG_NO_SERVER_REQUEST_URI = 'nc_debug_no_server_request_uri';
 
 		/**
-		 * No-cache because the {@link \QUICK_CACHE_ALLOWED} constant says not to.
+		 * No-cache because the {@link \ZENCACHE_ALLOWED} constant says not to.
 		 *
 		 * @since 140422 First documented version.
 		 *
 		 * @var string A unique string identifier in the set of `NC_DEBUG_` constants.
 		 */
-		const NC_DEBUG_QUICK_CACHE_ALLOWED_CONSTANT = 'nc_debug_zencache_allowed_constant';
+		const NC_DEBUG_ZENCACHE_ALLOWED_CONSTANT = 'nc_debug_zencache_allowed_constant';
 
 		/**
-		 * No-cache because the `$_SERVER['QUICK_CACHE_ALLOWED']` environment variable says not to.
+		 * No-cache because the `$_SERVER['ZENCACHE_ALLOWED']` environment variable says not to.
 		 *
 		 * @since 140422 First documented version.
 		 *
 		 * @var string A unique string identifier in the set of `NC_DEBUG_` constants.
 		 */
-		const NC_DEBUG_QUICK_CACHE_ALLOWED_SERVER_VAR = 'nc_debug_zencache_allowed_server_var';
+		const NC_DEBUG_ZENCACHE_ALLOWED_SERVER_VAR = 'nc_debug_zencache_allowed_server_var';
 
 		/**
 		 * No-cache because the {@link \DONOTCACHEPAGE} constant says not to.
@@ -799,7 +799,7 @@ namespace zencache
 		{
 			parent::__construct(); // Shared constructor.
 
-			if(!WP_CACHE || !QUICK_CACHE_ENABLE)
+			if(!WP_CACHE || !ZENCACHE_ENABLE)
 				return; // Not enabled.
 
 			if(defined('WP_INSTALLING') || defined('RELOCATE'))
@@ -870,7 +870,7 @@ namespace zencache
 		 */
 		public function maybe_stop_browser_caching()
 		{
-			if(QUICK_CACHE_ALLOW_BROWSER_CACHE)
+			if(ZENCACHE_ALLOW_BROWSER_CACHE)
 				return; // Allow in this case.
 
 			if(!empty($_GET['qcABC']) && filter_var($_GET['qcABC'], FILTER_VALIDATE_BOOLEAN))
@@ -889,7 +889,7 @@ namespace zencache
 		 */
 		public function maybe_postload_invalidate_when_logged_in()
 		{
-			if(QUICK_CACHE_WHEN_LOGGED_IN !== 'postload')
+			if(ZENCACHE_WHEN_LOGGED_IN !== 'postload')
 				return; // Nothing to do in this case.
 
 			if(is_admin()) // Not in admin.
@@ -913,7 +913,7 @@ namespace zencache
 			if($this->is_post_put_delete_request() || $this->is_uncacheable_request_method())
 				$this->postload['invalidate_when_logged_in'] = TRUE;
 
-			else if(!QUICK_CACHE_GET_REQUESTS && $this->is_get_request_w_query())
+			else if(!ZENCACHE_GET_REQUESTS && $this->is_get_request_w_query())
 				$this->postload['invalidate_when_logged_in'] = TRUE;
 		}
 
@@ -939,11 +939,11 @@ namespace zencache
 			if(isset($_GET['qcAC']) && !filter_var($_GET['qcAC'], FILTER_VALIDATE_BOOLEAN))
 				return $this->maybe_set_debug_info($this::NC_DEBUG_QCAC_GET_VAR);
 
-			if(defined('QUICK_CACHE_ALLOWED') && !QUICK_CACHE_ALLOWED)
-				return $this->maybe_set_debug_info($this::NC_DEBUG_QUICK_CACHE_ALLOWED_CONSTANT);
+			if(defined('ZENCACHE_ALLOWED') && !ZENCACHE_ALLOWED)
+				return $this->maybe_set_debug_info($this::NC_DEBUG_ZENCACHE_ALLOWED_CONSTANT);
 
-			if(isset($_SERVER['QUICK_CACHE_ALLOWED']) && !$_SERVER['QUICK_CACHE_ALLOWED'])
-				return $this->maybe_set_debug_info($this::NC_DEBUG_QUICK_CACHE_ALLOWED_SERVER_VAR);
+			if(isset($_SERVER['ZENCACHE_ALLOWED']) && !$_SERVER['ZENCACHE_ALLOWED'])
+				return $this->maybe_set_debug_info($this::NC_DEBUG_ZENCACHE_ALLOWED_SERVER_VAR);
 
 			if(defined('DONOTCACHEPAGE'))
 				return $this->maybe_set_debug_info($this::NC_DEBUG_DONOTCACHEPAGE_CONSTANT);
@@ -958,7 +958,7 @@ namespace zencache
 				if(!$this->is_auto_cache_engine() && !$this->is_localhost()) // The auto-cache engine does this too.
 					return $this->maybe_set_debug_info($this::NC_DEBUG_SELF_SERVE_REQUEST);
 
-			if(!QUICK_CACHE_FEEDS_ENABLE && $this->is_feed())
+			if(!ZENCACHE_FEEDS_ENABLE && $this->is_feed())
 				return $this->maybe_set_debug_info($this::NC_DEBUG_FEED_REQUEST);
 
 			if(preg_match('/\/(?:wp\-[^\/]+|xmlrpc)\.php(?:[?]|$)/i', $_SERVER['REQUEST_URI']))
@@ -970,39 +970,39 @@ namespace zencache
 			if(is_multisite() && preg_match('/\/files(?:[\/?]|$)/i', $_SERVER['REQUEST_URI']))
 				return $this->maybe_set_debug_info($this::NC_DEBUG_MS_FILES);
 
-			if(!QUICK_CACHE_WHEN_LOGGED_IN && $this->is_like_user_logged_in())
+			if(!ZENCACHE_WHEN_LOGGED_IN && $this->is_like_user_logged_in())
 				return $this->maybe_set_debug_info($this::NC_DEBUG_IS_LIKE_LOGGED_IN_USER);
 
-			if(!QUICK_CACHE_GET_REQUESTS && $this->is_get_request_w_query() && (!isset($_GET['qcAC']) || !filter_var($_GET['qcAC'], FILTER_VALIDATE_BOOLEAN)))
+			if(!ZENCACHE_GET_REQUESTS && $this->is_get_request_w_query() && (!isset($_GET['qcAC']) || !filter_var($_GET['qcAC'], FILTER_VALIDATE_BOOLEAN)))
 				return $this->maybe_set_debug_info($this::NC_DEBUG_GET_REQUEST_QUERIES);
 
-			if(QUICK_CACHE_EXCLUDE_URIS && preg_match(QUICK_CACHE_EXCLUDE_URIS, $_SERVER['REQUEST_URI']))
+			if(ZENCACHE_EXCLUDE_URIS && preg_match(ZENCACHE_EXCLUDE_URIS, $_SERVER['REQUEST_URI']))
 				return $this->maybe_set_debug_info($this::NC_DEBUG_EXCLUDED_URIS);
 
-			if(QUICK_CACHE_EXCLUDE_AGENTS && !empty($_SERVER['HTTP_USER_AGENT']) && !$this->is_auto_cache_engine())
-				if(preg_match(QUICK_CACHE_EXCLUDE_AGENTS, $_SERVER['HTTP_USER_AGENT']))
+			if(ZENCACHE_EXCLUDE_AGENTS && !empty($_SERVER['HTTP_USER_AGENT']) && !$this->is_auto_cache_engine())
+				if(preg_match(ZENCACHE_EXCLUDE_AGENTS, $_SERVER['HTTP_USER_AGENT']))
 					return $this->maybe_set_debug_info($this::NC_DEBUG_EXCLUDED_AGENTS);
 
-			if(QUICK_CACHE_EXCLUDE_REFS && !empty($_REQUEST['_wp_http_referer']))
-				if(preg_match(QUICK_CACHE_EXCLUDE_REFS, stripslashes($_REQUEST['_wp_http_referer'])))
+			if(ZENCACHE_EXCLUDE_REFS && !empty($_REQUEST['_wp_http_referer']))
+				if(preg_match(ZENCACHE_EXCLUDE_REFS, stripslashes($_REQUEST['_wp_http_referer'])))
 					return $this->maybe_set_debug_info($this::NC_DEBUG_EXCLUDED_REFS);
 
-			if(QUICK_CACHE_EXCLUDE_REFS && !empty($_SERVER['HTTP_REFERER']))
-				if(preg_match(QUICK_CACHE_EXCLUDE_REFS, $_SERVER['HTTP_REFERER']))
+			if(ZENCACHE_EXCLUDE_REFS && !empty($_SERVER['HTTP_REFERER']))
+				if(preg_match(ZENCACHE_EXCLUDE_REFS, $_SERVER['HTTP_REFERER']))
 					return $this->maybe_set_debug_info($this::NC_DEBUG_EXCLUDED_REFS);
 
 			$this->protocol       = $this->is_ssl() ? 'https://' : 'http://';
-			$this->version_salt   = $this->apply_filters(__CLASS__.'__version_salt', QUICK_CACHE_VERSION_SALT);
+			$this->version_salt   = $this->apply_filters(__CLASS__.'__version_salt', ZENCACHE_VERSION_SALT);
 			$this->cache_path     = $this->build_cache_path($this->protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], '', $this->version_salt);
-			$this->cache_file     = QUICK_CACHE_DIR.'/'.$this->cache_path; // NOT considering a user cache; not yet.
-			$this->cache_file_404 = QUICK_CACHE_DIR.'/'.$this->build_cache_path($this->protocol.$_SERVER['HTTP_HOST'].'/'.QUICK_CACHE_404_CACHE_FILENAME);
+			$this->cache_file     = ZENCACHE_DIR.'/'.$this->cache_path; // NOT considering a user cache; not yet.
+			$this->cache_file_404 = ZENCACHE_DIR.'/'.$this->build_cache_path($this->protocol.$_SERVER['HTTP_HOST'].'/'.ZENCACHE_404_CACHE_FILENAME);
 			$this->salt_location  = ltrim($this->version_salt.' '.$this->protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
-			if(QUICK_CACHE_WHEN_LOGGED_IN === 'postload' && $this->is_like_user_logged_in())
+			if(ZENCACHE_WHEN_LOGGED_IN === 'postload' && $this->is_like_user_logged_in())
 			{
 				$this->postload['when_logged_in'] = TRUE; // Enable postload check.
 			}
-			else if(is_file($this->cache_file) && filemtime($this->cache_file) >= strtotime('-'.QUICK_CACHE_MAX_AGE))
+			else if(is_file($this->cache_file) && filemtime($this->cache_file) >= strtotime('-'.ZENCACHE_MAX_AGE))
 			{
 				list($headers, $cache) = explode('<!--headers-->', file_get_contents($this->cache_file), 2);
 
@@ -1012,7 +1012,7 @@ namespace zencache
 						header($_header); // Only cacheable/safe headers are stored in the cache.
 				unset($_header); // Just a little housekeeping.
 
-				if(QUICK_CACHE_DEBUGGING_ENABLE && $this->is_html_xml_doc($cache)) // Only if HTML comments are possible.
+				if(ZENCACHE_DEBUGGING_ENABLE && $this->is_html_xml_doc($cache)) // Only if HTML comments are possible.
 				{
 					$total_time = number_format(microtime(TRUE) - $this->timer, 5, '.', '');
 					$cache .= "\n".'<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->';
@@ -1038,7 +1038,7 @@ namespace zencache
 		 */
 		public function maybe_set_debug_info($reason_code, $reason = '')
 		{
-			if(!QUICK_CACHE_DEBUGGING_ENABLE)
+			if(!ZENCACHE_DEBUGGING_ENABLE)
 				return; // Nothing to do.
 
 			$reason = (string)$reason;
@@ -1076,7 +1076,7 @@ namespace zencache
 		 */
 		public function maybe_invalidate_when_logged_in_postload()
 		{
-			if(QUICK_CACHE_WHEN_LOGGED_IN !== 'postload')
+			if(ZENCACHE_WHEN_LOGGED_IN !== 'postload')
 				return; // Nothing to do in this case.
 
 			if(empty($this->postload['invalidate_when_logged_in']))
@@ -1098,7 +1098,7 @@ namespace zencache
 		 */
 		public function maybe_start_ob_when_logged_in_postload()
 		{
-			if(QUICK_CACHE_WHEN_LOGGED_IN !== 'postload')
+			if(ZENCACHE_WHEN_LOGGED_IN !== 'postload')
 				return NULL; // Nothing to do in this case.
 
 			if(empty($this->postload['when_logged_in']))
@@ -1113,9 +1113,9 @@ namespace zencache
 			 * In this scenario we still proceed, but WITHOUT a user token; i.e. we use a cache that is NOT user-specific.
 			 */
 			$this->cache_path = $this->build_cache_path($this->protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], $this->user_token, $this->version_salt);
-			$this->cache_file = QUICK_CACHE_DIR.'/'.$this->cache_path; // NOT considering a user cache; not yet.
+			$this->cache_file = ZENCACHE_DIR.'/'.$this->cache_path; // NOT considering a user cache; not yet.
 
-			if(is_file($this->cache_file) && filemtime($this->cache_file) >= strtotime('-'.QUICK_CACHE_MAX_AGE))
+			if(is_file($this->cache_file) && filemtime($this->cache_file) >= strtotime('-'.ZENCACHE_MAX_AGE))
 			{
 				list($headers, $cache) = explode('<!--headers-->', file_get_contents($this->cache_file), 2);
 
@@ -1125,7 +1125,7 @@ namespace zencache
 						header($_header); // Only cacheable/safe headers are stored in the cache.
 				unset($_header); // Just a little housekeeping.
 
-				if(QUICK_CACHE_DEBUGGING_ENABLE && $this->is_html_xml_doc($cache)) // Only if HTML comments are possible.
+				if(ZENCACHE_DEBUGGING_ENABLE && $this->is_html_xml_doc($cache)) // Only if HTML comments are possible.
 				{
 					$total_time = number_format(microtime(TRUE) - $this->timer, 5, '.', '');
 					$cache .= "\n".'<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->';
@@ -1147,7 +1147,7 @@ namespace zencache
 		 */
 		public function maybe_set_debug_info_postload()
 		{
-			if(!QUICK_CACHE_DEBUGGING_ENABLE)
+			if(!ZENCACHE_DEBUGGING_ENABLE)
 				return; // Nothing to do.
 
 			if(empty($this->postload['set_debug_info']))
@@ -1234,11 +1234,11 @@ namespace zencache
 			if(isset($_GET['qcAC']) && !filter_var($_GET['qcAC'], FILTER_VALIDATE_BOOLEAN))
 				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_QCAC_GET_VAR);
 
-			if(defined('QUICK_CACHE_ALLOWED') && !QUICK_CACHE_ALLOWED)
-				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_QUICK_CACHE_ALLOWED_CONSTANT);
+			if(defined('ZENCACHE_ALLOWED') && !ZENCACHE_ALLOWED)
+				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_ZENCACHE_ALLOWED_CONSTANT);
 
-			if(isset($_SERVER['QUICK_CACHE_ALLOWED']) && !$_SERVER['QUICK_CACHE_ALLOWED'])
-				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_QUICK_CACHE_ALLOWED_SERVER_VAR);
+			if(isset($_SERVER['ZENCACHE_ALLOWED']) && !$_SERVER['ZENCACHE_ALLOWED'])
+				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_ZENCACHE_ALLOWED_SERVER_VAR);
 
 			if(defined('DONOTCACHEPAGE')) // WP Super Cache compatible.
 				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_DONOTCACHEPAGE_CONSTANT);
@@ -1246,13 +1246,13 @@ namespace zencache
 			if(isset($_SERVER['DONOTCACHEPAGE'])) // WP Super Cache compatible.
 				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_DONOTCACHEPAGE_SERVER_VAR);
 
-			if(!QUICK_CACHE_WHEN_LOGGED_IN && $this->is_user_logged_in) // Logged-in.
+			if(!ZENCACHE_WHEN_LOGGED_IN && $this->is_user_logged_in) // Logged-in.
 				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_IS_LOGGED_IN_USER);
 
-			if(!QUICK_CACHE_WHEN_LOGGED_IN && $this->is_like_user_logged_in()) // Commenters, password-protected access, or actually logged-in.
+			if(!ZENCACHE_WHEN_LOGGED_IN && $this->is_like_user_logged_in()) // Commenters, password-protected access, or actually logged-in.
 				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_IS_LIKE_LOGGED_IN_USER); // Separate debug notice.
 
-			if($this->is_404 && !QUICK_CACHE_CACHE_404_REQUESTS) // Not caching 404 errors.
+			if($this->is_404 && !ZENCACHE_CACHE_404_REQUESTS) // Not caching 404 errors.
 				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_404_REQUEST);
 
 			if(stripos($cache, '<body id="error-page">') !== FALSE) // A WordPress-generated error?
@@ -1285,8 +1285,8 @@ namespace zencache
 
 			# Cache directory checks. The cache file directory is created here if necessary.
 
-			if(!is_dir(QUICK_CACHE_DIR) && mkdir(QUICK_CACHE_DIR, 0775, TRUE) && !is_file(QUICK_CACHE_DIR.'/.htaccess'))
-				file_put_contents(QUICK_CACHE_DIR.'/.htaccess', $this->htaccess_deny); // We know it's writable here.
+			if(!is_dir(ZENCACHE_DIR) && mkdir(ZENCACHE_DIR, 0775, TRUE) && !is_file(ZENCACHE_DIR.'/.htaccess'))
+				file_put_contents(ZENCACHE_DIR.'/.htaccess', $this->htaccess_deny); // We know it's writable here.
 
 			if(!is_dir($cache_file_dir = dirname($this->cache_file))) $cache_file_dir_writable = mkdir($cache_file_dir, 0775, TRUE);
 			if(empty($cache_file_dir_writable) && !is_writable($cache_file_dir)) // Only check if it's writable, if we didn't just successfully create it.
@@ -1297,7 +1297,7 @@ namespace zencache
 			if($this->is_404 && is_file($this->cache_file_404))
 			{
 				if(!(symlink($this->cache_file_404, $cache_file_tmp) && rename($cache_file_tmp, $this->cache_file)))
-					throw new \exception(sprintf(__('Unable to create symlink: `%1$s` » `%2$s`. Possible permissions issue (or race condition), please check your cache directory: `%3$s`.', $this->text_domain), $this->cache_file, $this->cache_file_404, QUICK_CACHE_DIR));
+					throw new \exception(sprintf(__('Unable to create symlink: `%1$s` » `%2$s`. Possible permissions issue (or race condition), please check your cache directory: `%3$s`.', $this->text_domain), $this->cache_file, $this->cache_file_404, ZENCACHE_DIR));
 
 				$this->cache_unlock($cache_lock); // Unlock cache directory.
 
@@ -1307,13 +1307,13 @@ namespace zencache
 
 			$cache = $this->maybe_compress_html($cache); // Possible HTML compression.
 
-			if(QUICK_CACHE_DEBUGGING_ENABLE && $this->is_html_xml_doc($cache)) // Add HTML comments?
+			if(ZENCACHE_DEBUGGING_ENABLE && $this->is_html_xml_doc($cache)) // Add HTML comments?
 			{
 				$total_time = number_format(microtime(TRUE) - $this->timer, 5, '.', ''); // Based on the original timer.
 				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('ZenCache file path: %1$s', $this->text_domain), str_replace(WP_CONTENT_DIR, '', $this->is_404 ? $this->cache_file_404 : $this->cache_file))).' -->';
 				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('ZenCache file built for (%1$s%2$s) in %3$s seconds, on: %4$s.', $this->text_domain),
 				                                                ($this->is_404) ? '404 [error document]' : $this->salt_location, (($this->user_token) ? '; '.sprintf(__('user token: %1$s', $this->text_domain), $this->user_token) : ''), $total_time, date('M jS, Y @ g:i a T'))).' -->';
-				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('This ZenCache file will auto-expire (and be rebuilt) on: %1$s (based on your configured expiration time).', $this->text_domain), date('M jS, Y @ g:i a T', strtotime('+'.QUICK_CACHE_MAX_AGE)))).' -->';
+				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('This ZenCache file will auto-expire (and be rebuilt) on: %1$s (based on your configured expiration time).', $this->text_domain), date('M jS, Y @ g:i a T', strtotime('+'.ZENCACHE_MAX_AGE)))).' -->';
 			}
 			# NOT a 404, or it is 404 and the 404 cache file doesn't yet exist (so we need to create it).
 
@@ -1322,7 +1322,7 @@ namespace zencache
 				if(file_put_contents($cache_file_tmp, serialize($this->cacheable_headers_list()).'<!--headers-->'.$cache) && rename($cache_file_tmp, $this->cache_file_404))
 				{
 					if(!(symlink($this->cache_file_404, $cache_file_tmp) && rename($cache_file_tmp, $this->cache_file)))
-						throw new \exception(sprintf(__('Unable to create symlink: `%1$s` » `%2$s`. Possible permissions issue (or race condition), please check your cache directory: `%3$s`.', $this->text_domain), $this->cache_file, $this->cache_file_404, QUICK_CACHE_DIR));
+						throw new \exception(sprintf(__('Unable to create symlink: `%1$s` » `%2$s`. Possible permissions issue (or race condition), please check your cache directory: `%3$s`.', $this->text_domain), $this->cache_file, $this->cache_file_404, ZENCACHE_DIR));
 
 					$this->cache_unlock($cache_lock); // Unlock cache directory.
 
@@ -1337,7 +1337,7 @@ namespace zencache
 			}
 			@unlink($cache_file_tmp); // Clean this up (if it exists); and throw an exception with information for the site owner.
 
-			throw new \exception(sprintf(__('ZenCache: failed to write cache file for: `%1$s`; possible permissions issue (or race condition), please check your cache directory: `%2$s`.', $this->text_domain), $_SERVER['REQUEST_URI'], QUICK_CACHE_DIR));
+			throw new \exception(sprintf(__('ZenCache: failed to write cache file for: `%1$s`; possible permissions issue (or race condition), please check your cache directory: `%2$s`.', $this->text_domain), $_SERVER['REQUEST_URI'], ZENCACHE_DIR));
 		}
 
 		/**
@@ -1356,7 +1356,7 @@ namespace zencache
 			if(!$this->content_url)
 				return $cache; // Not possible.
 
-			if(!QUICK_CACHE_HTMLC_ENABLE)
+			if(!ZENCACHE_HTMLC_ENABLE)
 				return $cache; // Nothing to do here.
 
 			require_once dirname($this->plugin_file).'/submodules/html-compressor/html-compressor/stub.php';
@@ -1367,28 +1367,28 @@ namespace zencache
 			// e.g. `wp-content/htmlc/cache/public/www-example-com` (main site)
 			// e.g. `wp-content/htmlc/cache/public/sub/www-example-com`
 
-			$htmlc_benchmark = (QUICK_CACHE_DEBUGGING_ENABLE >= 2 ? 'details' : QUICK_CACHE_DEBUGGING_ENABLE);
+			$htmlc_benchmark = (ZENCACHE_DEBUGGING_ENABLE >= 2 ? 'details' : ZENCACHE_DEBUGGING_ENABLE);
 
 			$html_compressor_options = array(
 				'benchmark'                      => $htmlc_benchmark,
 				'product_title'                  => __('ZenCache HTML Compressor', $this->text_domain),
 
-				'regex_css_exclusions'           => QUICK_CACHE_HTMLC_CSS_EXCLUSIONS,
-				'regex_js_exclusions'            => QUICK_CACHE_HTMLC_JS_EXCLUSIONS,
+				'regex_css_exclusions'           => ZENCACHE_HTMLC_CSS_EXCLUSIONS,
+				'regex_js_exclusions'            => ZENCACHE_HTMLC_JS_EXCLUSIONS,
 
-				'cache_expiration_time'          => QUICK_CACHE_HTMLC_CACHE_EXPIRATION_TIME,
-				'cache_dir_public'               => QUICK_CACHE_HTMLC_CACHE_DIR_PUBLIC.$host_dir_token,
-				'cache_dir_url_public'           => $this->content_url.str_replace(WP_CONTENT_DIR, '', QUICK_CACHE_HTMLC_CACHE_DIR_PUBLIC.$host_dir_token),
-				'cache_dir_private'              => QUICK_CACHE_HTMLC_CACHE_DIR_PRIVATE.$host_dir_token,
+				'cache_expiration_time'          => ZENCACHE_HTMLC_CACHE_EXPIRATION_TIME,
+				'cache_dir_public'               => ZENCACHE_HTMLC_CACHE_DIR_PUBLIC.$host_dir_token,
+				'cache_dir_url_public'           => $this->content_url.str_replace(WP_CONTENT_DIR, '', ZENCACHE_HTMLC_CACHE_DIR_PUBLIC.$host_dir_token),
+				'cache_dir_private'              => ZENCACHE_HTMLC_CACHE_DIR_PRIVATE.$host_dir_token,
 
-				'compress_combine_head_body_css' => QUICK_CACHE_HTMLC_COMPRESS_COMBINE_HEAD_BODY_CSS,
-				'compress_combine_head_js'       => QUICK_CACHE_HTMLC_COMPRESS_COMBINE_HEAD_JS,
-				'compress_combine_footer_js'     => QUICK_CACHE_HTMLC_COMPRESS_COMBINE_FOOTER_JS,
-				'compress_combine_remote_css_js' => QUICK_CACHE_HTMLC_COMPRESS_COMBINE_REMOTE_CSS_JS,
-				'compress_inline_js_code'        => QUICK_CACHE_HTMLC_COMPRESS_INLINE_JS_CODE,
-				'compress_css_code'              => QUICK_CACHE_HTMLC_COMPRESS_CSS_CODE,
-				'compress_js_code'               => QUICK_CACHE_HTMLC_COMPRESS_JS_CODE,
-				'compress_html_code'             => QUICK_CACHE_HTMLC_COMPRESS_HTML_CODE,
+				'compress_combine_head_body_css' => ZENCACHE_HTMLC_COMPRESS_COMBINE_HEAD_BODY_CSS,
+				'compress_combine_head_js'       => ZENCACHE_HTMLC_COMPRESS_COMBINE_HEAD_JS,
+				'compress_combine_footer_js'     => ZENCACHE_HTMLC_COMPRESS_COMBINE_FOOTER_JS,
+				'compress_combine_remote_css_js' => ZENCACHE_HTMLC_COMPRESS_COMBINE_REMOTE_CSS_JS,
+				'compress_inline_js_code'        => ZENCACHE_HTMLC_COMPRESS_INLINE_JS_CODE,
+				'compress_css_code'              => ZENCACHE_HTMLC_COMPRESS_CSS_CODE,
+				'compress_js_code'               => ZENCACHE_HTMLC_COMPRESS_JS_CODE,
+				'compress_html_code'             => ZENCACHE_HTMLC_COMPRESS_HTML_CODE,
 			);
 			$html_compressor         = new \websharks\html_compressor\core($html_compressor_options);
 			$compressed_cache        = $html_compressor->compress($cache);
@@ -1405,7 +1405,7 @@ namespace zencache
 		 */
 		public function maybe_echo_nc_debug_info() // Debug info in the shutdown phase.
 		{
-			if(!QUICK_CACHE_DEBUGGING_ENABLE)
+			if(!ZENCACHE_DEBUGGING_ENABLE)
 				return; // Nothing to do.
 
 			if(is_admin()) return; // Not applicable.
@@ -1429,7 +1429,7 @@ namespace zencache
 		 */
 		public function maybe_get_nc_debug_info($reason_code = '', $reason = '')
 		{
-			if(!QUICK_CACHE_DEBUGGING_ENABLE)
+			if(!ZENCACHE_DEBUGGING_ENABLE)
 				return ''; // Not applicable.
 
 			$reason = (string)$reason;
@@ -1454,12 +1454,12 @@ namespace zencache
 					$reason = __('because `$_SERVER[\'REQUEST_URI\']` is missing from your server configuration.', $this->text_domain);
 					break; // Break switch handler.
 
-				case $this::NC_DEBUG_QUICK_CACHE_ALLOWED_CONSTANT:
-					$reason = __('because the PHP constant `QUICK_CACHE_ALLOWED` has been set to a boolean-ish `FALSE` value at runtime. Perhaps by WordPress itself, or by one of your themes/plugins. This usually means that you have a theme/plugin intentionally disabling the cache on this page; and it\'s usually for a very good reason.', $this->text_domain);
+				case $this::NC_DEBUG_ZENCACHE_ALLOWED_CONSTANT:
+					$reason = __('because the PHP constant `ZENCACHE_ALLOWED` has been set to a boolean-ish `FALSE` value at runtime. Perhaps by WordPress itself, or by one of your themes/plugins. This usually means that you have a theme/plugin intentionally disabling the cache on this page; and it\'s usually for a very good reason.', $this->text_domain);
 					break; // Break switch handler.
 
-				case $this::NC_DEBUG_QUICK_CACHE_ALLOWED_SERVER_VAR:
-					$reason = __('because the environment variable `$_SERVER[\'QUICK_CACHE_ALLOWED\']` has been set to a boolean-ish `FALSE` value at runtime. Perhaps by WordPress itself, or by one of your themes/plugins. This usually means that you have a theme/plugin intentionally disabling the cache on this page; and it\'s usually for a very good reason.', $this->text_domain);
+				case $this::NC_DEBUG_ZENCACHE_ALLOWED_SERVER_VAR:
+					$reason = __('because the environment variable `$_SERVER[\'ZENCACHE_ALLOWED\']` has been set to a boolean-ish `FALSE` value at runtime. Perhaps by WordPress itself, or by one of your themes/plugins. This usually means that you have a theme/plugin intentionally disabling the cache on this page; and it\'s usually for a very good reason.', $this->text_domain);
 					break; // Break switch handler.
 
 				case $this::NC_DEBUG_DONOTCACHEPAGE_CONSTANT:
