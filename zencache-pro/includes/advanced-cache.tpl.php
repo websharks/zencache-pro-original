@@ -16,6 +16,11 @@ namespace zencache
 	if(!defined('WPINC')) // MUST have WordPress.
 		exit('Do NOT access this file directly: '.basename(__FILE__));
 
+	/*
+	 * Back compat. with Quick Cache.
+	 */
+	advanced_cache::qcAC_qcABC_back_compat();
+
 	/**
 	 * ZenCache Pro flag.
 	 *
@@ -1584,8 +1589,6 @@ namespace zencache
 			unset($_super_g_key, $_super_g_value, $_qc_suffix); // Housekeeping.
 		}
 	}
-
-	advanced_cache::qcAC_qcABC_back_compat();
 
 	/**
 	 * Global ZenCache {@link advanced_cache} instance.
