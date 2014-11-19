@@ -1557,7 +1557,35 @@ namespace zencache
 			}
 			return "\n".'<!-- '.htmlspecialchars(sprintf(__('ZenCache is NOT caching this page, %1$s', $this->text_domain), $reason)).' -->';
 		}
+
+		/**
+		 * Back compat. with `qcAC` and `qcABC`.
+		 *
+		 * @since 14xxxx First documented version.
+		 */
+		public static function qcAC_qcABC_back_compat()
+		{
+			$super_gs    = array(
+				'_GET'     => &$_GET,
+				'_REQUEST' => &$_REQUEST,
+			);
+			$qc_suffixes = array('AC', 'ABC');
+
+			foreach($super_gs as $_super_g_key => &$_super_g_value) foreach($qc_suffixes as $_qc_suffix)
+				if(array_key_exists('qc'.$_qc_suffix, $_super_g_value))
+				{
+					if($_super_g_key === '_GET' && !isset($_GET['zc'.$_qc_suffix]))
+						$_GET['zc'.$_qc_suffix] = $_super_g_value['qc'.$_qc_suffix];
+
+					foreach($super_gs as $__super_g_key => &$__super_g_value)
+						unset($__super_g_value['qc'.$_qc_suffix]);
+					unset($__super_g_key, $__super_g_value); // Housekeeping.
+				}
+			unset($_super_g_key, $_super_g_value, $_qc_suffix); // Housekeeping.
+		}
 	}
+
+	advanced_cache::qcAC_qcABC_back_compat();
 
 	/**
 	 * Global ZenCache {@link advanced_cache} instance.
