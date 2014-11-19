@@ -687,7 +687,7 @@ namespace zencache // Root namespace.
 					return static::$static[__FUNCTION__];
 
 				if(!empty($_GET) || isset($_SERVER['QUERY_STRING'][0]))
-					if(!(isset($_GET['qcABC']) && count($_GET) === 1)) // Special case.
+					if(!(isset($_GET['zcABC']) && count($_GET) === 1)) // Special case.
 						return (static::$static[__FUNCTION__] = TRUE);
 
 				return (static::$static[__FUNCTION__] = FALSE);

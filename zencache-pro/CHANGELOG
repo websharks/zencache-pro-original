@@ -19,7 +19,7 @@
 = v140725 =
 
 - **Enhancement**: Improved overall performance by optimizing the auto-purge routines. See also: [#130](https://github.com/websharks/zencache/issues/130)
-- **Enhancement**: The "GET Requests" UI Panel now explains that you can use `?qcAC=0` to disable caching when you ARE caching GET Requests. See also: [#210](https://github.com/websharks/zencache/issues/210).
+- **Enhancement**: The "GET Requests" UI Panel now explains that you can use `?zcAC=0` to disable caching when you ARE caching GET Requests. See also: [#210](https://github.com/websharks/zencache/issues/210).
 - **New Pro Feature: Auto-Purge XML Sitemaps**. If you're generating XML Sitemaps with a plugin like Google XML Sitemaps, you can now tell ZenCache to automatically purge any cached sitemap files whenever it purges a Post/Page cache. You may also specify a list of XML Sitemap patterns to clear, if you have multiple sitemap files. See also: [#169](https://github.com/websharks/zencache/issues/169)
 - **Enhancement (Pro)**: The ZenCache Pro Updater now accepts a License Key in place of the WebSharks password.
 - **Enhancement (Pro)**: In a Multisite Network, the Auto-Cache Engine will now also auto-cache each child blog. See also: [#169](https://github.com/websharks/zencache/issues/169)

@@ -95,7 +95,7 @@ msgid "because `PHP_SAPI` reports that you are currently running from the comman
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1431
-msgid "because `$_GET['qcAC']` is set to a boolean-ish FALSE value."
+msgid "because `$_GET['zcAC']` is set to a boolean-ish FALSE value."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1435
@@ -672,7 +672,7 @@ msgid "<strong>Tip:</strong> Setting this to <code>No</code> will NOT impact sta
 msgstr ""
 
 #: includes/menu-pages.php:293
-msgid "<strong>Advanced Tip:</strong> if you have this set to <code>No</code>, but you DO want to allow a few special URLs to be cached by the browser; you can add this parameter to your URL <code>?qcABC=1</code>. This tells ZenCache that it's OK for the browser to cache that particular URL. In other words, the <code>qcABC=1</code> parameter tells ZenCache NOT to send no-cache headers to the browser."
+msgid "<strong>Advanced Tip:</strong> if you have this set to <code>No</code>, but you DO want to allow a few special URLs to be cached by the browser; you can add this parameter to your URL <code>?zcABC=1</code>. This tells ZenCache that it's OK for the browser to cache that particular URL. In other words, the <code>zcABC=1</code> parameter tells ZenCache NOT to send no-cache headers to the browser."
 msgstr ""
 
 #: includes/menu-pages.php:301
@@ -736,7 +736,7 @@ msgid "<strong>Note:</strong> POST requests (i.e. forms with <code>method=&quot;
 msgstr ""
 
 #: includes/menu-pages.php:336
-msgid "<strong>Advanced Tip:</strong> If you are NOT caching GET requests (recommended), but you DO want to allow some special URLs that include query string parameters to be cached; you can add this special parameter to any URL <code>?qcAC=1</code>. This tells ZenCache that it's OK to cache that particular URL, even though it contains query string arguments. If you ARE caching GET requests and you want to force ZenCache to NOT cache a specific request, you can add this special parameter to any URL <code>?qcAC=0</code>."
+msgid "<strong>Advanced Tip:</strong> If you are NOT caching GET requests (recommended), but you DO want to allow some special URLs that include query string parameters to be cached; you can add this special parameter to any URL <code>?zcAC=1</code>. This tells ZenCache that it's OK to cache that particular URL, even though it contains query string arguments. If you ARE caching GET requests and you want to force ZenCache to NOT cache a specific request, you can add this special parameter to any URL <code>?zcAC=0</code>."
 msgstr ""
 
 #: includes/menu-pages.php:344

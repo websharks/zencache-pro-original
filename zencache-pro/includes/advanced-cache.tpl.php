@@ -539,7 +539,7 @@ namespace zencache
 		const NC_DEBUG_PHP_SAPI_CLI = 'nc_debug_php_sapi_cli';
 
 		/**
-		 * No-cache because the current request includes the `?qcAC=0` parameter.
+		 * No-cache because the current request includes the `?zcAC=0` parameter.
 		 *
 		 * @since 140422 First documented version.
 		 *
@@ -873,7 +873,7 @@ namespace zencache
 			if(ZENCACHE_ALLOW_BROWSER_CACHE)
 				return; // Allow in this case.
 
-			if(!empty($_GET['qcABC']) && filter_var($_GET['qcABC'], FILTER_VALIDATE_BOOLEAN))
+			if(!empty($_GET['zcABC']) && filter_var($_GET['zcABC'], FILTER_VALIDATE_BOOLEAN))
 				return; // The query var says it's OK here.
 
 			header_remove('Last-Modified');
@@ -936,7 +936,7 @@ namespace zencache
 			if(empty($_SERVER['REQUEST_URI']))
 				return $this->maybe_set_debug_info($this::NC_DEBUG_NO_SERVER_REQUEST_URI);
 
-			if(isset($_GET['qcAC']) && !filter_var($_GET['qcAC'], FILTER_VALIDATE_BOOLEAN))
+			if(isset($_GET['zcAC']) && !filter_var($_GET['zcAC'], FILTER_VALIDATE_BOOLEAN))
 				return $this->maybe_set_debug_info($this::NC_DEBUG_QCAC_GET_VAR);
 
 			if(defined('ZENCACHE_ALLOWED') && !ZENCACHE_ALLOWED)
@@ -973,7 +973,7 @@ namespace zencache
 			if(!ZENCACHE_WHEN_LOGGED_IN && $this->is_like_user_logged_in())
 				return $this->maybe_set_debug_info($this::NC_DEBUG_IS_LIKE_LOGGED_IN_USER);
 
-			if(!ZENCACHE_GET_REQUESTS && $this->is_get_request_w_query() && (!isset($_GET['qcAC']) || !filter_var($_GET['qcAC'], FILTER_VALIDATE_BOOLEAN)))
+			if(!ZENCACHE_GET_REQUESTS && $this->is_get_request_w_query() && (!isset($_GET['zcAC']) || !filter_var($_GET['zcAC'], FILTER_VALIDATE_BOOLEAN)))
 				return $this->maybe_set_debug_info($this::NC_DEBUG_GET_REQUEST_QUERIES);
 
 			if(ZENCACHE_EXCLUDE_URIS && preg_match(ZENCACHE_EXCLUDE_URIS, $_SERVER['REQUEST_URI']))
@@ -1231,7 +1231,7 @@ namespace zencache
 			if(!isset($GLOBALS[__NAMESPACE__.'__shutdown_flag']))
 				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_EARLY_BUFFER_TERMINATION);
 
-			if(isset($_GET['qcAC']) && !filter_var($_GET['qcAC'], FILTER_VALIDATE_BOOLEAN))
+			if(isset($_GET['zcAC']) && !filter_var($_GET['zcAC'], FILTER_VALIDATE_BOOLEAN))
 				return (boolean)$this->maybe_set_debug_info($this::NC_DEBUG_QCAC_GET_VAR);
 
 			if(defined('ZENCACHE_ALLOWED') && !ZENCACHE_ALLOWED)
@@ -1443,7 +1443,7 @@ namespace zencache
 					break; // Break switch handler.
 
 				case $this::NC_DEBUG_QCAC_GET_VAR:
-					$reason = __('because `$_GET[\'qcAC\']` is set to a boolean-ish FALSE value.', $this->text_domain);
+					$reason = __('because `$_GET[\'zcAC\']` is set to a boolean-ish FALSE value.', $this->text_domain);
 					break; // Break switch handler.
 
 				case $this::NC_DEBUG_NO_SERVER_HTTP_HOST:
