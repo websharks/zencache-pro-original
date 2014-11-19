@@ -80,7 +80,7 @@ namespace zencache // Root namespace.
 
 			/*
 			 * Upgrading from a version prior to v140605, where we introduced a branched cache structure.
-			 * See <https://github.com/WebSharks/Quick-Cache/issues/147#issuecomment-42659131>
+			 * See <https://github.com/WebSharks/zencache/issues/147#issuecomment-42659131>
 			 *    We also also moved to a base directory layout.
 			 */
 			public function from_lt_v140605()

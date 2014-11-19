@@ -1106,7 +1106,7 @@ msgid "Writing \"Advanced Cache\" Plugins Specifically for ZenCache"
 msgstr ""
 
 #: includes/menu-pages.php:591
-msgid "Theme/plugin developers can take advantage of the ZenCache plugin architecture by creating PHP files inside this special directory: <code>/wp-content/ac-plugins/</code>. There is an <a href=\"https://github.com/WebSharks/Quick-Cache/blob/000000-dev/zencache/includes/ac-plugin.example.php\" target=\"_blank\">example plugin file @ GitHub</a> (please review it carefully and ask questions). If you develop a plugin for ZenCache, please share it with the community by publishing it in the plugins respository at WordPress.org."
+msgid "Theme/plugin developers can take advantage of the ZenCache plugin architecture by creating PHP files inside this special directory: <code>/wp-content/ac-plugins/</code>. There is an <a href=\"https://github.com/WebSharks/zencache/blob/000000-dev/zencache/includes/ac-plugin.example.php\" target=\"_blank\">example plugin file @ GitHub</a> (please review it carefully and ask questions). If you develop a plugin for ZenCache, please share it with the community by publishing it in the plugins respository at WordPress.org."
 msgstr ""
 
 #: includes/menu-pages.php:592
