@@ -34,7 +34,7 @@ namespace zencache // Root namespace.
 			 *
 			 * @var string Short name for this plugin.
 			 */
-			public $short_name = 'QC';
+			public $short_name = 'ZC';
 
 			/**
 			 * Identifies pro version of ZenCache.
@@ -2135,7 +2135,8 @@ namespace zencache // Root namespace.
 			function __($string, $text_domain)
 			{
 				static $exists; // Static cache.
-				if(($exists || function_exists('__')) && ($exists = TRUE))
+
+				if($exists || ($exists = function_exists('__')))
 					return \__($string, $text_domain);
 
 				return $string; // Not possible (yet).

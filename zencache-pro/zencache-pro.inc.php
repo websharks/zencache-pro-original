@@ -14,7 +14,7 @@ namespace zencache
 
 	require_once dirname(__FILE__).'/includes/share.php';
 
-	if(!class_exists('\\'.__NAMESPACE__.'\\plugin'))
+	if(!class_exists('\\'.__NAMESPACE__.'\\plugin') && empty($GLOBALS['quick_cache_plugin_active']))
 	{
 		/**
 		 * ZenCache Plugin
@@ -3067,10 +3067,20 @@ namespace zencache
 	}
 	else if(empty($GLOBALS[__NAMESPACE__.'_uninstalling'])) add_action('all_admin_notices', function ()
 	{
-		echo '<div class="error">'.
-		     '   <p>'. // Running multiple versions of this plugin at same time.
-		     '      '.sprintf(__('Please disable the LITE version of %1$s before you activate the PRO version.', str_replace('_', '-', __NAMESPACE__)), esc_html(str_replace('_', '-', __NAMESPACE__))).
-		     '   </p>'.
-		     '</div>';
+		$text_domain = str_replace('_', '-', __NAMESPACE__);
+		$name        = ucwords(str_replace(array('_', 'cache'), array(' ', 'Cache'), __NAMESPACE__));
+
+		if(!empty($GLOBALS['quick_cache_plugin_active']))
+			echo '<div class="error">'.
+			     '   <p>'. // Running multiple versions of this plugin at same time.
+			     '      '.sprintf(__('Please disable Quick Cache before you run %1$s.', $text_domain), esc_html($name)).
+			     '   </p>'.
+			     '</div>';
+		else
+			echo '<div class="error">'.
+			     '   <p>'. // Running multiple versions of this plugin at same time.
+			     '      '.sprintf(__('Please disable the LITE version of %1$s before you activate the PRO version.', $text_domain), esc_html($name)).
+			     '   </p>'.
+			     '</div>';
 	});
 }
