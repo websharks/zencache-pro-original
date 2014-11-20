@@ -1319,7 +1319,7 @@ namespace zencache
 				$total_time = number_format(microtime(TRUE) - $this->timer, 5, '.', ''); // Based on the original timer.
 				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('%1$s file path: %2$s', $this->text_domain), $this->name, str_replace(WP_CONTENT_DIR, '', $this->is_404 ? $this->cache_file_404 : $this->cache_file))).' -->';
 				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('%1$s file built for (%2$s%3$s) in %4$s seconds, on: %5$s.', $this->text_domain),
-				                                                $this->name, ($this->is_404) ? '404 [error document]' : $this->salt_location, (($this->user_token) ? '; '.sprintf(__('user token: %1$s', $this->text_domain), $this->user_token) : ''), $total_time, date('M jS, Y @ g:i a T'))).' -->';
+				                                                $this->name, $this->is_404 ? '404 [error document]' : $this->salt_location, (($this->user_token) ? '; '.sprintf(__('user token: %1$s', $this->text_domain), $this->user_token) : ''), $total_time, date('M jS, Y @ g:i a T'))).' -->';
 				$cache .= "\n".'<!-- '.htmlspecialchars(sprintf(__('This %1$s file will auto-expire (and be rebuilt) on: %2$s (based on your configured expiration time).', $this->text_domain), $this->name, date('M jS, Y @ g:i a T', strtotime('+'.ZENCACHE_MAX_AGE)))).' -->';
 			}
 			# NOT a 404, or it is 404 and the 404 cache file doesn't yet exist (so we need to create it).
