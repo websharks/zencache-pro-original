@@ -412,7 +412,7 @@ namespace zencache
 
 				add_filter('plugin_action_links_'.plugin_basename($this->file), array($this, 'add_settings_link'));
 
-				if($this->options['enable'] && $this->options['htmlc_enable']) // Mark `<!--footer-scripts-->` for HTML compressor.
+				if($this->options['enable'] && $this->options['htmlc_enable']) // `<!--footer-scripts-->` for HTML compressor.
 				{
 					add_action('wp_print_footer_scripts', array($this, 'htmlc_footer_scripts'), -PHP_INT_MAX);
 					add_action('wp_print_footer_scripts', array($this, 'htmlc_footer_scripts'), PHP_INT_MAX);

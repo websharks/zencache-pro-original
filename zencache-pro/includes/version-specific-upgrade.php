@@ -49,6 +49,7 @@ namespace zencache // Root namespace.
 				$this->from_lt_v140612();
 				$this->from_lt_v141001();
 				$this->from_lt_v141009();
+				$this->from_quick_cache();
 			}
 
 			/*
@@ -65,7 +66,7 @@ namespace zencache // Root namespace.
 					wp_clear_scheduled_hook('ws_plugin__qcache_garbage_collector__schedule'); // Ditch old CRON job.
 					wp_clear_scheduled_hook('ws_plugin__qcache_auto_cache_engine__schedule'); // Ditch old CRON job.
 
-					$this->plugin->enqueue_notice(__('<strong>ZenCache:</strong> this version is a <strong>complete rewrite</strong> :-) Please review your ZenCache options carefully!', $this->plugin->text_domain));
+					$this->plugin->enqueue_notice(__('<strong>ZenCache:</strong> this version is a <strong>complete rewrite</strong> of Quick Cache :-) Please review your ZenCache options carefully!', $this->plugin->text_domain));
 				}
 			}
 
@@ -87,25 +88,33 @@ namespace zencache // Root namespace.
 			{
 				if(version_compare($this->prev_version, '140605', '<'))
 				{
-					if(!empty($this->plugin->options['cache_dir']))
+					if((is_multisite() && is_array($existing_options = get_site_option(__NAMESPACE__.'_options')))
+					   || is_array($existing_options = get_option(__NAMESPACE__.'_options'))
+
+					   || (is_multisite() && is_array($existing_options = get_site_option('quick_cache_options')))
+					   || is_array($existing_options = get_option('quick_cache_options'))
+
+					) // Upgrading from a version before we introduced a branched cache structure?
 					{
-						$wp_content_dir_relative = // We considered custom locations.
-							trim(str_replace(ABSPATH, '', WP_CONTENT_DIR), '\\/'." \t\n\r\0\x0B");
+						if(!empty($existing_options['cache_dir']))
+						{
+							$wp_content_dir_relative = // We considered custom locations.
+								trim(str_replace(ABSPATH, '', WP_CONTENT_DIR), '\\/'." \t\n\r\0\x0B");
 
-						$this->plugin->options['base_dir'] = $this->plugin->options['cache_dir']
-							= trim($this->plugin->options['cache_dir'], '\\/'." \t\n\r\0\x0B");
+							$this->plugin->options['base_dir'] = $existing_options['cache_dir'] = trim($existing_options['cache_dir'], '\\/'." \t\n\r\0\x0B");
 
-						if(!$this->plugin->options['base_dir'] || $this->plugin->options['base_dir'] === $wp_content_dir_relative.'/cache')
-							$this->plugin->options['base_dir'] = $this->plugin->default_options['base_dir'];
+							if(!$this->plugin->options['base_dir'] || $this->plugin->options['base_dir'] === $wp_content_dir_relative.'/cache')
+								$this->plugin->options['base_dir'] = $this->plugin->default_options['base_dir'];
 
-						if($this->plugin->options['cache_dir']) // Wipe old files?
-							$this->plugin->wipe_cache(FALSE, ABSPATH.$this->plugin->options['cache_dir']);
-						unset($this->plugin->options['cache_dir']);
+							if($existing_options['cache_dir']) // Wipe old files?
+								$this->plugin->wipe_cache(FALSE, ABSPATH.$existing_options['cache_dir']);
+							unset($this->plugin->options['cache_dir']); // Just to be sure.
 
-						update_option(__NAMESPACE__.'_options', $this->plugin->options);
-						if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
+							update_option(__NAMESPACE__.'_options', $this->plugin->options);
+							if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
+						}
+						$this->plugin->enqueue_notice(__('<strong>ZenCache Feature Notice:</strong> This version of ZenCache introduces a new <a href="http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/" target="_blank">Branched Cache Structure</a> and several other <a href="http://www.websharks-inc.com/post/zencache-v140605-now-available/" target="_blank">new features</a>.', $this->plugin->text_domain));
 					}
-					$this->plugin->enqueue_notice(__('<strong>ZenCache Feature Notice:</strong> This version of ZenCache introduces a new <a href="http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/" target="_blank">Branched Cache Structure</a> and several other <a href="http://www.websharks-inc.com/post/zencache-v140605-now-available/" target="_blank">new features</a>.', $this->plugin->text_domain));
 				}
 			}
 
@@ -118,7 +127,13 @@ namespace zencache // Root namespace.
 			{
 				if(version_compare($this->prev_version, '140612', '<'))
 				{
-					if(is_array($existing_options = get_option(__NAMESPACE__.'_options')))
+					if((is_multisite() && is_array($existing_options = get_site_option(__NAMESPACE__.'_options')))
+					   || is_array($existing_options = get_option(__NAMESPACE__.'_options'))
+
+					   || (is_multisite() && is_array($existing_options = get_site_option('quick_cache_options')))
+					   || is_array($existing_options = get_option('quick_cache_options'))
+
+					) // Upgrading from a version before we changed base directory from `ABSPATH` to `WP_CONTENT_DIR`?
 					{
 						if(!empty($existing_options['base_dir']) && stripos($existing_options['base_dir'], basename(WP_CONTENT_DIR)) !== FALSE)
 						{
@@ -152,7 +167,7 @@ namespace zencache // Root namespace.
 			}
 
 			/**
-			 * Upgrading from a version before we changed several `cache_purge_*` optinos to `cache_clear_*`.
+			 * Upgrading from a version before we changed several `cache_purge_*` options to `cache_clear_*`.
 			 *    If so, we need to use the existing options to fill the new keys.
 			 *    And, of course, then we save the updated options.
 			 */
@@ -160,7 +175,13 @@ namespace zencache // Root namespace.
 			{
 				if(version_compare($this->prev_version, '141009', '<'))
 				{
-					if(is_array($existing_options = get_option(__NAMESPACE__.'_options')))
+					if((is_multisite() && is_array($existing_options = get_site_option(__NAMESPACE__.'_options')))
+					   || is_array($existing_options = get_option(__NAMESPACE__.'_options'))
+
+					   || (is_multisite() && is_array($existing_options = get_site_option('quick_cache_options')))
+					   || is_array($existing_options = get_option('quick_cache_options'))
+
+					) // Update old purge keys; which now use `clear` instead of `purge`.
 					{
 						foreach(array('cache_purge_xml_feeds_enable',
 						              'cache_purge_xml_sitemaps_enable',
@@ -171,7 +192,7 @@ namespace zencache // Root namespace.
 						              'cache_purge_author_page_enable',
 						              'cache_purge_term_category_enable',
 						              'cache_purge_term_post_tag_enable',
-						              'cache_purge_term_other_enable'
+						              'cache_purge_term_other_enable',
 						        ) as $_old_purge_option)
 							if(isset($existing_options[$_old_purge_option][0]))
 							{
@@ -188,6 +209,37 @@ namespace zencache // Root namespace.
 					}
 				}
 			}
+
+			/**
+			 * Upgrading from a version before we changed the name to ZenCache.
+			 */
+			public function from_quick_cache()
+			{
+				if((is_multisite() && is_array($quick_cache_options = get_site_option('quick_cache_options')))
+				   || is_array($quick_cache_options = get_option('quick_cache_options'))
+
+				) // Automatically uninstall Quick Cache; for the most part anyway.
+				{
+					delete_option('quick_cache_options');
+					if(is_multisite()) // Delete network options too.
+						delete_site_option('quick_cache_options');
+
+					delete_option('quick_cache_notices');
+					delete_option('quick_cache_errors');
+
+					wp_clear_scheduled_hook('_cron_quick_cache_auto_cache');
+					wp_clear_scheduled_hook('_cron_quick_cache_cleanup');
+
+					if(!empty($quick_cache_options['base_dir']))
+						$this->plugin->delete_all_files_dirs_in(WP_CONTENT_DIR.'/'.trim($quick_cache_options['base_dir'], '/'), TRUE);
+					$this->plugin->remove_base_dir(); // Let's be extra sure that the old base directory is gone.
+
+					$this->plugin->options['base_dir']    = $this->plugin->default_options['base_dir'];
+					$this->plugin->options['crons_setup'] = $this->plugin->default_options['crons_setup'];
+
+					update_option(__NAMESPACE__.'_options', $this->plugin->options);
+					if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
+				}
+			}
 		}
 	}
-}
