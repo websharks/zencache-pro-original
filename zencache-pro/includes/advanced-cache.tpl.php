@@ -330,7 +330,10 @@ namespace zencache
 	/*
 	 * Include shared methods between {@link advanced_cache} and {@link plugin}.
 	 */
-	require_once dirname(ZENCACHE_PLUGIN_FILE).'/includes/share.php';
+	if(defined('WP_DEBUG') && WP_DEBUG)
+		require_once dirname(ZENCACHE_PLUGIN_FILE).'/includes/share.php';
+	else if(@require_once dirname(ZENCACHE_PLUGIN_FILE).'/includes/share.php' === FALSE)
+		return; // Unable to find class dependency. Fail softly.
 
 	/**
 	 * ZenCache (Advanced Cache Handler)
