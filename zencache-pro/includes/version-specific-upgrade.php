@@ -112,6 +112,8 @@ namespace zencache // Root namespace.
 
 							update_option(__NAMESPACE__.'_options', $this->plugin->options);
 							if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
+
+							$this->plugin->activate(); // Reactivate plugin w/ new options.
 						}
 						$this->plugin->enqueue_notice(__('<strong>ZenCache Feature Notice:</strong> This version of ZenCache introduces a new <a href="http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/" target="_blank">Branched Cache Structure</a> and several other <a href="http://www.websharks-inc.com/post/zencache-v140605-now-available/" target="_blank">new features</a>.', $this->plugin->text_domain));
 					}
@@ -142,6 +144,8 @@ namespace zencache // Root namespace.
 
 							update_option(__NAMESPACE__.'_options', $this->plugin->options);
 							if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
+
+							$this->plugin->activate(); // Reactivate plugin w/ new options.
 
 							$this->plugin->enqueue_notice( // Give site owners a quick heads up about this.
 								'<p>'.__('<strong>ZenCache Notice:</strong> This version of ZenCache changes the default base directory that it uses, from <code>ABSPATH</code> to <code>WP_CONTENT_DIR</code>. This is for improved compatibility with installations that choose to use a custom <code>WP_CONTENT_DIR</code> location.', $this->plugin->text_domain).
@@ -239,6 +243,8 @@ namespace zencache // Root namespace.
 
 					update_option(__NAMESPACE__.'_options', $this->plugin->options);
 					if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
+
+					$this->plugin->activate(); // Reactivate plugin w/ new options.
 				}
 			}
 		}
