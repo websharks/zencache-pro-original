@@ -13,8 +13,9 @@ namespace zencache
 		exit('Do NOT access this file directly: '.basename(__FILE__));
 
 	require_once dirname(__FILE__).'/includes/share.php';
+	require dirname(__FILE__).'/includes/conflicts-check.php';
 
-	if(!class_exists('\\'.__NAMESPACE__.'\\plugin') && empty($GLOBALS['quick_cache_plugin_active']))
+	if(!class_exists('\\'.__NAMESPACE__.'\\plugin') && empty($GLOBALS[__NAMESPACE__.'_conflicting_plugin']))
 	{
 		/**
 		 * ZenCache Plugin
@@ -3065,22 +3066,28 @@ namespace zencache
 			$GLOBALS[__NAMESPACE__] = new plugin(); // Load the ZenCache plugin automatically.
 		require_once dirname(__FILE__).'/includes/api-class.php'; // API class.
 	}
-	else if(empty($GLOBALS[__NAMESPACE__.'_uninstalling'])) add_action('all_admin_notices', function ()
+	else if(!empty($GLOBALS[__NAMESPACE__.'_conflicting_plugin']) && empty($GLOBALS[__NAMESPACE__.'_uninstalling'])) add_action('all_admin_notices', function ()
 	{
-		$text_domain = str_replace('_', '-', __NAMESPACE__);
-		$name        = ucwords(str_replace(array('_', 'cache'), array(' ', 'Cache'), __NAMESPACE__));
+		$construct_name          = function ($string)
+		{
+			$name = trim(strtolower((string)$string));
+			$name = preg_replace('/[^a-z0-9]/', ' ', $name);
+			$name = str_replace('cache', 'Cache', ucwords($name));
+			return $name; // e.g. `x-cache` becomes `X Cache`.
+		};
+		$text_domain             = str_replace('_', '-', __NAMESPACE__);
+		$conflicting_plugin_name = $construct_name($GLOBALS[__NAMESPACE__.'_conflicting_plugin']);
+		$plugin_name             = $construct_name(__NAMESPACE__); // e.g. `zencache` becomes `ZenCache`.
 
-		if(!empty($GLOBALS['quick_cache_plugin_active']))
-			echo '<div class="error">'.
-			     '   <p>'. // Running multiple versions of this plugin at same time.
-			     '      '.sprintf(__('Please disable Quick Cache before you run %1$s.', $text_domain), esc_html($name)).
-			     '   </p>'.
-			     '</div>';
-		else
-			echo '<div class="error">'.
-			     '   <p>'. // Running multiple versions of this plugin at same time.
-			     '      '.sprintf(__('Please disable the LITE version of %1$s before you activate the PRO version.', $text_domain), esc_html($name)).
-			     '   </p>'.
-			     '</div>';
+		if(strcasecmp($conflicting_plugin_name, $plugin_name) === 0 && !preg_match($plugin_name, '/\b(?:lite|pro)\b/i', $plugin_name))
+		{
+			$conflicting_plugin_name = $conflicting_plugin_name.' '.__('Lite', $text_domain);
+			$plugin_name             = $plugin_name.' '.__('Pro', $text_domain);
+		}
+		echo '<div class="error">'.
+		     '   <p>'. // Running multiple versions of this plugin at same time.
+		     '      '.sprintf(__('Please disable %1$s before you run %2$s.', $text_domain), esc_html($conflicting_plugin_name), esc_html($plugin_name)).
+		     '   </p>'.
+		     '</div>';
 	});
 }

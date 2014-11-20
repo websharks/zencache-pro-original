@@ -16,15 +16,7 @@ Speed up your site (BIG time!) — ZenCache provides reliable page caching for W
 if(!defined('WPINC')) // MUST have WordPress.
 	exit('Do NOT access this file directly: '.basename(__FILE__));
 
-if(require(dirname(__FILE__).'/includes/wp-php53.php')) // TRUE if running PHP v5.3+.
-{
-	if(!($GLOBALS['quick_cache_plugin_active'] = class_exists('\\quick_cache\\plugin')))
-		foreach(array_merge(wp_get_active_and_valid_plugins(), wp_get_active_network_plugins()) as ${__FILE__}['_active_plugin'])
-			if(stripos(${__FILE__}['_active_plugin'], 'quick-cache') !== FALSE)
-				$GLOBALS['quick_cache_plugin_active'] = TRUE;
-
-	unset(${__FILE__}); // Housekeeping.
-
+$GLOBALS['wp_php_rv'] = '5.3'; // Require PHP v5.3+.
+if(require(dirname(__FILE__).'/submodules/wp-php-rv/wp-php-rv.php'))
 	require_once dirname(__FILE__).'/zencache-pro.inc.php';
-}
-else wp_php53_notice('ZenCache Pro');
+else wp_php_rv_notice('ZenCache Pro');
