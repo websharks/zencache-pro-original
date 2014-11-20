@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZenCache Pro 141001\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/zencache-pro\n"
-"POT-Creation-Date: 2014-11-20 01:49:05+00:00\n"
+"POT-Creation-Date: 2014-11-20 21:26:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,11 +43,11 @@ msgstr ""
 #. translators: This string is actually NOT translatable because the `__()`
 #. function is not available at this point in the processing.
 #: includes/advanced-cache.tpl.php:1027
-msgid "ZenCache fully functional :-) Cache file served for (%1$s) in %2$s seconds, on: %3$s."
+msgid "%1$s fully functional :-) Cache file served for (%2$s) in %3$s seconds, on: %4$s."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1139
-msgid "ZenCache fully functional :-) Cache file served for (%1$s; user token: %2$s) in %3$s seconds, on: %4$s."
+msgid "%1$s fully functional :-) Cache file served for (%2$s; user token: %3$s) in %4$s seconds, on: %5$s."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1230
@@ -55,7 +55,7 @@ msgid "Unexpected OB phase: `%1$s`."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1300
-msgid "Cache directory not writable. ZenCache needs this directory please: `%1$s`. Set permissions to `755` or higher; `777` might be needed in some cases."
+msgid "Cache directory not writable. %1$s needs this directory please: `%2$s`. Set permissions to `755` or higher; `777` might be needed in some cases."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1307 includes/advanced-cache.tpl.php:1332
@@ -63,11 +63,11 @@ msgid "Unable to create symlink: `%1$s` » `%2$s`. Possible permissions issue (o
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1320
-msgid "ZenCache file path: %1$s"
+msgid "%1$s file path: %2$s"
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1321
-msgid "ZenCache file built for (%1$s%2$s) in %3$s seconds, on: %4$s."
+msgid "%1$s file built for (%2$s%3$s) in %4$s seconds, on: %5$s."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1322
@@ -75,15 +75,15 @@ msgid "user token: %1$s"
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1323
-msgid "This ZenCache file will auto-expire (and be rebuilt) on: %1$s (based on your configured expiration time)."
+msgid "This %1$s file will auto-expire (and be rebuilt) on: %2$s (based on your configured expiration time)."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1347
-msgid "ZenCache: failed to write cache file for: `%1$s`; possible permissions issue (or race condition), please check your cache directory: `%2$s`."
+msgid "%1$s: failed to write cache file for: `%2$s`; possible permissions issue (or race condition), please check your cache directory: `%3$s`."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1381
-msgid "ZenCache HTML Compressor"
+msgid "%1$s HTML Compressor"
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1449
@@ -147,7 +147,7 @@ msgid "because the current user visiting this page (usually YOU), appears to be 
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1510
-msgid "because the current user appeared to be logged into the site (in one way or another); but ZenCache was unable to formulate a User Token for them. Please report this as a possible bug."
+msgid "because the current user appeared to be logged into the site (in one way or another); but %1$s was unable to formulate a User Token for them. Please report this as a possible bug."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1514
@@ -175,7 +175,7 @@ msgid "because a plugin running on this installation says this page is in Mainte
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1538
-msgid "because ZenCache is unable to cache already-compressed output. Please use `mod_deflate` w/ Apache; or use `zlib.output_compression` in your `php.ini` file. ZenCache is NOT compatible with `ob_gzhandler()` and others like this."
+msgid "because %1$s is unable to cache already-compressed output. Please use `mod_deflate` w/ Apache; or use `zlib.output_compression` in your `php.ini` file. %1$s is NOT compatible with `ob_gzhandler()` and others like this."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1542
@@ -191,11 +191,11 @@ msgid "because a `Status:` header (or an `HTTP/` header) was set via PHP at runt
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1554
-msgid "because the WordPress `is_404()` Conditional Tag says the current page is a 404 error; and this is the first time it's happened on this page. Your current configuration says that 404 errors SHOULD be cached, so ZenCache built a cached symlink which points future requests for this location to your already-cached 404 error document. If you reload this page (assuming you don't clear the cache before you do so); you should get a cached version of your 404 error document. This message occurs ONCE for each new/unique 404 error request."
+msgid "because the WordPress `is_404()` Conditional Tag says the current page is a 404 error; and this is the first time it's happened on this page. Your current configuration says that 404 errors SHOULD be cached, so %1$s built a cached symlink which points future requests for this location to your already-cached 404 error document. If you reload this page (assuming you don't clear the cache before you do so); you should get a cached version of your 404 error document. This message occurs ONCE for each new/unique 404 error request."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1558
-msgid "because ZenCache detected an early output buffer termination. This may happen when a theme/plugin ends, cleans, or flushes all output buffers before reaching the PHP shutdown phase. It's not always a bad thing. Sometimes it is necessary for a theme/plugin to do this. However, in this scenario it is NOT possible to cache the output; since ZenCache is effectively disabled at runtime when this occurs."
+msgid "because %1$s detected an early output buffer termination. This may happen when a theme/plugin ends, cleans, or flushes all output buffers before reaching the PHP shutdown phase. It's not always a bad thing. Sometimes it is necessary for a theme/plugin to do this. However, in this scenario it is NOT possible to cache the output; since %1$s is effectively disabled at runtime when this occurs."
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1562
@@ -203,7 +203,7 @@ msgid "due to an unexpected behavior in the application. Please report this as a
 msgstr ""
 
 #: includes/advanced-cache.tpl.php:1565
-msgid "ZenCache is NOT caching this page, %1$s"
+msgid "%1$s is NOT caching this page, %2$s"
 msgstr ""
 
 #: includes/auto-cache.php:155 includes/auto-cache.php:183
@@ -222,15 +222,15 @@ msgstr ""
 msgid "Invalid XML sitemap content type at: `%1$s`. Expecting XML. Instead got: `%2$s`."
 msgstr ""
 
-#: includes/menu-pages.php:24 zencache-pro.inc.php:636
+#: includes/menu-pages.php:24 zencache-pro.inc.php:637
 msgid "Wipe Cache (Start Fresh); clears the cache for all sites in this network at once!"
 msgstr ""
 
-#: includes/menu-pages.php:26 zencache-pro.inc.php:635
+#: includes/menu-pages.php:26 zencache-pro.inc.php:636
 msgid "Wipe"
 msgstr ""
 
-#: includes/menu-pages.php:28 zencache-pro.inc.php:642
+#: includes/menu-pages.php:28 zencache-pro.inc.php:643
 msgid "Clear Cache (Start Fresh)"
 msgstr ""
 
@@ -250,7 +250,7 @@ msgstr ""
 msgid "Restore"
 msgstr ""
 
-#: includes/menu-pages.php:37 includes/menu-pages.php:698
+#: includes/menu-pages.php:37 includes/menu-pages.php:696
 msgid "All Panels"
 msgstr ""
 
@@ -258,16 +258,16 @@ msgstr ""
 msgid "Pro Updater"
 msgstr ""
 
-#: includes/menu-pages.php:44 includes/menu-pages.php:705
+#: includes/menu-pages.php:44 includes/menu-pages.php:703
 msgid "Newsletter (Subscribe)"
 msgstr ""
 
-#: includes/menu-pages.php:45 includes/menu-pages.php:706
+#: includes/menu-pages.php:45 includes/menu-pages.php:704
 msgid "Beta Testers (Signup)"
 msgstr ""
 
-#: includes/menu-pages.php:48 zencache-pro.inc.php:786
-#: zencache-pro.inc.php:809
+#: includes/menu-pages.php:48 zencache-pro.inc.php:787
+#: zencache-pro.inc.php:810
 msgid "Plugin Options"
 msgstr ""
 
@@ -308,15 +308,19 @@ msgid "Failed to remove your <code>/wp-content/advanced-cache.php</code> file. M
 msgstr ""
 
 #: includes/menu-pages.php:105
-msgid "ZenCache is currently disabled; please review options below."
+msgid "%1$s is currently disabled; please review options below."
 msgstr ""
 
 #: includes/menu-pages.php:113
 msgid "Enable/Disable"
 msgstr ""
 
+#: includes/menu-pages.php:117
+msgid "%1$s = <i class=\"fa fa-tachometer fa-4x\"></i> SPEED<em>!!</em>"
+msgstr ""
+
 #: includes/menu-pages.php:118
-msgid "Yes, enable ZenCache!"
+msgid "Yes, enable %1$s!"
 msgstr ""
 
 #: includes/menu-pages.php:118
@@ -324,23 +328,23 @@ msgid "No, disable."
 msgstr ""
 
 #: includes/menu-pages.php:120
-msgid "<strong>HUGE Time-Saver:</strong> Approx. 95% of all WordPress sites running ZenCache, simply enable it here; and that's it :-) <strong>No further configuration is necessary (really).</strong> All of the other options (down below) are already tuned for the BEST performance on a typical WordPress installation. Simply enable ZenCache here and click \"Save All Changes\". If you get any warnings please follow the instructions given. Otherwise, you're good <i class=\"fa fa-smile-o\"></i>. This plugin is designed to run just fine like it is. Take it for a spin right away; you can always fine-tune things later if you deem necessary."
+msgid "<strong>HUGE Time-Saver:</strong> Approx. 95% of all WordPress sites running %1$s, simply enable it here; and that's it :-) <strong>No further configuration is necessary (really).</strong> All of the other options (down below) are already tuned for the BEST performance on a typical WordPress installation. Simply enable %1$s here and click \"Save All Changes\". If you get any warnings please follow the instructions given. Otherwise, you're good <i class=\"fa fa-smile-o\"></i>. This plugin is designed to run just fine like it is. Take it for a spin right away; you can always fine-tune things later if you deem necessary."
 msgstr ""
 
 #: includes/menu-pages.php:123
-msgid "How Can I Tell ZenCache is Working?"
+msgid "How Can I Tell %1$s is Working?"
 msgstr ""
 
 #: includes/menu-pages.php:124
-msgid "First of all, please make sure that you've enabled ZenCache here; then scroll down to the bottom of this page and click \"Save All Changes\". All of the other options (below) are already pre-configured for typical usage. Feel free to skip them all for now. You can go back through all of these later and fine-tune things the way you like them."
+msgid "First of all, please make sure that you've enabled %1$s here; then scroll down to the bottom of this page and click \"Save All Changes\". All of the other options (below) are already pre-configured for typical usage. Feel free to skip them all for now. You can go back through all of these later and fine-tune things the way you like them."
 msgstr ""
 
 #: includes/menu-pages.php:125
-msgid "Once ZenCache has been enabled, <strong>you'll need to log out (and/or clear browser cookies)</strong>. By default, cache files are NOT served to visitors who are logged-in, and that includes you too ;-) Cache files are NOT served to recent comment authors either. If you've commented (or replied to a comment lately); please clear your browser cookies before testing."
+msgid "Once %1$s has been enabled, <strong>you'll need to log out (and/or clear browser cookies)</strong>. By default, cache files are NOT served to visitors who are logged-in, and that includes you too ;-) Cache files are NOT served to recent comment authors either. If you've commented (or replied to a comment lately); please clear your browser cookies before testing."
 msgstr ""
 
 #: includes/menu-pages.php:126
-msgid "<strong>To verify that ZenCache is working</strong>, navigate your site like a normal visitor would. Right-click on any page (choose View Source), then scroll to the very bottom of the document. At the bottom, you'll find comments that show ZenCache stats and information. You should also notice that page-to-page navigation is <i class=\"fa fa-flash\"></i> <strong>lightning fast</strong> now that ZenCache is running; and it gets faster over time!"
+msgid "<strong>To verify that %1$s is working</strong>, navigate your site like a normal visitor would. Right-click on any page (choose View Source), then scroll to the very bottom of the document. At the bottom, you'll find comments that show %1$s stats and information. You should also notice that page-to-page navigation is <i class=\"fa fa-flash\"></i> <strong>lightning fast</strong> now that %1$s is running; and it gets faster over time!"
 msgstr ""
 
 #: includes/menu-pages.php:128
@@ -364,7 +368,7 @@ msgid "Uninstall on Plugin Deletion; or Safeguard Options?"
 msgstr ""
 
 #: includes/menu-pages.php:145
-msgid "<strong>Tip:</strong> By default, if you delete ZenCache using the plugins menu in WordPress, nothing is lost. However, if you want to completely uninstall ZenCache you should set this to <code>Yes</code> and <strong>THEN</strong> deactivate &amp; delete ZenCache from the plugins menu in WordPress. This way ZenCache will erase your options for the plugin, erase directories/files created by the plugin, remove the <code>advanced-cache.php</code> file, terminate CRON jobs, etc. It erases itself from existence completely."
+msgid "<strong>Tip:</strong> By default, if you delete %1$s using the plugins menu in WordPress, nothing is lost. However, if you want to completely uninstall %1$s you should set this to <code>Yes</code> and <strong>THEN</strong> deactivate &amp; delete %1$s from the plugins menu in WordPress. This way %1$s will erase your options for the plugin, erase directories/files created by the plugin, remove the <code>advanced-cache.php</code> file, terminate CRON jobs, etc. It erases itself from existence completely."
 msgstr ""
 
 #: includes/menu-pages.php:147
@@ -372,7 +376,7 @@ msgid "Safeguard my options and the cache (recommended)."
 msgstr ""
 
 #: includes/menu-pages.php:148
-msgid "Yes, uninstall (completely erase) ZenCache on plugin deletion."
+msgid "Yes, uninstall (completely erase) %1$s on plugin deletion."
 msgstr ""
 
 #: includes/menu-pages.php:157
@@ -384,11 +388,11 @@ msgid "Clearing the Cache Manually"
 msgstr ""
 
 #: includes/menu-pages.php:163
-msgid "Once ZenCache is enabled, you will find this new option in your WordPress Admin Bar (see screenshot on right). Clicking this button will clear the cache and you can start fresh at anytime (e.g. you can do this manually; and as often as you wish)."
+msgid "Once %1$s is enabled, you will find this new option in your WordPress Admin Bar (see screenshot on right). Clicking this button will clear the cache and you can start fresh at anytime (e.g. you can do this manually; and as often as you wish)."
 msgstr ""
 
 #: includes/menu-pages.php:164
-msgid "Depending on the structure of your site, there could be many reasons to clear the cache. However, the most common reasons are related to Post/Page edits or deletions, Category/Tag edits or deletions, and Theme changes. ZenCache handles most scenarios all by itself. However, many site owners like to clear the cache manually; for a variety of reasons (just to force a refresh)."
+msgid "Depending on the structure of your site, there could be many reasons to clear the cache. However, the most common reasons are related to Post/Page edits or deletions, Category/Tag edits or deletions, and Theme changes. %1$s handles most scenarios all by itself. However, many site owners like to clear the cache manually; for a variety of reasons (just to force a refresh)."
 msgstr ""
 
 #: includes/menu-pages.php:166
@@ -404,7 +408,7 @@ msgid "Running the <a href=\"http://www.websharks-inc.com/product/s2clean/\" tar
 msgstr ""
 
 #: includes/menu-pages.php:171
-msgid "If s2Clean is installed, ZenCache can be configured to clear the Markdown cache too (if you've enabled Markdown processing with s2Clean). The s2Clean Markdown cache is only cleared when you manually clear the cache (with ZenCache); and only if you enable this option here. Note: s2Clean's Markdown cache is extremely dynamic. Just like the rest of your site, s2Clean caches do NOT need to be cleared away at all, as this happens automatically when your content changes. However, some developers find this feature useful while developing their site; just to force a refresh."
+msgid "If s2Clean is installed, %1$s can be configured to clear the Markdown cache too (if you've enabled Markdown processing with s2Clean). The s2Clean Markdown cache is only cleared when you manually clear the cache (with %1$s); and only if you enable this option here. Note: s2Clean's Markdown cache is extremely dynamic. Just like the rest of your site, s2Clean caches do NOT need to be cleared away at all, as this happens automatically when your content changes. However, some developers find this feature useful while developing their site; just to force a refresh."
 msgstr ""
 
 #: includes/menu-pages.php:173
@@ -420,7 +424,7 @@ msgid "Process Other Custom PHP Code?"
 msgstr ""
 
 #: includes/menu-pages.php:177
-msgid "If you have other custom routines you'd like to process when the cache is cleared manually, please type your custom PHP code here. The PHP code that you provide is only evaluated when you manually clear the cache (with ZenCache); and only if the field below contains PHP code. Note: if your PHP code outputs a message (e.g. if you have <code>echo '&lt;p&gt;My message&lt;/p&gt;';</code>); your message will be displayed along with any other notes from ZenCache itself. This could be useful to developers that need to clear server caches too (such as <a href=\"http://www.php.net/manual/en/function.apc-clear-cache.php\" target=\"_blank\">APC</a> or <a href=\"http://www.php.net/manual/en/memcache.flush.php\" target=\"_blank\">memcache</a>)."
+msgid "If you have other custom routines you'd like to process when the cache is cleared manually, please type your custom PHP code here. The PHP code that you provide is only evaluated when you manually clear the cache (with %1$s); and only if the field below contains PHP code. Note: if your PHP code outputs a message (e.g. if you have <code>echo '&lt;p&gt;My message&lt;/p&gt;';</code>); your message will be displayed along with any other notes from %1$s itself. This could be useful to developers that need to clear server caches too (such as <a href=\"http://www.php.net/manual/en/function.apc-clear-cache.php\" target=\"_blank\">APC</a> or <a href=\"http://www.php.net/manual/en/memcache.flush.php\" target=\"_blank\">memcache</a>)."
 msgstr ""
 
 #: includes/menu-pages.php:179
@@ -432,15 +436,15 @@ msgid "Clearing the Cache Automatically"
 msgstr ""
 
 #: includes/menu-pages.php:183
-msgid "This is built into the ZenCache plugin; e.g. this functionality is \"always on\". If you edit a Post/Page (or delete one), ZenCache will automatically clear the cache file(s) associated with that content. This way a new updated version of the cache will be created automatically the next time this content is accessed. Simple updates like this occur each time you make changes in the Dashboard, and ZenCache will notify you of these as they occur. ZenCache monitors changes to Posts (of any kind, including Pages), Categories, Tags, Links, Themes (even Users); and more. Notifications in the Dashboard regarding these detections can be enabled/disabled below."
+msgid "This is built into the %1$s plugin; e.g. this functionality is \"always on\". If you edit a Post/Page (or delete one), %1$s will automatically clear the cache file(s) associated with that content. This way a new updated version of the cache will be created automatically the next time this content is accessed. Simple updates like this occur each time you make changes in the Dashboard, and %1$s will notify you of these as they occur. %1$s monitors changes to Posts (of any kind, including Pages), Categories, Tags, Links, Themes (even Users); and more. Notifications in the Dashboard regarding these detections can be enabled/disabled below."
 msgstr ""
 
 #: includes/menu-pages.php:185
-msgid "Yes, enable ZenCache notifications in the Dashboard when changes are detected &amp; one or more cache files are cleared automatically."
+msgid "Yes, enable %1$s notifications in the Dashboard when changes are detected &amp; one or more cache files are cleared automatically."
 msgstr ""
 
 #: includes/menu-pages.php:186
-msgid "No, I don't want to know (don't really care) what ZenCache is doing behind-the-scene."
+msgid "No, I don't want to know (don't really care) what %1$s is doing behind-the-scene."
 msgstr ""
 
 #: includes/menu-pages.php:189
@@ -448,7 +452,7 @@ msgid "Auto-Clear Designated \"Home Page\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:190
-msgid "On many sites, the Home Page (aka: the Front Page) offers an archive view of all Posts (or even Pages). Therefore, if a single Post/Page is changed in some way; and ZenCache clears/resets the cache for a single Post/Page, would you like ZenCache to also clear any existing cache files for the \"Home Page\"?"
+msgid "On many sites, the Home Page (aka: the Front Page) offers an archive view of all Posts (or even Pages). Therefore, if a single Post/Page is changed in some way; and %1$s clears/resets the cache for a single Post/Page, would you like %1$s to also clear any existing cache files for the \"Home Page\"?"
 msgstr ""
 
 #: includes/menu-pages.php:192
@@ -464,7 +468,7 @@ msgid "Auto-Clear Designated \"Posts Page\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:196
-msgid "On many sites, the Posts Page (aka: the Blog Page) offers an archive view of all Posts (or even Pages). Therefore, if a single Post/Page is changed in some way; and ZenCache clears/resets the cache for a single Post/Page, would you like ZenCache to also clear any existing cache files for the \"Posts Page\"?"
+msgid "On many sites, the Posts Page (aka: the Blog Page) offers an archive view of all Posts (or even Pages). Therefore, if a single Post/Page is changed in some way; and %1$s clears/resets the cache for a single Post/Page, would you like %1$s to also clear any existing cache files for the \"Posts Page\"?"
 msgstr ""
 
 #: includes/menu-pages.php:198
@@ -480,7 +484,7 @@ msgid "Auto-Clear \"Author Page\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:203
-msgid "On many sites, each author has a related \"Author Page\" that offers an archive view of all posts associated with that author. Therefore, if a single Post/Page is changed in some way; and ZenCache clears/resets the cache for a single Post/Page, would you like ZenCache to also clear any existing cache files for the related \"Author Page\"?"
+msgid "On many sites, each author has a related \"Author Page\" that offers an archive view of all posts associated with that author. Therefore, if a single Post/Page is changed in some way; and %1$s clears/resets the cache for a single Post/Page, would you like %1$s to also clear any existing cache files for the related \"Author Page\"?"
 msgstr ""
 
 #: includes/menu-pages.php:205
@@ -496,7 +500,7 @@ msgid "Auto-Clear \"Category Archives\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:209
-msgid "On many sites, each post is associated with at least one Category. Each category then has an archive view that contains all the posts within that category. Therefore, if a single Post/Page is changed in some way; and ZenCache clears/resets the cache for a single Post/Page, would you like ZenCache to also clear any existing cache files for the associated Category archive views?"
+msgid "On many sites, each post is associated with at least one Category. Each category then has an archive view that contains all the posts within that category. Therefore, if a single Post/Page is changed in some way; and %1$s clears/resets the cache for a single Post/Page, would you like %1$s to also clear any existing cache files for the associated Category archive views?"
 msgstr ""
 
 #: includes/menu-pages.php:211
@@ -512,7 +516,7 @@ msgid "Auto-Clear \"Tag Archives\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:215
-msgid "On many sites, each post may be associated with at least one Tag. Each tag then has an archive view that contains all the posts assigned that tag. Therefore, if a single Post/Page is changed in some way; and ZenCache clears/resets the cache for a single Post/Page, would you like ZenCache to also clear any existing cache files for the associated Tag archive views?"
+msgid "On many sites, each post may be associated with at least one Tag. Each tag then has an archive view that contains all the posts assigned that tag. Therefore, if a single Post/Page is changed in some way; and %1$s clears/resets the cache for a single Post/Page, would you like %1$s to also clear any existing cache files for the associated Tag archive views?"
 msgstr ""
 
 #: includes/menu-pages.php:217
@@ -528,7 +532,7 @@ msgid "Auto-Clear \"Custom Term Archives\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:221
-msgid "Most sites do not use any custom Terms so it should be safe to leave this disabled. However, if your site uses custom Terms and they have their own Term archive views, you may want to clear those when the associated post is cleared. Therefore, if a single Post/Page is changed in some way; and ZenCache clears/resets the cache for a single Post/Page, would you like ZenCache to also clear any existing cache files for the associated Tag archive views?"
+msgid "Most sites do not use any custom Terms so it should be safe to leave this disabled. However, if your site uses custom Terms and they have their own Term archive views, you may want to clear those when the associated post is cleared. Therefore, if a single Post/Page is changed in some way; and %1$s clears/resets the cache for a single Post/Page, would you like %1$s to also clear any existing cache files for the associated Tag archive views?"
 msgstr ""
 
 #: includes/menu-pages.php:223
@@ -544,7 +548,7 @@ msgid "Auto-Clear \"Custom Post Type Archives\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:227
-msgid "Most sites do not use any Custom Post Types so it should be safe to disable this option. However, if your site uses Custom Post Types and they have their own Custom Post Type archive views, you may want to clear those when any associated post is cleared. Therefore, if a single Post with a Custom Post Type is changed in some way; and ZenCache clears/resets the cache for that post, would you like ZenCache to also clear any existing cache files for the associated Custom Post Type archive views?"
+msgid "Most sites do not use any Custom Post Types so it should be safe to disable this option. However, if your site uses Custom Post Types and they have their own Custom Post Type archive views, you may want to clear those when any associated post is cleared. Therefore, if a single Post with a Custom Post Type is changed in some way; and %1$s clears/resets the cache for that post, would you like %1$s to also clear any existing cache files for the associated Custom Post Type archive views?"
 msgstr ""
 
 #: includes/menu-pages.php:229
@@ -560,7 +564,7 @@ msgid "Auto-Clear \"RSS/RDF/ATOM Feeds\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:234
-msgid "If you enable Feed Caching (below), this can be quite handy. If enabled, when you update a Post/Page, approve a Comment, or make other changes where ZenCache can detect that certain types of Feeds should be cleared to keep your site up-to-date, then ZenCache will do this for you automatically. For instance, the blog's master feed, the blog's master comments feed, feeds associated with comments on a Post/Page, term-related feeds (including mixed term-related feeds), author-related feeds, etc. Under various circumstances (i.e. as you work in the Dashboard) these can be cleared automatically to keep your site up-to-date."
+msgid "If you enable Feed Caching (below), this can be quite handy. If enabled, when you update a Post/Page, approve a Comment, or make other changes where %1$s can detect that certain types of Feeds should be cleared to keep your site up-to-date, then %1$s will do this for you automatically. For instance, the blog's master feed, the blog's master comments feed, feeds associated with comments on a Post/Page, term-related feeds (including mixed term-related feeds), author-related feeds, etc. Under various circumstances (i.e. as you work in the Dashboard) these can be cleared automatically to keep your site up-to-date."
 msgstr ""
 
 #: includes/menu-pages.php:236
@@ -576,7 +580,7 @@ msgid "Auto-Clear \"XML Sitemaps\" Too?"
 msgstr ""
 
 #: includes/menu-pages.php:241
-msgid "If you're generating XML Sitemaps with a plugin like <a href=\"http://wordpress.org/plugins/google-sitemap-generator/\" target=\"_blank\">Google XML Sitemaps</a>, you can tell ZenCache to automatically clear the cache of any XML Sitemaps whenever it clears a Post/Page. Note; this does NOT clear the XML Sitemap itself of course, only the cache. The point being, to clear the cache and allow changes to a Post/Page to be reflected by a fresh copy of your XML Sitemap; sooner rather than later."
+msgid "If you're generating XML Sitemaps with a plugin like <a href=\"http://wordpress.org/plugins/google-sitemap-generator/\" target=\"_blank\">Google XML Sitemaps</a>, you can tell %1$s to automatically clear the cache of any XML Sitemaps whenever it clears a Post/Page. Note; this does NOT clear the XML Sitemap itself of course, only the cache. The point being, to clear the cache and allow changes to a Post/Page to be reflected by a fresh copy of your XML Sitemap; sooner rather than later."
 msgstr ""
 
 #: includes/menu-pages.php:243
@@ -604,7 +608,7 @@ msgid "Base Cache Directory (Must be Writable; e.g. <a href=\"http://codex.wordp
 msgstr ""
 
 #: includes/menu-pages.php:261
-msgid "This is where ZenCache will store the cached version of your site. If you're not sure how to deal with directory permissions, don't worry too much about this. If there is a problem, ZenCache will let you know about it. By default, this directory is created by ZenCache and the permissions are setup automatically. In most cases there is nothing more you need to do."
+msgid "This is where %1$s will store the cached version of your site. If you're not sure how to deal with directory permissions, don't worry too much about this. If there is a problem, %1$s will let you know about it. By default, this directory is created by %1$s and the permissions are setup automatically. In most cases there is nothing more you need to do."
 msgstr ""
 
 #: includes/menu-pages.php:265
@@ -616,11 +620,11 @@ msgid "If you don't update your site much, you could set this to <code>6 months<
 msgstr ""
 
 #: includes/menu-pages.php:267
-msgid "Keep in mind that your Expiration Time is only one part of the big picture. ZenCache will also clear the cache automatically as changes are made to the site (i.e. you edit a post, someone comments on a post, you change your theme, you add a new navigation menu item, etc., etc.). Thus, your Expiration Time is really just a fallback; e.g. the maximum amount of time that a cache file could ever possibly live."
+msgid "Keep in mind that your Expiration Time is only one part of the big picture. %1$s will also clear the cache automatically as changes are made to the site (i.e. you edit a post, someone comments on a post, you change your theme, you add a new navigation menu item, etc., etc.). Thus, your Expiration Time is really just a fallback; e.g. the maximum amount of time that a cache file could ever possibly live."
 msgstr ""
 
 #: includes/menu-pages.php:268
-msgid "All of that being said, you could set this to just <code>60 seconds</code> and you would still see huge differences in speed and performance. If you're just starting out with ZenCache (perhaps a bit nervous about old cache files being served to your visitors); you could set this to something like <code>30 minutes</code>, and experiment with it while you build confidence in ZenCache. It's not necessary to do so, but many site owners have reported this makes them feel like they're more-in-control when the cache has a short expiration time. All-in-all, it's a matter of preference <i class=\"fa fa-smile-o\"></i>."
+msgid "All of that being said, you could set this to just <code>60 seconds</code> and you would still see huge differences in speed and performance. If you're just starting out with %1$s (perhaps a bit nervous about old cache files being served to your visitors); you could set this to something like <code>30 minutes</code>, and experiment with it while you build confidence in %1$s. It's not necessary to do so, but many site owners have reported this makes them feel like they're more-in-control when the cache has a short expiration time. All-in-all, it's a matter of preference <i class=\"fa fa-smile-o\"></i>."
 msgstr ""
 
 #: includes/menu-pages.php:270
@@ -628,7 +632,7 @@ msgid "<strong>Tip:</strong> the value that you specify here MUST be compatible 
 msgstr ""
 
 #: includes/menu-pages.php:271
-msgid "<strong>Note:</strong> ZenCache will never serve a cache file that is older than what you specify here (even if one exists in your cache directory; stale cache files are never used). In addition, a WP Cron job will automatically cleanup your cache directory (once daily); purging expired cache files periodically. This prevents a HUGE cache from building up over time, creating a potential storage issue."
+msgid "<strong>Note:</strong> %1$s will never serve a cache file that is older than what you specify here (even if one exists in your cache directory; stale cache files are never used). In addition, a WP Cron job will automatically cleanup your cache directory (once daily); purging expired cache files periodically. This prevents a HUGE cache from building up over time, creating a potential storage issue."
 msgstr ""
 
 #: includes/menu-pages.php:279
@@ -644,7 +648,7 @@ msgid "Recommended setting: <code>No</code> (for membership sites, very importan
 msgstr ""
 
 #: includes/menu-pages.php:286
-msgid "ZenCache handles content delivery through its ability to communicate with a browser using PHP. If you allow a browser to (cache) the caching system itself, you are momentarily losing some control; and this can have a negative impact on users that see more than one version of your site; e.g. one version while logged-in, and another while NOT logged-in. For instance, a user may log out of your site, but upon logging out they report seeing pages on the site which indicate they are STILL logged in (even though they're not — that's bad). This can happen if you allow a client-side cache, because their browser may cache web pages they visited while logged into your site which persist even after logging out. Sending no-cache headers will work to prevent this issue."
+msgid "%1$s handles content delivery through its ability to communicate with a browser using PHP. If you allow a browser to (cache) the caching system itself, you are momentarily losing some control; and this can have a negative impact on users that see more than one version of your site; e.g. one version while logged-in, and another while NOT logged-in. For instance, a user may log out of your site, but upon logging out they report seeing pages on the site which indicate they are STILL logged in (even though they're not — that's bad). This can happen if you allow a client-side cache, because their browser may cache web pages they visited while logged into your site which persist even after logging out. Sending no-cache headers will work to prevent this issue."
 msgstr ""
 
 #: includes/menu-pages.php:287
@@ -668,7 +672,7 @@ msgid "<strong>Tip:</strong> Setting this to <code>No</code> will NOT impact sta
 msgstr ""
 
 #: includes/menu-pages.php:294
-msgid "<strong>Advanced Tip:</strong> if you have this set to <code>No</code>, but you DO want to allow a few special URLs to be cached by the browser; you can add this parameter to your URL <code>?zcABC=1</code>. This tells ZenCache that it's OK for the browser to cache that particular URL. In other words, the <code>zcABC=1</code> parameter tells ZenCache NOT to send no-cache headers to the browser."
+msgid "<strong>Advanced Tip:</strong> if you have this set to <code>No</code>, but you DO want to allow a few special URLs to be cached by the browser; you can add this parameter to your URL <code>?zcABC=1</code>. This tells %1$s that it's OK for the browser to cache that particular URL. In other words, the <code>zcABC=1</code> parameter tells %1$s NOT to send no-cache headers to the browser."
 msgstr ""
 
 #: includes/menu-pages.php:302
@@ -684,7 +688,7 @@ msgid "This should almost ALWAYS be set to <code>No</code>. Most sites will NOT 
 msgstr ""
 
 #: includes/menu-pages.php:310
-msgid "<strong>Exception (Membership Sites):</strong> If you run a site with many users and the majority of your traffic comes from users who ARE logged-in, please choose: <code>Yes (maintain separate cache)</code>. ZenCache will operate normally; but when a user is logged-in, the cache is user-specific. ZenCache will intelligently refresh the cache when/if a user submits a form on your site with the GET or POST method. Or, if you make changes to their account (or another plugin makes changes to their account); including user <a href=\"http://codex.wordpress.org/Function_Reference/update_user_option\" target=\"_blank\">option</a>|<a href=\"http://codex.wordpress.org/Function_Reference/update_user_meta\" target=\"_blank\">meta</a> additions, updates &amp; deletions too. However, please note that enabling this feature (e.g. user-specific cache entries); will eat up MUCH more disk space. That being said, the benefits of this feature for most sites will outweigh the disk overhead (e.g. it's NOT an issue in most cases). Unless you are short on disk space (or you have MANY thousands of users), the disk overhead is neglible."
+msgid "<strong>Exception (Membership Sites):</strong> If you run a site with many users and the majority of your traffic comes from users who ARE logged-in, please choose: <code>Yes (maintain separate cache)</code>. %1$s will operate normally; but when a user is logged-in, the cache is user-specific. %1$s will intelligently refresh the cache when/if a user submits a form on your site with the GET or POST method. Or, if you make changes to their account (or another plugin makes changes to their account); including user <a href=\"http://codex.wordpress.org/Function_Reference/update_user_option\" target=\"_blank\">option</a>|<a href=\"http://codex.wordpress.org/Function_Reference/update_user_meta\" target=\"_blank\">meta</a> additions, updates &amp; deletions too. However, please note that enabling this feature (e.g. user-specific cache entries); will eat up MUCH more disk space. That being said, the benefits of this feature for most sites will outweigh the disk overhead (e.g. it's NOT an issue in most cases). Unless you are short on disk space (or you have MANY thousands of users), the disk overhead is neglible."
 msgstr ""
 
 #: includes/menu-pages.php:312
@@ -704,7 +708,7 @@ msgid "<strong>Note:</strong> For most sites, the majority of their traffic (if 
 msgstr ""
 
 #: includes/menu-pages.php:317
-msgid "<strong>Note:</strong> This setting includes some users who AREN'T actually logged into the system, but who HAVE authored comments recently. ZenCache includes comment authors as part of it's logged-in user check. This way comment authors will be able to see updates to the comment thread immediately; and, so that any dynamically-generated messages displayed by your theme will work as intended. In short, ZenCache thinks of a comment author as a logged-in user, even though technically they are not. ~ Users who gain access to password-protected Posts/Pages are also included."
+msgid "<strong>Note:</strong> This setting includes some users who AREN'T actually logged into the system, but who HAVE authored comments recently. %1$s includes comment authors as part of it's logged-in user check. This way comment authors will be able to see updates to the comment thread immediately; and, so that any dynamically-generated messages displayed by your theme will work as intended. In short, %1$s thinks of a comment author as a logged-in user, even though technically they are not. ~ Users who gain access to password-protected Posts/Pages are also included."
 msgstr ""
 
 #: includes/menu-pages.php:325
@@ -732,7 +736,7 @@ msgid "<strong>Note:</strong> POST requests (i.e. forms with <code>method=&quot;
 msgstr ""
 
 #: includes/menu-pages.php:337
-msgid "<strong>Advanced Tip:</strong> If you are NOT caching GET requests (recommended), but you DO want to allow some special URLs that include query string parameters to be cached; you can add this special parameter to any URL <code>?zcAC=1</code>. This tells ZenCache that it's OK to cache that particular URL, even though it contains query string arguments. If you ARE caching GET requests and you want to force ZenCache to NOT cache a specific request, you can add this special parameter to any URL <code>?zcAC=0</code>."
+msgid "<strong>Advanced Tip:</strong> If you are NOT caching GET requests (recommended), but you DO want to allow some special URLs that include query string parameters to be cached; you can add this special parameter to any URL <code>?zcAC=1</code>. This tells %1$s that it's OK to cache that particular URL, even though it contains query string arguments. If you ARE caching GET requests and you want to force %1$s to NOT cache a specific request, you can add this special parameter to any URL <code>?zcAC=0</code>."
 msgstr ""
 
 #: includes/menu-pages.php:345
@@ -744,7 +748,7 @@ msgid "Caching Enabled for 404 Requests?"
 msgstr ""
 
 #: includes/menu-pages.php:351
-msgid "When this is set to <code>No</code>, ZenCache will ignore all 404 requests and no cache file will be served. While this is fine for most site owners, caching the 404 page on a high-traffic site may further reduce server load. When this is set to <code>Yes</code>, ZenCache will cache the 404 page (see <a href=\"https://codex.wordpress.org/Creating_an_Error_404_Page\" target=\"_blank\">Creating an Error 404 Page</a>) and then serve that single cache file to all future 404 requests."
+msgid "When this is set to <code>No</code>, %1$s will ignore all 404 requests and no cache file will be served. While this is fine for most site owners, caching the 404 page on a high-traffic site may further reduce server load. When this is set to <code>Yes</code>, %1$s will cache the 404 page (see <a href=\"https://codex.wordpress.org/Creating_an_Error_404_Page\" target=\"_blank\">Creating an Error 404 Page</a>) and then serve that single cache file to all future 404 requests."
 msgstr ""
 
 #: includes/menu-pages.php:353
@@ -756,7 +760,7 @@ msgid "Yes, I would like to cache the 404 page and serve the cached file for 404
 msgstr ""
 
 #: includes/menu-pages.php:356
-msgid "<strong>How does ZenCache cache 404 requests?</strong> ZenCache will create a special cache file (<code>----404----.html</code>, see Advanced Tip below) for the first 404 request and then <a href=\"http://www.php.net/manual/en/function.symlink.php\" target=\"_blank\">symlink</a> future 404 requests to this special cache file. That way you don't end up with lots of 404 cache files that all contain the same thing (the contents of the 404 page). Instead, you'll have one 404 cache file and then several symlinks (i.e., references) to that 404 cache file."
+msgid "<strong>How does %1$s cache 404 requests?</strong> %1$s will create a special cache file (<code>----404----.html</code>, see Advanced Tip below) for the first 404 request and then <a href=\"http://www.php.net/manual/en/function.symlink.php\" target=\"_blank\">symlink</a> future 404 requests to this special cache file. That way you don't end up with lots of 404 cache files that all contain the same thing (the contents of the 404 page). Instead, you'll have one 404 cache file and then several symlinks (i.e., references) to that 404 cache file."
 msgstr ""
 
 #: includes/menu-pages.php:357
@@ -804,8 +808,8 @@ msgid "<strong>Tip:</strong> let's use this example URL: <code>http://www.exampl
 msgstr ""
 
 #: includes/menu-pages.php:392 includes/menu-pages.php:408
-#: includes/menu-pages.php:424 includes/menu-pages.php:522
-#: includes/menu-pages.php:526 includes/menu-pages.php:602
+#: includes/menu-pages.php:424 includes/menu-pages.php:520
+#: includes/menu-pages.php:524 includes/menu-pages.php:600
 msgid "<strong>Note:</strong> please remember that your entries here should be formatted as a line-delimited list; e.g. one exclusion pattern per line."
 msgstr ""
 
@@ -838,7 +842,7 @@ msgid "Sometimes there are special cases when a particular user-agent (e.g. a sp
 msgstr ""
 
 #: includes/menu-pages.php:423
-msgid "<strong>Tip:</strong> if you wanted to exclude iPhones put this line into the field above: <code>iPhone;*AppleWebKit</code>. Or, you could also just put in a small fragment, like: <code>iphone</code>; and that would exclude any user-agent containing that word fragment. Note, this is just an example. With a default installation of ZenCache, there is no compelling reason to exclude iOS devices (or any mobile device for that matter)."
+msgid "<strong>Tip:</strong> if you wanted to exclude iPhones put this line into the field above: <code>iPhone;*AppleWebKit</code>. Or, you could also just put in a small fragment, like: <code>iphone</code>; and that would exclude any user-agent containing that word fragment. Note, this is just an example. With a default installation of %1$s, there is no compelling reason to exclude iOS devices (or any mobile device for that matter)."
 msgstr ""
 
 #: includes/menu-pages.php:432
@@ -850,7 +854,7 @@ msgid "Enable the Auto-Cache Engine?"
 msgstr ""
 
 #: includes/menu-pages.php:438
-msgid "After using ZenCache for awhile (or any other page caching plugin, for that matter); it becomes obvious that at some point (based on your configured Expiration Time) ZenCache has to refresh itself. It does this by ditching its cached version of a page, reloading the database-driven content, and then recreating the cache with the latest data. This is a never ending regeneration cycle that is based entirely on your configured Expiration Time."
+msgid "After using %1$s for awhile (or any other page caching plugin, for that matter); it becomes obvious that at some point (based on your configured Expiration Time) %1$s has to refresh itself. It does this by ditching its cached version of a page, reloading the database-driven content, and then recreating the cache with the latest data. This is a never ending regeneration cycle that is based entirely on your configured Expiration Time."
 msgstr ""
 
 #: includes/menu-pages.php:439
@@ -871,6 +875,10 @@ msgstr ""
 
 #: includes/menu-pages.php:447
 msgid "XML Sitemap URL (or an XML Sitemap Index)"
+msgstr ""
+
+#: includes/menu-pages.php:449
+msgid "In a Multisite Network, each child blog will be auto-cached too. %1$s will dynamically change the leading <code>%2$s</code> as necessary; for each child blog in the network. %1$s supports both sub-directory &amp; sub-domain networks; including domain mapping plugins."
 msgstr ""
 
 #: includes/menu-pages.php:450
@@ -906,384 +914,380 @@ msgid "This is an experimental feature, however it offers a potentially HUGE spe
 msgstr ""
 
 #: includes/menu-pages.php:476
-msgid "<strong>WARNING:</strong> The HTML Compressor requires the <a href=\"http://www.php.net/manual/en/book.curl.php\" target=\"_blank\" rel=\"external\">cURL extension for PHP</a>. cURL must also be compiled together with <a href=\"http://www.php.net/manual/en/book.openssl.php\" target=\"_blank\" rel=\"external\">OpenSSL</a>. ZenCache has detected that one or both of these are currently missing. Please check with your hosting company to resolve this message."
-msgstr ""
-
-#: includes/menu-pages.php:478
 msgid "No, do NOT compress HTML/CSS/JS code at runtime."
 msgstr ""
 
-#: includes/menu-pages.php:479
+#: includes/menu-pages.php:477
 msgid "Yes, I want to compress HTML/CSS/JS for blazing fast speeds."
 msgstr ""
 
-#: includes/menu-pages.php:481
+#: includes/menu-pages.php:479
 msgid "<strong>Note:</strong> This is experimental. Please <a href=\"https://github.com/websharks/html-compressor/issues\" target=\"_blank\">report issues here</a>."
 msgstr ""
 
-#: includes/menu-pages.php:484
+#: includes/menu-pages.php:482
 msgid "HTML Compression Options"
 msgstr ""
 
-#: includes/menu-pages.php:485
+#: includes/menu-pages.php:483
 msgid "You can <a href=\"https://github.com/websharks/html-compressor\" target=\"_blank\">learn more about all of these options here</a>."
 msgstr ""
 
-#: includes/menu-pages.php:487
+#: includes/menu-pages.php:485
 msgid "Yes, combine CSS from &lt;head&gt; and &lt;body&gt; into fewer files."
 msgstr ""
 
-#: includes/menu-pages.php:488
+#: includes/menu-pages.php:486
 msgid "No, do not combine CSS from &lt;head&gt; and &lt;body&gt; into fewer files."
 msgstr ""
 
-#: includes/menu-pages.php:491
+#: includes/menu-pages.php:489
 msgid "Yes, compress the code in any unified CSS files."
 msgstr ""
 
-#: includes/menu-pages.php:492
+#: includes/menu-pages.php:490
 msgid "No, do not compress the code in any unified CSS files."
 msgstr ""
 
-#: includes/menu-pages.php:495
+#: includes/menu-pages.php:493
 msgid "Yes, combine JS from &lt;head&gt; into fewer files."
 msgstr ""
 
-#: includes/menu-pages.php:496
+#: includes/menu-pages.php:494
 msgid "No, do not combine JS from &lt;head&gt; into fewer files."
 msgstr ""
 
-#: includes/menu-pages.php:499
+#: includes/menu-pages.php:497
 msgid "Yes, combine JS footer scripts into fewer files."
 msgstr ""
 
-#: includes/menu-pages.php:500
+#: includes/menu-pages.php:498
 msgid "No, do not combine JS footer scripts into fewer files."
 msgstr ""
 
-#: includes/menu-pages.php:503
+#: includes/menu-pages.php:501
 msgid "Yes, combine CSS/JS from remote resources too."
 msgstr ""
 
-#: includes/menu-pages.php:504
+#: includes/menu-pages.php:502
 msgid "No, do not combine CSS/JS from remote resources."
 msgstr ""
 
-#: includes/menu-pages.php:507
+#: includes/menu-pages.php:505
 msgid "Yes, compress the code in any unified JS files."
 msgstr ""
 
-#: includes/menu-pages.php:508
+#: includes/menu-pages.php:506
 msgid "No, do not compress the code in any unified JS files."
 msgstr ""
 
-#: includes/menu-pages.php:511
+#: includes/menu-pages.php:509
 msgid "Yes, compress inline JavaScript snippets."
 msgstr ""
 
-#: includes/menu-pages.php:512
+#: includes/menu-pages.php:510
 msgid "No, do not compress inline JavaScript snippets."
 msgstr ""
 
-#: includes/menu-pages.php:515
+#: includes/menu-pages.php:513
 msgid "Yes, compress (remove extra whitespace) in the final HTML code too."
 msgstr ""
 
-#: includes/menu-pages.php:516
+#: includes/menu-pages.php:514
 msgid "No, do not compress the final HTML code."
 msgstr ""
 
-#: includes/menu-pages.php:519
+#: includes/menu-pages.php:517
 msgid "CSS Exclusion Patterns?"
 msgstr ""
 
-#: includes/menu-pages.php:520
+#: includes/menu-pages.php:518
 msgid "Sometimes there are special cases when a particular CSS file should NOT be consolidated or compressed in any way. This is where you will enter those if you need to (one per line). Searches are performed against the <code>&lt;link href=&quot;&quot;&gt;</code> value, and also against the contents of any inline <code>&lt;style&gt;</code> tags (caSe insensitive). A wildcard <code>*</code> character can also be used when necessary; e.g. <code>xy*-framework</code>; (where <code>*</code> = anything, 0 or more characters in length)."
 msgstr ""
 
-#: includes/menu-pages.php:523
+#: includes/menu-pages.php:521
 msgid "JavaScript Exclusion Patterns?"
 msgstr ""
 
-#: includes/menu-pages.php:524
+#: includes/menu-pages.php:522
 msgid "Sometimes there are special cases when a particular JS file should NOT be consolidated or compressed in any way. This is where you will enter those if you need to (one per line). Searches are performed against the <code>&lt;script src=&quot;&quot;&gt;</code> value, and also against the contents of any inline <code>&lt;script&gt;</code> tags (caSe insensitive). A wildcard <code>*</code> character can also be used when necessary; e.g. <code>xy*-framework</code>; (where <code>*</code> = anything, 0 or more characters in length)."
 msgstr ""
 
-#: includes/menu-pages.php:528
+#: includes/menu-pages.php:526
 msgid "HTML Compression Cache Expiration"
 msgstr ""
 
-#: includes/menu-pages.php:530
+#: includes/menu-pages.php:528
 msgid "<strong>Tip:</strong> the value that you specify here MUST be compatible with PHP's <a href=\"http://php.net/manual/en/function.strtotime.php\" target=\"_blank\" style=\"text-decoration:none;\"><code>strtotime()</code></a> function. Examples: <code>2 hours</code>, <code>7 days</code>, <code>6 months</code>, <code>1 year</code>."
 msgstr ""
 
-#: includes/menu-pages.php:531
-msgid "<strong>Note:</strong> This does NOT impact the overall cache expiration time that you configure with ZenCache. It only impacts the sub-routines provided by the HTML Compressor. In fact, this expiration time is mostly irrelevant. The HTML Compressor uses an internal checksum, and it also checks <code>filemtime()</code> before using an existing cache file. The HTML Compressor class also handles the automatic cleanup of your cache directories to keep it from growing too large over time. Therefore, unless you have VERY little disk space there is no reason to set this to a lower value (even if your site changes dynamically quite often). If anything, you might like to increase this value which could help to further reduce server load. You can <a href=\"https://github.com/websharks/HTML-Compressor\" target=\"_blank\">learn more here</a>. We recommend setting this value to at least double that of your overall ZenCache expiration time."
+#: includes/menu-pages.php:529
+msgid "<strong>Note:</strong> This does NOT impact the overall cache expiration time that you configure with %1$s. It only impacts the sub-routines provided by the HTML Compressor. In fact, this expiration time is mostly irrelevant. The HTML Compressor uses an internal checksum, and it also checks <code>filemtime()</code> before using an existing cache file. The HTML Compressor class also handles the automatic cleanup of your cache directories to keep it from growing too large over time. Therefore, unless you have VERY little disk space there is no reason to set this to a lower value (even if your site changes dynamically quite often). If anything, you might like to increase this value which could help to further reduce server load. You can <a href=\"https://github.com/websharks/HTML-Compressor\" target=\"_blank\">learn more here</a>. We recommend setting this value to at least double that of your overall %1$s expiration time."
 msgstr ""
 
-#: includes/menu-pages.php:540
+#: includes/menu-pages.php:538
 msgid "GZIP Compression"
 msgstr ""
 
-#: includes/menu-pages.php:545
+#: includes/menu-pages.php:543
 msgid "<a href=\"https://developers.google.com/speed/articles/gzip\" target=\"_blank\">GZIP Compression</a> (Optional; Highly Recommended)"
 msgstr ""
 
-#: includes/menu-pages.php:546
+#: includes/menu-pages.php:544
 msgid "You don't have to use an <code>.htaccess</code> file to enjoy the performance enhancements provided by this plugin; caching is handled automatically by WordPress/PHP alone. That being said, if you want to take advantage of the additional speed enhancements associated w/ GZIP compression (and we do recommend this), then you WILL need an <code>.htaccess</code> file to accomplish that part."
 msgstr ""
 
-#: includes/menu-pages.php:547
-msgid "ZenCache fully supports GZIP compression on its output. However, it does not handle GZIP compression directly. We purposely left GZIP compression out of this plugin, because GZIP compression is something that should really be enabled at the Apache level or inside your <code>php.ini</code> file. GZIP compression can be used for things like JavaScript and CSS files as well, so why bother turning it on for only WordPress-generated pages when you can enable GZIP at the server level and cover all the bases!"
+#: includes/menu-pages.php:545
+msgid "%1$s fully supports GZIP compression on its output. However, it does not handle GZIP compression directly. We purposely left GZIP compression out of this plugin, because GZIP compression is something that should really be enabled at the Apache level or inside your <code>php.ini</code> file. GZIP compression can be used for things like JavaScript and CSS files as well, so why bother turning it on for only WordPress-generated pages when you can enable GZIP at the server level and cover all the bases!"
 msgstr ""
 
-#: includes/menu-pages.php:548
+#: includes/menu-pages.php:546
 msgid "If you want to enable GZIP, create an <code>.htaccess</code> file in your WordPress® installation directory, and put the following few lines in it. Alternatively, if you already have an <code>.htaccess</code> file, just add these lines to it, and that is all there is to it. GZIP is now enabled in the recommended way! See also: <a href=\"https://developers.google.com/speed/articles/gzip\" target=\"_blank\"><i class=\"fa fa-youtube-play\"></i> video about GZIP Compression</a>."
 msgstr ""
 
-#: includes/menu-pages.php:559
+#: includes/menu-pages.php:557
 msgid "Static CDN Filters"
 msgstr ""
 
-#: includes/menu-pages.php:564
+#: includes/menu-pages.php:562
 msgid "Enable Static CDN Filters (e.g. MaxCDN/CloudFront)?"
 msgstr ""
 
-#: includes/menu-pages.php:565
-msgid "This feature allows you to serve some and/or ALL static files on your site from a CDN of your choosing. This is made possible through content/URL filters exposed by WordPress and implemented by ZenCache. All it requires is that you setup a CDN host name sourced by your WordPress installation domain. You enter that CDN host name below and ZenCache will do the rest! Super easy, and it does'nt require any DNS changes either :-) Please <a href=\"http://www.websharks-inc.com/r/zencache-static-cdn-filters-general-instructions-wiki/\" target=\"_blank\">click here</a> for a general set of instructions."
+#: includes/menu-pages.php:563
+msgid "This feature allows you to serve some and/or ALL static files on your site from a CDN of your choosing. This is made possible through content/URL filters exposed by WordPress and implemented by %1$s. All it requires is that you setup a CDN host name sourced by your WordPress installation domain. You enter that CDN host name below and %1$s will do the rest! Super easy, and it does'nt require any DNS changes either :-) Please <a href=\"http://www.websharks-inc.com/r/zencache-static-cdn-filters-general-instructions-wiki/\" target=\"_blank\">click here</a> for a general set of instructions."
 msgstr ""
 
-#: includes/menu-pages.php:566
+#: includes/menu-pages.php:564
 msgid "<strong>What's a CDN?</strong> It's a Content Delivery Network (i.e. a network of optimized servers) designed to cache static resources served from your site (e.g. JS/CSS/images and other static files) onto it's own servers, which are located strategically in various geographic areas around the world. Integrating a CDN for static files can dramatically improve the speed and performance of your site, lower the burden on your own server, and reduce latency associated with visitors attempting to access your site from geographic areas of the world that might be very far away from the primary location of your own web servers."
 msgstr ""
 
-#: includes/menu-pages.php:568
+#: includes/menu-pages.php:566
 msgid "No, I do NOT want CDN filters applied at runtime."
 msgstr ""
 
-#: includes/menu-pages.php:569
+#: includes/menu-pages.php:567
 msgid "Yes, I want CDN filters applied w/ my configuration below."
 msgstr ""
 
-#: includes/menu-pages.php:573
+#: includes/menu-pages.php:571
 msgid "CDN Host Name (Absolutely Required)"
 msgstr ""
 
-#: includes/menu-pages.php:577
+#: includes/menu-pages.php:575
 msgid "This one field is really all that's necessary to get Static CDN Filters working! However, it does requires a little bit of work on your part. You need to setup and configure a CDN before you can fill in this field. One you configure a CDN, you'll receive a host name (provided by your CDN), which you'll enter here; e.g. <code>js9dgjsl4llqpp.cloudfront.net</code>. We recommend <a href=\"https://www.maxcdn.com/websharks/\" target=\"_blank\">MaxCDN</a> and/or <a href=\"http://aws.amazon.com/cloudfront/\" target=\"_blank\">Amazon CloudFront</a>, but this should work with many of the most popular CDNs. Please read <a href=\"http://www.websharks-inc.com/r/zencache-static-cdn-filters-general-instructions-wiki/\" target=\"_blank\">this article</a> for a general set of instructions. We also have a <a href=\"http://www.websharks-inc.com/r/zencache-static-cdn-filters-cloudfront-wiki/\" target=\"_blank\">CloudFront tutorial video</a> that walks you through the process."
 msgstr ""
 
-#: includes/menu-pages.php:579
+#: includes/menu-pages.php:577
 msgid "CDN Host Supports HTTPS Connections?"
 msgstr ""
 
-#: includes/menu-pages.php:581
+#: includes/menu-pages.php:579
 msgid "No, I don't serve content over https://; or I haven't configured my CDN w/ an SSL certificate."
 msgstr ""
 
-#: includes/menu-pages.php:582
+#: includes/menu-pages.php:580
 msgid "Yes, I've configured my CDN w/ an SSL certificate; I need https:// enabled."
 msgstr ""
 
-#: includes/menu-pages.php:585
+#: includes/menu-pages.php:583
 msgid "Everything else below is 100% completely optional; i.e. not required to enjoy the benefits of Static CDN Filters."
 msgstr ""
 
-#: includes/menu-pages.php:587
+#: includes/menu-pages.php:585
 msgid "Whitelisted File Extensions (Optional; Comma-Delimited)"
 msgstr ""
 
-#: includes/menu-pages.php:590
+#: includes/menu-pages.php:588
 msgid "Blacklisted File Extensions (Optional; Comma-Delimited)"
 msgstr ""
 
-#: includes/menu-pages.php:592
+#: includes/menu-pages.php:590
 msgid "With or without a whitelist, you can force exclusions by explicitly blacklisting certain file extensions of your choosing. Please note, the <code>php</code> extension will never be considered a static resource; i.e. it is automatically blacklisted at all times."
 msgstr ""
 
-#: includes/menu-pages.php:594
+#: includes/menu-pages.php:592
 msgid "Whitelisted URI Inclusion Patterns (Optional; One Per Line)"
 msgstr ""
 
-#: includes/menu-pages.php:596
+#: includes/menu-pages.php:594
 msgid "<strong>Note:</strong> please remember that your entries here should be formatted as a line-delimited list; e.g. one inclusion pattern per line."
 msgstr ""
 
-#: includes/menu-pages.php:597
+#: includes/menu-pages.php:595
 msgid "If provided, only local URIs matching one of the patterns you list here will be served from your CDN Host Name. URI patterns are caSe-insensitive. A wildcard <code>*</code> will match zero or more characters in any of your patterns. A caret <code>^</code> symbol will match zero or more characters that are NOT the <code>/</code> character. For instance, <code>*/wp-content/*</code> here would indicate that you only want to filter URLs that lead to files located inside the <code>wp-content</code> directory. Adding an additional line with <code>*/wp-includes/*</code> would filter URLs in the <code>wp-includes</code> directory also. <strong>If you leave this empty</strong>, ALL files matching a static file extension will be served from your CDN; i.e. the default behavior."
 msgstr ""
 
-#: includes/menu-pages.php:598
+#: includes/menu-pages.php:596
 msgid "Please note that URI patterns are tested against a file's path (i.e. a file's URI, and NOT its full URL). A URI always starts with a leading <code>/</code>. To clarify, a URI is the portion of the URL which comes after the host name. For instance, given the following URL: <code>http://example.com/path/to/style.css?ver=3</code>, the URI you are matching against would be: <code>/path/to/style.css?ver=3</code>. To whitelist this URI, you could use a line that contains something like this: <code>/path/to/*.css*</code>"
 msgstr ""
 
-#: includes/menu-pages.php:599
+#: includes/menu-pages.php:597
 msgid "Blacklisted URI Exclusion Patterns (Optional; One Per Line)"
 msgstr ""
 
-#: includes/menu-pages.php:601
+#: includes/menu-pages.php:599
 msgid "With or without a whitelist, you can force exclusions by explicitly blacklisting certain URI patterns. URI patterns are caSe-insensitive. A wildcard <code>*</code> will match zero or more characters in any of your patterns. A caret <code>^</code> symbol will match zero or more characters that are NOT the <code>/</code> character. For instance, <code>*/wp-content/*/dynamic.pdf*</code> would exclude a file with the name <code>dynamic.pdf</code> located anywhere inside a sub-directory of <code>wp-content</code>."
 msgstr ""
 
-#: includes/menu-pages.php:604
+#: includes/menu-pages.php:602
 msgid "Query String Invalidation Variable Name"
 msgstr ""
 
-#: includes/menu-pages.php:606
-msgid "Each filtered URL (which then leads to your CDN) will include this query string variable as an easy way to invalidate the CDN cache at any time. Invalidating the CDN cache is simply a matter of changing the global invalidation counter (i.e. the value assigned to this query string variable). ZenCache manages invalidations automatically; i.e. ZenCache will automatically bump an internal counter each time you upgrade a WordPress component (e.g. a plugin, theme, or WP itself). Or, if you ask ZenCache to invalidate the CDN cache (e.g. a manual clearing of the CDN cache); the internal counter is bumped then too. In short, ZenCache handles cache invalidations for you reliably. This option simply allows you to customize the query string variable name which makes cache invalidations possible. <strong>Please note, the default value is adequate for most sites. You can change this if you like, but it's not necessary.</strong>"
+#: includes/menu-pages.php:604
+msgid "Each filtered URL (which then leads to your CDN) will include this query string variable as an easy way to invalidate the CDN cache at any time. Invalidating the CDN cache is simply a matter of changing the global invalidation counter (i.e. the value assigned to this query string variable). %1$s manages invalidations automatically; i.e. %1$s will automatically bump an internal counter each time you upgrade a WordPress component (e.g. a plugin, theme, or WP itself). Or, if you ask %1$s to invalidate the CDN cache (e.g. a manual clearing of the CDN cache); the internal counter is bumped then too. In short, %1$s handles cache invalidations for you reliably. This option simply allows you to customize the query string variable name which makes cache invalidations possible. <strong>Please note, the default value is adequate for most sites. You can change this if you like, but it's not necessary.</strong>"
 msgstr ""
 
-#: includes/menu-pages.php:607
-msgid "<strong>Note:</strong> If you empty this field, it will effectively disable the ZenCache invalidation system for Static CDN Filters; i.e. the query string variable will NOT be included if you do not supply a variable name."
+#: includes/menu-pages.php:605
+msgid "<strong>Note:</strong> If you empty this field, it will effectively disable the %1$s invalidation system for Static CDN Filters; i.e. the query string variable will NOT be included if you do not supply a variable name."
 msgstr ""
 
-#: includes/menu-pages.php:616
+#: includes/menu-pages.php:614
 msgid "Dynamic Version Salt"
 msgstr ""
 
-#: includes/menu-pages.php:621
+#: includes/menu-pages.php:619
 msgid "<i class=\"fa fa-flask\"></i> <span style=\"display:inline-block; padding:5px; border-radius:3px; background:#FFFFFF; color:#354913;\"><span style=\"font-weight:bold; font-size:80%;\">GEEK ALERT</span></span> This is for VERY advanced users only..."
 msgstr ""
 
-#: includes/menu-pages.php:622
-msgid "<em>Note: Understanding the ZenCache <a href=\"http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> is a prerequisite to understanding how Dynamic Version Salts are added to the mix.</em>"
+#: includes/menu-pages.php:620
+msgid "<em>Note: Understanding the %1$s <a href=\"http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> is a prerequisite to understanding how Dynamic Version Salts are added to the mix.</em>"
 msgstr ""
 
-#: includes/menu-pages.php:623
+#: includes/menu-pages.php:621
 msgid "A Version Salt gives you the ability to dynamically create multiple variations of the cache, and those dynamic variations will be served on subsequent visits; e.g. if a visitor has a specific cookie (of a certain value) they will see pages which were cached with that version (i.e. w/ that Version Salt: the value of the cookie). A Version Salt can really be anything."
 msgstr ""
 
-#: includes/menu-pages.php:624
+#: includes/menu-pages.php:622
 msgid "A Version Salt can be a single variable like <code>$_COOKIE['my_cookie']</code>, or it can be a combination of multiple variables, like <code>$_COOKIE['my_cookie'].$_COOKIE['my_other_cookie']</code>. (When using multiple variables, please separate them with a dot, as shown in the example.)"
 msgstr ""
 
-#: includes/menu-pages.php:625
+#: includes/menu-pages.php:623
 msgid "Experts could even use PHP ternary expressions that evaluate into something. For example: <code>((preg_match('/iPhone/i', $_SERVER['HTTP_USER_AGENT'])) ? 'iPhones' : '')</code>. This would force a separate version of the cache to be created for iPhones (e.g., <code>/cache/PROTOCOL/HOST/REQUEST-URI.v/iPhones.html</code>)."
 msgstr ""
 
-#: includes/menu-pages.php:626
+#: includes/menu-pages.php:624
 msgid "For more documentation, please see <a href=\"http://www.websharks-inc.com/r/zencache-dynamic-version-salts-wiki/\" target=\"_blank\">Dynamic Version Salts</a>."
 msgstr ""
 
-#: includes/menu-pages.php:628
-msgid "Create a Dynamic Version Salt For ZenCache? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"font-size:90%; opacity:0.5;\">150% OPTIONAL</span>"
+#: includes/menu-pages.php:626
+msgid "Create a Dynamic Version Salt For %1$s? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"font-size:90%; opacity:0.5;\">150% OPTIONAL</span>"
 msgstr ""
 
-#: includes/menu-pages.php:630
+#: includes/menu-pages.php:628
 msgid "<a href=\"http://php.net/manual/en/language.variables.superglobals.php\" target=\"_blank\">Super Globals</a> work here; <a href=\"http://codex.wordpress.org/Editing_wp-config.php#table_prefix\" target=\"_blank\"><code>$GLOBALS['table_prefix']</code></a> is a popular one.<br />Or, perhaps a PHP Constant defined in <code>/wp-config.php</code>; such as <code>WPLANG</code> or <code>DB_HOST</code>."
 msgstr ""
 
-#: includes/menu-pages.php:631
+#: includes/menu-pages.php:629
 msgid "<strong>Important:</strong> your Version Salt is scanned for PHP syntax errors via <a href=\"http://phpcodechecker.com/\" target=\"_blank\"><code>phpCodeChecker.com</code></a>. If errors are found, you'll receive a notice in the Dashboard."
 msgstr ""
 
-#: includes/menu-pages.php:632
+#: includes/menu-pages.php:630
 msgid "If you've enabled a separate cache for each user (optional) that's perfectly OK. A Version Salt works with user caching too."
 msgstr ""
 
-#: includes/menu-pages.php:640
+#: includes/menu-pages.php:638
 msgid "Theme/Plugin Developers"
 msgstr ""
 
-#: includes/menu-pages.php:645
+#: includes/menu-pages.php:643
 msgid "Developing a Theme or Plugin for WordPress?"
 msgstr ""
 
+#: includes/menu-pages.php:644
+msgid "<strong>Tip:</strong> %1$s can be disabled temporarily. If you're a theme/plugin developer, you can set a flag within your PHP code to disable the cache engine at runtime. Perhaps on a specific page, or in a specific scenario. In your PHP script, set: <code>$_SERVER['ZENCACHE_ALLOWED'] = FALSE;</code> or <code>define('ZENCACHE_ALLOWED', FALSE)</code>. %1$s is also compatible with: <code>define('DONOTCACHEPAGE', TRUE)</code>. It does't matter where or when you define one of these, because %1$s is the last thing to run before script execution ends."
+msgstr ""
+
 #: includes/menu-pages.php:646
-msgid "<strong>Tip:</strong> ZenCache can be disabled temporarily. If you're a theme/plugin developer, you can set a flag within your PHP code to disable the cache engine at runtime. Perhaps on a specific page, or in a specific scenario. In your PHP script, set: <code>$_SERVER['ZENCACHE_ALLOWED'] = FALSE;</code> or <code>define('ZENCACHE_ALLOWED', FALSE)</code>. ZenCache is also compatible with: <code>define('DONOTCACHEPAGE', TRUE)</code>. It does't matter where or when you define one of these, because ZenCache is the last thing to run before script execution ends."
+msgid "Writing \"Advanced Cache\" Plugins Specifically for %1$s"
+msgstr ""
+
+#: includes/menu-pages.php:647
+msgid "Theme/plugin developers can take advantage of the %1$s plugin architecture by creating PHP files inside this special directory: <code>/wp-content/ac-plugins/</code>. There is an <a href=\"https://github.com/websharks/zencache/blob/000000-dev/zencache/includes/ac-plugin.example.php\" target=\"_blank\">example plugin file @ GitHub</a> (please review it carefully and ask questions). If you develop a plugin for %1$s, please share it with the community by publishing it in the plugins respository at WordPress.org."
 msgstr ""
 
 #: includes/menu-pages.php:648
-msgid "Writing \"Advanced Cache\" Plugins Specifically for ZenCache"
+msgid "<strong>Why does %1$s have it's own plugin architecture?</strong> WordPress loads the <code>advanced-cache.php</code> drop-in file (for caching purposes) very early-on; before any other plugins or a theme. For this reason, %1$s implements it's own watered-down version of functions like <code>add_action()</code>, <code>do_action()</code>, <code>add_filter()</code>, <code>apply_filters()</code>."
 msgstr ""
 
-#: includes/menu-pages.php:649
-msgid "Theme/plugin developers can take advantage of the ZenCache plugin architecture by creating PHP files inside this special directory: <code>/wp-content/ac-plugins/</code>. There is an <a href=\"https://github.com/websharks/zencache/blob/000000-dev/zencache/includes/ac-plugin.example.php\" target=\"_blank\">example plugin file @ GitHub</a> (please review it carefully and ask questions). If you develop a plugin for ZenCache, please share it with the community by publishing it in the plugins respository at WordPress.org."
-msgstr ""
-
-#: includes/menu-pages.php:650
-msgid "<strong>Why does ZenCache have it's own plugin architecture?</strong> WordPress loads the <code>advanced-cache.php</code> drop-in file (for caching purposes) very early-on; before any other plugins or a theme. For this reason, ZenCache implements it's own watered-down version of functions like <code>add_action()</code>, <code>do_action()</code>, <code>add_filter()</code>, <code>apply_filters()</code>."
-msgstr ""
-
-#: includes/menu-pages.php:658
+#: includes/menu-pages.php:656
 msgid "Import/Export Options"
 msgstr ""
 
-#: includes/menu-pages.php:663
-msgid "Import Options from Another ZenCache Installation?"
+#: includes/menu-pages.php:661
+msgid "Import Options from Another %1$s Installation?"
 msgstr ""
 
-#: includes/menu-pages.php:664
+#: includes/menu-pages.php:662
 msgid "Upload your <code>%1$s-options.json</code> file and click \"Save All Changes\" below. The options provided by your import file will override any that exist currently."
 msgstr ""
 
-#: includes/menu-pages.php:667
-msgid "Export Existing Options from this ZenCache Installation?"
+#: includes/menu-pages.php:665
+msgid "Export Existing Options from this %1$s Installation?"
 msgstr ""
 
-#: includes/menu-pages.php:670
+#: includes/menu-pages.php:668
 msgid "%1$s-options.json"
 msgstr ""
 
-#: includes/menu-pages.php:671
-msgid "Download your existing options and import them all into another ZenCache installation; saves time on future installs."
+#: includes/menu-pages.php:669
+msgid "Download your existing options and import them all into another %1$s installation; saves time on future installs."
 msgstr ""
 
-#: includes/menu-pages.php:682
+#: includes/menu-pages.php:680
 msgid "Save All Changes"
 msgstr ""
 
-#: includes/menu-pages.php:696 includes/menu-pages.php:760
+#: includes/menu-pages.php:694 includes/menu-pages.php:758
 msgid "Update Now"
 msgstr ""
 
-#: includes/menu-pages.php:704
+#: includes/menu-pages.php:702
 msgid "Options"
 msgstr ""
 
-#: includes/menu-pages.php:709 zencache-pro.inc.php:790
-#: zencache-pro.inc.php:812
+#: includes/menu-pages.php:707 zencache-pro.inc.php:791
+#: zencache-pro.inc.php:813
 msgid "Plugin Updater"
 msgstr ""
 
-#: includes/menu-pages.php:724
+#: includes/menu-pages.php:722
 msgid "Update Credentials"
 msgstr ""
 
-#: includes/menu-pages.php:729
+#: includes/menu-pages.php:727
 msgid "WebSharks™ Authentication"
 msgstr ""
 
-#: includes/menu-pages.php:730
-msgid "From this page you can update to the latest version of ZenCache Pro for WordPress. ZenCache Pro is a premium product available for purchase @ <a href=\"http://www.websharks-inc.com/product/%1$s/\" target=\"_blank\">websharks-inc.com</a>. In order to connect with our update servers, we ask that you supply your account login details for <a href=\"http://www.websharks-inc.com/product/%1$s/\" target=\"_blank\">websharks-inc.com</a>. If you prefer not to provide your password, you can use your License Key in place of your password. Your License Key is located under \"My Products (purchase history)\" when you login to your account @ <a href=\"http://www.websharks-inc.com/product/%1$s/\" target=\"_blank\">websharks-inc.com</a>. This will authenticate your copy of ZenCache Pro; providing you with access to the latest version. You only need to enter these credentials once. ZenCache Pro will save them in your WordPress database; making future upgrades even easier. <i class=\"fa fa-smile-o\"></i>"
+#: includes/menu-pages.php:728
+msgid "From this page you can update to the latest version of %1$s Pro for WordPress. %1$s Pro is a premium product available for purchase @ <a href=\"http://www.websharks-inc.com/product/%2$s/\" target=\"_blank\">websharks-inc.com</a>. In order to connect with our update servers, we ask that you supply your account login details for <a href=\"http://www.websharks-inc.com/product/%2$s/\" target=\"_blank\">websharks-inc.com</a>. If you prefer not to provide your password, you can use your License Key in place of your password. Your License Key is located under \"My Products (purchase history)\" when you login to your account @ <a href=\"http://www.websharks-inc.com/product/%2$s/\" target=\"_blank\">websharks-inc.com</a>. This will authenticate your copy of %1$s Pro; providing you with access to the latest version. You only need to enter these credentials once. %1$s Pro will save them in your WordPress database; making future upgrades even easier. <i class=\"fa fa-smile-o\"></i>"
 msgstr ""
 
-#: includes/menu-pages.php:732
+#: includes/menu-pages.php:730
 msgid "WebSharks™ Username"
 msgstr ""
 
-#: includes/menu-pages.php:734
+#: includes/menu-pages.php:732
 msgid "WebSharks™ Password OR Product License Key"
 msgstr ""
 
-#: includes/menu-pages.php:743
+#: includes/menu-pages.php:741
 msgid "Update Notifier"
 msgstr ""
 
-#: includes/menu-pages.php:748
+#: includes/menu-pages.php:746
 msgid "WebSharks™ Update Notifier"
 msgstr ""
 
-#: includes/menu-pages.php:749
-msgid "When a new version of ZenCache Pro becomes available, WebSharks™ can display a notification in your WordPress Dashboard prompting you to return to this page and perform an upgrade. Would you like this functionality enabled or disabled?"
+#: includes/menu-pages.php:747
+msgid "When a new version of %1$s Pro becomes available, WebSharks™ can display a notification in your WordPress Dashboard prompting you to return to this page and perform an upgrade. Would you like this functionality enabled or disabled?"
 msgstr ""
 
-#: includes/menu-pages.php:752
+#: includes/menu-pages.php:750
 msgid "Yes, display a notification in my WordPress Dashboard when a new version is available."
 msgstr ""
 
-#: includes/menu-pages.php:753
-msgid "No, do not display any ZenCache update notifications in my WordPress Dashboard."
+#: includes/menu-pages.php:751
+msgid "No, do not display any %1$s update notifications in my WordPress Dashboard."
 msgstr ""
 
 #: includes/share.php:254
@@ -1349,143 +1353,170 @@ msgid "Invalid hook."
 msgstr ""
 
 #: includes/version-specific-upgrade.php:69
-msgid "<strong>ZenCache:</strong> this version is a <strong>complete rewrite</strong> of Quick Cache :-) Please review your ZenCache options carefully!"
+msgid "<strong>%1$s:</strong> this version is a <strong>complete rewrite</strong> of Quick Cache :-) Please review your %1$s options carefully!"
 msgstr ""
 
 #: includes/version-specific-upgrade.php:79
-msgid "<strong>ZenCache Feature Notice:</strong> This version of ZenCache adds new options for Feed caching. Feed caching is now disabled by default. If you wish to enable feed caching, please visit the ZenCache options panel."
+msgid "<strong>%1$s Feature Notice:</strong> This version of %1$s adds new options for Feed caching. Feed caching is now disabled by default. If you wish to enable feed caching, please visit the %1$s options panel."
 msgstr ""
 
 #: includes/version-specific-upgrade.php:118
-msgid "<strong>ZenCache Feature Notice:</strong> This version of ZenCache introduces a new <a href=\"http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> and several other <a href=\"http://www.websharks-inc.com/post/quick-cache-v140605-now-available/\" target=\"_blank\">new features</a>."
+msgid "<strong>%1$s Feature Notice:</strong> This version of %1$s introduces a new <a href=\"http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/\" target=\"_blank\">Branched Cache Structure</a> and several other <a href=\"http://www.websharks-inc.com/post/quick-cache-v140605-now-available/\" target=\"_blank\">new features</a>."
 msgstr ""
 
 #: includes/version-specific-upgrade.php:151
-msgid "<strong>ZenCache Notice:</strong> This version of ZenCache changes the default base directory that it uses, from <code>ABSPATH</code> to <code>WP_CONTENT_DIR</code>. This is for improved compatibility with installations that choose to use a custom <code>WP_CONTENT_DIR</code> location."
+msgid "<strong>%1$s Notice:</strong> This version of %1$s changes the default base directory that it uses, from <code>ABSPATH</code> to <code>WP_CONTENT_DIR</code>. This is for improved compatibility with installations that choose to use a custom <code>WP_CONTENT_DIR</code> location."
 msgstr ""
 
 #: includes/version-specific-upgrade.php:152
-msgid "ZenCache has detected that your previously configured cache directory may have been in conflict with this change. As a result, your ZenCache configuration has been updated to the new default value; just to keep things running smoothly for you :-). If you would like to review this change, please see: <code>Dashboard ⥱ ZenCache ⥱ Directory &amp; Expiration Time</code>; where you may customize it further if necessary."
+msgid "%1$s has detected that your previously configured cache directory may have been in conflict with this change. As a result, your %1$s configuration has been updated to the new default value; just to keep things running smoothly for you :-). If you would like to review this change, please see: <code>Dashboard ⥱ %1$s ⥱ Directory &amp; Expiration Time</code>; where you may customize it further if necessary."
 msgstr ""
 
-#: includes/wp-php53.php:31
-msgid "<strong>%1$s is NOT active; %1$s requires PHP v5.3 (or higher).</strong>"
+#: submodules/wp-php-rv/wp-php-rv.php:124
+msgid "extension"
+msgid_plural "extensions"
+msgstr[0] ""
+msgstr[1] ""
+
+#: submodules/wp-php-rv/wp-php-rv.php:132
+msgid "<strong>%1$s is NOT active. It requires PHP v%2$s+.</strong>"
 msgstr ""
 
-#: includes/wp-php53.php:32
-msgid "You're currently running <code>PHP v%1$s</code>."
+#: submodules/wp-php-rv/wp-php-rv.php:133
+msgid "&#8627; You're currently running an older copy of PHP v%1$s."
 msgstr ""
 
-#: includes/wp-php53.php:33
-msgid "A simple update is necessary. Please ask your web hosting company to do this for you."
+#: submodules/wp-php-rv/wp-php-rv.php:136
+msgid "&#8627; You are also missing the following required PHP %1$s: %2$s."
 msgstr ""
 
-#: includes/wp-php53.php:34
-msgid "To remove this message, please deactivate %1$s."
+#: submodules/wp-php-rv/wp-php-rv.php:138
+#: submodules/wp-php-rv/wp-php-rv.php:146
+msgid "<em>A simple update is necessary. Please ask your hosting company to help resolve this quickly.</em>"
 msgstr ""
 
-#: zencache-pro.inc.php:511
-msgid "<strong>ZenCache:</strong> detected a new version of itself. Recompiling w/ latest version... wiping the cache... all done :-)"
+#: submodules/wp-php-rv/wp-php-rv.php:139
+msgid "<em>To remove this message, please upgrade PHP. Or, remove %1$s from WordPress.</em>"
 msgstr ""
 
-#: zencache-pro.inc.php:639
+#: submodules/wp-php-rv/wp-php-rv.php:144
+msgid "<strong>%1$s is NOT active. PHP %2$s missing.</strong>"
+msgstr ""
+
+#: submodules/wp-php-rv/wp-php-rv.php:145
+msgid "&#8627; You are missing the following required PHP %1$s: %2$s."
+msgstr ""
+
+#: submodules/wp-php-rv/wp-php-rv.php:147
+msgid "<em>To remove this message, please install the required PHP %1$s. Or, remove %2$s from WordPress.</em>"
+msgstr ""
+
+#: zencache-pro.inc.php:512
+msgid "<strong>%1$s:</strong> detected a new version of itself. Recompiling w/ latest version... wiping the cache... all done :-)"
+msgstr ""
+
+#: zencache-pro.inc.php:640
 msgid "Clear Cache"
 msgstr ""
 
-#: zencache-pro.inc.php:641
+#: zencache-pro.inc.php:642
 msgid "Clear Cache (Start Fresh); affects the current site only."
 msgstr ""
 
-#: zencache-pro.inc.php:782 zencache-pro.inc.php:805
-msgid "ZenCache"
-msgstr ""
-
-#: zencache-pro.inc.php:829
+#: zencache-pro.inc.php:830
 msgid "Settings"
 msgstr ""
 
-#: zencache-pro.inc.php:900
-msgid "<strong>ZenCache Pro:</strong> a new version is now available. Please <a href=\"%1$s\">upgrade to v%2$s</a>."
+#: zencache-pro.inc.php:901
+msgid "<strong>%1$s Pro:</strong> a new version is now available. Please <a href=\"%2$s\">upgrade to v%3$s</a>."
 msgstr ""
 
-#: zencache-pro.inc.php:982 zencache-pro.inc.php:1053
+#: zencache-pro.inc.php:983 zencache-pro.inc.php:1054
 msgid "dismiss &times;"
 msgstr ""
 
-#: zencache-pro.inc.php:1134
+#: zencache-pro.inc.php:1135
 msgid "Every 15 Minutes"
 msgstr ""
 
-#: zencache-pro.inc.php:1351
-msgid "<strong>ZenCache:</strong> detected significant changes. Found %1$s in the cache; auto-wiping."
+#: zencache-pro.inc.php:1352
+msgid "<strong>%1$s:</strong> detected significant changes. Found %2$s in the cache; auto-wiping."
 msgstr ""
 
-#: zencache-pro.inc.php:1387
+#: zencache-pro.inc.php:1379
 msgid "<strong>%1$s:</strong> detected significant changes that would normally trigger a wipe cache routine, however wipe cache routines have been disabled by a site administrator. [<a href=\"http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/\" target=\"_blank\">?</a>]"
 msgstr ""
 
-#: zencache-pro.inc.php:1434
-msgid "<strong>ZenCache:</strong> detected important site changes. Found %1$s in the cache for this site; auto-clearing."
+#: zencache-pro.inc.php:1426
+msgid "<strong>%1$s:</strong> detected important site changes. Found %2$s in the cache for this site; auto-clearing."
 msgstr ""
 
-#: zencache-pro.inc.php:1470
+#: zencache-pro.inc.php:1453
 msgid "<strong>%1$s:</strong> detected important site changes that would normally trigger a clear cache routine. However, clear cache routines have been disabled by a site administrator. [<a href=\"http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/\" target=\"_blank\">?</a>]"
 msgstr ""
 
-#: zencache-pro.inc.php:1549
+#: zencache-pro.inc.php:1532
 msgid "Post"
 msgstr ""
 
-#: zencache-pro.inc.php:1557
-msgid "<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for %2$s ID: <code>%3$s</code>; auto-clearing."
+#: zencache-pro.inc.php:1540
+msgid "<strong>%1$s:</strong> detected changes. Found %2$s in the cache for %3$s ID: <code>%4$s</code>; auto-clearing."
 msgstr ""
 
-#: zencache-pro.inc.php:1723
-msgid "<strong>ZenCache:</strong> detected changes. Found %1$s in the cache, for XML feeds of type: <code>%2$s</code>; auto-clearing."
+#: zencache-pro.inc.php:1706
+msgid "<strong>%1$s:</strong> detected changes. Found %2$s in the cache, for XML feeds of type: <code>%3$s</code>; auto-clearing."
 msgstr ""
 
-#: zencache-pro.inc.php:1772
-msgid "<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for XML sitemaps; auto-clearing."
+#: zencache-pro.inc.php:1755
+msgid "<strong>%1$s:</strong> detected changes. Found %2$s in the cache for XML sitemaps; auto-clearing."
 msgstr ""
 
-#: zencache-pro.inc.php:1815
-msgid "<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for the designated \"Home Page\"; auto-clearing."
+#: zencache-pro.inc.php:1798
+msgid "<strong>%1$s:</strong> detected changes. Found %2$s in the cache for the designated \"Home Page\"; auto-clearing."
 msgstr ""
 
-#: zencache-pro.inc.php:1873
-msgid "<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for the designated \"Posts Page\"; auto-clearing."
+#: zencache-pro.inc.php:1856
+msgid "<strong>%1$s:</strong> detected changes. Found %2$s in the cache for the designated \"Posts Page\"; auto-clearing."
 msgstr ""
 
-#: zencache-pro.inc.php:1931
+#: zencache-pro.inc.php:1914
 msgid "Untitled"
 msgstr ""
 
-#: zencache-pro.inc.php:1942
-msgid "<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for Custom Post Type: <code>%2$s</code>; auto-clearing."
+#: zencache-pro.inc.php:1925
+msgid "<strong>%1$s:</strong> detected changes. Found %2$s in the cache for Custom Post Type: <code>%3$s</code>; auto-clearing."
 msgstr ""
 
-#: zencache-pro.inc.php:2032
-msgid "<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for Author Page: <code>%2$s</code>; auto-clearing."
+#: zencache-pro.inc.php:2015
+msgid "<strong>%1$s:</strong> detected changes. Found %2$s in the cache for Author Page: <code>%3$s</code>; auto-clearing."
 msgstr ""
 
-#: zencache-pro.inc.php:2184
-msgid "<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for %2$s: <code>%3$s</code>; auto-clearing."
+#: zencache-pro.inc.php:2167
+msgid "<strong>%1$s:</strong> detected changes. Found %2$s in the cache for %3$s: <code>%4$s</code>; auto-clearing."
 msgstr ""
 
-#: zencache-pro.inc.php:2336
-msgid "<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for user ID: <code>%2$s</code>; auto-clearing."
+#: zencache-pro.inc.php:2319
+msgid "<strong>%1$s:</strong> detected changes. Found %2$s in the cache for user ID: <code>%3$s</code>; auto-clearing."
 msgstr ""
 
-#: zencache-pro.inc.php:2596 zencache-pro.inc.php:2624
+#: zencache-pro.inc.php:2579 zencache-pro.inc.php:2607
 msgid "Doing it wrong! Missing `base_dir` option value. MUST call this method after `setup()`."
 msgstr ""
 
-#: zencache-pro.inc.php:2847
-msgid "<strong>ZenCache</strong>: ignoring your Version Salt; it seems to contain PHP syntax errors."
+#: zencache-pro.inc.php:2830
+msgid "<strong>%1$s</strong>: ignoring your Version Salt; it seems to contain PHP syntax errors."
 msgstr ""
 
-#: zencache-pro.inc.php:3090
-msgid "Please disable the LITE version of ZenCache before you activate the PRO version."
+#: zencache-pro.inc.php:3084
+msgid "Lite"
+msgstr ""
+
+#: zencache-pro.inc.php:3085
+msgid "Pro"
+msgstr ""
+
+#: zencache-pro.inc.php:3089
+msgid "Please disable %1$s before you run %2$s."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
