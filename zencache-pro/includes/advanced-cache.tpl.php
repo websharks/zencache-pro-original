@@ -1371,8 +1371,8 @@ namespace zencache
 			if(($host_dir_token = $this->host_dir_token(TRUE)) === '/')
 				$host_dir_token = ''; // Not necessary.
 			// Deals with multisite sub-directory installs.
-			// e.g. `wp-content/htmlc/cache/public/www-example-com` (main site)
-			// e.g. `wp-content/htmlc/cache/public/sub/www-example-com`
+			// e.g. `wp-content/cache/zencache/htmlc/cache/public/www-example-com` (main site)
+			// e.g. `wp-content/cache/zencache/htmlc/cache/public/sub/www-example-com`
 
 			$htmlc_benchmark = (ZENCACHE_DEBUGGING_ENABLE >= 2 ? 'details' : ZENCACHE_DEBUGGING_ENABLE);
 
