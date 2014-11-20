@@ -314,11 +314,15 @@ namespace zencache
 					$options = array_merge($options, $site_options); // Multisite network options.
 
 				if(!$options && is_multisite() && is_array($quick_cache_site_options = get_site_option('quick_cache_options')))
-					$options = $quick_cache_site_options; // Old Multisite Network options from Quick Cache.
-
+				{ // Old Multisite Network options from Quick Cache.
+					$options                = $quick_cache_site_options;
+					$options['crons_setup'] = $this->default_options['crons_setup'];
+				}
 				if(!$options && is_array($quick_cache_options = get_option('quick_cache_options')))
-					$options = $quick_cache_options; // Old options from Quick Cache.
-
+				{ // Old options from Quick Cache standard installation.
+					$options                = $quick_cache_options;
+					$options['crons_setup'] = $this->default_options['crons_setup'];
+				}
 				$this->default_options = apply_filters(__METHOD__.'__default_options', $this->default_options, get_defined_vars());
 				$this->options         = array_merge($this->default_options, $options); // This considers old options also.
 				$this->options         = apply_filters(__METHOD__.'__options', $this->options, get_defined_vars());
