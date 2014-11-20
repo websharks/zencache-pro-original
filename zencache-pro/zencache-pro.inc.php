@@ -309,43 +309,16 @@ namespace zencache
 					'uninstall_on_deletion'                => '0', // `0|1`.
 
 				); // Default options are merged with those defined by the site owner.
-				$options               = (is_array($options = get_option(__NAMESPACE__.'_options'))) ? $options : array();
+				$options               = is_array($options = get_option(__NAMESPACE__.'_options')) ? $options : array();
 				if(is_multisite() && is_array($site_options = get_site_option(__NAMESPACE__.'_options')))
 					$options = array_merge($options, $site_options); // Multisite network options.
 
-				if(!$options && get_option('ws_plugin__qcache_configured')
-				   && is_array($old_options = get_option('ws_plugin__qcache_options')) && $old_options
-				) // Before the rewrite. Only if QC was previously configured w/ options.
-				{
-					$this->options['version'] = '2.3.6'; // Old options.
+				if(!$options && is_multisite() && is_array($quick_cache_site_options = get_site_option('quick_cache_options')))
+					$options = $quick_cache_site_options; // Old Multisite Network options from Quick Cache.
 
-					if(!isset($options['enable']) && isset($old_options['enabled']))
-						$options['enable'] = (string)(integer)$old_options['enabled'];
+				if(!$options && is_array($quick_cache_options = get_option('quick_cache_options')))
+					$options = $quick_cache_options; // Old options from Quick Cache.
 
-					if(!isset($options['debugging_enable']) && isset($old_options['enable_debugging']))
-						$options['debugging_enable'] = (string)(integer)$old_options['enable_debugging'];
-
-					if(!isset($options['allow_browser_cache']) && isset($old_options['allow_browser_cache']))
-						$options['allow_browser_cache'] = (string)(integer)$old_options['allow_browser_cache'];
-
-					if(!isset($options['when_logged_in']) && isset($old_options['dont_cache_when_logged_in']))
-						$options['when_logged_in'] = ((string)(integer)$old_options['dont_cache_when_logged_in']) ? '0' : '1';
-
-					if(!isset($options['get_requests']) && isset($old_options['dont_cache_query_string_requests']))
-						$options['get_requests'] = ((string)(integer)$old_options['dont_cache_query_string_requests']) ? '0' : '1';
-
-					if(!isset($options['exclude_uris']) && isset($old_options['dont_cache_these_uris']))
-						$options['exclude_uris'] = (string)$old_options['dont_cache_these_uris'];
-
-					if(!isset($options['exclude_refs']) && isset($old_options['dont_cache_these_refs']))
-						$options['exclude_refs'] = (string)$old_options['dont_cache_these_refs'];
-
-					if(!isset($options['exclude_agents']) && isset($old_options['dont_cache_these_agents']))
-						$options['exclude_agents'] = (string)$old_options['dont_cache_these_agents'];
-
-					if(!isset($options['version_salt']) && isset($old_options['version_salt']))
-						$options['version_salt'] = (string)$old_options['version_salt'];
-				}
 				$this->default_options = apply_filters(__METHOD__.'__default_options', $this->default_options, get_defined_vars());
 				$this->options         = array_merge($this->default_options, $options); // This considers old options also.
 				$this->options         = apply_filters(__METHOD__.'__options', $this->options, get_defined_vars());
