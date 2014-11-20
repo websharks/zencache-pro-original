@@ -2841,7 +2841,7 @@ namespace zencache
 					}
 					$advanced_cache_contents = // Fill replacement codes.
 						str_ireplace(array("'%%".__NAMESPACE__.'_'.$_option."%%'",
-						                   "'%%".str_ireplace('_cache', '', __NAMESPACE__).'_'.$_option."%%'"),
+						                   "'%%".__NAMESPACE__.'_'.preg_replace('/^cache_/i', '', $_option)."%%'"),
 						             $_value, $advanced_cache_contents);
 				}
 				unset($_option, $_value, $_values, $_response); // Housekeeping.
