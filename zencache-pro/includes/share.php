@@ -2057,6 +2057,55 @@ namespace zencache // Root namespace.
 				return $value; // With applied filters.
 			}
 
+			/**
+			 * Does an action w/ back compat. for Quick Cache.
+			 *
+			 * @since 14xxxx First documented version.
+			 *
+			 * @param string $hook The hook to apply.
+			 */
+			public function do_wp_action($hook)
+			{
+				$hook = (string)$hook; // Force string value.
+				$args = func_get_args(); // Including `$hook`.
+				call_user_func_array('do_action', $args);
+
+				if(stripos($hook, __NAMESPACE__) === 0) // Do Quick Cache back compat?
+				{
+					$quick_cache_filter = 'quick_cache'.substr($hook, strlen(__NAMESPACE__));
+
+					array_shift($args); // Shift `$hook` off.
+					array_unshift($args, $quick_cache_filter); // For Quick Cache.
+					call_user_func_array('do_action', $args);
+				}
+			}
+
+			/**
+			 * Applies filters w/ back compat. for Quick Cache.
+			 *
+			 * @since 14xxxx First documented version.
+			 *
+			 * @param string $hook The hook to apply.
+			 *
+			 * @return mixed The filtered value.
+			 */
+			public function apply_wp_filters($hook)
+			{
+				$hook  = (string)$hook; // Force string value.
+				$args  = func_get_args(); // Including `$hook`.
+				$value = call_user_func_array('apply_filters', $args);
+
+				if(stripos($hook, __NAMESPACE__) === 0) // Do Quick Cache back compat?
+				{
+					$quick_cache_hook = 'quick_cache'.substr($hook, strlen(__NAMESPACE__));
+
+					array_shift($args); // Shift `$hook` off.
+					array_unshift($args, $quick_cache_hook); // For Quick Cache.
+					$value = call_user_func_array('apply_filters', $args);
+				}
+				return $value; // Filtered value.
+			}
+
 			/* --------------------------------------------------------------------------------------
 			 * Misc. long property values.
 			 -------------------------------------------------------------------------------------- */

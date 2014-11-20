@@ -179,7 +179,7 @@ namespace zencache
 				$this->cache[__FUNCTION__] = -1;
 
 				if($this->enable_hooks) // Hooks enabled?
-					do_action('before__'.__METHOD__, get_defined_vars());
+					$this->do_wp_action('before__'.__METHOD__, get_defined_vars());
 
 				/* -------------------------------------------------------------- */
 
@@ -323,19 +323,19 @@ namespace zencache
 					$options                = $quick_cache_options;
 					$options['crons_setup'] = $this->default_options['crons_setup'];
 				}
-				$this->default_options = apply_filters(__METHOD__.'__default_options', $this->default_options, get_defined_vars());
+				$this->default_options = $this->apply_wp_filters(__METHOD__.'__default_options', $this->default_options, get_defined_vars());
 				$this->options         = array_merge($this->default_options, $options); // This considers old options also.
-				$this->options         = apply_filters(__METHOD__.'__options', $this->options, get_defined_vars());
+				$this->options         = $this->apply_wp_filters(__METHOD__.'__options', $this->options, get_defined_vars());
 				$this->options         = array_intersect_key($this->options, $this->default_options);
 
 				$this->options['base_dir'] = trim($this->options['base_dir'], '\\/'." \t\n\r\0\x0B");
 				if(!$this->options['base_dir']) // Security enhancement; NEVER allow this to be empty.
 					$this->options['base_dir'] = $this->default_options['base_dir'];
 
-				$this->cap           = apply_filters(__METHOD__.'__cap', 'activate_plugins');
-				$this->update_cap    = apply_filters(__METHOD__.'__update_cap', 'update_plugins');
-				$this->network_cap   = apply_filters(__METHOD__.'__network_cap', 'manage_network_plugins');
-				$this->uninstall_cap = apply_filters(__METHOD__.'__uninstall_cap', 'delete_plugins');
+				$this->cap           = $this->apply_wp_filters(__METHOD__.'__cap', 'activate_plugins');
+				$this->update_cap    = $this->apply_wp_filters(__METHOD__.'__update_cap', 'update_plugins');
+				$this->network_cap   = $this->apply_wp_filters(__METHOD__.'__network_cap', 'manage_network_plugins');
+				$this->uninstall_cap = $this->apply_wp_filters(__METHOD__.'__uninstall_cap', 'delete_plugins');
 
 				/* -------------------------------------------------------------- */
 
@@ -444,8 +444,8 @@ namespace zencache
 
 				/* -------------------------------------------------------------- */
 
-				do_action('after__'.__METHOD__, get_defined_vars());
-				do_action(__METHOD__.'_complete', get_defined_vars());
+				$this->do_wp_action('after__'.__METHOD__, get_defined_vars());
+				$this->do_wp_action(__METHOD__.'_complete', get_defined_vars());
 			}
 
 			/**
@@ -592,7 +592,7 @@ namespace zencache
 				if($scheme) // A specific URL scheme?
 					$url = set_url_scheme($url, (string)$scheme);
 
-				return apply_filters(__METHOD__, $url, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $url, get_defined_vars());
 			}
 
 			/**
@@ -665,12 +665,12 @@ namespace zencache
 				               'ajaxURL'  => site_url('/wp-load.php', is_ssl() ? 'https' : 'http'),
 				               '_wpnonce' => wp_create_nonce());
 
-				$vars = apply_filters(__METHOD__, $vars, get_defined_vars());
+				$vars = $this->apply_wp_filters(__METHOD__, $vars, get_defined_vars());
 
 				$tags = '<meta property="'.esc_attr(__NAMESPACE__).':vars" content="data-json"'.
 				        ' data-json="'.esc_attr(json_encode($vars)).'" id="'.esc_attr(__NAMESPACE__).'-vars" />'."\n";
 
-				echo apply_filters(__METHOD__, $tags, get_defined_vars());
+				echo $this->apply_wp_filters(__METHOD__, $tags, get_defined_vars());
 			}
 
 			/**
@@ -828,7 +828,7 @@ namespace zencache
 			{
 				$links[] = '<a href="options-general.php?page='.urlencode(__NAMESPACE__).'">'.__('Settings', $this->text_domain).'</a>';
 
-				return apply_filters(__METHOD__, $links, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $links, get_defined_vars());
 			}
 
 			/**
@@ -981,7 +981,7 @@ namespace zencache
 						$_dismiss     = add_query_arg(urlencode_deep(array(__NAMESPACE__ => array('dismiss_notice' => array('key' => $_key)), '_wpnonce' => wp_create_nonce())));
 						$_dismiss     = '<a style="'.esc_attr($_dismiss_css).'" href="'.esc_attr($_dismiss).'">'.__('dismiss &times;', $this->text_domain).'</a>';
 					}
-					echo apply_filters(__METHOD__.'__notice', '<div class="updated"><p>'.$_notice.$_dismiss.'</p></div>', get_defined_vars());
+					echo $this->apply_wp_filters(__METHOD__.'__notice', '<div class="updated"><p>'.$_notice.$_dismiss.'</p></div>', get_defined_vars());
 				}
 				unset($_key, $_notice, $_dismiss_css, $_dismiss); // Housekeeping.
 			}
@@ -1052,7 +1052,7 @@ namespace zencache
 						$_dismiss     = add_query_arg(urlencode_deep(array(__NAMESPACE__ => array('dismiss_error' => array('key' => $_key)), '_wpnonce' => wp_create_nonce())));
 						$_dismiss     = '<a style="'.esc_attr($_dismiss_css).'" href="'.esc_attr($_dismiss).'">'.__('dismiss &times;', $this->text_domain).'</a>';
 					}
-					echo apply_filters(__METHOD__.'__error', '<div class="error"><p>'.$_error.$_dismiss.'</p></div>', get_defined_vars());
+					echo $this->apply_wp_filters(__METHOD__.'__error', '<div class="error"><p>'.$_error.$_dismiss.'</p></div>', get_defined_vars());
 				}
 				unset($_key, $_error, $_dismiss_css, $_dismiss); // Housekeeping.
 			}
@@ -1133,7 +1133,7 @@ namespace zencache
 			{
 				$schedules['every15m'] = array('interval' => 900, 'display' => __('Every 15 Minutes', $this->text_domain));
 
-				return apply_filters(__METHOD__, $schedules, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $schedules, get_defined_vars());
 			}
 
 			/**
@@ -1190,7 +1190,7 @@ namespace zencache
 
 				$counter += $this->wipe_htmlc_cache($manually);
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1221,7 +1221,7 @@ namespace zencache
 					$counter += $this->delete_all_files_dirs_in($_htmlc_cache_dir);
 				unset($_htmlc_cache_dir); // Just a little housekeeping.
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1244,7 +1244,7 @@ namespace zencache
 					return $counter; // Nothing to do.
 
 				if(!is_dir($cache_dir = $this->cache_dir()))
-					return apply_filters(__METHOD__, $this->clear_htmlc_cache($manually), get_defined_vars());
+					return $this->apply_wp_filters(__METHOD__, $this->clear_htmlc_cache($manually), get_defined_vars());
 
 				@set_time_limit(1800); // @TODO When disabled, display a warning.
 
@@ -1252,7 +1252,7 @@ namespace zencache
 				$counter += $this->clear_files_from_host_cache_dir($regex);
 				$counter += $this->clear_htmlc_cache($manually);
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1287,7 +1287,7 @@ namespace zencache
 					$counter += $this->delete_all_files_dirs_in($_htmlc_cache_dir);
 				unset($_htmlc_cache_dir); // Just a little housekeeping.
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1316,7 +1316,7 @@ namespace zencache
 				$regex = $this->build_host_cache_path_regex('', '.+');
 				$counter += $this->purge_files_from_host_cache_dir($regex);
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1351,7 +1351,7 @@ namespace zencache
 					                      sprintf(__('<strong>ZenCache:</strong> detected significant changes. Found %1$s in the cache; auto-wiping.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter))));
 				}
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1362,15 +1362,6 @@ namespace zencache
 			 *
 			 * @since 141001 First documented version.
 			 *
-			 * @TODO @raamdev I noticed that you used `zencache_` in this filter.
-			 *    Moving forward, I'd suggest that we use `__METHOD__` instead, as seen elsewhere in the codebase.
-			 *    This allows us to rebrand the software under a different namespace quite easily. Changing the namespace changes everything.
-			 *    In the future, we could even work to enhance this further, by avoiding anything that hard-codes `zencache` or `ZenCache`.
-			 *    Instead, we might create a class property; e.g. `$this->name = 'ZenCache';` so it's available when we need to call the plugin by name.
-			 *
-			 * @raamdev UPDATE: I added two new properties that we can start using for the plugin name, to help make a name transition easier.
-			 *    New properties can be referenced like this: `$this->name`, and `$this->short_name`, as seen in the notice below.
-			 *
 			 * @return boolean `TRUE` if disabled; and this also creates a dashboard notice in some cases.
 			 *
 			 * @see auto_wipe_cache()
@@ -1379,7 +1370,7 @@ namespace zencache
 			 */
 			public function disable_auto_wipe_cache_routines()
 			{
-				$is_disabled = (boolean)apply_filters('zencache_disable_auto_wipe_cache_routines', FALSE);
+				$is_disabled = (boolean)$this->apply_wp_filters(__NAMESPACE__.'_disable_auto_wipe_cache_routines', FALSE);
 
 				if($is_disabled && is_admin() && $this->options['change_notifications_enable'])
 				{
@@ -1434,7 +1425,7 @@ namespace zencache
 					                      sprintf(__('<strong>ZenCache:</strong> detected important site changes. Found %1$s in the cache for this site; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter))));
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1445,15 +1436,6 @@ namespace zencache
 			 *
 			 * @since 141001 First documented version.
 			 *
-			 * @TODO @raamdev I noticed that you used `zencache_` in this filter.
-			 *    Moving forward, I'd suggest that we use `__METHOD__` instead, as seen elsewhere in the codebase.
-			 *    This allows us to rebrand the software under a different namespace quite easily. Changing the namespace changes everything.
-			 *    In the future, we could even work to enhance this further, by avoiding anything that hard-codes `zencache` or `ZenCache`.
-			 *    Instead, we might create a class property; e.g. `$this->name = 'ZenCache';` so it's available when we need to call the plugin by name.
-			 *
-			 * @raamdev UPDATE: I added two new properties that we can start using for the plugin name, to help make a name transition easier.
-			 *    New properties can be referenced like this: `$this->name`, and `$this->short_name`, as seen in the notice below.
-			 *
 			 * @return boolean `TRUE` if disabled; and this also creates a dashboard notice in some cases.
 			 *
 			 * @see auto_clear_cache()
@@ -1462,7 +1444,7 @@ namespace zencache
 			 */
 			public function disable_auto_clear_cache_routines()
 			{
-				$is_disabled = (boolean)apply_filters('zencache_disable_auto_clear_cache_routines', FALSE);
+				$is_disabled = (boolean)$this->apply_wp_filters(__NAMESPACE__.'_disable_auto_clear_cache_routines', FALSE);
 
 				if($is_disabled && is_admin() && $this->options['change_notifications_enable'])
 				{
@@ -1569,7 +1551,7 @@ namespace zencache
 				// Also clear a possible custom post type archive view.
 				$counter += $this->auto_clear_custom_post_type_archive_cache($post_id);
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1613,7 +1595,7 @@ namespace zencache
 				if($new_status === 'draft' || $new_status === 'future' || $new_status === 'private' || $new_status === 'trash')
 					$counter = $this->auto_clear_post_cache($post->ID, TRUE);
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1708,7 +1690,7 @@ namespace zencache
 				   || !($variation_regex_frags = array_unique($variation_regex_frags))
 				) return $counter; // Nothing to do here.
 
-				$in_sets_of = apply_filters(__METHOD__.'__in_sets_of', 10, get_defined_vars());
+				$in_sets_of = $this->apply_wp_filters(__METHOD__.'__in_sets_of', 10, get_defined_vars());
 				for($_i = 0; $_i < count($variation_regex_frags); $_i = $_i + $in_sets_of)
 				{
 					$_variation_regex_frags = array_slice($variation_regex_frags, $_i, $in_sets_of);
@@ -1723,7 +1705,7 @@ namespace zencache
 					                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache, for XML feeds of type: <code>%2$s</code>; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter)), esc_html($type)));
 				}
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1772,7 +1754,7 @@ namespace zencache
 					                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for XML sitemaps; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter))));
 				}
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1817,7 +1799,7 @@ namespace zencache
 				}
 				$counter += $this->auto_clear_xml_feeds_cache('blog');
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1875,7 +1857,7 @@ namespace zencache
 				}
 				$counter += $this->auto_clear_xml_feeds_cache('blog');
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -1944,7 +1926,7 @@ namespace zencache
 				}
 				$counter += $this->auto_clear_xml_feeds_cache('custom-post-type', $post_id);
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -2039,7 +2021,7 @@ namespace zencache
 				$counter += $this->auto_clear_xml_feeds_cache('blog');
 				$counter += $this->auto_clear_xml_feeds_cache('post-authors', $post_id);
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -2190,7 +2172,7 @@ namespace zencache
 
 				$counter += $this->auto_clear_xml_feeds_cache('post-terms', $post_id);
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -2239,7 +2221,7 @@ namespace zencache
 				$counter += $this->auto_clear_xml_feeds_cache('post-comments', $comment->comment_post_ID);
 				$counter += $this->auto_clear_post_cache($comment->comment_post_ID);
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -2285,7 +2267,7 @@ namespace zencache
 				$counter += $this->auto_clear_xml_feeds_cache('post-comments', $comment->comment_post_ID);
 				$counter += $this->auto_clear_post_cache($comment->comment_post_ID);
 
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -2336,7 +2318,7 @@ namespace zencache
 					                      sprintf(__('<strong>ZenCache:</strong> detected changes. Found %1$s in the cache for user ID: <code>%2$s</code>; auto-clearing.', $this->text_domain),
 					                              esc_html($this->i18n_files($counter)), esc_html($user_id)));
 				}
-				return apply_filters(__METHOD__, $counter, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $counter, get_defined_vars());
 			}
 
 			/**
@@ -2600,7 +2582,7 @@ namespace zencache
 				if(isset($rel_dir_file[0])) // Do we have this also?
 					$wp_content_base_dir_to .= '/'.$rel_dir_file;
 
-				return apply_filters(__METHOD__, $wp_content_base_dir_to, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $wp_content_base_dir_to, get_defined_vars());
 			}
 
 			/**
@@ -2628,7 +2610,7 @@ namespace zencache
 				if(isset($rel_dir_file[0])) // Do we have this also?
 					$base_path_to .= '/'.$rel_dir_file;
 
-				return apply_filters(__METHOD__, $base_path_to, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $base_path_to, get_defined_vars());
 			}
 
 			/**
@@ -2649,7 +2631,7 @@ namespace zencache
 
 				else $wp_config_file = ''; // Unable to find `/wp-config.php` file.
 
-				return apply_filters(__METHOD__, $wp_config_file, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $wp_config_file, get_defined_vars());
 			}
 
 			/**
@@ -2691,7 +2673,7 @@ namespace zencache
 				if(!file_put_contents($wp_config_file, $wp_config_file_contents))
 					return ''; // Failure; could not write changes.
 
-				return apply_filters(__METHOD__, $wp_config_file_contents, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $wp_config_file_contents, get_defined_vars());
 			}
 
 			/**
@@ -2730,7 +2712,7 @@ namespace zencache
 				if(!file_put_contents($wp_config_file, $wp_config_file_contents))
 					return ''; // Failure; could not write changes.
 
-				return apply_filters(__METHOD__, $wp_config_file_contents, get_defined_vars());
+				return $this->apply_wp_filters(__METHOD__, $wp_config_file_contents, get_defined_vars());
 			}
 
 			/**
