@@ -115,7 +115,7 @@ namespace zencache // Root namespace.
 
 							$this->plugin->activate(); // Reactivate plugin w/ new options.
 						}
-						$this->plugin->enqueue_notice(__('<strong>ZenCache Feature Notice:</strong> This version of ZenCache introduces a new <a href="http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/" target="_blank">Branched Cache Structure</a> and several other <a href="http://www.websharks-inc.com/post/zencache-v140605-now-available/" target="_blank">new features</a>.', $this->plugin->text_domain));
+						$this->plugin->enqueue_notice(__('<strong>ZenCache Feature Notice:</strong> This version of ZenCache introduces a new <a href="http://www.websharks-inc.com/r/zencache-branched-cache-structure-wiki/" target="_blank">Branched Cache Structure</a> and several other <a href="http://www.websharks-inc.com/post/quick-cache-v140605-now-available/" target="_blank">new features</a>.', $this->plugin->text_domain));
 					}
 				}
 			}
