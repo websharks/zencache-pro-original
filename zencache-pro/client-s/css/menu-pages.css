@@ -115,7 +115,6 @@ Menu page styles.
 .plugin-menu-page textarea, .plugin-menu-page textarea:focus
 {
 	width         : 100%;
-	height        : 2em;
 
 	margin        : 0;
 	padding       : .25em .5em .25em .5em;
@@ -128,6 +127,12 @@ Menu page styles.
 	color         : #FFFFFF;
 	background    : #7E7E7E;
 	box-shadow    : 0 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+}
+.plugin-menu-page input:not([type='radio']):not([type='checkbox']),
+.plugin-menu-page input:not([type='radio']):not([type='checkbox']):focus,
+.plugin-menu-page select, .plugin-menu-page select:focus
+{
+	height : 2em;
 }
 .plugin-menu-page input:not([type='radio']):not([type='checkbox']):focus,
 .plugin-menu-page select:focus, .plugin-menu-page textarea:focus
