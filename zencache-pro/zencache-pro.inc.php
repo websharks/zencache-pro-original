@@ -3073,20 +3073,25 @@ namespace zencache
 		if(!empty($GLOBALS[__NAMESPACE__.'_conflicting_plugin_lite_pro']))
 			return; // Already detected this in one plugin or the other.
 
-		$construct_name          = function ($string)
+		$construct_name          = function ($slug_or_ns)
 		{
-			$name = trim(strtolower((string)$string));
-			$name = preg_replace('/[^a-z0-9]/', ' ', $name);
+			$slug_or_ns = trim(strtolower((string)$slug_or_ns));
+
+			if(preg_match('/^'.preg_quote(__NAMESPACE__, '/').'[_\-]pro/', $slug_or_ns))
+				$slug_or_ns = strtolower(__NAMESPACE__); // Strip `-pro` suffix.
+
+			$name = preg_replace('/[^a-z0-9]/', ' ', $slug_or_ns);
 			$name = str_replace('cache', 'Cache', ucwords($name));
+
 			return $name; // e.g. `x-cache` becomes `X Cache`.
 		};
 		$text_domain             = str_replace('_', '-', __NAMESPACE__);
 		$conflicting_plugin_name = $construct_name($GLOBALS[__NAMESPACE__.'_conflicting_plugin']);
 		$plugin_name             = $construct_name(__NAMESPACE__); // e.g. `zencache` becomes `ZenCache`.
 
-		if(strcasecmp($conflicting_plugin_name, $plugin_name) === 0 && !preg_match($plugin_name, '/\b(?:lite|pro)\b/i', $plugin_name))
+		if(strcasecmp($conflicting_plugin_name, $plugin_name) === 0) // Conflict between lite/pro editions?
 		{
-			$conflicting_plugin_name = $conflicting_plugin_name.' '.__('Lite', $text_domain);
+			$conflicting_plugin_name = $plugin_name.' '.__('Lite', $text_domain);
 			$plugin_name             = $plugin_name.' '.__('Pro', $text_domain);
 
 			$GLOBALS[__NAMESPACE__.'_conflicting_plugin_lite_pro'] = TRUE;
