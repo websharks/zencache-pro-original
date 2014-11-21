@@ -3070,6 +3070,9 @@ namespace zencache
 	}
 	else if(!empty($GLOBALS[__NAMESPACE__.'_conflicting_plugin']) && empty($GLOBALS[__NAMESPACE__.'_uninstalling'])) add_action('all_admin_notices', function ()
 	{
+		if(!empty($GLOBALS[__NAMESPACE__.'_conflicting_plugin_lite_pro']))
+			return; // Already detected this in one plugin or the other.
+
 		$construct_name          = function ($string)
 		{
 			$name = trim(strtolower((string)$string));
@@ -3085,6 +3088,8 @@ namespace zencache
 		{
 			$conflicting_plugin_name = $conflicting_plugin_name.' '.__('Lite', $text_domain);
 			$plugin_name             = $plugin_name.' '.__('Pro', $text_domain);
+
+			$GLOBALS[__NAMESPACE__.'_conflicting_plugin_lite_pro'] = TRUE;
 		}
 		echo '<div class="error">'.
 		     '   <p>'. // Running multiple versions of this plugin at same time.
