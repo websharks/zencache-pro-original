@@ -3077,7 +3077,7 @@ namespace zencache
 		{
 			$slug_or_ns = trim(strtolower((string)$slug_or_ns));
 
-			if(preg_match('/^'.preg_quote(__NAMESPACE__, '/').'[_\-]pro/', $slug_or_ns))
+			if(preg_match('/^'.preg_quote(__NAMESPACE__, '/').'[_\-]pro$/', $slug_or_ns))
 				$slug_or_ns = strtolower(__NAMESPACE__); // Strip `-pro` suffix.
 
 			$name = preg_replace('/[^a-z0-9]/', ' ', $slug_or_ns);
