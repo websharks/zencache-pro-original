@@ -552,7 +552,7 @@ namespace zencache
 		 *
 		 * @var string A unique string identifier in the set of `NC_DEBUG_` constants.
 		 */
-		const NC_DEBUG_QCAC_GET_VAR = 'nc_debug_qcac_get_var';
+		const NC_DEBUG_QCAC_GET_VAR = 'nc_debug_zcac_get_var';
 
 		/**
 		 * No-cache because of a missing `$_SERVER['HTTP_HOST']`.

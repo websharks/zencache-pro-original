@@ -170,7 +170,7 @@ namespace zencache // Root namespace.
 				if(!($add_advanced_cache = $this->plugin->add_advanced_cache()))
 					$query_args[__NAMESPACE__.'__advanced_cache_add_failure']
 						= ($add_advanced_cache === NULL)
-						? 'qc-advanced-cache' : '1';
+						? 'zc-advanced-cache' : '1';
 
 				$this->plugin->update_blog_paths();
 			}
@@ -212,7 +212,7 @@ namespace zencache // Root namespace.
 				if(!($add_advanced_cache = $this->plugin->add_advanced_cache()))
 					$query_args[__NAMESPACE__.'__advanced_cache_add_failure']
 						= ($add_advanced_cache === NULL)
-						? 'qc-advanced-cache' : '1';
+						? 'zc-advanced-cache' : '1';
 
 				$this->plugin->update_blog_paths();
 			}

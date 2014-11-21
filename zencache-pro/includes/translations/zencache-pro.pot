@@ -296,7 +296,7 @@ msgid "Failed to update your <code>/wp-config.php</code> file automatically. Ple
 msgstr ""
 
 #: includes/menu-pages.php:92
-msgid "Failed to update your <code>/wp-content/advanced-cache.php</code> file. Cannot write stat file: <code>%1$s/qc-advanced-cache</code>. Please be sure this directory exists (and that it's writable): <code>%1$s</code>. Please use directory permissions <code>755</code> or higher (perhaps <code>777</code>). Once you've done this, please try again."
+msgid "Failed to update your <code>/wp-content/advanced-cache.php</code> file. Cannot write stat file: <code>%1$s/zc-advanced-cache</code>. Please be sure this directory exists (and that it's writable): <code>%1$s</code>. Please use directory permissions <code>755</code> or higher (perhaps <code>777</code>). Once you've done this, please try again."
 msgstr ""
 
 #: includes/menu-pages.php:93

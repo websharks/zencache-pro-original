@@ -592,8 +592,8 @@ namespace zencache // Root namespace.
 					$host_dir_token = isset($host_dir_token[0]) ? '/'.$host_dir_token.'/' : '/';
 
 					if($host_dir_token !== '/' // Perhaps NOT the main site?
-					   && (!is_file(($cache_dir = $this->cache_dir()).'/qc-blog-paths') // NOT a read/valid blog path?
-					       || !in_array($host_dir_token, unserialize(file_get_contents($cache_dir.'/qc-blog-paths')), TRUE))
+					   && (!is_file(($cache_dir = $this->cache_dir()).'/zc-blog-paths') // NOT a read/valid blog path?
+					       || !in_array($host_dir_token, unserialize(file_get_contents($cache_dir.'/zc-blog-paths')), TRUE))
 					) $host_dir_token = '/'; // Main site; e.g. this is NOT a real/valid child blog path.
 				}
 				$token_value = $dashify ? trim(preg_replace('/[^a-z0-9\/]/i', '-', $host_dir_token), '-') : $host_dir_token;
@@ -1503,7 +1503,7 @@ namespace zencache // Root namespace.
 					$cache_dir_tmp_regex = '/^'.preg_quote($cache_dir_tmp, '/').$cache_dir_tmp_regex;
 				else $cache_dir_tmp_regex = '/^'.preg_quote($cache_dir_tmp.'/', '/').$cache_dir_tmp_regex;
 
-				# if(WP_DEBUG) file_put_contents(WP_CONTENT_DIR.'/qc-debug.log', print_r($regex, TRUE)."\n".print_r($cache_dir_tmp_regex, TRUE)."\n\n", FILE_APPEND);
+				# if(WP_DEBUG) file_put_contents(WP_CONTENT_DIR.'/zc-debug.log', print_r($regex, TRUE)."\n".print_r($cache_dir_tmp_regex, TRUE)."\n\n", FILE_APPEND);
 				// Uncomment the above line to debug regex pattern matching used by this routine; and others that call upon it.
 
 				if(!rename($cache_dir, $cache_dir_tmp)) // Work from tmp directory so deletions are atomic.
@@ -1514,7 +1514,7 @@ namespace zencache // Root namespace.
 				{
 					if(($_file_dir->isFile() || $_file_dir->isLink()) // Files and/or symlinks only.
 
-					   // Don't delete files in the immediate directory; e.g. `qc-advanced-cache` or `.htaccess`, etc.
+					   // Don't delete files in the immediate directory; e.g. `zc-advanced-cache` or `.htaccess`, etc.
 					   // Actual `http|https/...` cache files are nested. Files in the immediate directory are for other purposes.
 					   && (strpos($_file_dir->getSubpathname(), '/') !== FALSE)
 
@@ -1631,7 +1631,7 @@ namespace zencache // Root namespace.
 						$_host_cache_dir_tmp_regex = '/^'.preg_quote($_host_cache_dir_tmp, '/').$_host_cache_dir_tmp_regex;
 					else $_host_cache_dir_tmp_regex = '/^'.preg_quote($_host_cache_dir_tmp.'/', '/').$_host_cache_dir_tmp_regex;
 
-					# if(WP_DEBUG) file_put_contents(WP_CONTENT_DIR.'/qc-debug.log', print_r($regex, TRUE)."\n".print_r($_host_cache_dir_tmp_regex, TRUE)."\n\n", FILE_APPEND);
+					# if(WP_DEBUG) file_put_contents(WP_CONTENT_DIR.'/zc-debug.log', print_r($regex, TRUE)."\n".print_r($_host_cache_dir_tmp_regex, TRUE)."\n\n", FILE_APPEND);
 					// Uncomment the above line to debug regex pattern matching used by this routine; and others that call upon it.
 
 					if(!rename($_host_cache_dir, $_host_cache_dir_tmp)) // Work from tmp directory so deletions are atomic.
@@ -1642,7 +1642,7 @@ namespace zencache // Root namespace.
 					{
 						if(($_file_dir->isFile() || $_file_dir->isLink()) // Files and/or symlinks only.
 
-						   // Don't delete files in the immediate directory; e.g. `qc-advanced-cache` or `.htaccess`, etc.
+						   // Don't delete files in the immediate directory; e.g. `zc-advanced-cache` or `.htaccess`, etc.
 						   // Actual `http|https/...` cache files are nested. Files in the immediate directory are for other purposes.
 						   && ($_host_cache_dir !== $cache_dir || strpos($_file_dir->getSubpathname(), '/') !== FALSE)
 
@@ -1679,7 +1679,7 @@ namespace zencache // Root namespace.
 
 			/**
 			 * Delete all files/dirs from a directory (for all schemes/hosts);
-			 *    including `qc-` prefixed files; or anything else for that matter.
+			 *    including `zc-` prefixed files; or anything else for that matter.
 			 *
 			 * @since 141110 Refactoring cache clear/purge routines.
 			 *

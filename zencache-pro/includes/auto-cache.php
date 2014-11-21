@@ -149,7 +149,7 @@ namespace zencache // Root namespace.
 		{
 			$cache_dir           = $this->plugin->cache_dir();
 			$cache_lock          = $this->plugin->cache_lock();
-			$auto_cache_log_file = $cache_dir.'/qc-auto-cache.log';
+			$auto_cache_log_file = $cache_dir.'/zc-auto-cache.log';
 
 			if(is_file($auto_cache_log_file) && !is_writable($auto_cache_log_file))
 				throw new \exception(sprintf(__('Auto-cache log file is NOT writable: `%1$s`. Please set permissions to `644` (or higher). `666` might be needed in some cases.', $this->plugin->text_domain), $auto_cache_log_file));
@@ -177,7 +177,7 @@ namespace zencache // Root namespace.
 		{
 			$cache_dir           = $this->plugin->cache_dir();
 			$cache_lock          = $this->plugin->cache_lock();
-			$auto_cache_log_file = $cache_dir.'/qc-auto-cache.log';
+			$auto_cache_log_file = $cache_dir.'/zc-auto-cache.log';
 
 			if(is_file($auto_cache_log_file) && !is_writable($auto_cache_log_file))
 				throw new \exception(sprintf(__('Auto-cache log file is NOT writable: `%1$s`. Please set permissions to `644` (or higher). `666` might be needed in some cases.', $this->plugin->text_domain), $auto_cache_log_file));
