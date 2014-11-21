@@ -18,7 +18,11 @@ namespace zencache // Root namespace.
 			echo '<form id="plugin-menu-page" class="plugin-menu-page" method="post" enctype="multipart/form-data"'.
 			     ' action="'.esc_attr(add_query_arg(urlencode_deep(array('page' => __NAMESPACE__, '_wpnonce' => wp_create_nonce())), self_admin_url('/admin.php'))).'">'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-heading">'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			if(is_multisite()) // Wipes entire cache (e.g. this clears ALL sites in a network).
 				echo '   <button type="button" class="plugin-menu-page-wipe-cache" style="float:right; margin-left:15px;" title="'.esc_attr(__('Wipe Cache (Start Fresh); clears the cache for all sites in this network at once!', $this->plugin->text_domain)).'"'.
@@ -48,6 +52,12 @@ namespace zencache // Root namespace.
 			echo '   <img src="'.$this->plugin->url('/client-s/images/options.png').'" alt="'.esc_attr(__('Plugin Options', $this->plugin->text_domain)).'" />'."\n";
 
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
+
+			echo '<hr />'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			if(!empty($_REQUEST[__NAMESPACE__.'__updated'])) // Options updated successfully?
 			{
@@ -105,7 +115,18 @@ namespace zencache // Root namespace.
 				echo '   <i class="fa fa-warning"></i> '.sprintf(__('%1$s is currently disabled; please review options below.', $this->plugin->text_domain), esc_html($this->plugin->name))."\n";
 				echo '</div>'."\n";
 			}
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-body">'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
+
+			echo '         <h2 class="plugin-menu-page-section-heading">'.
+			     '            '.__('Basic Configuration (Required)', $this->plugin->text_domain).
+			     '            <small><span>'.sprintf(__('Review these basic options and %1$s&trade; will be ready-to-go!', $this->plugin->text_domain), esc_html($this->plugin->name)).'</span></small>'.
+			     '         </h2>';
+
+			/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
@@ -114,10 +135,10 @@ namespace zencache // Root namespace.
 			echo '   </a>'."\n";
 
 			echo '   <div class="plugin-menu-page-panel-body'.((!$this->plugin->options['enable']) ? ' open' : '').' clearfix">'."\n";
-			echo '      <p style="float:right; margin:-5px 0 0 0; font-weight:bold;">'.sprintf(__('%1$s = <i class="fa fa-tachometer fa-4x"></i> SPEED<em>!!</em>', $this->plugin->text_domain), esc_html($this->plugin->name)).'</p>'."\n";
-			echo '      <p style="margin-top:1em;"><label class="switch-primary"><input type="radio" name="'.esc_attr(__NAMESPACE__).'[save_options][enable]" value="1"'.checked($this->plugin->options['enable'], '1', FALSE).' /> <i class="fa fa-magic fa-flip-horizontal"></i> '.sprintf(__('Yes, enable %1$s!', $this->plugin->text_domain), esc_html($this->plugin->name)).'</label> &nbsp;&nbsp;&nbsp; <label><input type="radio" name="'.esc_attr(__NAMESPACE__).'[save_options][enable]" value="0"'.checked($this->plugin->options['enable'], '0', FALSE).' /> '.__('No, disable.', $this->plugin->text_domain).'</label></p>'."\n";
-			echo '      <hr />'."\n";
-			echo '      <p class="info">'.sprintf(__('<strong>HUGE Time-Saver:</strong> Approx. 95%% of all WordPress sites running %1$s, simply enable it here; and that\'s it :-) <strong>No further configuration is necessary (really).</strong> All of the other options (down below) are already tuned for the BEST performance on a typical WordPress installation. Simply enable %1$s here and click "Save All Changes". If you get any warnings please follow the instructions given. Otherwise, you\'re good <i class="fa fa-smile-o"></i>. This plugin is designed to run just fine like it is. Take it for a spin right away; you can always fine-tune things later if you deem necessary.', $this->plugin->text_domain), esc_html($this->plugin->name)).'</p>'."\n";
+			echo '      <img src="'.esc_attr($this->plugin->url('/client-s/images/tach.png')).'" style="float:right; width:100px; margin-left:1em;" />'."\n";
+			echo '      <p style="float:right; font-size:120%; font-weight:bold;">'.sprintf(__('%1$s&trade; = SPEED<em>!!</em>', $this->plugin->text_domain), esc_html($this->plugin->name)).'</p>'."\n";
+			echo '      <p><label class="switch-primary"><input type="radio" name="'.esc_attr(__NAMESPACE__).'[save_options][enable]" value="1"'.checked($this->plugin->options['enable'], '1', FALSE).' /> '.sprintf(__('Yes, enable %1$s&trade;', $this->plugin->text_domain), esc_html($this->plugin->name)).' <i class="fa fa-magic fa-flip-horizontal"></i></label> &nbsp;&nbsp;&nbsp; <label><input type="radio" name="'.esc_attr(__NAMESPACE__).'[save_options][enable]" value="0"'.checked($this->plugin->options['enable'], '0', FALSE).' /> '.__('No, disable.', $this->plugin->text_domain).'</label></p>'."\n";
+			echo '      <p class="info" style="font-size:110%; margin-top:1.5em;">'.sprintf(__('<strong>HUGE Time-Saver:</strong> Approx. 95%% of all WordPress sites running %1$s, simply enable it here; and that\'s it :-) <strong>No further configuration is necessary (really).</strong> All of the other options (down below) are already tuned for the BEST performance on a typical WordPress installation. Simply enable %1$s here and click "Save All Changes". If you get any warnings please follow the instructions given. Otherwise, you\'re good <i class="fa fa-smile-o"></i>. This plugin is designed to run just fine like it is. Take it for a spin right away; you can always fine-tune things later if you deem necessary.', $this->plugin->text_domain), esc_html($this->plugin->name)).'</p>'."\n";
 			echo '      <hr />'."\n";
 			echo '      <img src="'.esc_attr($this->plugin->url('/client-s/images/source-code-ss.png')).'" class="screenshot" />'."\n";
 			echo '      <h3>'.sprintf(__('How Can I Tell %1$s is Working?', $this->plugin->text_domain), esc_html($this->plugin->name)).'</h3>'."\n";
@@ -132,6 +153,8 @@ namespace zencache // Root namespace.
 			echo '   </div>'."\n";
 
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
@@ -150,6 +173,15 @@ namespace zencache // Root namespace.
 			echo '   </div>'."\n";
 
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
+
+			echo '         <h2 class="plugin-menu-page-section-heading">'.
+			     '            '.__('Advanced Configuration (All Optional)', $this->plugin->text_domain).
+			     '            <small>'.__('Recommended for advanced site owners only; already pre-configured for most WP installs.', $this->plugin->text_domain).'</small>'.
+			     '         </h2>';
+
+			/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
@@ -250,6 +282,8 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
 			echo '   <a href="#" class="plugin-menu-page-panel-heading">'."\n";
@@ -272,6 +306,8 @@ namespace zencache // Root namespace.
 			echo '   </div>'."\n";
 
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
@@ -296,6 +332,8 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
 			echo '   <a href="#" class="plugin-menu-page-panel-heading">'."\n";
@@ -319,6 +357,8 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
 			echo '   <a href="#" class="plugin-menu-page-panel-heading">'."\n";
@@ -338,6 +378,8 @@ namespace zencache // Root namespace.
 			echo '   </div>'."\n";
 
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
@@ -359,6 +401,8 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
 			echo '   <a href="#" class="plugin-menu-page-panel-heading">'."\n";
@@ -378,6 +422,8 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
 			echo '   <a href="#" class="plugin-menu-page-panel-heading">'."\n";
@@ -393,6 +439,8 @@ namespace zencache // Root namespace.
 			echo '   </div>'."\n";
 
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
@@ -410,6 +458,8 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
 			echo '   <a href="#" class="plugin-menu-page-panel-heading">'."\n";
@@ -425,6 +475,8 @@ namespace zencache // Root namespace.
 			echo '   </div>'."\n";
 
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
@@ -461,6 +513,8 @@ namespace zencache // Root namespace.
 			echo '   </div>'."\n";
 
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
@@ -532,6 +586,8 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
 			echo '   <a href="#" class="plugin-menu-page-panel-heading">'."\n";
@@ -550,6 +606,8 @@ namespace zencache // Root namespace.
 			echo '   </div>'."\n";
 
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
@@ -608,6 +666,8 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
 			echo '   <a href="#" class="plugin-menu-page-panel-heading">'."\n";
@@ -632,6 +692,8 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
 			echo '   <a href="#" class="plugin-menu-page-panel-heading">'."\n";
@@ -649,6 +711,8 @@ namespace zencache // Root namespace.
 			echo '   </div>'."\n";
 
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
@@ -671,6 +735,8 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-save">'."\n";
 			echo '   <input type="hidden" name="'.esc_attr(__NAMESPACE__).'[save_options][crons_setup]" value="'.esc_attr($this->plugin->options['crons_setup']).'" autocomplete="off" />'."\n";
 			echo '   <input type="hidden" name="'.esc_attr(__NAMESPACE__).'[save_options][update_sync_username]" value="'.esc_attr($this->plugin->options['update_sync_username']).'" autocomplete="off" />'."\n";
@@ -679,6 +745,8 @@ namespace zencache // Root namespace.
 			echo '   <input type="hidden" name="'.esc_attr(__NAMESPACE__).'[save_options][last_update_sync_version_check]" value="'.esc_attr($this->plugin->options['last_update_sync_version_check']).'" autocomplete="off" />'."\n";
 			echo '   <button type="submit">'.__('Save All Changes', $this->plugin->text_domain).' <i class="fa fa-save"></i></button>'."\n";
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			echo '</div>'."\n";
 			echo '</form>';
@@ -689,9 +757,11 @@ namespace zencache // Root namespace.
 			echo '<form id="plugin-menu-page" class="plugin-menu-page" method="post" enctype="multipart/form-data"'.
 			     ' action="'.esc_attr(add_query_arg(urlencode_deep(array('page' => __NAMESPACE__.'-update-sync', '_wpnonce' => wp_create_nonce())), self_admin_url('/admin.php'))).'">'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-heading">'."\n";
 
-			echo '   <button type="submit">'.__('Update Now', $this->plugin->text_domain).' <i class="fa fa-magic"></i></button>'."\n";
+			echo '   <button type="submit" style="float:right; margin-right:1.5em;">'.__('Update Now', $this->plugin->text_domain).' <i class="fa fa-magic"></i></button>'."\n";
 
 			echo '   <div class="plugin-menu-page-panel-togglers" title="'.esc_attr(__('All Panels', $this->plugin->text_domain)).'">'."\n";
 			echo '      <button type="button" class="plugin-menu-page-panels-open"><i class="fa fa-chevron-down"></i></button>'."\n";
@@ -708,13 +778,23 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
+			echo '<hr />'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
+
 			if(!empty($_REQUEST[__NAMESPACE__.'__error'])) // Error?
 			{
 				echo '<div class="plugin-menu-page-error error">'."\n";
 				echo '   <i class="fa fa-thumbs-down"></i> '.esc_html(stripslashes((string)$_REQUEST[__NAMESPACE__.'__error']))."\n";
 				echo '</div>'."\n";
 			}
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-body">'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
@@ -735,13 +815,15 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-panel">'."\n";
 
-			echo '   <a href="#" class="plugin-menu-page-panel-heading">'."\n";
+			echo '   <a href="#" class="plugin-menu-page-panel-heading open">'."\n";
 			echo '      <i class="fa fa-bullhorn"></i> '.__('Update Notifier', $this->plugin->text_domain)."\n";
 			echo '   </a>'."\n";
 
-			echo '   <div class="plugin-menu-page-panel-body clearfix">'."\n";
+			echo '   <div class="plugin-menu-page-panel-body clearfix open">'."\n";
 			echo '      <i class="fa fa-rss fa-4x" style="float:right; margin: 0 0 0 25px;"></i>'."\n";
 			echo '      <h3>'.__('WebSharks™ Update Notifier', $this->plugin->text_domain).'</h3>'."\n";
 			echo '      <p>'.sprintf(__('When a new version of %1$s Pro becomes available, WebSharks™ can display a notification in your WordPress Dashboard prompting you to return to this page and perform an upgrade. Would you like this functionality enabled or disabled?', $this->plugin->text_domain), esc_html($this->plugin->name)).'</p>'."\n";
@@ -754,9 +836,13 @@ namespace zencache // Root namespace.
 
 			echo '</div>'."\n";
 
+			/* ----------------------------------------------------------------------------------------- */
+
 			echo '<div class="plugin-menu-page-save">'."\n";
 			echo '   <button type="submit">'.__('Update Now', $this->plugin->text_domain).' <i class="fa fa-magic"></i></button>'."\n";
 			echo '</div>'."\n";
+
+			/* ----------------------------------------------------------------------------------------- */
 
 			echo '</div>'."\n";
 			echo '</form>';

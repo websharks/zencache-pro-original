@@ -1,6 +1,6 @@
 === ZenCache (Speed Without Compromise) ===
 
-Stable tag: 141001
+Stable tag: 141120
 Requires at least: 3.7
 Tested up to: 4.0
 Text Domain: zencache

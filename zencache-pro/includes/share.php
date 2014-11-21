@@ -52,7 +52,7 @@ namespace zencache // Root namespace.
 			 *
 			 * @var string Current version of the software.
 			 */
-			public $version = '141001';
+			public $version = '141120';
 
 			/**
 			 * Plugin slug; based on `__NAMESPACE__`.

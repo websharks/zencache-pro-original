@@ -64,7 +64,7 @@ namespace zencache // Root namespace.
 				eval('?>'.$this->plugin->options['cache_clear_eval_code'].'<?php ');
 				$eval_output = ob_get_clean();
 			}
-			$response = sprintf(__('<p><strong>Wiped a total of <code>%1$s</code> cache files.</strong></p>', $this->plugin->text_domain), $counter);
+			$response = sprintf(__('<p>Wiped a total of <code>%2$s</code> cache files.</p>', $this->plugin->text_domain), esc_html($this->plugin->name), esc_html($counter));
 			$response .= __('<p>Cache wiped for all sites; recreation will occur automatically over time.</p>', $this->plugin->text_domain);
 			if(isset($s2clean_counter)) $response .= sprintf(__('<p><strong>Also wiped <code>%1$s</code> s2Clean cache files.</strong></p>', $this->plugin->text_domain), $s2clean_counter);
 			if(!empty($eval_output)) $response .= $eval_output; // Custom output (perhaps even multiple messages).
@@ -117,7 +117,7 @@ namespace zencache // Root namespace.
 				eval('?>'.$this->plugin->options['cache_clear_eval_code'].'<?php ');
 				$eval_output = ob_get_clean();
 			}
-			$response = sprintf(__('<p><strong>Cleared a total of <code>%1$s</code> cache files.</strong></p>', $this->plugin->text_domain), $counter);
+			$response = sprintf(__('<p>Cleared a total of <code>%2$s</code> cache files.</p>', $this->plugin->text_domain), esc_html($this->plugin->name), esc_html($counter));
 			$response .= __('<p>Cache cleared for this site; recreation will occur automatically over time.</p>', $this->plugin->text_domain);
 			if(isset($s2clean_counter)) $response .= sprintf(__('<p><strong>Also cleared <code>%1$s</code> s2Clean cache files.</strong></p>', $this->plugin->text_domain), $s2clean_counter);
 			if(!empty($eval_output)) $response .= $eval_output; // Custom output (perhaps even multiple messages).

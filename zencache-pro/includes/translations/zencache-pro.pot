@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the ZenCache Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: ZenCache Pro 141001\n"
+"Project-Id-Version: ZenCache Pro 141120\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/zencache-pro\n"
 "POT-Creation-Date: 2014-11-20 21:26:46+00:00\n"
 "MIME-Version: 1.0\n"
