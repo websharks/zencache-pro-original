@@ -780,9 +780,10 @@ namespace zencache
 			 */
 			public function add_network_menu_pages()
 			{
-				add_menu_page($this->name, $this->name,
-				              $this->network_cap, __NAMESPACE__, array($this, 'menu_page_options'),
-				              $this->url('/client-s/images/menu-icon.png'));
+				$icon = 'data:image/svg+xml;base64,'. // Base64-encoded inline SVG icon.
+				        base64_encode(file_get_contents(dirname(__FILE__).'/client-s/images/inline-icon.svg'));
+
+				add_menu_page($this->name, $this->name, $this->network_cap, __NAMESPACE__, array($this, 'menu_page_options'), $icon);
 
 				add_submenu_page(__NAMESPACE__, __('Plugin Options', $this->text_domain), __('Plugin Options', $this->text_domain),
 				                 $this->network_cap, __NAMESPACE__, array($this, 'menu_page_options'));
@@ -803,9 +804,10 @@ namespace zencache
 			{
 				if(is_multisite()) return; // Multisite networks MUST use network admin area.
 
-				add_menu_page($this->name, $this->name,
-				              $this->cap, __NAMESPACE__, array($this, 'menu_page_options'),
-				              $this->url('/client-s/images/menu-icon.png'));
+				$icon = 'data:image/svg+xml;base64,'. // Base64-encoded inline SVG icon.
+				        base64_encode(file_get_contents(dirname(__FILE__).'/client-s/images/inline-icon.svg'));
+
+				add_menu_page($this->name, $this->name, $this->cap, __NAMESPACE__, array($this, 'menu_page_options'), $icon);
 
 				add_submenu_page(__NAMESPACE__, __('Plugin Options', $this->text_domain), __('Plugin Options', $this->text_domain),
 				                 $this->cap, __NAMESPACE__, array($this, 'menu_page_options'));
