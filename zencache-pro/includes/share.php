@@ -37,6 +37,15 @@ namespace zencache // Root namespace.
 			public $short_name = 'ZC';
 
 			/**
+			 * Domain name for this plugin.
+			 *
+			 * @since 14xxxx Refactoring.
+			 *
+			 * @var string Domain name for this plugin.
+			 */
+			public $domain = 'zencache.com';
+
+			/**
 			 * Identifies pro version of ZenCache.
 			 *
 			 * @since 140422 First documented version.

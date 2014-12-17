@@ -44,7 +44,7 @@ namespace zencache // Root namespace.
 			echo '   </div>'."\n";
 
 			echo '   <div class="plugin-menu-page-upsells">'."\n";
-			if(current_user_can($this->plugin->update_cap)) echo '<a href="'.esc_attr(add_query_arg(urlencode_deep(array('page' => __NAMESPACE__.'-update-sync')), self_admin_url('/admin.php'))).'"><i class="fa fa-magic"></i> '.__('Pro Updater', $this->plugin->text_domain).'</a>'."\n";
+			if(current_user_can($this->plugin->update_cap)) echo '<a href="'.esc_attr(add_query_arg(urlencode_deep(array('page' => __NAMESPACE__.'-pro-updater')), self_admin_url('/admin.php'))).'"><i class="fa fa-magic"></i> '.__('Pro Updater', $this->plugin->text_domain).'</a>'."\n";
 			echo '      <a href="'.esc_attr('http://www.websharks-inc.com/r/'.str_replace('_', '-', __NAMESPACE__).'-subscribe/').'" target="_blank"><i class="fa fa-envelope"></i> '.__('Newsletter (Subscribe)', $this->plugin->text_domain).'</a>'."\n";
 			echo '      <a href="'.esc_attr('http://www.websharks-inc.com/r/zencache-beta-testers-list/').'" target="_blank"><i class="fa fa-envelope"></i> '.__('Beta Testers (Signup)', $this->plugin->text_domain).'</a>'."\n";
 			echo '   </div>'."\n";
@@ -738,11 +738,6 @@ namespace zencache // Root namespace.
 			/* ----------------------------------------------------------------------------------------- */
 
 			echo '<div class="plugin-menu-page-save">'."\n";
-			echo '   <input type="hidden" name="'.esc_attr(__NAMESPACE__).'[save_options][crons_setup]" value="'.esc_attr($this->plugin->options['crons_setup']).'" autocomplete="off" />'."\n";
-			echo '   <input type="hidden" name="'.esc_attr(__NAMESPACE__).'[save_options][update_sync_username]" value="'.esc_attr($this->plugin->options['update_sync_username']).'" autocomplete="off" />'."\n";
-			echo '   <input type="hidden" name="'.esc_attr(__NAMESPACE__).'[save_options][update_sync_password]" value="'.esc_attr($this->plugin->options['update_sync_password']).'" autocomplete="off" />'."\n";
-			echo '   <input type="hidden" name="'.esc_attr(__NAMESPACE__).'[save_options][update_sync_version_check]" value="'.esc_attr($this->plugin->options['update_sync_version_check']).'" autocomplete="off" />'."\n";
-			echo '   <input type="hidden" name="'.esc_attr(__NAMESPACE__).'[save_options][last_update_sync_version_check]" value="'.esc_attr($this->plugin->options['last_update_sync_version_check']).'" autocomplete="off" />'."\n";
 			echo '   <button type="submit">'.__('Save All Changes', $this->plugin->text_domain).' <i class="fa fa-save"></i></button>'."\n";
 			echo '</div>'."\n";
 
@@ -752,10 +747,10 @@ namespace zencache // Root namespace.
 			echo '</form>';
 		}
 
-		public function update_sync()
+		public function pro_updater()
 		{
 			echo '<form id="plugin-menu-page" class="plugin-menu-page" method="post" enctype="multipart/form-data"'.
-			     ' action="'.esc_attr(add_query_arg(urlencode_deep(array('page' => __NAMESPACE__.'-update-sync', '_wpnonce' => wp_create_nonce())), self_admin_url('/admin.php'))).'">'."\n";
+			     ' action="'.esc_attr(add_query_arg(urlencode_deep(array('page' => __NAMESPACE__.'-pro-updater', '_wpnonce' => wp_create_nonce())), self_admin_url('/admin.php'))).'">'."\n";
 
 			/* ----------------------------------------------------------------------------------------- */
 
@@ -774,7 +769,7 @@ namespace zencache // Root namespace.
 			echo '      <a href="'.esc_attr('http://www.websharks-inc.com/r/zencache-beta-testers-list/').'" target="_blank"><i class="fa fa-envelope"></i> '.__('Beta Testers (Signup)', $this->plugin->text_domain).'</a>'."\n";
 			echo '   </div>'."\n";
 
-			echo '   <img src="'.$this->plugin->url('/client-s/images/updater.png').'" alt="'.esc_attr(__('Plugin Updater', $this->plugin->text_domain)).'" />'."\n";
+			echo '   <img src="'.$this->plugin->url('/client-s/images/pro-updater.png').'" alt="'.esc_attr(__('Pro Plugin Updater', $this->plugin->text_domain)).'" />'."\n";
 
 			echo '</div>'."\n";
 
@@ -804,13 +799,13 @@ namespace zencache // Root namespace.
 
 			echo '   <div class="plugin-menu-page-panel-body clearfix open">'."\n";
 			echo '      <i class="fa fa-user fa-4x" style="float:right; margin: 0 0 0 25px;"></i>'."\n";
-			echo '      <h3>'.__('WebSharks™ Authentication', $this->plugin->text_domain).'</h3>'."\n";
-			echo '      <p>'.sprintf(__('From this page you can update to the latest version of %1$s Pro for WordPress. %1$s Pro is a premium product available for purchase @ <a href="http://www.websharks-inc.com/product/%2$s/" target="_blank">websharks-inc.com</a>. In order to connect with our update servers, we ask that you supply your account login details for <a href="http://www.websharks-inc.com/product/%2$s/" target="_blank">websharks-inc.com</a>. If you prefer not to provide your password, you can use your License Key in place of your password. Your License Key is located under "My Products (purchase history)" when you login to your account @ <a href="http://www.websharks-inc.com/product/%2$s/" target="_blank">websharks-inc.com</a>. This will authenticate your copy of %1$s Pro; providing you with access to the latest version. You only need to enter these credentials once. %1$s Pro will save them in your WordPress database; making future upgrades even easier. <i class="fa fa-smile-o"></i>', $this->plugin->text_domain), esc_html($this->plugin->name), esc_attr($this->plugin->slug)).'</p>'."\n";
+			echo '      <h3>'.sprintf(__('%1$s™ Authentication', $this->plugin->text_domain), esc_html($this->plugin->name)).'</h3>'."\n";
+			echo '      <p>'.sprintf(__('From this page you can update to the latest version of %1$s Pro for WordPress. %1$s Pro is a premium product available for purchase @ <a href="http://%2$s/" target="_blank">%2$s</a>. In order to connect with our update servers, we ask that you supply your account login details for <a href="http://%2$s/" target="_blank">%2$s</a>. If you prefer not to provide your password, you can use your License Key in place of your password. Your License Key is located under "My Account" when you log in @ <a href="http://%2$s/" target="_blank">%2$s</a>. This will authenticate your copy of %1$s Pro; providing you with access to the latest version. You only need to enter these credentials once. %1$s Pro will save them in your WordPress database; making future upgrades even easier. <i class="fa fa-smile-o"></i>', $this->plugin->text_domain), esc_html($this->plugin->name), esc_html($this->plugin->domain)).'</p>'."\n";
 			echo '      <hr />'."\n";
-			echo '      <h3>'.__('WebSharks™ Username', $this->plugin->text_domain).'</h3>'."\n";
-			echo '      <p><input type="text" name="'.esc_attr(__NAMESPACE__).'[update_sync][username]" value="'.esc_attr($this->plugin->options['update_sync_username']).'" autocomplete="off" /></p>'."\n";
-			echo '      <h3>'.__('WebSharks™ Password OR Product License Key', $this->plugin->text_domain).'</h3>'."\n";
-			echo '      <p><input type="password" name="'.esc_attr(__NAMESPACE__).'[update_sync][password]" value="'.esc_attr($this->plugin->options['update_sync_password']).'" autocomplete="off" /></p>'."\n";
+			echo '      <h3>'.sprintf(__('Customer Username', $this->plugin->text_domain), esc_html($this->plugin->name)).'</h3>'."\n";
+			echo '      <p><input type="text" name="'.esc_attr(__NAMESPACE__).'[pro_update][username]" value="'.esc_attr($this->plugin->options['pro_update_username']).'" autocomplete="off" /></p>'."\n";
+			echo '      <h3>'.sprintf(__('Customer Password or Product License Key', $this->plugin->text_domain), esc_html($this->plugin->name)).'</h3>'."\n";
+			echo '      <p><input type="password" name="'.esc_attr(__NAMESPACE__).'[pro_update][password]" value="'.esc_attr($this->plugin->options['pro_update_password']).'" autocomplete="off" /></p>'."\n";
 			echo '   </div>'."\n";
 
 			echo '</div>'."\n";
@@ -825,12 +820,12 @@ namespace zencache // Root namespace.
 
 			echo '   <div class="plugin-menu-page-panel-body clearfix open">'."\n";
 			echo '      <i class="fa fa-rss fa-4x" style="float:right; margin: 0 0 0 25px;"></i>'."\n";
-			echo '      <h3>'.__('WebSharks™ Update Notifier', $this->plugin->text_domain).'</h3>'."\n";
-			echo '      <p>'.sprintf(__('When a new version of %1$s Pro becomes available, WebSharks™ can display a notification in your WordPress Dashboard prompting you to return to this page and perform an upgrade. Would you like this functionality enabled or disabled?', $this->plugin->text_domain), esc_html($this->plugin->name)).'</p>'."\n";
+			echo '      <h3>'.sprintf(__('%1$s™ Update Notifier', $this->plugin->text_domain), esc_html($this->plugin->name)).'</h3>'."\n";
+			echo '      <p>'.sprintf(__('When a new version of %1$s Pro becomes available, %1$s Pro can display a notification in your WordPress Dashboard prompting you to return to this page and perform an upgrade. Would you like this functionality enabled or disabled?', $this->plugin->text_domain), esc_html($this->plugin->name)).'</p>'."\n";
 			echo '      <hr />'."\n";
-			echo '      <p><select name="'.esc_attr(__NAMESPACE__).'[update_sync][version_check]" autocomplete="off">'."\n";
-			echo '            <option value="1"'.selected($this->plugin->options['update_sync_version_check'], '1', FALSE).'>'.__('Yes, display a notification in my WordPress Dashboard when a new version is available.', $this->plugin->text_domain).'</option>'."\n";
-			echo '            <option value="0"'.selected($this->plugin->options['update_sync_version_check'], '0', FALSE).'>'.sprintf(__('No, do not display any %1$s update notifications in my WordPress Dashboard.', $this->plugin->text_domain), esc_html($this->plugin->name)).'</option>'."\n";
+			echo '      <p><select name="'.esc_attr(__NAMESPACE__).'[pro_update][check]" autocomplete="off">'."\n";
+			echo '            <option value="1"'.selected($this->plugin->options['pro_update_check'], '1', FALSE).'>'.sprintf(__('Yes, display a notification in my WordPress Dashboard when a new version is available.', $this->plugin->text_domain), esc_html($this->plugin->name)).'</option>'."\n";
+			echo '            <option value="0"'.selected($this->plugin->options['pro_update_check'], '0', FALSE).'>'.sprintf(__('No, do not display any %1$s update notifications in my WordPress Dashboard.', $this->plugin->text_domain), esc_html($this->plugin->name)).'</option>'."\n";
 			echo '         </select></p>'."\n";
 			echo '   </div>'."\n";
 
