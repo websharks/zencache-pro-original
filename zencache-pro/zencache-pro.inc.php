@@ -892,7 +892,7 @@ namespace zencache
 				if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->options);
 
 				$product_api_url        = 'https://'.urlencode($this->domain).'/';
-				$product_api_input_vars = array('product' => array('action' => 'latest_pro_version'));
+				$product_api_input_vars = array('product_api' => array('action' => 'latest_pro_version'));
 
 				$product_api_response = wp_remote_post($product_api_url, array('body' => $product_api_input_vars));
 				$product_api_response = json_decode(wp_remote_retrieve_body($product_api_response), TRUE);

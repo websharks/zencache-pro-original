@@ -270,8 +270,8 @@ namespace zencache // Root namespace.
 			if(empty($args['password'])) $args['password'] = $this->plugin->options['pro_update_password'];
 
 			$product_api_url        = 'https://'.urlencode($this->plugin->domain).'/';
-			$product_api_input_vars = array('product' => array('action'   => 'latest_pro_update',
-			                                                   'username' => $args['username'], 'password' => $args['password']));
+			$product_api_input_vars = array('product_api' => array('action'   => 'latest_pro_update',
+			                                                       'username' => $args['username'], 'password' => $args['password']));
 
 			$product_api_response = wp_remote_post($product_api_url, array('body' => $product_api_input_vars));
 			$product_api_response = json_decode(wp_remote_retrieve_body($product_api_response), TRUE);
@@ -290,10 +290,10 @@ namespace zencache // Root namespace.
 
 				wp_redirect($redirect_to).exit(); // Done; with errors.
 			}
-			$this->plugin->options['last_pro_update_check'] = time();
-			$this->plugin->options['pro_update_check']      = $args['check'];
-			$this->plugin->options['pro_update_username']   = $args['username'];
-			$this->plugin->options['pro_update_password']   = $args['password'];
+			$this->plugin->options['last_pro_update_check'] = (string)time();
+			$this->plugin->options['pro_update_check']      = (string)$args['check'];
+			$this->plugin->options['pro_update_username']   = (string)$args['username'];
+			$this->plugin->options['pro_update_password']   = (string)$args['password'];
 
 			update_option(__NAMESPACE__.'_options', $this->plugin->options); // Blog-specific.
 			if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
