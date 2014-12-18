@@ -234,12 +234,33 @@ namespace zencache // Root namespace.
 					wp_clear_scheduled_hook('_cron_quick_cache_auto_cache');
 					wp_clear_scheduled_hook('_cron_quick_cache_cleanup');
 
+					// Collect old pro update options. These have different names in ZenCache.
+
+					if(isset($quick_cache_options['update_sync_version_check']))
+						$this->plugin->options['pro_update_check'] = $quick_cache_options['update_sync_version_check'];
+
+					if(isset($quick_cache_options['last_update_sync_version_check']))
+						$this->plugin->options['last_pro_update_check'] = $quick_cache_options['last_update_sync_version_check'];
+
+					if(isset($quick_cache_options['update_sync_username']))
+						$this->plugin->options['pro_update_username'] = $quick_cache_options['update_sync_username'];
+
+					if(isset($quick_cache_options['update_sync_password']))
+						$this->plugin->options['pro_update_password'] = $quick_cache_options['update_sync_password'];
+
+					// Use the new base dir for ZenCache; remove the old base dir for Quick Cache.
+
 					if(!empty($quick_cache_options['base_dir']))
 						$this->plugin->delete_all_files_dirs_in(WP_CONTENT_DIR.'/'.trim($quick_cache_options['base_dir'], '/'), TRUE);
 					$this->plugin->remove_base_dir(); // Let's be extra sure that the old base directory is gone.
 
-					$this->plugin->options['base_dir']    = $this->plugin->default_options['base_dir'];
+					$this->plugin->options['base_dir'] = $this->plugin->default_options['base_dir'];
+
+					// Reset CRONs. We need CRONs to be set up again for ZenCache.
+
 					$this->plugin->options['crons_setup'] = $this->plugin->default_options['crons_setup'];
+
+					// Save revised options; reactive the plugin with the new options.
 
 					update_option(__NAMESPACE__.'_options', $this->plugin->options);
 					if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);

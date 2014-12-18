@@ -300,10 +300,13 @@ namespace zencache
 					'cdn_blacklisted_uri_patterns'         => '', // A line-delimited list of exclusion patterns.
 					// Wildcards `*` are supported here. Matched against local file URIs.
 
-					/* Related to automatic pro plugin updates. */
+					/* Related to automatic pro updates. */
 
-					'update_sync_username'                 => '', 'update_sync_password' => '',
-					'update_sync_version_check'            => '1', 'last_update_sync_version_check' => '0',
+					'pro_update_check'                     => '1', // `0|1`; enable?
+					'last_pro_update_check'                => '0', // Timestamp.
+
+					'pro_update_username'                  => '', // Username.
+					'pro_update_password'                  => '', // Password or license key.
 
 					/* Related to uninstallation routines. */
 
@@ -350,7 +353,7 @@ namespace zencache
 				add_action('wp_loaded', array($this, 'actions'));
 
 				add_action('admin_init', array($this, 'check_version'));
-				add_action('admin_init', array($this, 'check_update_sync_version'));
+				add_action('admin_init', array($this, 'check_latest_pro_version'));
 				add_action('admin_init', array($this, 'maybe_auto_clear_cache'));
 
 				add_action('admin_bar_menu', array($this, 'admin_bar_menu'));
@@ -789,8 +792,8 @@ namespace zencache
 				                 $this->network_cap, __NAMESPACE__, array($this, 'menu_page_options'));
 
 				if(current_user_can($this->network_cap)) // Multi-layer security here.
-					add_submenu_page(__NAMESPACE__, __('Plugin Updater', $this->text_domain), __('Plugin Updater', $this->text_domain),
-					                 $this->update_cap, __NAMESPACE__.'-update-sync', array($this, 'menu_page_update_sync'));
+					add_submenu_page(__NAMESPACE__, __('Pro Plugin Updater', $this->text_domain), __('Plugin Updater', $this->text_domain),
+					                 $this->update_cap, __NAMESPACE__.'-pro-updater', array($this, 'menu_page_pro_updater'));
 			}
 
 			/**
@@ -812,8 +815,8 @@ namespace zencache
 				add_submenu_page(__NAMESPACE__, __('Plugin Options', $this->text_domain), __('Plugin Options', $this->text_domain),
 				                 $this->cap, __NAMESPACE__, array($this, 'menu_page_options'));
 
-				add_submenu_page(__NAMESPACE__, __('Plugin Updater', $this->text_domain), __('Plugin Updater', $this->text_domain),
-				                 $this->update_cap, __NAMESPACE__.'-update-sync', array($this, 'menu_page_update_sync'));
+				add_submenu_page(__NAMESPACE__, __('Pro Plugin Updater', $this->text_domain), __('Plugin Updater', $this->text_domain),
+				                 $this->update_cap, __NAMESPACE__.'-pro-updater', array($this, 'menu_page_pro_updater'));
 			}
 
 			/**
@@ -829,7 +832,7 @@ namespace zencache
 			 */
 			public function add_settings_link($links)
 			{
-				$links[] = '<a href="options-general.php?page='.urlencode(__NAMESPACE__).'">'.__('Settings', $this->text_domain).'</a>';
+				$links[] = '<a href="'.esc_attr(add_query_arg(urlencode_deep(array('page' => __NAMESPACE__)), self_admin_url('/admin.php'))).'">'.__('Settings', $this->text_domain).'</a>';
 
 				return $this->apply_wp_filters(__METHOD__, $links, get_defined_vars());
 			}
@@ -850,18 +853,18 @@ namespace zencache
 			}
 
 			/**
-			 * Loads the admin menu page updater.
+			 * Loads admin menu page for pro updater.
 			 *
 			 * @since 140422 First documented version.
 			 *
 			 * @see add_network_menu_pages()
 			 * @see add_menu_pages()
 			 */
-			public function menu_page_update_sync()
+			public function menu_page_pro_updater()
 			{
 				require_once dirname(__FILE__).'/includes/menu-pages.php';
 				$menu_pages = new menu_pages();
-				$menu_pages->update_sync();
+				$menu_pages->pro_updater();
 			}
 
 			/**
@@ -873,41 +876,39 @@ namespace zencache
 			 *
 			 * @see pre_site_transient_update_plugins()
 			 */
-			public function check_update_sync_version()
+			public function check_latest_pro_version()
 			{
-				if(!$this->options['update_sync_version_check'])
+				if(!$this->options['pro_update_check'])
 					return; // Functionality is disabled here.
 
-				if(!current_user_can($this->update_cap)) return; // Nothing to do.
+				if(!current_user_can($this->update_cap))
+					return; // Nothing to do.
 
-				if($this->options['last_update_sync_version_check'] >= strtotime('-1 hour'))
+				if($this->options['last_pro_update_check'] >= strtotime('-1 hour'))
 					return; // No reason to keep checking on this.
 
-				$this->options['last_update_sync_version_check'] = time(); // Update; checking now.
+				$this->options['last_pro_update_check'] = time(); // Update; checking now.
 				update_option(__NAMESPACE__.'_options', $this->options); // Save this option value now.
 				if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->options);
 
-				$update_sync_url       = 'https://www.websharks-inc.com/products/update-sync.php';
-				$update_sync_post_vars = array('data' => array('slug'    => str_replace('_', '-', __NAMESPACE__).'-pro',
-				                                               'version' => 'latest-stable', 'version_check_only' => '1'));
+				$product_api_url        = 'https://'.urlencode($this->domain).'/';
+				$product_api_input_vars = array('product_api' => array('action' => 'latest_pro_version'));
 
-				$update_sync_response = wp_remote_post($update_sync_url, array('body' => $update_sync_post_vars));
-				$update_sync_response = json_decode(wp_remote_retrieve_body($update_sync_response), TRUE);
+				$product_api_response = wp_remote_post($product_api_url, array('body' => $product_api_input_vars));
+				$product_api_response = json_decode(wp_remote_retrieve_body($product_api_response), TRUE);
 
-				if(empty($update_sync_response['version']) || version_compare($this->version, $update_sync_response['version'], '>='))
-					return; // Current version is the latest stable version. Nothing more to do here.
+				if(!is_array($product_api_response) || empty($product_api_response['pro_version']) || version_compare($this->version, $product_api_response['pro_version'], '>='))
+					return; // Current pro version is the latest stable version. Nothing more to do here.
 
-				$update_sync_page = network_admin_url('/admin.php'); // Page that initiates an update.
-				$update_sync_page = add_query_arg(urlencode_deep(array('page' => __NAMESPACE__.'-update-sync')), $update_sync_page);
+				$pro_updater_page = network_admin_url('/admin.php'); // Page that initiates an update.
+				$pro_updater_page = add_query_arg(urlencode_deep(array('page' => __NAMESPACE__.'-pro-updater')), $pro_updater_page);
 
 				$this->enqueue_notice(sprintf(__('<strong>%1$s Pro:</strong> a new version is now available. Please <a href="%2$s">upgrade to v%3$s</a>.', $this->text_domain),
-				                              esc_html($this->name), esc_attr($update_sync_page), esc_html($update_sync_response['version'])), 'persistent-update-sync-version');
+				                              esc_html($this->name), esc_attr($pro_updater_page), esc_html($product_api_response['pro_version'])), 'persistent-new-pro-version-available');
 			}
 
 			/**
 			 * Modifies transient data associated with this plugin.
-			 *
-			 * This tells WordPress to connect to our server in order to receive plugin updates.
 			 *
 			 * @since 140422 First documented version.
 			 *
@@ -917,7 +918,7 @@ namespace zencache
 			 *
 			 * @return object Transient object; possibly altered by this routine.
 			 *
-			 * @see check_update_sync_version()
+			 * @see check_latest_pro_version()
 			 */
 			public function pre_site_transient_update_plugins($transient)
 			{
@@ -934,10 +935,10 @@ namespace zencache
 				if(empty($_r['_wpnonce']) || !wp_verify_nonce((string)$_r['_wpnonce'], 'upgrade-plugin_'.plugin_basename($this->file)))
 					return $transient; // Nothing to do here.
 
-				if(empty($_r[__NAMESPACE__.'__update_version']) || !($update_version = (string)$_r[__NAMESPACE__.'__update_version']))
+				if(empty($_r[__NAMESPACE__.'__update_pro_version']) || !($update_pro_version = (string)$_r[__NAMESPACE__.'__update_pro_version']))
 					return $transient; // Nothing to do here.
 
-				if(empty($_r[__NAMESPACE__.'__update_zip']) || !($update_zip = base64_decode((string)$_r[__NAMESPACE__.'__update_zip'])))
+				if(empty($_r[__NAMESPACE__.'__update_pro_zip']) || !($update_pro_zip = base64_decode((string)$_r[__NAMESPACE__.'__update_pro_zip'])))
 					return $transient; // Nothing to do here.
 
 				if(!is_object($transient)) $transient = new \stdClass();
@@ -946,9 +947,8 @@ namespace zencache
 				$transient->checked[plugin_basename($this->file)]  = $this->version;
 				$transient->response[plugin_basename($this->file)] = (object)array(
 					'id'          => 0, 'slug' => basename($this->file, '.php'),
-					'url'         => add_query_arg(urlencode_deep(array('page' => __NAMESPACE__.'-update-sync')),
-					                               self_admin_url('/admin.php')),
-					'new_version' => $update_version, 'package' => $update_zip);
+					'url'         => add_query_arg(urlencode_deep(array('page' => __NAMESPACE__.'-pro-updater')), self_admin_url('/admin.php')),
+					'new_version' => $update_pro_version, 'package' => $update_pro_zip);
 
 				return $transient; // Nodified now.
 			}
@@ -974,8 +974,9 @@ namespace zencache
 				}
 				if(current_user_can($this->cap)) foreach($notices as $_key => $_notice)
 				{
-					if($_key === 'persistent-update-sync-version' && !current_user_can($this->update_cap))
-						continue; // Current user does not have access.
+					if($_key === 'persistent-new-pro-version-available')
+						if(!current_user_can($this->update_cap))
+							continue; // Not applicable.
 
 					$_dismiss = ''; // Initialize empty string; e.g. reset value on each pass.
 					if(strpos($_key, 'persistent-') === 0) // A dismissal link is needed in this case?

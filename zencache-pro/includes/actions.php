@@ -147,7 +147,7 @@ namespace zencache // Root namespace.
 			if(isset($args['base_dir'])) // No leading/trailing slashes please.
 				$args['base_dir'] = trim($args['base_dir'], '\\/'." \t\n\r\0\x0B");
 
-			$this->plugin->options = array_merge($this->plugin->default_options, $args);
+			$this->plugin->options = array_merge($this->plugin->default_options, $this->plugin->options, $args);
 			$this->plugin->options = array_intersect_key($this->plugin->options, $this->plugin->default_options);
 
 			if(!trim($this->plugin->options['base_dir'], '\\/'." \t\n\r\0\x0B") // Empty?
@@ -255,7 +255,7 @@ namespace zencache // Root namespace.
 			exit($export); // Deliver the export file.
 		}
 
-		public function update_sync($args)
+		public function pro_update($args)
 		{
 			if(!current_user_can($this->plugin->update_cap))
 				return; // Nothing to do.
@@ -265,46 +265,48 @@ namespace zencache // Root namespace.
 
 			$args = array_map('trim', stripslashes_deep((array)$args));
 
-			if(empty($args['username'])) $args['username'] = $this->plugin->options['update_sync_username'];
-			if(empty($args['password'])) $args['password'] = $this->plugin->options['update_sync_password'];
-			if(!isset($args['version_check'])) $args['version_check'] = $this->plugin->options['update_sync_version_check'];
+			if(!isset($args['check'])) $args['check'] = $this->plugin->options['pro_update_check'];
+			if(empty($args['username'])) $args['username'] = $this->plugin->options['pro_update_username'];
+			if(empty($args['password'])) $args['password'] = $this->plugin->options['pro_update_password'];
 
-			$update_sync_url       = 'https://www.websharks-inc.com/products/update-sync.php';
-			$update_sync_post_vars = array('data' => array('slug'     => str_replace('_', '-', __NAMESPACE__).'-pro', 'version' => 'latest-stable',
-			                                               'username' => $args['username'], 'password' => $args['password']));
+			$product_api_url        = 'https://'.urlencode($this->plugin->domain).'/';
+			$product_api_input_vars = array('product_api' => array('action'   => 'latest_pro_update',
+			                                                       'username' => $args['username'], 'password' => $args['password']));
 
-			$update_sync_response = wp_remote_post($update_sync_url, array('body' => $update_sync_post_vars));
-			$update_sync_response = json_decode(wp_remote_retrieve_body($update_sync_response), TRUE);
+			$product_api_response = wp_remote_post($product_api_url, array('body' => $product_api_input_vars));
+			$product_api_response = json_decode(wp_remote_retrieve_body($product_api_response), TRUE);
 
-			if(!is_array($update_sync_response) || !empty($update_sync_response['error'])
-			   || empty($update_sync_response['version']) || empty($update_sync_response['zip'])
-			) // Report errors in all of these cases. Redirect errors to `update-sync` page.
+			if(!is_array($product_api_response) || !empty($product_api_response['error'])
+			   || empty($product_api_response['pro_version']) || empty($product_api_response['pro_zip'])
+			) // Report errors in all of these cases. Redirect errors to `pro-updater` page.
 			{
-				if(!empty($update_sync_response['error'])) $error = $update_sync_response['error'];
+				if(!empty($product_api_response['error'])) // Error supplied by API?
+					$error = $product_api_response['error']; // Use error supplied by API when possible.
 				else $error = __('Unknown error. Please wait 15 minutes and try again.', $this->plugin->text_domain);
 
 				$redirect_to = self_admin_url('/admin.php'); // Redirect preparations.
-				$query_args  = array('page' => __NAMESPACE__.'-update-sync', __NAMESPACE__.'__error' => $error);
+				$query_args  = array('page' => __NAMESPACE__.'-pro-updater', __NAMESPACE__.'__error' => $error);
 				$redirect_to = add_query_arg(urlencode_deep($query_args), $redirect_to);
 
 				wp_redirect($redirect_to).exit(); // Done; with errors.
 			}
-			$this->plugin->options['update_sync_username']           = $args['username']; // Update username.
-			$this->plugin->options['update_sync_password']           = $args['password']; // Update password.
-			$this->plugin->options['update_sync_version_check']      = $args['version_check']; // Check version?
-			$this->plugin->options['last_update_sync_version_check'] = time(); // Update this; we just checked :-)
-			update_option(__NAMESPACE__.'_options', $this->plugin->options); // Save each of these options.
+			$this->plugin->options['last_pro_update_check'] = (string)time();
+			$this->plugin->options['pro_update_check']      = (string)$args['check'];
+			$this->plugin->options['pro_update_username']   = (string)$args['username'];
+			$this->plugin->options['pro_update_password']   = (string)$args['password'];
+
+			update_option(__NAMESPACE__.'_options', $this->plugin->options); // Blog-specific.
 			if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
 
-			$notices = (is_array($notices = get_option(__NAMESPACE__.'_notices'))) ? $notices : array();
-			unset($notices['persistent-update-sync-version']); // Dismiss this notice.
+			$notices = is_array($notices = get_option(__NAMESPACE__.'_notices')) ? $notices : array();
+			unset($notices['persistent-new-pro-version-available']); // Dismiss this notice.
 			update_option(__NAMESPACE__.'_notices', $notices); // Update notices.
 
 			$redirect_to = self_admin_url('/update.php'); // Runs update routines in WordPress.
-			$query_args  = array('action'                         => 'upgrade-plugin', 'plugin' => plugin_basename($this->plugin->file),
-			                     '_wpnonce'                       => wp_create_nonce('upgrade-plugin_'.plugin_basename($this->plugin->file)),
-			                     __NAMESPACE__.'__update_version' => $update_sync_response['version'],
-			                     __NAMESPACE__.'__update_zip'     => base64_encode($update_sync_response['zip']));
+			$query_args  = array('action'                             => 'upgrade-plugin', 'plugin' => plugin_basename($this->plugin->file),
+			                     '_wpnonce'                           => wp_create_nonce('upgrade-plugin_'.plugin_basename($this->plugin->file)),
+			                     __NAMESPACE__.'__update_pro_version' => $product_api_response['pro_version'],
+			                     __NAMESPACE__.'__update_pro_zip'     => base64_encode($product_api_response['pro_zip']));
 			$redirect_to = add_query_arg(urlencode_deep($query_args), $redirect_to);
 
 			wp_redirect($redirect_to).exit(); // All done :-)
