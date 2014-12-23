@@ -329,7 +329,7 @@ namespace zencache
 	 */
 	if(defined('WP_DEBUG') && WP_DEBUG)
 		require_once dirname(ZENCACHE_PLUGIN_FILE).'/includes/share.php';
-	else if(@require_once (dirname(ZENCACHE_PLUGIN_FILE).'/includes/share.php') === FALSE)
+	else if((@require_once(dirname(ZENCACHE_PLUGIN_FILE).'/includes/share.php')) === FALSE)
 		return; // Unable to find class dependency. Fail softly.
 
 	/**

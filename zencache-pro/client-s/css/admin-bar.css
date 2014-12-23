@@ -48,8 +48,9 @@ AJAX Responses.
 	width               : 500px;
 	margin              : 0 0 0 -250px;
 
-	border-radius       : 5px;
-	box-shadow          : 0 0 20px 2px rgba(0, 0, 0, 0.25);
+	border-radius       : 3px;
+	border              : 1px solid #000000;
+	box-shadow          : 0 0 20px 2px rgba(0, 0, 0, 0.1);
 
 	outline             : none;
 	cursor              : pointer;
@@ -59,11 +60,11 @@ AJAX Responses.
 }
 #zencache-ajax-response.zencache-wipe
 {
-	background : #333333 url('../images/wipe-response.png') no-repeat 5px 5px;
+	background : #151515 url('../images/wipe-response.png') no-repeat 5px 5px;
 }
 #zencache-ajax-response.zencache-clear
 {
-	background : #333333 url('../images/clear-response.png') no-repeat 5px 5px;
+	background : #151515 url('../images/clear-response.png') no-repeat 5px 5px;
 }
 #zencache-ajax-response:before
 {
@@ -73,7 +74,7 @@ AJAX Responses.
 }
 #zencache-ajax-response:hover
 {
-	opacity : 0.8;
+	opacity : 0.9;
 }
 #zencache-ajax-response p
 {

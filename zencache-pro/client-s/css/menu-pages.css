@@ -2,6 +2,26 @@
 @import url('../../submodules/sharkicons/styles.min.css');
 
 /*
+Wrap background.
+ */
+#wpwrap
+{
+	position  : relative;
+}
+#wpwrap::after
+{
+	top        : 0;
+	left       : 0;
+	bottom     : 0;
+	right      : 0;
+	z-index    : -1;
+	position   : absolute;
+
+	content    : '';
+	background : url('../images/bg.png');
+	opacity    : 0.25;
+}
+/*
 Align these with menu page.
 */
 div.updated, div.error
@@ -23,12 +43,12 @@ Menu page styles.
 }
 .plugin-menu-page a
 {
-	color : #44486A;
+	color : #23263E;
 }
 .plugin-menu-page a:hover,
 .plugin-menu-page a:active
 {
-	color : #307D27;
+	color : #467629;
 }
 .plugin-menu-page p:first-child,
 .plugin-menu-page pre:first-child
@@ -122,11 +142,15 @@ Menu page styles.
 	line-height   : 1.3em;
 	border-radius : 4px;
 	box-sizing    : border-box;
-	border        : 1px solid rgba(13, 31, 47, 0.5);
+	border        : 1px solid #848484;
 
-	color         : #FFFFFF;
-	background    : #7E7E7E;
-	box-shadow    : 0 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+	color         : #333333;
+	background    : #E8E8E8;
+	box-shadow    : 0 0 2px 0 rgba(132, 132, 132, 0.5) inset;
+}
+.plugin-menu-page select, .plugin-menu-page select:focus
+{
+	box-shadow    : 0 1px 0 0 #FFFFFF inset, 0 -2px 3px 0 rgba(132, 132, 132, 0.25) inset;
 }
 .plugin-menu-page input:not([type='radio']):not([type='checkbox']),
 .plugin-menu-page input:not([type='radio']):not([type='checkbox']):focus,
@@ -137,27 +161,28 @@ Menu page styles.
 .plugin-menu-page input:not([type='radio']):not([type='checkbox']):focus,
 .plugin-menu-page select:focus, .plugin-menu-page textarea:focus
 {
-	background : #727272;
+	color      : #000000;
+	background : #e2e2e2;
 }
 .plugin-menu-page input::-webkit-input-placeholder
 {
 	font-style : italic;
-	color      : rgba(255, 255, 255, 0.2);
+	color      : rgba(0, 0, 0, 0.2);
 }
 .plugin-menu-page input::-moz-placeholder
 {
 	font-style : italic;
-	color      : rgba(255, 255, 255, 0.2);
+	color      : rgba(0, 0, 0, 0.2);
 }
 .plugin-menu-page input:-moz-placeholder
 {
 	font-style : italic;
-	color      : rgba(255, 255, 255, 0.2);
+	color      : rgba(0, 0, 0, 0.2);
 }
 .plugin-menu-page input:-ms-input-placeholder
 {
 	font-style : italic;
-	color      : rgba(255, 255, 255, 0.2);
+	color      : rgba(0, 0, 0, 0.2);
 }
 .plugin-menu-page input[disabled],
 .plugin-menu-page select[disabled],
@@ -196,11 +221,11 @@ Menu page styles.
 }
 .plugin-menu-page button:hover
 {
-	background : #307D27;
+	background : #467629;
 }
 .plugin-menu-page button[type='submit']
 {
-	background : #307D27;
+	background : #467629;
 }
 .plugin-menu-page button[type='submit']:hover
 {
@@ -226,8 +251,8 @@ Menu page styles.
 }
 .plugin-menu-page .info
 {
-	background : #CEE5FF;
-	border     : 1px solid #35558A;
+	background : #CADFED;
+	border     : 1px solid #216095;
 }
 .plugin-menu-page .notice
 {
@@ -246,7 +271,7 @@ Menu page styles.
 }
 .plugin-menu-page .monospace
 {
-	font-family : 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
+	font-family : 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
 }
 .plugin-menu-page textarea.monospace
 {
@@ -327,7 +352,7 @@ Panel styles.
 	font-size           : 150%;
 	font-weight         : bold;
 	background          : #23263E;
-	color               : #E0E0E0 !important;
+	color               : #DDDDDD !important;
 
 	border-radius       : 4px;
 	box-shadow          : 0 2px 2px 0 rgba(0, 0, 0, 0.25);
@@ -374,24 +399,29 @@ Panel styles.
 	padding                    : 1.2em;
 	color                      : #222222;
 
-	background                 : #DBDBDB;
+	border                     : 1px solid #848484;
+	background                 : #FFFFFF;
 
 	border-bottom-left-radius  : 4px;
 	border-bottom-right-radius : 4px;
 
-	box-shadow                 : 0 1px 1px 0 rgba(0, 0, 0, 0.5), 0 3px 1px -1px rgba(0, 0, 0, 0.25) inset;
+	box-shadow                 : 0 1px 1px 0 rgba(0, 0, 0, 0.25),0 3px 1px -1px rgba(0, 0, 0, 0.25) inset;
 }
 .plugin-menu-page-panel-body.open
 {
 	display : block;
 }
-.plugin-menu-page-panel-body p,
-.plugin-menu-page-panel-body .notice,
-.plugin-menu-page-panel-body .info,
-.plugin-menu-page-panel-body .warning,
-.plugin-menu-page-panel-body .error
+.plugin-menu-page-panel-body p
 {
+	color: #666666;
 	font-size : 90%;
+}
+.plugin-menu-page-panel-body p.notice,
+.plugin-menu-page-panel-body p.info,
+.plugin-menu-page-panel-body p.warning,
+.plugin-menu-page-panel-body p.error
+{
+	color: #000000;
 }
 .plugin-menu-page-panel-body h3
 {
