@@ -1777,7 +1777,7 @@ namespace zencache // Root namespace.
 			 *
 			 * @since 140422 First documented version.
 			 *
-			 * @return array Lock type & resource handle needed to unlock later.
+			 * @return array Lock type & resource handle needed to unlock later or FALSE if disabled by filter.
 			 *
 			 * @throws \exception If {@link \sem_get()} not available and there's
 			 *    no writable tmp directory for {@link \flock()} either.
@@ -1789,6 +1789,9 @@ namespace zencache // Root namespace.
 			 */
 			public function cache_lock()
 			{
+				if((boolean)apply_filters('zencache_disable_cache_locking', FALSE))
+					return false;
+
 				if($this->function_is_possible('sem_get'))
 					if(($resource = sem_get(1976, 1)) && sem_acquire($resource))
 						return array('type' => 'sem', 'resource' => $resource);
@@ -1814,6 +1817,9 @@ namespace zencache // Root namespace.
 			 */
 			public function cache_unlock(array $lock)
 			{
+				if((boolean)apply_filters('zencache_disable_cache_locking', FALSE))
+					return;
+
 				if(!is_array($lock))
 					return; // Not possible.
 
