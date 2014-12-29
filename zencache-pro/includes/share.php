@@ -1358,6 +1358,27 @@ namespace zencache // Root namespace.
 				return ($tmp_dir = ''); // Failed to locate.
 			}
 
+			/**
+			 * Finds absolute server path to `/wp-config.php` file.
+			 *
+			 * @since 140422 First documented version.
+			 *
+			 * @return string Absolute server path to `/wp-config.php` file;
+			 *    else an empty string if unable to locate the file.
+			 */
+			public function find_wp_config_file()
+			{
+				if(is_file($abspath_wp_config = ABSPATH.'wp-config.php'))
+					$wp_config_file = $abspath_wp_config;
+
+				else if(is_file($dirname_abspath_wp_config = dirname(ABSPATH).'/wp-config.php'))
+					$wp_config_file = $dirname_abspath_wp_config;
+
+				else $wp_config_file = ''; // Unable to find `/wp-config.php` file.
+
+				return $wp_config_file;
+			}
+
 			/* --------------------------------------------------------------------------------------
 			 * File/directory iteration utilities for ZenCache.
 			 -------------------------------------------------------------------------------------- */
@@ -1777,7 +1798,7 @@ namespace zencache // Root namespace.
 			 *
 			 * @since 140422 First documented version.
 			 *
-			 * @return array Lock type & resource handle needed to unlock later.
+			 * @return array Lock type & resource handle needed to unlock later or FALSE if disabled by filter.
 			 *
 			 * @throws \exception If {@link \sem_get()} not available and there's
 			 *    no writable tmp directory for {@link \flock()} either.
@@ -1789,16 +1810,30 @@ namespace zencache // Root namespace.
 			 */
 			public function cache_lock()
 			{
-				if($this->function_is_possible('sem_get'))
-					if(($resource = sem_get(1976, 1)) && sem_acquire($resource))
-						return array('type' => 'sem', 'resource' => $resource);
+				if($this->apply_wp_filters(__CLASS__.'_disable_cache_locking', FALSE))
+					return false;
 
-				// Use `flock()` as a decent fallback when `sem_get()` is not possible.
+				if(!($wp_config_file = $this->find_wp_config_file()))
+					throw new \exception(__('Unable to find the wp-config.php file.', $this->text_domain));
+
+				$locking_method = $this->apply_wp_filters(__METHOD__.'_lock_type', 'flock');
+
+				if(!in_array($locking_method, array('flock', 'sem')))
+					$locking_method = 'flock';
+
+				if($locking_method === 'sem')
+					if($this->function_is_possible('sem_get'))
+						if(($ipc_key = ftok($wp_config_file, 'w')))
+							if(($resource = sem_get($ipc_key, 1)) && sem_acquire($resource))
+								return array('type' => 'sem', 'resource' => $resource);
+
+				// Use `flock()` as a decent fallback when `sem_get()` is not not forced or is not possible.
 
 				if(!($tmp_dir = $this->get_tmp_dir()))
 					throw new \exception(__('No writable tmp directory.', $this->text_domain));
 
-				$mutex = $tmp_dir.'/'.$this->slug.'.lock';
+				$inode_key = fileinode($wp_config_file);
+				$mutex = $tmp_dir.'/'.$this->slug.'-'.$inode_key.'.lock';
 				if(!($resource = fopen($mutex, 'w')) || !flock($resource, LOCK_EX))
 					throw new \exception(__('Unable to obtain an exclusive lock.', $this->text_domain));
 
@@ -1814,6 +1849,9 @@ namespace zencache // Root namespace.
 			 */
 			public function cache_unlock(array $lock)
 			{
+				if($this->apply_wp_filters(__CLASS__.'_disable_cache_locking', FALSE))
+					return;
+
 				if(!is_array($lock))
 					return; // Not possible.
 
