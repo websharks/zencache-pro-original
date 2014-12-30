@@ -3045,7 +3045,7 @@ namespace zencache
 		 * @var plugin Main plugin class.
 		 */
 		if(!isset($GLOBALS[__NAMESPACE__.'_autoload_plugin']) || $GLOBALS[__NAMESPACE__.'_autoload_plugin'])
-			$GLOBALS[__NAMESPACE__] = new plugin(); // Load the ZenCache plugin automatically.
+			$GLOBALS[__NAMESPACE__] = $GLOBALS['quick_cache'] = new plugin(); // Load plugin automatically.
 		require_once dirname(__FILE__).'/includes/api-class.php'; // API class.
 	}
 	else if(!empty($GLOBALS[__NAMESPACE__.'_conflicting_plugin']) && empty($GLOBALS[__NAMESPACE__.'_uninstalling'])) add_action('all_admin_notices', function ()
