@@ -836,6 +836,9 @@ namespace zencache
 			$GLOBALS[__NAMESPACE__.'__advanced_cache']
 				= $this; // Define now; so it's available for plugins.
 
+			if(!isset($GLOBALS['quick_cache__advanced_cache'])) // Back compat.
+				$GLOBALS['quick_cache__advanced_cache'] = &$GLOBALS[__NAMESPACE__.'__advanced_cache'];
+
 			foreach((array)glob(WP_CONTENT_DIR.'/ac-plugins/*.php') as $_ac_plugin)
 				if(is_file($_ac_plugin)) include_once $_ac_plugin;
 			unset($_ac_plugin); // Houskeeping.
@@ -1627,6 +1630,9 @@ namespace zencache
 	 * @var advanced_cache Global instance reference.
 	 */
 	$GLOBALS[__NAMESPACE__.'__advanced_cache'] = new advanced_cache();
+
+	if(!isset($GLOBALS['quick_cache__advanced_cache'])) // Back compat.
+		$GLOBALS['quick_cache__advanced_cache'] = &$GLOBALS[__NAMESPACE__.'__advanced_cache'];
 }
 namespace // Global namespace.
 {
