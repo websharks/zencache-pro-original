@@ -37,9 +37,10 @@ namespace zencache
 
 			if(in_array($_active_plugin_slug, $conflicting_plugin_slugs, TRUE))
 				if(in_array($_active_plugin_slug, array('quick-cache', 'quick-cache-pro'), TRUE))
-					add_action('init', function () use ($_active_plugin_basename)
+					add_action('admin_init', function () use ($_active_plugin_basename)
 					{
-						deactivate_plugins($_active_plugin_basename, TRUE);
+						if(function_exists('deactivate_plugins'))
+							deactivate_plugins($_active_plugin_basename, TRUE);
 					}, -1000);
 				else return $_active_plugin_slug;
 		}
