@@ -234,6 +234,8 @@ namespace zencache // Root namespace.
 					wp_clear_scheduled_hook('_cron_quick_cache_auto_cache');
 					wp_clear_scheduled_hook('_cron_quick_cache_cleanup');
 
+					deactivate_plugins(array('quick-cache/quick-cache.php', 'quick-cache-pro/quick-cache-pro.php'), TRUE);
+
 					// Collect old pro update options. These have different names in ZenCache.
 
 					if(isset($quick_cache_options['update_sync_version_check']))
