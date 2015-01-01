@@ -3078,7 +3078,7 @@ namespace zencache
 		}
 		echo '<div class="error">'.
 		     '   <p>'. // Running multiple versions of this plugin at same time.
-		     '      '.sprintf(__('Please disable %1$s before you run %2$s.', $text_domain), esc_html($conflicting_plugin_name), esc_html($plugin_name)).
+		     '      '.sprintf(__('<strong>%1$s</strong> is NOT running. A conflicting plugin, <strong>%2$s</strong>, is currently active. Please deactivate the %2$s plugin to clear this message.', $text_domain), esc_html($plugin_name), esc_html($conflicting_plugin_name)).
 		     '   </p>'.
 		     '</div>';
 	});

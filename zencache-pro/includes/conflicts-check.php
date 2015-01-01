@@ -21,15 +21,6 @@ namespace zencache
 		if(class_exists('\\'.__NAMESPACE__.'\\plugin'))
 			return $plugin_slug; // Lite/Pro conflict exists.
 
-		if(class_exists('\\quick_cache\\plugin'))
-			return 'quick-cache'; // Old plugin slug.
-		/*
-		 * Check list of active plugins too; in case of load order conflicts.
-		 * While we're at it, check other conflicts also; e.g. W3 Total Cache, etc.
-		 *
-		 * NOTE: We intentionally do not use {@link \wp_get_active_and_valid_plugins()}, {@link \wp_get_active_network_plugins()}.
-		 *    We don't need the additional overhead of their validations. Pulling the option values only conserves resources.
-		 */
 		$conflicting_plugin_slugs = array(
 			$plugin_lite_slug, // Exclude pro version; i.e. self.
 			'quick-cache', 'quick-cache-pro', // Old plugin slugs.
@@ -45,7 +36,13 @@ namespace zencache
 				continue; // Nothing to check in this case.
 
 			if(in_array($_active_plugin_slug, $conflicting_plugin_slugs, TRUE))
-				return $_active_plugin_slug;
+				if(in_array($_active_plugin_slug, array('quick-cache', 'quick-cache-pro'), TRUE))
+					add_action('admin_init', function () use ($_active_plugin_basename)
+					{
+						if(function_exists('deactivate_plugins'))
+							deactivate_plugins($_active_plugin_basename, TRUE);
+					}, -1000);
+				else return $_active_plugin_slug;
 		}
 		return ''; // i.e. No conflicting plugin found above.
 	};
