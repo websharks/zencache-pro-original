@@ -1621,6 +1621,9 @@ namespace zencache
 					define('ZENCACHE_'.$_constant_sub_name, $_value);
 			}
 			unset($_constant, $_value); // Housekeeping.
+
+			if(isset($_SERVER['QUICK_CACHE_ALLOWED']) && !isset($_SERVER['ZENCACHE_ALLOWED']))
+				$_SERVER['ZENCACHE_ALLOWED'] = $_SERVER['QUICK_CACHE_ALLOWED'];
 		}
 	}
 
