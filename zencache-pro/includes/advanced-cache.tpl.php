@@ -1234,6 +1234,8 @@ namespace zencache
 
 			# Exclusion checks; there are MANY of these...
 
+			advanced_cache_back_compat::QUICK_CACHE_constants();
+
 			$cache = trim((string)$buffer);
 			if(!isset($cache[0])) // Allows a `0`.
 				return FALSE; // Don't cache an empty buffer.
