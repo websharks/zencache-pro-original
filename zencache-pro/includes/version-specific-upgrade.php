@@ -268,6 +268,12 @@ namespace zencache // Root namespace.
 					if(is_multisite()) update_site_option(__NAMESPACE__.'_options', $this->plugin->options);
 
 					$this->plugin->activate(); // Reactivate plugin w/ new options.
+
+					$this->plugin->enqueue_notice( // Give site owners a quick heads up about this.
+						'<p>'.sprintf(__('<strong>Woohoo! %1$s activated.</strong> :-)', $this->plugin->text_domain), esc_html($this->plugin->name)).'</p>'.
+						'<p>'.sprintf(__('NOTE: Your Quick Cache options were preserved by %1$s (for more details, visit the <a href="http://zencache.com/r/quick-cache-pro-migration-faq/" target="_blank">Migration FAQ</a>).'.'', $this->plugin->text_domain), esc_html($this->plugin->name)).'</p>'.
+						'<p>'.sprintf(__('To review your configuration, please see: <a href="%2$s">%1$s ⥱ Plugin Options</a>.'.'', $this->plugin->text_domain), esc_html($this->plugin->name), esc_attr(add_query_arg(urlencode_deep(array('page' => __NAMESPACE__)), self_admin_url('/admin.php')))).'</p>'
+					);
 				}
 			}
 		}
