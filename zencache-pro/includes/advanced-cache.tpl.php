@@ -1576,7 +1576,7 @@ namespace zencache
 		/**
 		 * Back compat. with `qcAC` and `qcABC`.
 		 *
-		 * @since 14xxxx First documented version.
+		 * @since 150218 First documented version.
 		 */
 		public static function qcAC_qcABC_vars()
 		{
@@ -1602,7 +1602,7 @@ namespace zencache
 		/**
 		 * Back compat. with `QUICK_CACHE_` constants.
 		 *
-		 * @since 14xxxx First documented version.
+		 * @since 150218 First documented version.
 		 */
 		public static function QUICK_CACHE_constants()
 		{

@@ -911,7 +911,7 @@ namespace zencache
 			/**
 			 * Appends hidden inputs for pro updater when FTP credentials are requested by WP.
 			 *
-			 * @since 14xxxx See: <https://github.com/websharks/quick-cache/issues/389#issuecomment-68620617>
+			 * @since 150218 See: <https://github.com/websharks/quick-cache/issues/389#issuecomment-68620617>
 			 *
 			 * @attaches-to `fs_ftp_connection_types` filter.
 			 *
@@ -1418,7 +1418,7 @@ namespace zencache
 				if($is_disabled && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>%1$s:</strong> detected significant changes that would normally trigger a wipe cache routine, however wipe cache routines have been disabled by a site administrator. [<a href="http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/" target="_blank">?</a>]', $this->text_domain),
+					                      sprintf(__('<strong>%1$s:</strong> detected significant changes that would normally trigger a wipe cache routine, however wipe cache routines have been disabled by a site administrator. [<a href="http://zencache.com/r/kb-clear-and-wipe-cache-routines/" target="_blank">?</a>]', $this->text_domain),
 					                              esc_html($this->name)));
 				}
 				return $is_disabled; // Disabled?
@@ -1492,7 +1492,7 @@ namespace zencache
 				if($is_disabled && is_admin() && $this->options['change_notifications_enable'])
 				{
 					$this->enqueue_notice('<img src="'.esc_attr($this->url('/client-s/images/clear.png')).'" style="float:left; margin:0 10px 0 0; border:0;" />'.
-					                      sprintf(__('<strong>%1$s:</strong> detected important site changes that would normally trigger a clear cache routine. However, clear cache routines have been disabled by a site administrator. [<a href="http://www.websharks-inc.com/r/zencache-clear-cache-and-wipe-cache-routines-wiki/" target="_blank">?</a>]', $this->text_domain),
+					                      sprintf(__('<strong>%1$s:</strong> detected important site changes that would normally trigger a clear cache routine. However, clear cache routines have been disabled by a site administrator. [<a href="http://zencache.com/r/kb-clear-and-wipe-cache-routines/" target="_blank">?</a>]', $this->text_domain),
 					                              esc_html($this->name)));
 				}
 				return $is_disabled; // Disabled?

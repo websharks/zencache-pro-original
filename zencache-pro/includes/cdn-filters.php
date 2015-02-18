@@ -3,7 +3,7 @@
  * CDN Filters
  *
  * @package zencache\cdn
- * @since 14xxxx Adding CDN support.
+ * @since 150218 Adding CDN support.
  * @copyright WebSharks, Inc. <http://www.websharks-inc.com>
  * @license GNU General Public License, version 2
  */
@@ -15,72 +15,72 @@ namespace zencache // Root namespace.
 	/**
 	 * CDN Filters
 	 *
-	 * @since 14xxxx Adding CDN support.
+	 * @since 150218 Adding CDN support.
 	 */
 	class cdn_filters
 	{
 		/**
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 * @var plugin ZenCache instance.
 		 */
 		protected $plugin;
 
 		/**
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 * @var string Local host name.
 		 */
 		protected $local_host;
 
 		/**
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 * @var boolean Enable CDN filters?
 		 */
 		protected $cdn_enable;
 
 		/**
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 * @var string CDN serves files from this host.
 		 */
 		protected $cdn_host;
 
 		/**
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 * @var boolean CDN over SSL connections?
 		 */
 		protected $cdn_over_ssl;
 
 		/**
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 * @var string Invalidation variable name.
 		 */
 		protected $cdn_invalidation_var;
 
 		/**
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 * @var integer Invalidation counter.
 		 */
 		protected $cdn_invalidation_counter;
 
 		/**
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 * @var array Array of whitelisted extensions.
 		 */
 		protected $cdn_whitelisted_extensions;
 
 		/**
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 * @var array Array of blacklisted extensions.
 		 */
 		protected $cdn_blacklisted_extensions;
 
 		/**
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 * @var string|null CDN whitelisted URI patterns.
 		 */
 		protected $cdn_whitelisted_uri_patterns;
 
 		/**
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 * @var string|null CDN blacklisted URI patterns.
 		 */
 		protected $cdn_blacklisted_uri_patterns;
@@ -88,7 +88,7 @@ namespace zencache // Root namespace.
 		/**
 		 * Class constructor.
 		 *
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 */
 		public function __construct()
 		{
@@ -173,7 +173,7 @@ namespace zencache // Root namespace.
 		/**
 		 * Setup URL and content filters.
 		 *
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 */
 		public function maybe_setup_filters()
 		{
@@ -226,7 +226,7 @@ namespace zencache // Root namespace.
 		/**
 		 * Filter home/site URLs that should be served by the CDN.
 		 *
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 *
 		 * @param string       $url Input URL|URI|query; passed by filter.
 		 * @param string       $path The path component(s) passed through by the filter.
@@ -243,7 +243,7 @@ namespace zencache // Root namespace.
 		/**
 		 * Filter content for URLs that should be served by the CDN.
 		 *
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 *
 		 * @param string $string Input content string to filter; i.e. HTML code.
 		 *
@@ -292,7 +292,7 @@ namespace zencache // Root namespace.
 		/**
 		 * Filter URLs that should be served by the CDN.
 		 *
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 *
 		 * @param string      $url_uri_query Input URL|URI|query.
 		 * @param string|null $scheme `NULL`, `http`, `https`, `login`, `login_post`, `admin`, or `relative`.
@@ -337,7 +337,7 @@ namespace zencache // Root namespace.
 		/**
 		 * Parse a URL|URI|query into a local file array.
 		 *
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 *
 		 * @param string $url_uri_query Input URL|URI|query.
 		 *
@@ -381,7 +381,7 @@ namespace zencache // Root namespace.
 		/**
 		 * Get extension from a file path.
 		 *
-		 * @since 14xxxx Adding CDN support.
+		 * @since 150218 Adding CDN support.
 		 *
 		 * @param string $path Input file path.
 		 *
