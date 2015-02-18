@@ -22,7 +22,7 @@ namespace zencache
 		class uninstall // Uninstall handler.
 		{
 			/**
-			 * @since 14xxxx Adding uninstaller.
+			 * @since 150218 Adding uninstaller.
 			 *
 			 * @var plugin Primary plugin class instance.
 			 */
@@ -31,7 +31,7 @@ namespace zencache
 			/**
 			 * Uninstall constructor.
 			 *
-			 * @since 14xxxx Adding uninstall handler.
+			 * @since 150218 Adding uninstall handler.
 			 */
 			public function __construct()
 			{
