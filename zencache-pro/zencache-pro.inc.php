@@ -1024,9 +1024,15 @@ namespace zencache
 						$_dismiss     = add_query_arg(urlencode_deep(array(__NAMESPACE__ => array('dismiss_notice' => array('key' => $_key)), '_wpnonce' => wp_create_nonce())));
 						$_dismiss     = '<a style="'.esc_attr($_dismiss_css).'" href="'.esc_attr($_dismiss).'">'.__('dismiss &times;', $this->text_domain).'</a>';
 					}
-					echo $this->apply_wp_filters(__METHOD__.'__notice', '<div class="updated"><p>'.$_notice.$_dismiss.'</p></div>', get_defined_vars());
+					if(strpos($_key, 'class-update-nag') !== FALSE)
+						$_class = 'update-nag';
+					else if(strpos($_key, 'class-error') !== FALSE)
+						$_class = 'error';
+					else
+						$_class = 'updated';
+					echo $this->apply_wp_filters(__METHOD__.'__notice', '<div class="'.$_class.'"><p>'.$_notice.$_dismiss.'</p></div>', get_defined_vars());
 				}
-				unset($_key, $_notice, $_dismiss_css, $_dismiss); // Housekeeping.
+				unset($_key, $_notice, $_dismiss_css, $_dismiss, $_class); // Housekeeping.
 			}
 
 			/**
